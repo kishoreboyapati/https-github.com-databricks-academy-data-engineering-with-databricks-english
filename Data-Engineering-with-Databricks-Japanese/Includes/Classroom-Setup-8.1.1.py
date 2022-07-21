@@ -54,7 +54,8 @@ def _create_pipeline():
         target = DA.db_name, 
         notebooks = [path])
 
-    DA.pipline_id = pipeline.get("pipeline_id")
+    DA.pipeline_id = pipeline.get("pipeline_id")
+    print(f"Created the pipline {DA.pipeline_id}")
        
 DA.create_pipeline = _create_pipeline
 
@@ -68,11 +69,11 @@ def _start_pipeline():
     client = DBAcademyRestClient()
 
     # Start the pipeline
-    start = client.pipelines().start_by_id(DA.pipline_id)
+    start = client.pipelines().start_by_id(DA.pipeline_id)
     update_id = start.get("update_id")
 
     # Get the status and block until it is done
-    update = client.pipelines().get_update_by_id(DA.pipline_id, update_id)
+    update = client.pipelines().get_update_by_id(DA.pipeline_id, update_id)
     state = update.get("update").get("state")
 
     done = ["COMPLETED", "FAILED", "CANCELED"]
@@ -80,7 +81,7 @@ def _start_pipeline():
         duration = 15
         time.sleep(duration)
         print(f"Current state is {state}, sleeping {duration} seconds.")    
-        update = client.pipelines().get_update_by_id(DA.pipline_id, update_id)
+        update = client.pipelines().get_update_by_id(DA.pipeline_id, update_id)
         state = update.get("update").get("state")
     
     print(f"The final state is {state}.")    

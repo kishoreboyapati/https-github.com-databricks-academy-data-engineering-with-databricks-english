@@ -38,9 +38,9 @@
 # MAGIC 
 # MAGIC ## ストリーミング読み取りを構成する（Configure Streaming Read）
 # MAGIC 
-# MAGIC このラボでは、*/databricks-datasets/retail-org/customers/*にあるDBFSの顧客関連CSVデータのコレクションを使います。
+# MAGIC このラボでは、 */databricks-datasets/retail-org/customers/* にあるDBFSの顧客関連CSVデータのコレクションを使います。
 # MAGIC 
-# MAGIC スキーマ推論を使って<a href="https://docs.databricks.com/spark/latest/structured-streaming/auto-loader.html" target="_blank">Auto Loader</a>でこのデータを読み取ります（**`customers_checkpoint_path`**を使ってスキーマ情報を格納する）。 **`customers_raw_temp`**というストリーミングテンポラリビューを作成します。
+# MAGIC スキーマ推論を使って<a href="https://docs.databricks.com/spark/latest/structured-streaming/auto-loader.html" target="_blank">Auto Loader</a>でこのデータを読み取ります（ **`customers_checkpoint_path`** を使ってスキーマ情報を格納する）。  **`customers_raw_temp`** というストリーミングテンポラリビューを作成します。
 
 # COMMAND ----------
 
@@ -62,7 +62,7 @@ customers_checkpoint_path = f"{DA.paths.checkpoints}/customers"
 # MAGIC 
 # MAGIC ## ストリーミング集約を定義する（Define a streaming aggregation）
 # MAGIC 
-# MAGIC CTAS構文を使って、**`customer_count`**のフィールドにおける**`state`**ごとの顧客数をカウントする**`customer_count_by_state_temp`**という新しいストリーミングビューを定義します。
+# MAGIC CTAS構文を使って、 **`customer_count`** のフィールドにおける **`state`** ごとの顧客数をカウントする **`customer_count_by_state_temp`** という新しいストリーミングビューを定義します。
 
 # COMMAND ----------
 
@@ -85,7 +85,7 @@ customers_checkpoint_path = f"{DA.paths.checkpoints}/customers"
 # MAGIC 
 # MAGIC ## 集約されたデータをDeltaテーブルに書き込む（Write aggregated data to a Delta table）
 # MAGIC 
-# MAGIC データを**`customer_count_by_state_temp`**ビューから**`customer_count_by_state`**というDeltaテーブルにストリームします。
+# MAGIC データを **`customer_count_by_state_temp`** ビューから **`customer_count_by_state`** というDeltaテーブルにストリームします。
 
 # COMMAND ----------
 
@@ -111,7 +111,7 @@ DA.block_until_stream_is_ready(query)
 # MAGIC 
 # MAGIC ## 結果を照会する（Query the results）
 # MAGIC 
-# MAGIC **`customer_count_by_state`**テーブルを照会します（これはストリーミングクエリではありません）。 結果を棒グラフとしてプロットし、マッププロットを使用してプロットします。
+# MAGIC  **`customer_count_by_state`** テーブルを照会します（これはストリーミングクエリではありません）。 結果を棒グラフとしてプロットし、マッププロットを使用してプロットします。
 
 # COMMAND ----------
 

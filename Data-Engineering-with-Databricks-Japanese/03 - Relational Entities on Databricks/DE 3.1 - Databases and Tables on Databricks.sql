@@ -16,7 +16,7 @@
 -- MAGIC ## 学習目標（Learning Objectives）
 -- MAGIC このレッスンでは、以下のことが学べます。
 -- MAGIC * Spark SQL DDLを使用してデータベースとテーブルを定義する
--- MAGIC * **`LOCATION`**キーワードがデフォルトのストレージディレクトリにどのような影響を与えるかを説明する
+-- MAGIC *  **`LOCATION`** キーワードがデフォルトのストレージディレクトリにどのような影響を与えるかを説明する
 -- MAGIC 
 -- MAGIC 
 -- MAGIC 
@@ -69,8 +69,8 @@ SELECT "${da.db_name}" AS db_name,
 -- MAGIC 
 -- MAGIC ## データベース（Databases）
 -- MAGIC はじめに2つのデータベースを作成しましょう：
--- MAGIC - **`LOCATION`**指定するデータベース
--- MAGIC - **`LOCATION`**を指定しないデータベース
+-- MAGIC -  **`LOCATION`** 指定するデータベース
+-- MAGIC -  **`LOCATION`** を指定しないデータベース
 
 -- COMMAND ----------
 
@@ -82,7 +82,7 @@ CREATE DATABASE IF NOT EXISTS ${da.db_name}_custom_location LOCATION '${da.paths
 -- MAGIC %md
 -- MAGIC 
 -- MAGIC 
--- MAGIC 最初のデータベースの場所は、**`dbfs:/user/hive/warehouse/`**にあるデフォルトの場所で、データベースディレクトリは**`.db`**の拡張子が付いているデータベースの名前であることにご注意ください。
+-- MAGIC 最初のデータベースの場所は、 **`dbfs:/user/hive/warehouse/`** にあるデフォルトの場所で、データベースディレクトリは **`.db`** の拡張子が付いているデータベースの名前であることにご注意ください。
 
 -- COMMAND ----------
 
@@ -93,7 +93,7 @@ DESCRIBE DATABASE EXTENDED ${da.db_name}_default_location;
 -- MAGIC %md
 -- MAGIC 
 -- MAGIC 
--- MAGIC 2個目のデータベースの場所は、**`LOCATION`**キーワードの後ろに指定されているディレクトリであることにご注意ください。
+-- MAGIC 2個目のデータベースの場所は、 **`LOCATION`** キーワードの後ろに指定されているディレクトリであることにご注意ください。
 
 -- COMMAND ----------
 
@@ -133,7 +133,7 @@ DESCRIBE EXTENDED managed_table_in_db_with_default_location;
 -- MAGIC %md
 -- MAGIC 
 -- MAGIC 
--- MAGIC デフォルトでは、場所を指定しないデータベースのマネージドテーブルは**`dbfs:/user/hive/warehouse/<database_name>.db/`**ディレクトリに作成されます。
+-- MAGIC デフォルトでは、場所を指定しないデータベースのマネージドテーブルは **`dbfs:/user/hive/warehouse/<database_name>.db/`** ディレクトリに作成されます。
 -- MAGIC 
 -- MAGIC Deltaテーブルのデータとメタデータは予想通り、その場所に保存されていることが分かります。
 
@@ -209,7 +209,7 @@ DESCRIBE EXTENDED managed_table_in_db_with_custom_location;
 -- MAGIC %md
 -- MAGIC 
 -- MAGIC 
--- MAGIC 予想どおり、このマネージドテーブルは、データベース作成時に**`LOCATION`**キーワードで指定されたパスに作成されました。 したがって、テーブルのデータとメタデータはこちらのディレクトリに保持されます。
+-- MAGIC 予想どおり、このマネージドテーブルは、データベース作成時に **`LOCATION`** キーワードで指定されたパスに作成されました。 したがって、テーブルのデータとメタデータはこちらのディレクトリに保持されます。
 
 -- COMMAND ----------
 
@@ -259,7 +259,7 @@ DROP TABLE managed_table_in_db_with_custom_location;
 -- MAGIC ## テーブル（Tables）
 -- MAGIC サンプルデータを使用して外部（アンマネージド）テーブルを作成します。
 -- MAGIC 
--- MAGIC CSV形式のデータを使用します。 好きなディレクトリに指定した**`LOCATION`**のDeltaテーブルを作成します。
+-- MAGIC CSV形式のデータを使用します。 好きなディレクトリに指定した **`LOCATION`** のDeltaテーブルを作成します。
 
 -- COMMAND ----------
 

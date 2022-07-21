@@ -32,9 +32,9 @@
 # MAGIC 
 # MAGIC ## クエリを実行して破損しているデータを修復する（Execute a Query to Repair Broken Data）
 # MAGIC 
-# MAGIC **`recordings_enriched`**テーブルを定義したコードを確認して、品質チェックに適用されたフィルタを特定します。
+# MAGIC  **`recordings_enriched`** テーブルを定義したコードを確認して、品質チェックに適用されたフィルタを特定します。
 # MAGIC 
-# MAGIC 次のセルには、この品質チェックで拒否された**`recordings_bronze`**テーブルのすべてのレコードを返すクエリを書きます。
+# MAGIC 次のセルには、この品質チェックで拒否された **`recordings_bronze`** テーブルのすべてのレコードを返すクエリを書きます。
 
 # COMMAND ----------
 
@@ -61,7 +61,7 @@
 # MAGIC %md
 # MAGIC 
 # MAGIC 
-# MAGIC データセットを完成させるために、これらの固定レコードをシルバーの**`recordings_enriched`**テーブルに挿入します。
+# MAGIC データセットを完成させるために、これらの固定レコードをシルバーの **`recordings_enriched`** テーブルに挿入します。
 # MAGIC 
 # MAGIC 以下のセルを使用して、この修復を実行するためにDLTパイプラインで使用されるクエリを更新します。
 # MAGIC 
@@ -70,7 +70,7 @@
 # COMMAND ----------
 
 # TODO
-# CREATE INCREMENTAL LIVE TABLE recordings_enriched
+# CREATE OR REFRESH STREAMING LIVE TABLE recordings_enriched
 #   (CONSTRAINT positive_heartrate EXPECT (heartrate > 0) ON VIOLATION DROP ROW)
 # AS SELECT 
 #   CAST(a.device_id AS INTEGER) device_id, 
@@ -89,7 +89,7 @@
 # MAGIC 
 # MAGIC 以下のセルを使用して、この更新が成功したことを手動またはプログラムで確認します。
 # MAGIC 
-# MAGIC （**`recordings_bronze`**のレコードの総数は、**`recordings_enriched`**のレコードの総数と同じになります）。
+# MAGIC （ **`recordings_bronze`** のレコードの総数は、 **`recordings_enriched`** のレコードの総数と同じになります）。
 
 # COMMAND ----------
 

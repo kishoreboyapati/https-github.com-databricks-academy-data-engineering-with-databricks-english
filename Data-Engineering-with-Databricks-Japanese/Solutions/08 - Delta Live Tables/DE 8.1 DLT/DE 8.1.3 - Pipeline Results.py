@@ -20,7 +20,7 @@ display(files)
 # MAGIC %md
 # MAGIC 
 # MAGIC 
-# MAGIC **`system`**ディレクトリは、パイプラインに関連付けられたイベントをキャプチャします。
+# MAGIC **`system`** ディレクトリは、パイプラインに関連付けられたイベントをキャプチャします。
 
 # COMMAND ----------
 

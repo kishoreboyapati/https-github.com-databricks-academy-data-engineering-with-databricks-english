@@ -16,14 +16,14 @@
 -- MAGIC 
 -- MAGIC この機能を使用すると、SQLロジックのカスタムな組み合わせを関数としてデータベースに登録できます。これにより、これらのメソッドは、DatabricksでSQLを実行できる場所であれば再利用できます。 これらの関数は、Spark SQLを直接活用し、カスタムロジックを大きなデータセットに適用する際にSparkの最適化をすべて維持します。
 -- MAGIC 
--- MAGIC このノートブックでは、まずはこれらのメソッドを簡単に紹介します。次に、再利用可能なカスタムの制御流れのロジックを構築するために、このロジックを**`CASE`** / **`WHEN`**句と組み合わせる方法を学びます。
+-- MAGIC このノートブックでは、まずはこれらのメソッドを簡単に紹介します。次に、再利用可能なカスタムの制御流れのロジックを構築するために、このロジックを **`CASE`**  /  **`WHEN`** 句と組み合わせる方法を学びます。
 -- MAGIC 
 -- MAGIC ## 学習目標（Learning Objectives）
 -- MAGIC このレッスンでは、以下のことが学べます。
 -- MAGIC * SQL UDFの定義と登録
 -- MAGIC * SQL UDFの共有で使用するセキュリティモデルを説明する
--- MAGIC * SQLコードで**`CASE`** / **`WHEN`**文を使用する
--- MAGIC * カスタムの制御流れのためにSQL UDFで**`CASE`** / **`WHEN`**文を活用する
+-- MAGIC * SQLコードで **`CASE`**  /  **`WHEN`** 文を使用する
+-- MAGIC * カスタムの制御流れのためにSQL UDFで **`CASE`**  /  **`WHEN`** 文を活用する
 
 -- COMMAND ----------
 
@@ -64,7 +64,7 @@ SELECT * FROM foods
 -- MAGIC ## SQL UDF
 -- MAGIC SQL UDFには少なくとも、関数名、任意のパラメーター、戻り値の型、いくつかのカスタムロジックが必要です。
 -- MAGIC 
--- MAGIC 以下の簡単な関数である**`yelling`**は**`text`**というの1つのパラメーターを取ります。 この関数は、最後に3つのはてなマークがついている全ての文字が大文字の文字列を返します。
+-- MAGIC 以下の簡単な関数である **`yelling`** は **`text`** というの1つのパラメーターを取ります。 この関数は、最後に3つのはてなマークがついている全ての文字が大文字の文字列を返します。
 
 -- COMMAND ----------
 
@@ -105,7 +105,7 @@ DESCRIBE FUNCTION yelling
 -- MAGIC 
 -- MAGIC DESCRIBE EXTENDEDを実行するとさらに多くの情報を表示できます。
 -- MAGIC 
--- MAGIC 関数の説明の下にある**`Body`**フィールドは、関数自体の中で使用されているSQLロジックを表します。
+-- MAGIC 関数の説明の下にある **`Body`** フィールドは、関数自体の中で使用されているSQLロジックを表します。
 
 -- COMMAND ----------
 
@@ -118,7 +118,7 @@ DESCRIBE FUNCTION EXTENDED yelling
 -- MAGIC 
 -- MAGIC SQL UDFsはメタストア内のオブジェクトとして存在し、データベース、テーブル、ビューと同じテーブルACLによって管理されます。
 -- MAGIC 
--- MAGIC SQL UDFを使用するのにユーザーは、関数に対して**`USAGE`**と**`SELECT`**の権限を持っている必要があります。
+-- MAGIC SQL UDFを使用するのにユーザーは、関数に対して **`USAGE`** と **`SELECT`** の権限を持っている必要があります。
 
 -- COMMAND ----------
 
@@ -127,7 +127,7 @@ DESCRIBE FUNCTION EXTENDED yelling
 -- MAGIC 
 -- MAGIC ## CASE/WHEN
 -- MAGIC 
--- MAGIC SQLの標準統語構造である**`CASE`** / **`WHEN`**を使用すると、テーブルの内容によって結果が異なる複数の条件文を評価できます。
+-- MAGIC SQLの標準統語構造である **`CASE`**  /  **`WHEN`** を使用すると、テーブルの内容によって結果が異なる複数の条件文を評価できます。
 -- MAGIC 
 -- MAGIC 繰り返しますが、すべての評価がSparkでネイティブに実行されるため、並行処理に最適化されています。
 
@@ -149,7 +149,7 @@ FROM foods
 -- MAGIC 
 -- MAGIC ## 簡単な流れ制御の関数（Simple Control Flow Functions）
 -- MAGIC 
--- MAGIC SQL UDFを**`CASE `** / **`WHEN `**句の形式で制御流れと組み合わせると、SQL内のワークロードの制御流れの実行が最適化されます。
+-- MAGIC SQL UDFを **`CASE `**  /  **`WHEN `** 句の形式で制御流れと組み合わせると、SQL内のワークロードの制御流れの実行が最適化されます。
 -- MAGIC 
 -- MAGIC ここでは、前のロジックを、SQLを実行できる場所ならどこでも再利用できる関数で包む方法を示します。
 

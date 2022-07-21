@@ -109,7 +109,7 @@ DA.data_factory.load()
 # MAGIC 
 # MAGIC Spark DataFrame APIを使って増分読み取りを設定する必要がありますが、一度構成されると、すぐにテンポラリビューを登録してデータのストリーミング変換にSpark SQLが活用できることに留意してください。
 # MAGIC 
-# MAGIC **注**：JSONデータソースでは、Auto Loaderは各列を文字列として推測するように設定しています。 ここでは、**`cloudFiles.schemaHints`**オプションを使用して**`time`**列のデータ型を指定する方法を示します。 フィールドに不適切な型が入力されるとNULL値になることに注意してください。
+# MAGIC **注**：JSONデータソースでは、Auto Loaderは各列を文字列として推測するように設定しています。 ここでは、 **`cloudFiles.schemaHints`** オプションを使用して **`time`** 列のデータ型を指定する方法を示します。 フィールドに不適切な型が入力されるとNULL値になることに注意してください。
 
 # COMMAND ----------
 
@@ -195,7 +195,7 @@ DA.data_factory.load()
 # MAGIC ## シルバーテーブル：エンリッチ化されたレコーディングデータ（Silver Table: Enriched Recording Data）
 # MAGIC シルバーレベルの2番目のホップとして、以下のエンリッチ処理とチェックを行います。
 # MAGIC - レコーディングデータとPIIを結合して、患者名を追加する
-# MAGIC - レコーディングの時間を人間が読める形式**`'yyyy-MM-dd HH:mm:ss'`**に解析する
+# MAGIC - レコーディングの時間を人間が読める形式 **`'yyyy-MM-dd HH:mm:ss'`** に解析する
 # MAGIC - <= 0 の心拍数は患者の不在または送信エラーを意味するため排除する
 
 # COMMAND ----------
@@ -246,7 +246,7 @@ DA.data_factory.load()
 # MAGIC 
 # MAGIC ## ゴールドテーブル：一日の平均（Gold Table: Daily Averages）
 # MAGIC 
-# MAGIC ここでは**`recordings_enriched`**からデータのストリームを読み取り別のストリームを書き込むことで、患者別平均値を表す集約ゴールドテーブルを作成します。
+# MAGIC ここでは **`recordings_enriched`** からデータのストリームを読み取り別のストリームを書き込むことで、患者別平均値を表す集約ゴールドテーブルを作成します。
 
 # COMMAND ----------
 
@@ -267,7 +267,7 @@ DA.data_factory.load()
 # MAGIC %md
 # MAGIC 
 # MAGIC 
-# MAGIC 以下では **`.trigger(availableNow=True)`**を使用している点に注意してください。 これににより、すべての利用可能なデータをマイクロバッチで処理するようこの1回限りのジョブをトリガーする際、構造化ストリーミングの強みを生かし続けることが可能になります。 要約すると、その強みとは以下の通りです。
+# MAGIC 以下では  **`.trigger(availableNow=True)`** を使用している点に注意してください。 これににより、すべての利用可能なデータをマイクロバッチで処理するようこの1回限りのジョブをトリガーする際、構造化ストリーミングの強みを生かし続けることが可能になります。 要約すると、その強みとは以下の通りです。
 # MAGIC - 1回限りのエンドツーエンド・フォールトトレランス処理
 # MAGIC - アップストリームデータソースにおける変更の自動検出
 # MAGIC 
@@ -292,7 +292,7 @@ DA.data_factory.load()
 # MAGIC 
 # MAGIC #### Deltaを使った完全な出力に関する重要な考察（Important Considerations for complete Output with Delta）
 # MAGIC 
-# MAGIC **`complete`**の出力モードを使用すると、ロジックを実行する度にテーブルの状態全体が書き換えられます。 これは集約を計算するためには理想ですが、構造化ストリーミングがデータはアップストリームロジックにのみ追加されると想定しているため、このディレクトリからストリームを読み取ることは**できません**。
+# MAGIC  **`complete`** の出力モードを使用すると、ロジックを実行する度にテーブルの状態全体が書き換えられます。 これは集約を計算するためには理想ですが、構造化ストリーミングがデータはアップストリームロジックにのみ追加されると想定しているため、このディレクトリからストリームを読み取ることは**できません**。
 # MAGIC 
 # MAGIC **注**：この行動を変えるために特定のオプションを設定することができますが、その他の制限が追加されてしまいます。 詳細を知りたい場合は、<a href="https://docs.databricks.com/delta/delta-streaming.html#ignoring-updates-and-deletes" target="_blank">Deltaストリーミング：更新と削除を無視する</a>を参照してください。
 # MAGIC 
@@ -323,7 +323,7 @@ DA.data_factory.load()
 # MAGIC 
 # MAGIC 
 # MAGIC ## 残りのレコードを処理する（Process Remaining Records）
-# MAGIC 次のセルは、2020年の残り期間の追加ファイルをソースディレクトリに配置します。 これらの処理はDelta Lakeの最初の3つのテーブルを通して確認できますが、最後のクエリを再実行して**`daily_patient_avg`**テーブルを更新する必要があります。なぜなら、このクエリはtrigger available now構文を使っているからです。
+# MAGIC 次のセルは、2020年の残り期間の追加ファイルをソースディレクトリに配置します。 これらの処理はDelta Lakeの最初の3つのテーブルを通して確認できますが、最後のクエリを再実行して **`daily_patient_avg`** テーブルを更新する必要があります。なぜなら、このクエリはtrigger available now構文を使っているからです。
 
 # COMMAND ----------
 

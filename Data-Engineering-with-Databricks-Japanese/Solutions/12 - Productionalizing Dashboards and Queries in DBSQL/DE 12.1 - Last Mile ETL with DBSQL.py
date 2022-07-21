@@ -73,7 +73,7 @@ DA.generate_config()
 # MAGIC %md
 # MAGIC 
 # MAGIC 
-# MAGIC **注**：上記のクエリは、環境を再構成するために、デモを完全にリセットした後に一度だけ実行するものです。 ユーザーは、これらのクエリを実行するためにカタログ上で**`CREATE`**および**`USAGE`**権限を持っている必要があります。
+# MAGIC **注**：上記のクエリは、環境を再構成するために、デモを完全にリセットした後に一度だけ実行するものです。 ユーザーは、これらのクエリを実行するためにカタログ上で **`CREATE`** および **`USAGE`** 権限を持っている必要があります。
 
 # COMMAND ----------
 
@@ -81,7 +81,7 @@ DA.generate_config()
 # MAGIC 
 # MAGIC 
 # MAGIC 
-# MAGIC <img src="https://files.training.databricks.com/images/icon_warn_32.png" /> **警告：** **`USE`**文はクエリを実行するデータベースをまだ変更しないため、<br/>先に進む前にデータベースを必ず選択しておいてください。
+# MAGIC <img src="https://files.training.databricks.com/images/icon_warn_32.png" /> **警告：**  **`USE`** 文はクエリを実行するデータベースをまだ変更しないため、<br/>先に進む前にデータベースを必ず選択しておいてください。
 
 # COMMAND ----------
 
@@ -90,7 +90,7 @@ DA.generate_config()
 # MAGIC 
 # MAGIC ## クエリを作成してデータを読み込む（Create a Query to Load Data）
 # MAGIC 手順は、次の通りです。
-# MAGIC 1. 次のセルを実行すると、前の手順で作成した**`user_ping`**テーブルにデータを読み込むためにフォーマットされたSQLクエリが出力されます。
+# MAGIC 1. 次のセルを実行すると、前の手順で作成した **`user_ping`** テーブルにデータを読み込むためにフォーマットされたSQLクエリが出力されます。
 # MAGIC 1. このクエリを**Load Ping Data**という名前で保存します。
 # MAGIC 1. このクエリを実行して、データのバッチを読み込みます。
 
@@ -145,9 +145,9 @@ DA.generate_user_counts()
 # MAGIC 
 # MAGIC 手順は、次の通りです。
 # MAGIC 1. クエリウィンドウの右下隅にある [スケジュールを更新] ボタンの下の**ビジュアライゼーションを追加**ボタンをクリックします
-# MAGIC 1. 名前（デフォルトの状態は**`Visualization 1`**などになっています）をクリックし、名前を**Total User Records**へと変更します
-# MAGIC 1. **X列**に**`user_id`**を設定します
-# MAGIC 1. **Y列**に**`total_records`**を設定します
+# MAGIC 1. 名前（デフォルトの状態は **`Visualization 1`** などになっています）をクリックし、名前を**Total User Records**へと変更します
+# MAGIC 1. **X列**に **`user_id`** を設定します
+# MAGIC 1. **Y列**に **`total_records`** を設定します
 # MAGIC 1. **保存**をクリックします
 
 # COMMAND ----------
@@ -160,7 +160,7 @@ DA.generate_user_counts()
 # MAGIC 手順は、次の通りです。
 # MAGIC 1. 画面の一番下にある縦にドットが3つ並んだボタンをクリックし、**ダッシュボードに追加**を選択します
 # MAGIC 1. **新規ダッシュボードを作成**オプションをクリックします
-# MAGIC 1. ダッシュボードに<strong>User Ping Summary **`<your_initials_here>`**</strong>という名前を付けます
+# MAGIC 1. ダッシュボードに<strong>User Ping Summary  **`<your_initials_here>`** </strong>という名前を付けます
 # MAGIC 1. **保存**をクリックして新しいダッシュボードを作成します
 # MAGIC 1. 新しく作成したダッシュボードが対象として選択されているはずですので、**OK**をクリックしてビジュアライゼーションを追加します
 
@@ -188,11 +188,11 @@ DA.generate_avg_ping()
 # MAGIC 
 # MAGIC 手順は、次の通りです。
 # MAGIC 1. **ビジュアライゼーションの追加**ボタンをクリックします
-# MAGIC 1. 名前（デフォルトの状態は**`Visualization 1`**などになっています）をクリックし、名前を**Avg User Ping**へと変更します
-# MAGIC 1. **Visualization Type**に**`Line`**を選択します。
-# MAGIC 1. **X列**に**`end_time`**を設定します。
-# MAGIC 1. **Y列**に**`avg_ping`**を設定します。
-# MAGIC 1. **Group by**に**`user_id`**を設定します。
+# MAGIC 1. 名前（デフォルトの状態は **`Visualization 1`** などになっています）をクリックし、名前を**Avg User Ping**へと変更します
+# MAGIC 1. **Visualization Type**に **`Line`** を選択します。
+# MAGIC 1. **X列**に **`end_time`** を設定します。
+# MAGIC 1. **Y列**に **`avg_ping`** を設定します。
+# MAGIC 1. **Group by**に **`user_id`** を設定します。
 # MAGIC 1. **保存**をクリックします
 # MAGIC 1. 画面の一番下にある縦にドットが3つ並んだボタンをクリックし、**ダッシュボードに追加**を選択します
 # MAGIC 1. 先ほど作成したダッシュボードを選択します
@@ -266,12 +266,12 @@ DA.generate_summary()
 # MAGIC 手順は、次の通りです。
 # MAGIC 1. 左側のサイドバーを使用して、**アラート**に移動します
 # MAGIC 1. 右上にある**アラートを作成**をクリックします
-# MAGIC 1. 画面の左上にあるフィールドをクリックし、アラートに**`<your_initials>Count Check`**という名前を付けます
+# MAGIC 1. 画面の左上にあるフィールドをクリックし、アラートに **`<your_initials>Count Check`** という名前を付けます
 # MAGIC 1. **User Counts**クエリを選択します
 # MAGIC 1. **トリガー条件**オプションを、次のように構成します。
-# MAGIC   * **値列**：**`total_records`**
-# MAGIC   * **条件**：**`>`**
-# MAGIC   * **しきい値**：**`15`**
+# MAGIC   * **値列**： **`total_records`** 
+# MAGIC   * **条件**： **`>`** 
+# MAGIC   * **しきい値**： **`15`** 
 # MAGIC 1. **リフレッシュ**で、**なし**を選択します
 # MAGIC 1. **Create Alert**をクリックします
 # MAGIC 1. 次の画面で、右上にある青色の**更新**をクリックし、アラートを評価します

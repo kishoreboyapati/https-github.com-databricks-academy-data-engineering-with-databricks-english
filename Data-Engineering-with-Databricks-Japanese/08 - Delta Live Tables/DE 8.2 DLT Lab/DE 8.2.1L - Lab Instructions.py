@@ -94,14 +94,14 @@ DA.print_pipeline_config()
 # MAGIC 1. **パイプライン名**を入力します。これらの名前は一意である必要があるため、上記のセルに記載されている**Pipeline Name**使用することをおすすめします。
 # MAGIC 1. **ノートブックライブラリ** では、ナビゲーターを使ってノートブック **`DE 8.2.5L - SQLパイプラインをDLTラボに移行する`** を探して選択します。
 # MAGIC 1. ソースの構成
-# MAGIC     * **`構成を追加`**をクリックします
-# MAGIC     * **Key**フィールドに**`source`**という単語を入力します
-# MAGIC     * 上で指定されている**Source**値を**`Value`**フィールドに入力します
-# MAGIC 1. **`Target`**の横に表示されているデータベース名を下の**ターゲット**フィールドに入力します。
-# MAGIC 1. **`Storage Location`**の横に表示されている場所を下の**ストレージの場所**フィールドに入力します。
+# MAGIC     * **`構成を追加`** をクリックします
+# MAGIC     * **Key**フィールドに **`source`** という単語を入力します
+# MAGIC     * 上で指定されている**Source**値を **`Value`** フィールドに入力します
+# MAGIC 1. **`Target`** の横に表示されているデータベース名を下の**ターゲット**フィールドに入力します。
+# MAGIC 1. **`Storage Location`** の横に表示されている場所を下の**ストレージの場所**フィールドに入力します。
 # MAGIC 1. **パイプラインモード**を**トリガー**に設定します。
 # MAGIC 1. オートスケールを無効化します。
-# MAGIC 1. **`ワーカー`**の数を**`1`**（1つ）に設定します。
+# MAGIC 1. **`ワーカー`** の数を **`1`** （1つ）に設定します。
 # MAGIC 1. **作成**をクリックします。
 
 # COMMAND ----------
@@ -111,7 +111,7 @@ DA.print_pipeline_config()
 # MAGIC 
 # MAGIC ## DLTパイプラインノートブックを開き、完了する（Open and Complete DLT Pipeline Notebook）
 # MAGIC 
-# MAGIC 作業は[DE 8.2.2L - SQLパイプラインをDLTに移行するラボ]（$./DE 8.2.2L - SQLパイプラインをDLTに移行するラボ）という付録のノートブックで行います。<br/> このノートブックは、最終的にパイプラインとしてデプロイします。
+# MAGIC 作業は [DE 8.2.2L - Migrating a SQL Pipeline to DLT Lab]($./DE 8.2.2L - Migrating a SQL Pipeline to DLT Lab)という付録のノートブックで行います。<br/> このノートブックは、最終的にパイプラインとしてデプロイします。
 # MAGIC 
 # MAGIC ノートブックを開き、そこに記載されている手順に従って、セルに入力していきます。<br/>これらのセルは、以前のセクションと同様にマルチホップアーキテクチャを実装します。
 
@@ -145,10 +145,10 @@ DA.print_pipeline_config()
 # MAGIC 
 # MAGIC <img src="https://files.training.databricks.com/images/dlt-dag.png" />
 # MAGIC 
-# MAGIC **`Dataset not found: 'recordings_parsed'`**というエラーメッセージが発生した場合、いくつかの原因が考えられます。
-# MAGIC 1. **`recordings_parsed`**を定義するロジックが無効である
-# MAGIC 1. **`recordings_bronze`**からの読み取りにエラーが発生した
-# MAGIC 1. **`recordings_parsed`**または**`recordings_bronze`**にタイプミスがある
+# MAGIC `**  Dataset not found: 'recordings_parsed'`** というエラーメッセージが発生した場合、いくつかの原因が考えられます。
+# MAGIC 1. **`recordings_parsed`** を定義するロジックが無効である
+# MAGIC 1. **`recordings_bronze`** からの読み取りにエラーが発生した
+# MAGIC 1. **`recordings_parsed`** または **`recordings_bronze`** にタイプミスがある
 # MAGIC 
 # MAGIC 原因を特定する最も安全な方法は、最初の取り込みテーブルを皮切りに、テーブルまたはビューの定義を繰り返しまたDAGに追加することです。 後でテーブルまたはビューの定義をコメントアウトし、実行と実行の間でコメントアウトを外すことができます。
 

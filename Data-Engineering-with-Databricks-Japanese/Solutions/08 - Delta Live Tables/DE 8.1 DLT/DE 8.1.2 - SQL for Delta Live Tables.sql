@@ -16,7 +16,7 @@
 -- MAGIC 
 -- MAGIC このノートブックではSQLを使って、簡単なマルチホップアーキテクチャを一緒に実装するDelta Live Tablesを宣言します。この実装は、デフォルトでDatabricksワークスペースに読み込まれる、Databricksが提供するサンプルデータセットに基づいています。
 -- MAGIC 
--- MAGIC 簡単に言うと、DLT SQLは従来のCTAS文にわずかな修正を加えたものだと考えても良いです。 DLTテーブルとビューの前には常に**`LIVE`**キーワードが付きます。
+-- MAGIC 簡単に言うと、DLT SQLは従来のCTAS文にわずかな修正を加えたものだと考えても良いです。 DLTテーブルとビューの前には常に **`LIVE`** キーワードが付きます。
 -- MAGIC 
 -- MAGIC ## 学習目標（Learning Objectives）
 -- MAGIC このレッスンでは、以下のことが学べます。
@@ -41,18 +41,18 @@
 -- MAGIC 
 -- MAGIC ### sales_orders_raw
 -- MAGIC 
--- MAGIC **`sales_orders_raw`**は、*/databricks-datasets/retail-org/sales_orders/*にあるサンプルデータセットからJSONデータを段階的に取り込みます。
+-- MAGIC  **`sales_orders_raw`** は、 */databricks-datasets/retail-org/sales_orders/* にあるサンプルデータセットからJSONデータを段階的に取り込みます。
 -- MAGIC 
--- MAGIC （構造化ストリーミングと同じ処理モデルを使用した）<a herf="https://docs.databricks.com/spark/latest/structured-streaming/auto-loader.html" target="_blank">Auto Loader</a>を介した増分処理は、以下のように宣言に **`ストリーミング`** キーワードを追加する必要があります。 **`cloud_files()`**メソッドを使うと、Auto LoaderをSQLでネイティブに使用できます。 このメソッドは、次の位置パラメーターを取ります。
+-- MAGIC （構造化ストリーミングと同じ処理モデルを使用した）<a herf="https://docs.databricks.com/spark/latest/structured-streaming/auto-loader.html" target="_blank">Auto Loader</a>を介した増分処理は、以下のように宣言に  **`STREAMING`**  キーワードを追加する必要があります。  **`cloud_files()`** メソッドを使うと、Auto LoaderをSQLでネイティブに使用できます。 このメソッドは、次の位置パラメーターを取ります。
 -- MAGIC * 上記の通り、ソースの場所
 -- MAGIC * ソースデータフォーマット。今回の場合はJSONを指す
--- MAGIC * 任意読み取りオプションの配列。 この場合、**`cloudFiles.inferColumnTypes`**を**`true`**に設定します。
+-- MAGIC * 任意読み取りオプションの配列。 この場合、 **`cloudFiles.inferColumnTypes`** を **`true`** に設定します。
 -- MAGIC 
 -- MAGIC また下記には、データカタログを探索するすべての人に表示される追加のテーブルメタデータ （この場合はコメントとプロパティ）の宣言も示しています。
 
 -- COMMAND ----------
 
-CREATE INCREMENTAL LIVE TABLE sales_orders_raw
+CREATE OR REFRESH STREAMING LIVE TABLE sales_orders_raw
 COMMENT "The raw sales orders, ingested from /databricks-datasets."
 AS SELECT * FROM cloud_files("/databricks-datasets/retail-org/sales_orders/", "json", map("cloudFiles.inferColumnTypes", "true"))
 
@@ -63,11 +63,11 @@ AS SELECT * FROM cloud_files("/databricks-datasets/retail-org/sales_orders/", "j
 -- MAGIC 
 -- MAGIC ### customers
 -- MAGIC 
--- MAGIC **`customers`**は、*/databricks-datasets/retail-org/customers/*にあるCSV顧客データを表します。 このテーブルは購入記録に基づいた顧客データを調べるために、この後すぐに結合操作で使用します。
+-- MAGIC  **`customers`** は、 */databricks-datasets/retail-org/customers/* にあるCSV顧客データを表します。 このテーブルは購入記録に基づいた顧客データを調べるために、この後すぐに結合操作で使用します。
 
 -- COMMAND ----------
 
-CREATE INCREMENTAL LIVE TABLE customers
+CREATE OR REFRESH STREAMING LIVE TABLE customers
 COMMENT "The customers buying finished products, ingested from /databricks-datasets."
 AS SELECT * FROM cloud_files("/databricks-datasets/retail-org/customers/", "csv");
 
@@ -94,24 +94,24 @@ AS SELECT * FROM cloud_files("/databricks-datasets/retail-org/customers/", "csv"
 -- MAGIC 
 -- MAGIC #### 品質管理（Quality Control）
 -- MAGIC 
--- MAGIC **`CONSTRAINT`**キーワードで品質管理を導入します。 従来の**`WHERE`**句の機能と同じように、**`CONSTRAINT`**はDLTと統合することで制約違反のメトリクスを集めることができます。 制約はオプションの**`ON VIOLATION`**句を提供し、制約違反のレコードに対して実行するアクションを指定します。 現在DLTでサポートされている3つのモードは以下の通りです
+-- MAGIC  **`CONSTRAINT`** キーワードで品質管理を導入します。 従来の **`WHERE`** 句の機能と同じように、 **`CONSTRAINT`** はDLTと統合することで制約違反のメトリクスを集めることができます。 制約はオプションの **`ON VIOLATION`** 句を提供し、制約違反のレコードに対して実行するアクションを指定します。 現在DLTでサポートされている3つのモードは以下の通りです
 -- MAGIC 
--- MAGIC | **`ON VIOLATION`** | 動作                             |
+-- MAGIC |  **`ON VIOLATION`**  | 動作                             |
 -- MAGIC | ------------------ | ------------------------------ |
--- MAGIC | **`FAIL UPDATE`**  | 制約違反が発生した際のパイプライン障害            |
--- MAGIC | **`DROP ROW`**     | 制約違反のレコードを破棄する                 |
+-- MAGIC |  **`FAIL UPDATE`**   | 制約違反が発生した際のパイプライン障害            |
+-- MAGIC |  **`DROP ROW`**      | 制約違反のレコードを破棄する                 |
 -- MAGIC | 省略                 | 制約違反のレコードが含まれる（但し、違反はメトリクスで報告） |
 -- MAGIC 
 -- MAGIC #### DLTテーブルとビューの参照（References to DLT Tables and Views）
--- MAGIC 他のDLTテーブルとビューへの参照は、常に**`live.`**プレフィックスを含みます。 ターゲットのデータベース名はランタイム時に自動で置き換えられるため、DEV/QA/PROD環境間でのパイプラインの移行が簡単に行えます。
+-- MAGIC 他のDLTテーブルとビューへの参照は、常に **`live.`** プレフィックスを含みます。 ターゲットのデータベース名はランタイム時に自動で置き換えられるため、DEV/QA/PROD環境間でのパイプラインの移行が簡単に行えます。
 -- MAGIC 
 -- MAGIC #### ストリーミングテーブルの参照（References to Streaming Tables）
 -- MAGIC 
--- MAGIC ストリーミングDLTテーブルへの参照は**`STREAM()`**を使用して、テーブル名を引数として渡します。
+-- MAGIC ストリーミングDLTテーブルへの参照は **`STREAM()`** を使用して、テーブル名を引数として渡します。
 
 -- COMMAND ----------
 
-CREATE INCREMENTAL LIVE TABLE sales_orders_cleaned(
+CREATE OR REFRESH STREAMING LIVE TABLE sales_orders_cleaned(
   CONSTRAINT valid_order_number EXPECT (order_number IS NOT NULL) ON VIOLATION DROP ROW
 )
 COMMENT "The cleaned sales orders with valid order_number(s) and partitioned by order_datetime."
@@ -136,7 +136,7 @@ AS
 
 -- COMMAND ----------
 
-CREATE LIVE TABLE sales_order_in_la
+CREATE OR REFRESH LIVE TABLE sales_order_in_la
 COMMENT "Sales orders in LA."
 AS
   SELECT city, order_date, customer_id, customer_name, ordered_products_explode.curr, 
@@ -170,7 +170,7 @@ AS
 -- MAGIC 
 -- MAGIC ## パイプラインを更新する（Update Pipeline）
 -- MAGIC 
--- MAGIC 次のセルからコメントアウトを外して、他のゴールドテーブルを宣言します。 前のゴールドテーブル宣言と同様に、これはシカゴの**`city`**をフィルタしています。
+-- MAGIC 次のセルからコメントアウトを外して、他のゴールドテーブルを宣言します。 前のゴールドテーブル宣言と同様に、これはシカゴの **`city`** をフィルタしています。
 -- MAGIC 
 -- MAGIC パイプラインを再実行して、更新された結果を調べます。
 -- MAGIC 
@@ -181,7 +181,7 @@ AS
 -- COMMAND ----------
 
 -- ANSWER
-CREATE LIVE TABLE sales_order_in_chicago
+CREATE OR REFRESH LIVE TABLE sales_order_in_chicago
 COMMENT "Sales orders in Chicago."
 AS
   SELECT city, order_date, customer_id, customer_name, ordered_products_explode.curr, 

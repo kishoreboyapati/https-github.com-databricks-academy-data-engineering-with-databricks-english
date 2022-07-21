@@ -12,16 +12,16 @@
 # MAGIC 
 # MAGIC # ノートブックの基本（Notebook Basics）
 # MAGIC 
-# MAGIC ノートブックは、Databricksでインタラクティブにコードを開発および実行するための主要な手段です。 このレッスンでは、Databricksノートブックを使った作業の基本的な説明をします。
+# MAGIC ノートブックは、Databricksでインタラクティブにコードを開発および実行するための主要な手段です。 このレッスンでは、Databricksノートブックの基本的な使い方を説明します。
 # MAGIC 
-# MAGIC 以前、Databricksノートブックを使用したことはあるが、Databricks Reposでノートブックを実行するのは初めてという場合、基本的な機能は同じであることに気付くでしょう。 次のレッスンでは、Databricks Reposがノートブックに追加する機能の一部を概説します。
+# MAGIC Databricksノートブックの実行とDatabricks Reposでのノートブック実行は基本的に同じ機能になります。次のレッスンでは、Databricks Reposのほうで追加されたノートブック機能の一部を説明します。
 # MAGIC 
 # MAGIC ## 学習目標（Learning Objectives）
-# MAGIC このレッスンでは、以下のことが学べます。
-# MAGIC * ノートブックをクラスタにアタッチすること
+# MAGIC このレッスンでは、以下のことを学びます。
+# MAGIC * ノートブックをクラスタにアタッチする
 # MAGIC * ノートブックでセルを実行する
 # MAGIC * ノートブックの言語を設定する
-# MAGIC * MAGICコマンドを記述して使う
+# MAGIC * MAGICコマンドを記述して使用する
 # MAGIC * SQLセルを作成して実行する
 # MAGIC * Pythonセルを作成して実行する
 # MAGIC * Markdownセルを作成する
@@ -35,11 +35,11 @@
 # MAGIC 
 # MAGIC ## クラスタにアタッチする（Attach to a Cluster）
 # MAGIC 
-# MAGIC 前のレッスンでは、クラスタをデプロイするか、使用できるように管理者が設定したクラスタを確認したかと思います。
+# MAGIC 前のレッスンでは、クラスタをデプロイしたか、使用できるように管理者が設定したクラスタを確認したかと思います。
 # MAGIC 
-# MAGIC 画面上部のこのノートブックの名前のすぐ下にあるドロップダウンリストを使用して、このノートブックをクラスタに接続します。
+# MAGIC 画面上部のノートブックの名前のすぐ下にあるドロップダウンリストを使用して、ノートブックをクラスタに接続します。
 # MAGIC 
-# MAGIC **注**：クラスタのデプロイには数分かかる場合があります。 リソースがデプロイされると、緑色の矢印がクラスタ名の右側に表示されます。 クラスタの左側にグレーの実線の円が表示されている場合は、手順に従って<a href="https://docs.databricks.com/clusters/clusters-manage.html#start-a-cluster" target="_blank">クラスタを起動する</a>必要があります。
+# MAGIC **注**：クラスタのデプロイには数分かかります。リソースがデプロイされると、緑色の矢印がクラスタ名の左側に表示されます。 クラスタの左側にグレーの実線の円が表示されている場合は、手順に従って<a href="https://docs.databricks.com/clusters/clusters-manage.html#start-a-cluster" target="_blank">クラスタを起動する</a>必要があります。
 
 # COMMAND ----------
 
@@ -48,15 +48,15 @@
 # MAGIC 
 # MAGIC ## ノートブックの基本（Notebooks Basics）
 # MAGIC 
-# MAGIC ノートブックを使えば、コードをセルごとに実行できます。 ノートブックには複数の言語を混在させることができます。 ユーザーは、プロット、画像、Markdownテキストを追加して、コードを拡張できます。
+# MAGIC ノートブックでは、コードをセルごとに実行できます。 ノートブックには複数の言語を混在させることができます。ユーザーは、プロット、画像、Markdownテキストを追加して、コードを拡張できます。
 # MAGIC 
-# MAGIC このコースを通して、ノートブックは学習の道具として作成しています。 ノートブックは、Databricksを使って本番コードとして簡単にデプロイできるだけでなく、データ探索、レポート作成、ダッシュボード用の堅牢なツールセットも備わっています。
+# MAGIC このコースを通して、ノートブックを学習の道具として作成しています。 ノートブックは本番コードとして簡単にデプロイできるだけでなく、データ探索、レポート作成、ダッシュボード用のツールセットも備わっています。
 # MAGIC 
 # MAGIC ### セルの実行（Running a Cell）
 # MAGIC * 次のいずれかのオプションを使って、以下のセルを実行します：
 # MAGIC   * **CTRL+ENTER**または**CTRL+RETURN**
 # MAGIC   * **SHIFT+ENTER**または**SHIFT+RETURN**でセルを実行し、次のセルに移動します
-# MAGIC   * このように**セルを実行**または**上のすべてを実行**または**下のすべてを実行**を使い分けます<br/><img style="box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.25); border: 1px solid rgba(0,0,0,0.25);" src="https://files.training.databricks.com/images/notebook-cell-run-cmd.png" />
+# MAGIC   * 画像のように**セルを実行**または**上のすべてを実行**または**下のすべてを実行**を使い分けます<br/><img style="box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.25); border: 1px solid rgba(0,0,0,0.25);" src="https://files.training.databricks.com/images/notebook-cell-run-cmd.png" />
 
 # COMMAND ----------
 
@@ -151,9 +151,9 @@ print("Hello Python!")
 # MAGIC 
 # MAGIC ### Markdown
 # MAGIC 
-# MAGIC MAGICコマンド**&percnt;md**を使うと、Markdownをセルにレンダリングできます：
+# MAGIC MAGICコマンド **&percnt;md** を使うと、Markdownをセルにレンダリングできます：
 # MAGIC * このセルをダブルクリックして、編集を開始します
-# MAGIC * 次に**`Esc`**を押すと編集を停止します
+# MAGIC * 次に **`Esc`** を押すと編集を停止します
 # MAGIC 
 # MAGIC # タイトル1（Title One）
 # MAGIC ## タイトル2（Title One）
@@ -193,7 +193,7 @@ print("Hello Python!")
 # MAGIC 
 # MAGIC 
 # MAGIC ### %run
-# MAGIC * MAGICコマンド**%run**を使うと、ノートブックを別のノートブックから実行できます
+# MAGIC * MAGICコマンド **%run** を使うと、ノートブックを別のノートブックから実行できます
 # MAGIC * 実行するノートブックは、相対パスで指定されます
 # MAGIC * 参照されたノートブックは、現在のノートブックの一部であるかのように実行されるため、テンポラリビューやその他のローカル宣言は、呼び出し元のノートブックから利用できます。
 
@@ -225,7 +225,7 @@ print("Hello Python!")
 # MAGIC %md
 # MAGIC 
 # MAGIC 
-# MAGIC 参照した**`../Includes/Classroom-Setup-1.2`**ノートブックには、データベースを作成し、**`USE`**するためのロジックとテンポラリビュー**`demo_temp_vw`**を作成するロジックが含まれています。
+# MAGIC 参照した **`../Includes/Classroom-Setup-1.2`** ノートブックには、データベースを作成し、 **`USE`** するためのロジックとテンポラリビュー **`demo_temp_vw`** を作成するロジックが含まれています。
 # MAGIC 
 # MAGIC このテンポラリビューは、次のクエリを使って現在のノートブックセッションで利用できるようになっていることがわかります。
 
@@ -241,7 +241,7 @@ print("Hello Python!")
 # MAGIC 
 # MAGIC このパターンの「セットアップ」ノートブックをコース全体で使用して、レッスンとラボの環境構成に役立てます。
 # MAGIC 
-# MAGIC これらの「提供された」変数、関数、その他のオブジェクトは、**`DBAcademyHelper`**のインスタンスである**`DA`**オブジェクトの一部であると簡単に識別できるかと思います。
+# MAGIC これらの「提供された」変数、関数、その他のオブジェクトは、 **`DBAcademyHelper`** のインスタンスである **`DA`** オブジェクトの一部であると簡単に識別できるかと思います。
 # MAGIC 
 # MAGIC このことを念頭に置き、大部分のレッスンでは、ユーザー名から派生した変数を使用してファイルやデータベースを整理します。
 # MAGIC 
@@ -265,7 +265,7 @@ print(f"DA.db_name:           {DA.db_name}")
 # MAGIC 
 # MAGIC これについては後ほど詳しく説明しますが、次のセルで簡単な例を見ることができます。
 # MAGIC 
-# MAGIC <img src="https://files.training.databricks.com/images/icon_note_32.png" /> この2つの例では、単語**`da`**と**`DA`**の大文字と小文字という微妙ですが重要な違いに注意してください。
+# MAGIC <img src="https://files.training.databricks.com/images/icon_note_32.png" /> この2つの例では、単語 **`da`** と **`DA`** の大文字と小文字という微妙ですが重要な違いに注意してください。
 
 # COMMAND ----------
 
@@ -282,7 +282,7 @@ print(f"DA.db_name:           {DA.db_name}")
 # MAGIC ## Databricksユーティリティ（Databricks Utilities）
 # MAGIC Databricksノートブックには、環境を設定したり操作したりするためのユーティリティコマンドが多数用意されています：<a href="https://docs.databricks.com/user-guide/dev-tools/dbutils.html" target="_blank">dbutils docs</a>
 # MAGIC 
-# MAGIC このコースでは、時折**`dbutils.fs.ls()`**を使ってPythonセルからファイルのディレクトリを書き出します。
+# MAGIC このコースでは、時折 **`dbutils.fs.ls()`** を使ってPythonセルからファイルのディレクトリを書き出します。
 
 # COMMAND ----------
 
@@ -297,9 +297,9 @@ dbutils.fs.ls("/databricks-datasets")
 # MAGIC 
 # MAGIC セルからSQLクエリを実行した場合、結果は常にレンダリングされた表形式で表示されます。
 # MAGIC 
-# MAGIC Pythonセルが返した表形式のデータがある場合、**`display`**を呼び出して、同じタイプのプレビューを取得できます。
+# MAGIC Pythonセルが返した表形式のデータがある場合、 **`display`** を呼び出して、同じタイプのプレビューを取得できます。
 # MAGIC 
-# MAGIC ここでは、ファイルシステム上で先ほどのリストコマンドを**`display`**で囲います。
+# MAGIC ここでは、ファイルシステム上で先ほどのリストコマンドを **`display`** で囲います。
 
 # COMMAND ----------
 
@@ -310,7 +310,7 @@ display(dbutils.fs.ls("/databricks-datasets"))
 # MAGIC %md
 # MAGIC 
 # MAGIC 
-# MAGIC **`display()`**コマンドには次の機能と制限があります：
+# MAGIC **`display()`** コマンドには次の機能と制限があります：
 # MAGIC * 結果のプレビューの上限は1000レコードまで
 # MAGIC * 結果データをCSV形式でダウンロードするボタンを提供する
 # MAGIC * プロットのレンダリングが可能
@@ -376,7 +376,7 @@ display(dbutils.fs.ls("/databricks-datasets"))
 # MAGIC 
 # MAGIC ## もうひとつだけ！（One more note!）
 # MAGIC 
-# MAGIC 各レッスンの最後に、次のコマンド、**`DA.cleanup()`**が表示されます。
+# MAGIC 各レッスンの最後に、次のコマンド、 **`DA.cleanup()`** が表示されます。
 # MAGIC 
 # MAGIC この方法では、ワークスペースをクリーンに保ち、各レッスンの不変性を維持するために、レッスン固有のデータベースと作業ディレクトリを削除します。
 # MAGIC 

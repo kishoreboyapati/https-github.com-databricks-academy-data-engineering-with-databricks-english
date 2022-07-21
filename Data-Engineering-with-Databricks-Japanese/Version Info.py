@@ -8,12 +8,15 @@
 # COMMAND ----------
 
 # MAGIC %md
+# MAGIC %md --i18n-78c97c5e-68ec-4a38-86ce-6af6466b8bd1
+# MAGIC 
+# MAGIC   
 # MAGIC 
 # MAGIC # Project Information
 # MAGIC 
 # MAGIC * Name: **Data Engineering with Databricks**
-# MAGIC * Version:  **2.2.1-JA**
-# MAGIC * Built On: **Jun 14, 2022 at 17:56:45 UTC**
+# MAGIC * Version:  **2.2.1-JA.2**
+# MAGIC * Built On: **Jul 21, 2022 at 23:21:48 UTC**
 
 # COMMAND ----------
 

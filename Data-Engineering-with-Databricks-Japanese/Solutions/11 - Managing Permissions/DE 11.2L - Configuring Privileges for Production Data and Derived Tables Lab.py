@@ -12,7 +12,7 @@
 # MAGIC 
 # MAGIC # 本番データおよび派生テーブルの権限を構成する（Configuring Privileges for Production Data and Derived Tables）
 # MAGIC 
-# MAGIC DatabricksのテーブルACLがどのように機能するかを説明するために、ユーザーのペアを対象とした詳細な解説を以下に提供しています。 Databricks SQLとData Explorerを使用してこれらのタスクを達成します。また、どちらのユーザーもワークスペースの管理者権限を持っていないことを想定しています。 Databricks SQLでデータベースを作成するためには、管理者が事前に**`CREATE`**および**`USAGE`**権限をカタログ上でユーザーに付与しておく必要があります。
+# MAGIC DatabricksのテーブルACLがどのように機能するかを説明するために、ユーザーのペアを対象とした詳細な解説を以下に提供しています。 Databricks SQLとData Explorerを使用してこれらのタスクを達成します。また、どちらのユーザーもワークスペースの管理者権限を持っていないことを想定しています。 Databricks SQLでデータベースを作成するためには、管理者が事前に **`CREATE`** および **`USAGE`** 権限をカタログ上でユーザーに付与しておく必要があります。
 # MAGIC 
 # MAGIC ## 学習目標（Learning Objectives）
 # MAGIC 
@@ -80,7 +80,7 @@ DA.generate_query()
 # MAGIC 
 # MAGIC 
 # MAGIC ## データベースを見つける（Find Your Database）
-# MAGIC Data Explorerで、以前作成したデータベース（これは**`dbacademy_<username>_dewd_acls_lab`**というパターンに従っているはずです）を見つけます。
+# MAGIC Data Explorerで、以前作成したデータベース（これは **`dbacademy_<username>_dewd_acls_lab`** というパターンに従っているはずです）を見つけます。
 # MAGIC 
 # MAGIC データベース名をクリックすると、含まれているテーブルとビューのリストが左側に表示されます。
 # MAGIC 
@@ -111,7 +111,7 @@ DA.generate_query()
 # MAGIC 
 # MAGIC ## クエリを実行して確認する（Run a Query to Confirm）
 # MAGIC 
-# MAGIC あなたのデータベースに対して**`USAGE`**、**`SELECT`**、**`READ_METADATA`**を付与すると、パートナーはこのデータベースのテーブルとビューを自由にクエリできるようになりますが、新しいテーブルを作成したり、あなたのデータを修正したりすることはできないはずです。
+# MAGIC あなたのデータベースに対して **`USAGE`** 、 **`SELECT`** 、 **`READ_METADATA`** を付与すると、パートナーはこのデータベースのテーブルとビューを自由にクエリできるようになりますが、新しいテーブルを作成したり、あなたのデータを修正したりすることはできないはずです。
 # MAGIC 
 # MAGIC SQL Editorでは、各ユーザーは追加されたばかりのデータベースでこの動作を確認するために、一連のクエリを実行する必要があります。
 # MAGIC 
@@ -129,11 +129,11 @@ DA.generate_confirmation_query("FILL_IN")
 # MAGIC %md
 # MAGIC 
 # MAGIC 
-# MAGIC ## 豆の結合を生成するクエリの実行（Execute a Query to Generate the Union of Your Beans）
+# MAGIC ## Beansの結合を生成するクエリの実行（Execute a Query to Generate the Union of Your Beans）
 # MAGIC 
 # MAGIC 以下のクエリを、自分のデータベースに実行してみてください。
 # MAGIC 
-# MAGIC **注**：**`grams`**と**`delicious`**列にランダムな値が挿入されているため、**`name`**、**`color`**のペアのそれぞれに異なる2行が表示されているはずです。
+# MAGIC **注**： **`grams`** と **`delicious`** 列にランダムな値が挿入されているため、 **`name`** 、 **`color`** のペアのそれぞれに異なる2行が表示されているはずです。
 
 # COMMAND ----------
 
@@ -173,13 +173,13 @@ DA.generate_partner_view("FILL_IN")
 # MAGIC 
 # MAGIC ## 変更権限の追加（Add Modify Permissions）
 # MAGIC 
-# MAGIC それでは、お互いの**`豆`**テーブルを削除してみましょう。
+# MAGIC それでは、お互いの **`beans`** テーブルを削除してみましょう。
 # MAGIC 
 # MAGIC 現時点では、上手くいかないはずです。
 # MAGIC 
-# MAGIC Data Explorerを使用して、あなたの**`豆`**テーブルの**`MODIFY`**権限をあなたのパートナーに追加します。
+# MAGIC Data Explorerを使用して、あなたの **`beans`** テーブルの **`MODIFY`** 権限をあなたのパートナーに追加します。
 # MAGIC 
-# MAGIC もう一度、パートナーの**`豆`**テーブルを削除してみてください。
+# MAGIC もう一度、パートナーの **`beans`** テーブルを削除してみてください。
 # MAGIC 
 # MAGIC また失敗するはずです。
 # MAGIC 
@@ -201,9 +201,9 @@ DA.generate_delete_query("FILL_IN")
 # MAGIC 
 # MAGIC このラボで以前にクエリを実行したテーブルのビューのいずれかに対して、クエリを再実行してみてください。
 # MAGIC 
-# MAGIC **注**：手順が正しく完了されていれば、ビューが参照するデータが削除されたため、以前のクエリはどれも結果を返さないはずです。 これは、プロダクションアプリケーションやダッシュボードで使用されるデータを扱っているユーザーに**`MODIFY`**権限を付与することのリスクを示しています。
+# MAGIC **注**：手順が正しく完了されていれば、ビューが参照するデータが削除されたため、以前のクエリはどれも結果を返さないはずです。 これは、プロダクションアプリケーションやダッシュボードで使用されるデータを扱っているユーザーに **`MODIFY`** 権限を付与することのリスクを示しています。
 # MAGIC 
-# MAGIC もし時間があれば、Deltaメソッド**`DESCRIBE HISTORY`**と**`RESTORE`**を使用してテーブル内のレコードを元に戻せるかどうかを確認してみてください。
+# MAGIC もし時間があれば、Deltaメソッド **`DESCRIBE HISTORY`** と **`RESTORE`** を使用してテーブル内のレコードを元に戻せるかどうかを確認してみてください。
 
 # COMMAND ----------
 

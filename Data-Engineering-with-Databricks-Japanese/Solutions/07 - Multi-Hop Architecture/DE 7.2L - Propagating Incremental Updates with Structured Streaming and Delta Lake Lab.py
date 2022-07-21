@@ -38,7 +38,7 @@
 # MAGIC 
 # MAGIC このラボでは、*/databricks-datasets/retail-org/customers/*にあるDBFSの顧客関連CSVデータのコレクションを使います。
 # MAGIC 
-# MAGIC スキーマ推論を使ってAuto Loaderでこのデータを読み取ります (**`customers_checkpoint_path`**を使ってスキーマ情報を格納する)。 **`bronze`**というDeltaテーブルに未加工のデータをストリームします。
+# MAGIC スキーマ推論を使ってAuto Loaderでこのデータを読み取ります ( **`customers_checkpoint_path`** を使ってスキーマ情報を格納する)。  **`bronze`** というDeltaテーブルに未加工のデータをストリームします。
 
 # COMMAND ----------
 
@@ -82,10 +82,10 @@ DA.block_until_stream_is_ready(query)
 # MAGIC 
 # MAGIC ## データのクリーンアップと強化（Clean and enhance data）
 # MAGIC 
-# MAGIC CTAS構文を使って、以下を行う**`bronze_enhanced_temp`**という新しいストリーミングビューを定義します。
-# MAGIC * NULL値**`postcode`**（ゼロに設定）でレコードをスキップする
-# MAGIC * 現在のタイムスタンプを含む**`receipt_time`**という列を挿入する
-# MAGIC * 入力ファイル名を含む**`source_file`**という列を挿入する
+# MAGIC CTAS構文を使って、以下を行う **`bronze_enhanced_temp`** という新しいストリーミングビューを定義します。
+# MAGIC * NULL値 **`postcode`** （ゼロに設定）でレコードをスキップする
+# MAGIC * 現在のタイムスタンプを含む **`receipt_time`** という列を挿入する
+# MAGIC * 入力ファイル名を含む **`source_file`** という列を挿入する
 
 # COMMAND ----------
 
@@ -104,7 +104,7 @@ DA.block_until_stream_is_ready(query)
 # MAGIC 
 # MAGIC ## シルバーテーブル（Silver table）
 # MAGIC 
-# MAGIC データを**`bronze_enhanced_temp`**から**`silver`**というテーブルにストリームします。
+# MAGIC データを **`bronze_enhanced_temp`** から **`silver`** というテーブルにストリームします。
 
 # COMMAND ----------
 
@@ -145,7 +145,7 @@ DA.block_until_stream_is_ready(query)
 # MAGIC 
 # MAGIC ## ゴールドテーブル（Gold tables）
 # MAGIC 
-# MAGIC CTAS構文を使って、州別顧客数をカウントする**`customer_count_temp`**というストリーミングビューを定義します。
+# MAGIC CTAS構文を使って、州別顧客数をカウントする **`customer_count_temp`** というストリーミングビューを定義します。
 
 # COMMAND ----------
 
@@ -162,7 +162,7 @@ DA.block_until_stream_is_ready(query)
 # MAGIC %md
 # MAGIC 
 # MAGIC 
-# MAGIC 最後に、データを**`customer_count_by_state_temp`**ビューから**`gold_customer_count_by_state`**というDeltaテーブルにストリームします。
+# MAGIC 最後に、データを **`customer_count_by_state_temp`** ビューから **`gold_customer_count_by_state`** というDeltaテーブルにストリームします。
 
 # COMMAND ----------
 
@@ -188,7 +188,7 @@ DA.block_until_stream_is_ready(query)
 # MAGIC 
 # MAGIC ## 結果を照会する（Query the results）
 # MAGIC 
-# MAGIC **`gold_customer_count_by_state`**テーブルを照会します（これはストリーミングクエリではありません）。 結果を棒グラフとしてプロットし、マッププロットを使用してプロットします。
+# MAGIC  **`gold_customer_count_by_state`** テーブルを照会します（これはストリーミングクエリではありません）。 結果を棒グラフとしてプロットし、マッププロットを使用してプロットします。
 
 # COMMAND ----------
 

@@ -44,7 +44,7 @@
 # MAGIC 
 # MAGIC 続いてパイプラインを再度実行し、結果を表示します。
 # MAGIC 
-# MAGIC 必要なだけ上記のセルを再実行し、**`daily_patient_avg`**テーブルの更新ビューを取得しましょう。
+# MAGIC 必要なだけ上記のセルを再実行し、 **`daily_patient_avg`** テーブルの更新ビューを取得しましょう。
 
 # COMMAND ----------
 

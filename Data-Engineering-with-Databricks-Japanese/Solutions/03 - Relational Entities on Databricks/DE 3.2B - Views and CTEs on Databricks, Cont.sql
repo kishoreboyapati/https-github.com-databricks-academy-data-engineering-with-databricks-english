@@ -48,12 +48,12 @@ USE ${da.db_name};
 -- MAGIC 
 -- MAGIC 
 -- MAGIC 次の2つのセルを実行して次のことを確認します。
--- MAGIC 1. テーブル**`external_table`**はまだ存在しています。
--- MAGIC 2. ビュー**`view_delays_abq_lax`**はまだ存在しています。
--- MAGIC 3. テンポラリビュー**`temp_view_delays_gt_120`**は存在**しません**。
--- MAGIC 3. グローバルテンポラリビュー**`global_temp_view_dist_gt_1000`**は、特別な**`global_temp`**データベースに存在します。
+-- MAGIC 1. テーブル **`external_table`** はまだ存在しています。
+-- MAGIC 2. ビュー **`view_delays_abq_lax`** はまだ存在しています。
+-- MAGIC 3. テンポラリビュー **`temp_view_delays_gt_120`** は存在**しません**。
+-- MAGIC 3. グローバルテンポラリビュー **`global_temp_view_dist_gt_1000`** は、特別な **`global_temp`** データベースに存在します。
 -- MAGIC 
--- MAGIC <img src="https://files.training.databricks.com/images/icon_hint_24.png" /> ヒント：再び、前のノートブックに戻って**`SHOW TABLES`**<br/>を実行してみると、現在のデータベースの3つすべてのテーブルとビューが表示されます。
+-- MAGIC <img src="https://files.training.databricks.com/images/icon_hint_24.png" /> ヒント：再び、前のノートブックに戻って **`SHOW TABLES`** <br/>を実行してみると、現在のデータベースの3つすべてのテーブルとビューが表示されます。
 
 -- COMMAND ----------
 
@@ -85,7 +85,7 @@ SHOW TABLES IN global_temp;
 -- MAGIC 
 -- MAGIC グローバルテンポラリは、通常のテンポラリビューと同じく動作しますが、1つ重要な違いがあります。
 -- MAGIC 
--- MAGIC グローバルテンポラリは、**`クラスタ`**に存在する**`global_temp`**データベースに追加されます。
+-- MAGIC グローバルテンポラリは、 **`クラスタ`** に存在する **`global_temp`** データベースに追加されます。
 -- MAGIC 
 -- MAGIC クラスタが動作している限り、このデータベースは永続化され、クラスタにアタッチされているいかなるノートブックもそのグローバルテンポラリビューにアクセスできます。
 -- MAGIC 
@@ -216,7 +216,7 @@ SELECT
 -- MAGIC %md
 -- MAGIC 
 -- MAGIC 
--- MAGIC 最後に、**`CREATE VIEW`**文でのCTEを紹介します。
+-- MAGIC 最後に、 **`CREATE VIEW`** 文でのCTEを紹介します。
 
 -- COMMAND ----------
 

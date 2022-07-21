@@ -19,7 +19,7 @@
 # MAGIC このラボでは、以下のことが学べます。
 # MAGIC - ノートブックの名前を変更してデフォルト言語を変更する
 # MAGIC - クラスタをアタッチする
-# MAGIC - MAGICコマンド**`%run`**を使う
+# MAGIC - MAGICコマンド  **`%run`**  を使う
 # MAGIC - PythonセルとSQLセルを実行する
 # MAGIC - Markdownセルを作成する
 
@@ -57,34 +57,34 @@
 # MAGIC 
 # MAGIC どのような種類の複雑なプロジェクトでも、よりシンプルで再利用可能なコンポーネントに分解する機能があれば便利です。
 # MAGIC 
-# MAGIC Databricksノートブックのコンテキストでは、この機能は**`%run`**MAGICコマンドによって提供されます。
+# MAGIC Databricksノートブックのコンテキストでは、この機能は  **`%run`**  MAGICコマンドによって提供されます。
 # MAGIC 
 # MAGIC このように使用すると、変数、関数、コードブロックが現在のプログラミングコンテキストの一部になります。
 # MAGIC 
 # MAGIC 次の例を考えてみましょう：
 # MAGIC 
-# MAGIC **`Notebook_A`**には4つのコマンドがあります：
-# MAGIC   1. **`name = "John"`**
-# MAGIC   2. **`print(f"Hello {name}")`**
-# MAGIC   3. **`%run ./Notebook_B`**
-# MAGIC   4. **`print(f"Welcome back {full_name}`**
+# MAGIC  **`Notebook_A`** には4つのコマンドがあります：
+# MAGIC   1.   **`name = "John"`**  
+# MAGIC   2.   **`print(f"Hello {name}")`**   
+# MAGIC   3.   **`%run ./Notebook_B`**  
+# MAGIC   4.   **`print(f"Welcome back {full_name}`**  
 # MAGIC 
-# MAGIC **`Notebook_B`**にはコマンドが1つしかありません：
-# MAGIC   1. **`full_name = f"{name} Doe"`**
+# MAGIC  **`Notebook_B`**  にはコマンドが1つしかありません：
+# MAGIC   1.   **`full_name = f"{name} Doe"`**  
 # MAGIC 
-# MAGIC **`Notebook_B`**を実行すると、変数**`name`**が**`Notebook_B`**では定義されていないため、実行に失敗します
+# MAGIC  **`Notebook_B`**  を実行すると、変数  **`name`**  が  **`Notebook_B`**  では定義されていないため、実行に失敗します
 # MAGIC 
-# MAGIC 同様に、**`Notebook_A`**は、**`Notebook_A`**で同じく定義されていない変数**`full_name`**を使用しているため、失敗すると思うかもしれませんが、そうではありません！
+# MAGIC 同様に、  **`Notebook_A`**  は、  **`Notebook_A`**  で同じく定義されていない変数  **`full_name`**  を使用しているため、失敗すると思うかもしれませんが、そうではありません！
 # MAGIC 
 # MAGIC 実際に起きるのは、2つのノートブックが以下のようにマージされ、 **それから**実行されるのです：
-# MAGIC 1. **`name = "John"`**
-# MAGIC 2. **`print(f"Hello {name}")`**
-# MAGIC 3. **`full_name = f"{name} Doe"`**
-# MAGIC 4. **`print(f"Welcome back {full_name}`**
+# MAGIC 1.  **`name = "John"`** 
+# MAGIC 2.  **`print(f"Hello {name}")`** 
+# MAGIC 3.  **`full_name = f"{name} Doe"`** 
+# MAGIC 4.  **`print(f"Welcome back {full_name}`** 
 # MAGIC 
 # MAGIC そしてこの結果、期待通りに動作します：
-# MAGIC * **`Hello John`**
-# MAGIC * **`Welcome back John Doe`**
+# MAGIC *  **`Hello John`** 
+# MAGIC *  **`Welcome back John Doe`** 
 
 # COMMAND ----------
 
@@ -92,11 +92,11 @@
 # MAGIC 
 # MAGIC 
 # MAGIC 
-# MAGIC このノートブックを含むフォルダには、**`ExampleSetupFolder`**というのサブフォルダが含まれています。このサブフォルダには同様に、**`example-setup`**というのノートブックが含まれています。
+# MAGIC このノートブックを含むフォルダには、 **`ExampleSetupFolder`** というのサブフォルダが含まれています。このサブフォルダには同様に、 **`example-setup`** というのノートブックが含まれています。
 # MAGIC 
-# MAGIC この単純なノートブックは変数**`my_name`**を宣言し、それを**`None`**に設定してから、**`example_df`**というのデータフレームを作成します。
+# MAGIC この単純なノートブックは変数 **`my_name`** を宣言し、それを **`None`** に設定してから、 **`example_df`** というのデータフレームを作成します。
 # MAGIC 
-# MAGIC example-setupノートブックを開き、名前が**`None`**ではなく、自分の名前 （または誰かの名前）を引用符で囲むように変更します。次の2つのセルは、**`AssertionError`**を出さずに実行されます。
+# MAGIC example-setupノートブックを開き、名前が **`None`** ではなく、自分の名前 （または誰かの名前）を引用符で囲むように変更します。次の2つのセルは、 **`AssertionError`** を出さずに実行されます。
 
 # COMMAND ----------
 
@@ -115,7 +115,7 @@ print(my_name)
 # MAGIC 
 # MAGIC ## Pythonセルを実行する（Run a Python cell）
 # MAGIC 
-# MAGIC 次のセルを実行して、****example_df``データフレームを表示することにより、 **`example-setup`**ノートブックが実行されたことを確認してください。 このテーブルは、値が増加する16行で構成されています。
+# MAGIC 次のセルを実行して、 **`example_df`** データフレームを表示することにより、  **`example-setup`** ノートブックが実行されたことを確認してください。 このテーブルは、値が増加する16行で構成されています。
 
 # COMMAND ----------
 
@@ -133,7 +133,7 @@ display(example_df)
 # MAGIC 
 # MAGIC クラスタのドロップダウンに再度アクセスします。 現在アタッチされているクラスタを表すメニュー項目で、**デタッチと再アタッチ**リンクを選択します。
 # MAGIC 
-# MAGIC 結果と実行状態は無関係であるため、上のセルからの出力は残りますが、実行状態はクリアされていることに注意してください。 これは、上のセルを再実行してみると確認できます。 **`example_df`**変数が残りの状態とともにクリアされているため、これは失敗します。
+# MAGIC 結果と実行状態は無関係であるため、上のセルからの出力は残りますが、実行状態はクリアされていることに注意してください。 これは、上のセルを再実行してみると確認できます。  **`example_df`** 変数が残りの状態とともにクリアされているため、これは失敗します。
 
 # COMMAND ----------
 
@@ -196,7 +196,7 @@ display(files)
 # MAGIC 
 # MAGIC # 変更を確認する（Review Changes）
 # MAGIC 
-# MAGIC Databricks Repoを使用してこのデータをワークスペースにインポートした場合、このページの左上隅にある**`公開`**ブランチボタンをクリックして、Repoダイアログを開いてください。 変更が3つあります：
+# MAGIC Databricks Repoを使用してこのデータをワークスペースにインポートした場合、このページの左上隅にある **`公開`** ブランチボタンをクリックして、Repoダイアログを開いてください。 変更が3つあります：
 # MAGIC 1. **削除**項目で以前のノートブック名前
 # MAGIC 1. **追加**項目で新しいノートブックの名前
 # MAGIC 1. **変更**項目で上記のMarkdownセルの作成

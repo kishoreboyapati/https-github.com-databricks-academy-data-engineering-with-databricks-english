@@ -28,13 +28,13 @@
 -- MAGIC シミュレートされたクラウドソースから（Auto Loaderを用いて）JSONデータを段階的に取り込むブロンズテーブルを宣言します。 ソースの場所はすでに引数として提供されています。この値の使い方は以下のセルに示しています。
 -- MAGIC 
 -- MAGIC 以前と同様に、2つの追加列を含みます。
--- MAGIC * **`current_timestamp()`**によって返されるタイムスタンプを記録する**`receipt_time`**
--- MAGIC * **`input_file_name()`**によって取得される**`source_file`**
+-- MAGIC *  **`current_timestamp()`** によって返されるタイムスタンプを記録する **`receipt_time`** 
+-- MAGIC *  **`input_file_name()`** によって取得される **`source_file`** 
 
 -- COMMAND ----------
 
 -- ANSWER
-CREATE INCREMENTAL LIVE TABLE recordings_bronze
+CREATE OR REFRESH STREAMING LIVE TABLE recordings_bronze
 AS SELECT current_timestamp() receipt_time, input_file_name() source_file, *
   FROM cloud_files("${source}", "json", map("cloudFiles.schemaHints", "time DOUBLE"))
 
@@ -45,21 +45,21 @@ AS SELECT current_timestamp() receipt_time, input_file_name() source_file, *
 -- MAGIC 
 -- MAGIC ### PIIファイル（PII File）
 -- MAGIC 
--- MAGIC 同じようなCTAS構文を使用して、*/mnt/training/healthcare/patient*にあるCSVデータにライブ**テーブル**を作成します。
+-- MAGIC 同じようなCTAS構文を使用して、 */mnt/training/healthcare/patient* にあるCSVデータにライブ**テーブル**を作成します。
 -- MAGIC 
 -- MAGIC このソースのAuto Loaderを適切に構成するために、次の追加パラメーターを指定する必要があります。
 -- MAGIC 
 -- MAGIC | オプション                             | 値          |
 -- MAGIC | --------------------------------- | ---------- |
--- MAGIC | **`header`**                      | **`true`** |
--- MAGIC | **`cloudFiles.inferColumnTypes`** | **`true`** |
+-- MAGIC |  **`header`**                       |  **`true`**  |
+-- MAGIC |  **`cloudFiles.inferColumnTypes`**  |  **`true`**  |
 -- MAGIC 
 -- MAGIC <img src="https://files.training.databricks.com/images/icon_note_24.png" /> CSV用のAuto Loader構成は<a href="https://docs.databricks.com/spark/latest/structured-streaming/auto-loader-csv.html" target="_blank">こちら</a>を参照してください。
 
 -- COMMAND ----------
 
 -- ANSWER
-CREATE INCREMENTAL LIVE TABLE pii
+CREATE OR REFRESH STREAMING LIVE TABLE pii
 AS SELECT *
   FROM cloud_files("/mnt/training/healthcare/patient", "csv", map("header", "true", "cloudFiles.inferColumnTypes", "true"))
 
@@ -70,25 +70,25 @@ AS SELECT *
 -- MAGIC 
 -- MAGIC ## シルバーテーブルを宣言する（Declare Silver Tables）
 -- MAGIC 
--- MAGIC **`recordings_parsed`**のシルバーテーブルは、以下のフィールドで構成されます。
+-- MAGIC  **`recordings_parsed`** のシルバーテーブルは、以下のフィールドで構成されます。
 -- MAGIC 
 -- MAGIC | フィールド           | 型                      |
 -- MAGIC | --------------- | ---------------------- |
--- MAGIC | **`device_id`** | **`INTEGER`**          |
--- MAGIC | **`mrn`**       | **`LONG`**             |
--- MAGIC | **`heartrate`** | **`DOUBLE`**           |
--- MAGIC | **`time`**      | **`TIMESTAMP`**（下に例あり） |
--- MAGIC | **`name`**      | **`STRING`**           |
+-- MAGIC |  **`device_id`**  |  **`INTEGER`**           |
+-- MAGIC |  **`mrn`**        |  **`LONG`**              |
+-- MAGIC |  **`heartrate`**  |  **`DOUBLE`**            |
+-- MAGIC |  **`time`**       |  **`TIMESTAMP`** （下に例あり） |
+-- MAGIC |  **`name`**       |  **`STRING`**            |
 -- MAGIC 
--- MAGIC また、このクエリでは、共通の**`mrn`**フィールドで**`pii`**テーブルとinner joinを行って名前を取得し、データをエンリッチ化します。
+-- MAGIC また、このクエリでは、共通の **`mrn`** フィールドで **`pii`** テーブルとinner joinを行って名前を取得し、データをエンリッチ化します。
 -- MAGIC 
--- MAGIC 無効な**`heartrate`**（つまり、ゼロ以下の数値）を持つレコードを削除する制約を適用することで、品質管理を実装します。
+-- MAGIC 無効な **`heartrate`** （つまり、ゼロ以下の数値）を持つレコードを削除する制約を適用することで、品質管理を実装します。
 
 -- COMMAND ----------
 
 -- ANSWER
 
-CREATE INCREMENTAL LIVE TABLE recordings_enriched
+CREATE OR REFRESH STREAMING LIVE TABLE recordings_enriched
   (CONSTRAINT positive_heartrate EXPECT (heartrate > 0) ON VIOLATION DROP ROW)
 AS SELECT 
   CAST(a.device_id AS INTEGER) device_id, 
@@ -107,20 +107,20 @@ AS SELECT
 -- MAGIC 
 -- MAGIC ## ゴールドテーブル（Gold table）
 -- MAGIC 
--- MAGIC ゴールドテーブル**`daily_patient_avg`**を作成します。このテーブルは、 **`mrn`**、**`name`**、**`date`**で**`recordings_enriched`**を集約し、以下のような列を作成します。
+-- MAGIC ゴールドテーブル **`daily_patient_avg`** を作成します。このテーブルは、  **`mrn`** 、 **`name`** 、 **`date`** で **`recordings_enriched`** を集約し、以下のような列を作成します。
 -- MAGIC 
 -- MAGIC | 列名                  | 値                           |
 -- MAGIC | ------------------- | --------------------------- |
--- MAGIC | **`mrn`**           | ソースからの**`mrn`**             |
--- MAGIC | **`name`**          | ソースからの**`name`**            |
--- MAGIC | **`avg_heartrate`** | グループ化による平均**`heartrate`** f |
--- MAGIC | **`date`**          | **`time`**から抽出された日付         |
+-- MAGIC |  **`mrn`**            | ソースからの **`mrn`**              |
+-- MAGIC |  **`name`**           | ソースからの **`name`**             |
+-- MAGIC |  **`avg_heartrate`**  | グループ化による平均 **`heartrate`**  f |
+-- MAGIC |  **`date`**           |  **`time`** から抽出された日付         |
 
 -- COMMAND ----------
 
 -- ANSWER
 
-CREATE INCREMENTAL LIVE TABLE daily_patient_avg
+CREATE OR REFRESH STREAMING LIVE TABLE daily_patient_avg
   COMMENT "Daily mean heartrates by patient"
   AS SELECT mrn, name, MEAN(heartrate) avg_heartrate, DATE(time) `date`
     FROM STREAM(live.recordings_enriched)

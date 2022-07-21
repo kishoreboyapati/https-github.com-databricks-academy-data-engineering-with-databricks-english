@@ -118,11 +118,11 @@
 # MAGIC 
 # MAGIC ## ストリームを読み取る（Reading a Stream）
 # MAGIC 
-# MAGIC **`spark.readStream()`**メソッドは、ストリームの構成とクエリに使われる**`DataStreamReader`**を返します。
+# MAGIC  **`spark.readStream()`** メソッドは、ストリームの構成とクエリに使われる **`DataStreamReader`** を返します。
 # MAGIC 
 # MAGIC 前のレッスンでは、Auto Loaderを使って段階的に読み取るために構成したコードを見てきました。 ここからは、Delta Lakeテーブルを段階的に読み取ることがいかに簡単かを説明します。
 # MAGIC 
-# MAGIC このコードはPySpark APIを使用して、**`bronze`**というDelta Lakeテーブルを段階的に読み取り、**`streaming_tmp_vw`**というストリーミングのテンポラリビューを登録します。
+# MAGIC このコードはPySpark APIを使用して、 **`bronze`** というDelta Lakeテーブルを段階的に読み取り、 **`streaming_tmp_vw`** というストリーミングのテンポラリビューを登録します。
 # MAGIC 
 # MAGIC **注**：段階的な読み取りを構成する際には、数多くのオプション構成（ここでは示しません）を設定することができます。中でも最も重要なオプションは、<a href="https://docs.databricks.com/delta/delta-streaming.html#limit-input-rate" target="_blank">入力レートを制限できます</a>。
 
@@ -156,7 +156,7 @@
 # MAGIC 
 # MAGIC このデータは、前回のレッスンで書き出したDeltaテーブルと同じだということが分かるでしょう。
 # MAGIC 
-# MAGIC 続ける前に、ノートブック上部にある**`Stop Execution`**かセルのすぐ下にある**`Cancel`**をクリックするか、または次のセルを実行してすべてのアクティブなストリーミングクエリを停止してください。
+# MAGIC 続ける前に、ノートブック上部にある **`Stop Execution`** かセルのすぐ下にある **`Cancel`** をクリックするか、または次のセルを実行してすべてのアクティブなストリーミングクエリを停止してください。
 
 # COMMAND ----------
 
@@ -171,7 +171,7 @@ for s in spark.streams.active:
 # MAGIC 
 # MAGIC 
 # MAGIC ## ストリーミングデータの操作（Working with Streaming Data）
-# MAGIC 静的データと同じように、ストリーミングのテンポラリビューに対するほとんどの変換を実行できます。 ここでは単純な集約を実行して、**`device_id`**ごとのレコードの数を取得します。
+# MAGIC 静的データと同じように、ストリーミングのテンポラリビューに対するほとんどの変換を実行できます。 ここでは単純な集約を実行して、 **`device_id`** ごとのレコードの数を取得します。
 # MAGIC 
 # MAGIC ストリーミングのテンポラリビューを照会しているため、これは単一セットの結果を取得した後に終了しない、無期限に実行されるストリーミングクエリになります。 このようなストリーミングクエリでは、Databricksのノードブックにはストリーミングのパフォーマンスを監視するインタラクティブなダッシュボードが含まれます。 下で詳しく見ていきましょう。
 # MAGIC 
@@ -189,7 +189,7 @@ for s in spark.streams.active:
 # MAGIC %md
 # MAGIC 
 # MAGIC 
-# MAGIC 続ける前に、ノートブック上部にある**`Stop Execution`**かセルのすぐ下にある**`Cancel`**をクリックするか、または次のセルを実行してすべてのアクティブなストリーミングクエリを停止してください。
+# MAGIC 続ける前に、ノートブック上部にある **`Stop Execution`** かセルのすぐ下にある **`Cancel`** をクリックするか、または次のセルを実行してすべてのアクティブなストリーミングクエリを停止してください。
 
 # COMMAND ----------
 
@@ -248,7 +248,7 @@ for s in spark.streams.active:
 # MAGIC 
 # MAGIC ## ストリームを書き込む（Writing a Stream）
 # MAGIC 
-# MAGIC ストリーミングクエリの結果を永続化するには、それらを耐久性に優れたストレージに書き出す必要があります。 **`DataFrame.writeStream`**メソッドは、出力を構成する際に使われる**`DataStreamWriter`**を返します。
+# MAGIC ストリーミングクエリの結果を永続化するには、それらを耐久性に優れたストレージに書き出す必要があります。  **`DataFrame.writeStream`** メソッドは、出力を構成する際に使われる **`DataStreamWriter`** を返します。
 # MAGIC 
 # MAGIC Delta Lakeテーブルに書き込む際は、通常ここで示す3つの設定に注意する必要があります。
 # MAGIC 
@@ -266,25 +266,25 @@ for s in spark.streams.active:
 # MAGIC 
 # MAGIC | モード              | 例                             | メモ                                                     |
 # MAGIC | ---------------- | ----------------------------- | ------------------------------------------------------ |
-# MAGIC | **Append（追加）**   | **`.outputMode("append")`**   | **これがデフォルトです。**新しく追加された行だけが、バッチごとにターゲットテーブルへ段階的に追加されます |
-# MAGIC | **Complete（完全）** | **`.outputMode("complete")`** | 書き込みがトリガーされる度に、結果テーブルが再計算されます。ターゲットテーブルはバッチごとに上書きされます  |
+# MAGIC | **Append（追加）**   |  **`.outputMode("append")`**    | **これがデフォルトです。**新しく追加された行だけが、バッチごとにターゲットテーブルへ段階的に追加されます |
+# MAGIC | **Complete（完全）** |  **`.outputMode("complete")`**  | 書き込みがトリガーされる度に、結果テーブルが再計算されます。ターゲットテーブルはバッチごとに上書きされます  |
 # MAGIC 
 # MAGIC 
 # MAGIC ### トリガー間隔
 # MAGIC 
-# MAGIC ストリーミング書き込みを定義すると際、**`trigger`**メソッドはシステムが次のデータセットを処理するタイミングを指定します。
+# MAGIC ストリーミング書き込みを定義すると際、 **`trigger`** メソッドはシステムが次のデータセットを処理するタイミングを指定します。
 # MAGIC 
 # MAGIC 
 # MAGIC | トリガーの種類      | 例                                          | 動作                                                       |
 # MAGIC | ------------ | ------------------------------------------ | -------------------------------------------------------- |
-# MAGIC | 指定なし         |                                            | **これがデフォルトです。** これは**`processingTime="500ms"`**を使うのと同様です |
-# MAGIC | 固定間隔のマイクロバッチ | **`.trigger(processingTime="2 minutes")`** | クエリはマイクロバッチで実行され、ユーザーが指定した間隔で開始されます                      |
-# MAGIC | ワンタイムマイクロバッチ | **`.trigger(once=True)`**                  | クエリは単一のマイクロバッチを実行し、すべての利用可能なデータを処理してから停止します              |
-# MAGIC | トリガー型マイクロバッチ | **`.trigger(availableNow=True)`**          | クエリは複数のマイクロバッチを実行し、すべての利用可能なデータを処理してから停止します              |
+# MAGIC | 指定なし         |                                            | **これがデフォルトです。** これは **`processingTime="500ms"`** を使うのと同様です |
+# MAGIC | 固定間隔のマイクロバッチ |  **`.trigger(processingTime="2 minutes")`**  | クエリはマイクロバッチで実行され、ユーザーが指定した間隔で開始されます                      |
+# MAGIC | ワンタイムマイクロバッチ |  **`.trigger(once=True)`**                   | クエリは単一のマイクロバッチを実行し、すべての利用可能なデータを処理してから停止します              |
+# MAGIC | トリガー型マイクロバッチ |  **`.trigger(availableNow=True)`**           | クエリは複数のマイクロバッチを実行し、すべての利用可能なデータを処理してから停止します              |
 # MAGIC 
 # MAGIC どのようにデータがシンクに書き込まれマイクロバッチの頻度を制御するか定義する際に、トリガーが指定されます。 デフォルトでは、Sparkは最後のトリガー以降に追加されたソースにあるすべてのデータを自動で検出して処理します。
 # MAGIC 
-# MAGIC **注意：** **`Trigger.AvailableNow`**</a>は、DBR 10.1ではScalaでのみ、DBR 10.2以降ではPythonとScalaで使用できる新しいトリガーの種類です。
+# MAGIC **注意：**  **`Trigger.AvailableNow`** </a>は、DBR 10.1ではScalaでのみ、DBR 10.2以降ではPythonとScalaで使用できる新しいトリガーの種類です。
 
 # COMMAND ----------
 
@@ -293,9 +293,9 @@ for s in spark.streams.active:
 # MAGIC 
 # MAGIC ## まとめ（Pulling It All Together）
 # MAGIC 
-# MAGIC 以下のコードは、 **`spark.table()`**を使ってデータをストリーミングのテンポラリビューからロードしてデDataFrameに戻す方法を示しています。 Sparkは常にストリーミングビューをストリーミングDataFrameとして、静的ビューを静的DataFramesとしてロードすることに注意してください (つまり、増分処理は増分書き込みをサポートするために読み取りロジックで定義されなければなりません)。
+# MAGIC 以下のコードは、  **`spark.table()`** を使ってデータをストリーミングのテンポラリビューからロードしてデDataFrameに戻す方法を示しています。 Sparkは常にストリーミングビューをストリーミングDataFrameとして、静的ビューを静的DataFramesとしてロードすることに注意してください (つまり、増分処理は増分書き込みをサポートするために読み取りロジックで定義されなければなりません)。
 # MAGIC 
-# MAGIC この最初のクエリでは、増分バッチ処理を実行するために**`trigger(availableNow=True)`**の使い方を示します。
+# MAGIC この最初のクエリでは、増分バッチ処理を実行するために **`trigger(availableNow=True)`** の使い方を示します。
 
 # COMMAND ----------
 
@@ -365,7 +365,7 @@ DA.data_factory.load()
 # MAGIC %md
 # MAGIC 
 # MAGIC 
-# MAGIC ターゲットテーブルを再度クエリして、 **`device_id`**ごとに更新された数を確認します。
+# MAGIC ターゲットテーブルを再度クエリして、  **`device_id`** ごとに更新された数を確認します。
 
 # COMMAND ----------
 

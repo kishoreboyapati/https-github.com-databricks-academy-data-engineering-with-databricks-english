@@ -61,7 +61,7 @@ SELECT * FROM external_table;
 -- MAGIC 
 -- MAGIC 
 -- MAGIC 
--- MAGIC テーブル（とビュー）の一覧を表示させるには**`SHOW TABLES`**コマンドを使用します。
+-- MAGIC テーブル（とビュー）の一覧を表示させるには **`SHOW TABLES`** コマンドを使用します。
 
 -- COMMAND ----------
 
@@ -102,7 +102,7 @@ SELECT * FROM view_delays_abq_lax;
 -- MAGIC 
 -- MAGIC 
 -- MAGIC 
--- MAGIC **`view_delays_abq_lax`**が以下の一覧に追加されたことにご注意ください。
+-- MAGIC  **`view_delays_abq_lax`** が以下の一覧に追加されたことにご注意ください。
 
 -- COMMAND ----------
 
@@ -117,7 +117,7 @@ SHOW TABLES;
 -- MAGIC 
 -- MAGIC 次にテンポラリビューを作成しましょう。
 -- MAGIC 
--- MAGIC 構文はとても似ていますが、コマンドに**`TEMPORARY`**を追加します。
+-- MAGIC 構文はとても似ていますが、コマンドに **`TEMPORARY`** を追加します。
 
 -- COMMAND ----------
 
@@ -134,7 +134,7 @@ SELECT * FROM temp_view_delays_gt_120;
 -- MAGIC 
 -- MAGIC これで、テーブルをまた表示すると、1つのテーブルと両方のビューが表示されます。
 -- MAGIC 
--- MAGIC **`isTemporary`**列の値をメモしましょう。
+-- MAGIC  **`isTemporary`** 列の値をメモしましょう。
 
 -- COMMAND ----------
 
@@ -150,9 +150,9 @@ SHOW TABLES;
 -- MAGIC 
 -- MAGIC 最後に、グローバルテンポラリビューを作成します。
 -- MAGIC 
--- MAGIC ここでは単に、コマンドに**`GLOBAL`**を追加します。
+-- MAGIC ここでは単に、コマンドに **`GLOBAL`** を追加します。
 -- MAGIC 
--- MAGIC 次の**`SELECT`**文にある**`global_temp`**のデータベース修飾子にもご注意ください。
+-- MAGIC 次の **`SELECT`** 文にある **`global_temp`** のデータベース修飾子にもご注意ください。
 
 -- COMMAND ----------
 
@@ -179,7 +179,7 @@ SHOW TABLES;
 -- MAGIC 
 -- MAGIC 
 -- MAGIC 
--- MAGIC …および**`global_temp`**データベースのテーブルとビューを確認しましょう。
+-- MAGIC …および **`global_temp`** データベースのテーブルとビューを確認しましょう。
 
 -- COMMAND ----------
 
@@ -193,7 +193,7 @@ SHOW TABLES IN global_temp;
 -- MAGIC 
 -- MAGIC 次に、テーブルとビューは複数のセッションの間で永続化されるのに対し、テンポラリビューは永続化されないことを示します。
 -- MAGIC 
--- MAGIC これを行うには、次のノートブック [DE 3.2B - Databricks上のビューとCTE、続編]（$./DE 3.2B - Databricks上のビューとCTE、続編）を開いてレッスンを続けます。
+-- MAGIC これを行うには、次のノートブック [DE 3.2B - Views and CTEs on Databricks, Cont]($./DE 3.2B - Views and CTEs on Databricks, Cont)を開いてレッスンを続けます。
 -- MAGIC 
 -- MAGIC <img src="https://files.training.databricks.com/images/icon_note_24.png" /> 注：新しいセッションが作成されるシナリオはいくつかあります：
 -- MAGIC * クラスタを再起動したとき

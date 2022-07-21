@@ -74,7 +74,7 @@ DA.generate_users_table()
 # MAGIC * データスキーマ、メタデータ、履歴を探る
 # MAGIC * リレーショナルエンティティの権限を設定したり変更したりする
 # MAGIC 
-# MAGIC これらの解説が書かれている現在、Unity Catalogはまだ一般に利用可能ではないことに注意してください。 追加された3層の名前空間機能は、デフォルトの**`hive_metastore`**とダッシュボードやクエリなどに使用される**`サンプル`**カタログを切り替えることである程度下見できます。 Unity Catalogがワークスペースに追加されるにつれて、Data ExplorerのUIと機能が進化する予定です。
+# MAGIC これらの解説が書かれている現在、Unity Catalogはまだ一般に利用可能ではないことに注意してください。 追加された3層の名前空間機能は、デフォルトの **`hive_metastore`** とダッシュボードやクエリなどに使用される **`サンプル`** カタログを切り替えることである程度下見できます。 Unity Catalogがワークスペースに追加されるにつれて、Data ExplorerのUIと機能が進化する予定です。
 # MAGIC 
 # MAGIC ## 権限を設定する（Configuring Permissions）
 # MAGIC 
@@ -95,7 +95,7 @@ DA.generate_users_table()
 # MAGIC | FUNCTION | 名前付き関数へのアクセスを制御します。                                                                                              |
 # MAGIC | ANY FILE | 元となっているファイルシステムへのアクセスを制御します。 ANY FILE権限を付与されたユーザーは、ファイルシステムから直接読み取ることにより、カタログ、データベース、テーブル、およびビューに課せられた制限を回避できます。 |
 # MAGIC 
-# MAGIC **注**：現在、**`ANY FILE`**オブジェクトを Data Explorerから設定することはできます。
+# MAGIC **注**：現在、 **`ANY FILE`** オブジェクトを Data Explorerから設定することはできます。
 # MAGIC 
 # MAGIC ## 権限の付与（Granting Privileges）
 # MAGIC 
@@ -129,7 +129,7 @@ DA.generate_users_table()
 # MAGIC 
 # MAGIC 
 # MAGIC ## デフォルトの権限を確認する（Review the Default Permissions）
-# MAGIC データエクスプローラで、以前作成したデータベース（これは**`dbacademy_<username>_acls_demo`**というパターンに従っているはずです）を見つけます。
+# MAGIC データエクスプローラで、以前作成したデータベース（これは **`dbacademy_<username>_acls_demo`** というパターンに従っているはずです）を見つけます。
 # MAGIC 
 # MAGIC データベース名をクリックすると、含まれているテーブルとビューのリストが左側に表示されます。 右側には**所有者**や**場所**などのデータベースに関する詳細情報がいくつか表示されます。
 # MAGIC 
@@ -176,7 +176,7 @@ DA.generate_users_table()
 # MAGIC まず、ユーザーがビューを照会できるようにしましょう。
 # MAGIC 
 # MAGIC 手順は、次の通りです。
-# MAGIC 1. **`ny_users_vw`**を選択します
+# MAGIC 1.  **`ny_users_vw`** を選択します
 # MAGIC 1. **権限**タブを選択します
 # MAGIC    * ユーザーは、データベースレベルで付与された権限を継承しているはずです。ユーザーがアセットに対して現在持っている権限と、その権限がどこから継承されているかを確認できます
 # MAGIC 1. 青色の**付与**ボタンをクリックします
@@ -194,11 +194,11 @@ DA.generate_users_table()
 # MAGIC 
 # MAGIC **SQLエディタ**で、ユーザーは左側の**スキーマブラウザ**を使用して、管理者が制御しているデータベースに移動します。
 # MAGIC 
-# MAGIC ユーザーは、**`SELECT * FROM`**と入力してクエリを開始し、ビューの名前にカーソルを合わせると表示される**>>**をクリックして、クエリに挿入します。
+# MAGIC ユーザーは、 **`SELECT * FROM`** と入力してクエリを開始し、ビューの名前にカーソルを合わせると表示される**>>**をクリックして、クエリに挿入します。
 # MAGIC 
 # MAGIC このクエリでは2つの結果が返されます。
 # MAGIC 
-# MAGIC **注**：このビューは、まだ権限が設定されていない**`users`**テーブルに対して定義されています。 ユーザーは、ビューで定義されたフィルタを通過するデータの部分にのみアクセスできることに注意してください。このパターンは、元になっている単一のテーブルを使用して、関連する利害関係者のデータへの制御されたアクセスを実現する方法を示しています。
+# MAGIC **注**：このビューは、まだ権限が設定されていない **`users`** テーブルに対して定義されています。 ユーザーは、ビューで定義されたフィルタを通過するデータの部分にのみアクセスできることに注意してください。このパターンは、元になっている単一のテーブルを使用して、関連する利害関係者のデータへの制御されたアクセスを実現する方法を示しています。
 
 # COMMAND ----------
 
@@ -207,10 +207,10 @@ DA.generate_users_table()
 # MAGIC 
 # MAGIC ## テーブル権限の変更（Change Table Permissions）
 # MAGIC 
-# MAGIC 上記と同じ手順を、今度は**`ユーザー`**テーブルに対して実行します。
+# MAGIC 上記と同じ手順を、今度は **`ユーザー`** テーブルに対して実行します。
 # MAGIC 
 # MAGIC 手順は、次の通りです。
-# MAGIC 1. **`users`**テーブルを選択します
+# MAGIC 1.  **`users`** テーブルを選択します
 # MAGIC 1. **権限**タブを選択します
 # MAGIC 1. 青色の**付与**ボタンをクリックします
 # MAGIC 1. **SELECT**、**READ_METADATA**オプションを選択します
@@ -222,7 +222,7 @@ DA.generate_users_table()
 # MAGIC %md
 # MAGIC 
 # MAGIC 
-# MAGIC ## ユーザーに**`DROP TABLE`**の実行を試してもらう（Have Users Attempt to <0><1>DROP TABLE</1></0>）
+# MAGIC ## ユーザーに **`DROP TABLE`** の実行を試してもらう（Have Users Attempt to **`DROP TABLE`** ）
 # MAGIC 
 # MAGIC **SQLエディタ**で、にユーザーにこのテーブルのデータを調べてもらいます。
 # MAGIC 
@@ -263,7 +263,7 @@ DA.generate_create_database_with_grants()
 # MAGIC 
 # MAGIC ## 管理者設定（Admin Configuration）
 # MAGIC 
-# MAGIC 現在、ユーザーには、デフォルトのカタログ**`hive_metastore`**に対するテーブルACL権限がデフォルトで付与されていません。 次のラボでは、ユーザーがデータベースを作成できることを前提としています。
+# MAGIC 現在、ユーザーには、デフォルトのカタログ **`hive_metastore`** に対するテーブルACL権限がデフォルトで付与されていません。 次のラボでは、ユーザーがデータベースを作成できることを前提としています。
 # MAGIC 
 # MAGIC Databricks SQLを使用してデフォルトのカタログにデータベースとテーブルを作成する機能を有効にするには、ワークスペース管理者にDBSQLクエリエディタで次のコマンドを実行してもらいます。
 # MAGIC 

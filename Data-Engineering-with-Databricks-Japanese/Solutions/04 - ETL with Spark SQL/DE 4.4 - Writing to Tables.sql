@@ -17,10 +17,10 @@
 -- MAGIC 
 -- MAGIC ## 学習目標（Learning Objectives）
 -- MAGIC このレッスンでは、以下のことが学べます。
--- MAGIC - **`INSERT OVERWRITE`**を使用してテーブルを上書きする
--- MAGIC - **`INSERT INTO`**を使用してテーブルに追加する
--- MAGIC - **`MERGE INTO`**を使用してテーブルに対して追加、更新、削除を行う
--- MAGIC - **`COPY INTO`**を使用してデータを段階的にテーブルに取り込む
+-- MAGIC -  **`INSERT OVERWRITE`** を使用してテーブルを上書きする
+-- MAGIC -  **`INSERT INTO`** を使用してテーブルに追加する
+-- MAGIC -  **`MERGE INTO`** を使用してテーブルに対して追加、更新、削除を行う
+-- MAGIC -  **`COPY INTO`** を使用してデータを段階的にテーブルに取り込む
 
 -- COMMAND ----------
 
@@ -52,7 +52,7 @@
 -- MAGIC 
 -- MAGIC 一部の学習者は、CTAS文についての以前のレッスンで、実は（セルが複数回実行されたときに発生する可能性のあるエラーを避けるために）CRAS文が使用されていたことに気づいたかもしれません。
 -- MAGIC 
--- MAGIC **`CREATE OR REPLACE TABLE`**（CRAS）文は、実行されるたびにテーブルの中身を完全に置き換えます。
+-- MAGIC  **`CREATE OR REPLACE TABLE`** （CRAS）文は、実行されるたびにテーブルの中身を完全に置き換えます。
 
 -- COMMAND ----------
 
@@ -75,9 +75,9 @@ DESCRIBE HISTORY events
 -- MAGIC %md
 -- MAGIC 
 -- MAGIC 
--- MAGIC **`INSERT OVERWRITE`**では、ほとんど同じ結果を得られます。ターゲットテーブルのデータがクエリのデータに置き換えられます。
+-- MAGIC  **`INSERT OVERWRITE`** では、ほとんど同じ結果を得られます。ターゲットテーブルのデータがクエリのデータに置き換えられます。
 -- MAGIC 
--- MAGIC **`INSERT OVERWRITE`**は：
+-- MAGIC  **`INSERT OVERWRITE`** は：
 -- MAGIC 
 -- MAGIC - CRAS文と違って新しいテーブルを作成することはできず、既存のテーブルを上書きすることしかできません。
 -- MAGIC - 現在のテーブルスキーマに一致する新しいレコードでのみ上書きできるため、ダウンストリーム消費者に悪影響を与えずに既存のテーブルを上書きできるより安全なテクニックとなります。
@@ -106,7 +106,7 @@ DESCRIBE HISTORY sales
 -- MAGIC 
 -- MAGIC ここでの主な違いは、Delta Lakeが書き込み時にスキーマを強制する方法に関係しています。
 -- MAGIC 
--- MAGIC CRAS文を使用するとターゲットテーブルの中身を完全に再定義できるのに対し、**`INSERT OVERWRITE`**を使用すると、スキーマを変更しようとした場合（任意の設定を指定しない限り）失敗します。
+-- MAGIC CRAS文を使用するとターゲットテーブルの中身を完全に再定義できるのに対し、 **`INSERT OVERWRITE`** を使用すると、スキーマを変更しようとした場合（任意の設定を指定しない限り）失敗します。
 -- MAGIC 
 -- MAGIC 以下のセルからコメントアウトを外して実行すると、予期せぬエラーメッセージを生成できます。
 
@@ -123,9 +123,9 @@ DESCRIBE HISTORY sales
 -- MAGIC 
 -- MAGIC ## 行の追加（Append Rows）
 -- MAGIC 
--- MAGIC **`INSERT INTO`**を使用して、既存のDeltaテーブルにアトミックに新しい行を追加できます。 これにより、既存のテーブルを段階的に更新でき、毎回上書きするよりも効率的です。
+-- MAGIC  **`INSERT INTO`** を使用して、既存のDeltaテーブルにアトミックに新しい行を追加できます。 これにより、既存のテーブルを段階的に更新でき、毎回上書きするよりも効率的です。
 -- MAGIC 
--- MAGIC **`INSERT INTO`**を使用して、**`sales`**テーブルに新しい売上レコードを追加します。
+-- MAGIC  **`INSERT INTO`** を使用して、 **`sales`** テーブルに新しい売上レコードを追加します。
 
 -- COMMAND ----------
 
@@ -138,7 +138,7 @@ SELECT * FROM parquet.`${da.paths.datasets}/raw/sales-30m`
 -- MAGIC 
 -- MAGIC 
 -- MAGIC 
--- MAGIC 同じレコードを何度も追加してしまうのを防ぐ組み込み保証は**`INSERT INTO`**にはありませんので、ご注意ください。 上記のセルを再実行するとターゲットテーブルに同一のレコードが書き込まれ、重複レコードにつながります。
+-- MAGIC 同じレコードを何度も追加してしまうのを防ぐ組み込み保証は **`INSERT INTO`** にはありませんので、ご注意ください。 上記のセルを再実行するとターゲットテーブルに同一のレコードが書き込まれ、重複レコードにつながります。
 
 -- COMMAND ----------
 
@@ -148,7 +148,7 @@ SELECT * FROM parquet.`${da.paths.datasets}/raw/sales-30m`
 -- MAGIC 
 -- MAGIC ## 更新のマージ（Merge Updates）
 -- MAGIC 
--- MAGIC **`MERGE`**のSQL操作を使用して、ソーステーブル、ビュー、もしくはデータフレームからターゲットDeltaテーブルにデータをアップサートできます。 Delta Lakeは、**`MERGE`**で挿入、更新、削除をサポートしており、SQL標準構文の他にも、高度な使い方を助けるために構文拡張もサポートしています。
+-- MAGIC  **`MERGE`** のSQL操作を使用して、ソーステーブル、ビュー、もしくはデータフレームからターゲットDeltaテーブルにデータをアップサートできます。 Delta Lakeは、 **`MERGE`** で挿入、更新、削除をサポートしており、SQL標準構文の他にも、高度な使い方を助けるために構文拡張もサポートしています。
 -- MAGIC 
 -- MAGIC <strong><code>
 -- MAGIC MERGE INTO target a<br/>
@@ -158,7 +158,7 @@ SELECT * FROM parquet.`${da.paths.datasets}/raw/sales-30m`
 -- MAGIC WHEN NOT MATCHED THEN {not_matched_action}<br/>
 -- MAGIC </code></strong>
 -- MAGIC 
--- MAGIC **`MERGE`**操作を使用して、更新されたメールアドレスと新しいユーザーで過去のユーザーデータを更新します。
+-- MAGIC  **`MERGE`** 操作を使用して、更新されたメールアドレスと新しいユーザーで過去のユーザーデータを更新します。
 
 -- COMMAND ----------
 
@@ -171,12 +171,12 @@ FROM parquet.`${da.paths.datasets}/raw/users-30m`
 -- MAGIC %md
 -- MAGIC 
 -- MAGIC 
--- MAGIC **`MERGE`**の主な利点は：
+-- MAGIC  **`MERGE`** の主な利点は：
 -- MAGIC * 新、挿入、削除が単一のトランザクションとして行われる
 -- MAGIC * 一致するフィールドの他にも、複数の条件文を追加できる
 -- MAGIC * カスタムロジックを実装するための方法がたくさんある
 -- MAGIC 
--- MAGIC 以下では、現在の列のメールアドレスが**`NULL`**なっており、新しい列のメールアドレスアドレスが<0><1>NULL</1></0>となっていない場合にのみレコードを更新します。
+-- MAGIC 以下では、現在の列のメールアドレスが **`NULL`** なっており、新しい列のメールアドレスアドレスが<0><1>NULL</1></0>となっていない場合にのみレコードを更新します。
 -- MAGIC 
 -- MAGIC 新しいバッチの一致しないレコードはすべて挿入されます。
 
@@ -194,7 +194,7 @@ WHEN NOT MATCHED THEN INSERT *
 -- MAGIC %md
 -- MAGIC 
 -- MAGIC 
--- MAGIC **`MATCHED`**および**`NOT MATCHED`**の両方の条件においても、この関数の動作を明示的に指定していることにご注意ください。ここに示されている例は、すべての**`MERGE`**の動作を表すものではなく、適用できるロジックの一例にすぎません。
+-- MAGIC  **`MATCHED`** および **`NOT MATCHED`** の両方の条件においても、この関数の動作を明示的に指定していることにご注意ください。ここに示されている例は、すべての **`MERGE`** の動作を表すものではなく、適用できるロジックの一例にすぎません。
 
 -- COMMAND ----------
 
@@ -207,9 +207,9 @@ WHEN NOT MATCHED THEN INSERT *
 -- MAGIC 
 -- MAGIC 多くのソースシステムは重複レコードを生成します。 マージでは、insert-onlyマージを実行すれば重複レコードの挿入を予防できます。
 -- MAGIC 
--- MAGIC この最適化されたコマンドは同様の**`MERGE`**構文を使用しますが、**`WHEN NOT MATCHED`**句のみを指定します。
+-- MAGIC この最適化されたコマンドは同様の **`MERGE`** 構文を使用しますが、 **`WHEN NOT MATCHED`** 句のみを指定します。
 -- MAGIC 
--- MAGIC 以下では、これを使用して、同じ**`user_id`**および**`event_timestamp`**を持つレコードが既に**`events`**テーブルにないことを確認します。
+-- MAGIC 以下では、これを使用して、同じ **`user_id`** および **`event_timestamp`** を持つレコードが既に **`events`** テーブルにないことを確認します。
 
 -- COMMAND ----------
 
@@ -226,7 +226,7 @@ WHEN NOT MATCHED AND b.traffic_source = 'email' THEN
 -- MAGIC 
 -- MAGIC ## 段階的な読み込み（Load Incrementally）
 -- MAGIC 
--- MAGIC **`COPY INTO`**は、SQLエンジニアに、外部システムからデータを段階的に取り込める、べき等の方法を提供します。
+-- MAGIC  **`COPY INTO`** は、SQLエンジニアに、外部システムからデータを段階的に取り込める、べき等の方法を提供します。
 -- MAGIC 
 -- MAGIC この操作にはいくつかの条件があることにご注意ください：
 -- MAGIC - データスキーマは一貫している必要がある

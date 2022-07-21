@@ -16,13 +16,13 @@
 -- MAGIC 
 -- MAGIC データを調べてクリーンアップするとき、データセットに適用する変換を表現するために、さまざまな列式とクエリを構築する必要が出てきます。
 -- MAGIC 
--- MAGIC 列式は、既存の列、演算子、および組み込みのSpark SQL関数から構築されます。 列式は、**`SELECT`**文で使用して、データセットから新しい列を作成する変換を表現できます。
+-- MAGIC 列式は、既存の列、演算子、および組み込みのSpark SQL関数から構築されます。 列式は、 **`SELECT`** 文で使用して、データセットから新しい列を作成する変換を表現できます。
 -- MAGIC 
--- MAGIC Spark SQLでは、**`WHERE`**、**`DISTINCT`**、**`ORDER BY`**、**`GROUP BY`**など、**`SELECT`**の他にも、変換を表現するための多くの追加クエリコマンドがあります。
+-- MAGIC Spark SQLでは、 **`WHERE`** 、 **`DISTINCT`** 、 **`ORDER BY`** 、 **`GROUP BY`** など、 **`SELECT`** の他にも、変換を表現するための多くの追加クエリコマンドがあります。
 -- MAGIC 
 -- MAGIC このノートブックでは、これまで使用してきた他のシステムとは異なるいくつかの概念を見たり、一般的な操作に役立ついくつかの関数を呼び出したりします。
 -- MAGIC 
--- MAGIC **`NULL`**値のにおける動作、および文字列と日時フィールドの書式設定に特に注意を払います。
+-- MAGIC  **`NULL`** 値のにおける動作、および文字列と日時フィールドの書式設定に特に注意を払います。
 -- MAGIC 
 -- MAGIC ## 学習目標（Learning Objectives）
 -- MAGIC このレッスンでは、以下のことが学べます。
@@ -49,7 +49,7 @@
 -- MAGIC %md
 -- MAGIC 
 -- MAGIC 
--- MAGIC このレッスンでは、**`users_dirty`**テーブルにある新しいユーザーレコードを扱います。
+-- MAGIC このレッスンでは、 **`users_dirty`** テーブルにある新しいユーザーレコードを扱います。
 
 -- COMMAND ----------
 
@@ -74,11 +74,11 @@ FROM users_dirty
 -- MAGIC %md
 -- MAGIC 
 -- MAGIC 
--- MAGIC **`count(col)`**は特定の列もしくは式をカウントするときに**`NULL`**値をスキップするのでご注意ください。
+-- MAGIC  **`count(col)`** は特定の列もしくは式をカウントするときに **`NULL`** 値をスキップするのでご注意ください。
 -- MAGIC 
--- MAGIC ただし、**`count(*)`**は、行の総数（**`NULL`**値のみの行を含む）をカウントする特例です。
+-- MAGIC ただし、 **`count(*)`** は、行の総数（ **`NULL`** 値のみの行を含む）をカウントする特例です。
 -- MAGIC 
--- MAGIC null値をカウントする場合は、**`count_if`**関数もしくは**`WHERE`**句を使用して、値が**`IS NULL`**のレコードをフィルタリングする条件を設けましょう。
+-- MAGIC null値をカウントする場合は、 **`count_if`** 関数もしくは **`WHERE`** 句を使用して、値が **`IS NULL`** のレコードをフィルタリングする条件を設けましょう。
 
 -- COMMAND ----------
 
@@ -120,7 +120,7 @@ FROM users_dirty
 -- MAGIC %md
 -- MAGIC 
 -- MAGIC 
--- MAGIC **`user_id`**が**`user_first_touch_timestamp`**と同時に生成されるため、これらのフィールドのカウントは常に同じなはずです。
+-- MAGIC  **`user_id`** が **`user_first_touch_timestamp`** と同時に生成されるため、これらのフィールドのカウントは常に同じなはずです。
 
 -- COMMAND ----------
 
@@ -157,7 +157,7 @@ FROM users_dirty
 -- MAGIC 上記の概要から次のことが分かります：
 -- MAGIC * メールアドレスは全部固有
 -- MAGIC * メールアドレスには最も多くのnull値の数が含まれています
--- MAGIC * **`updated`**列にはユニークな値が1つのみ含まれていますが、値のほとんどはnullでない値です
+-- MAGIC *  **`updated`** 列にはユニークな値が1つのみ含まれていますが、値のほとんどはnullでない値です
 
 -- COMMAND ----------
 
@@ -165,7 +165,7 @@ FROM users_dirty
 -- MAGIC 
 -- MAGIC 
 -- MAGIC ## 行の重複排除（Deduplicate Rows）
--- MAGIC 上記の動作からすれば、**`DISTINCT *`**を使用して重複レコードを排除しようとした場合はどうなると思いますか？
+-- MAGIC 上記の動作からすれば、 **`DISTINCT *`** を使用して重複レコードを排除しようとした場合はどうなると思いますか？
 
 -- COMMAND ----------
 
@@ -179,9 +179,9 @@ SELECT * FROM users_deduped
 -- MAGIC %md
 -- MAGIC 
 -- MAGIC 
--- MAGIC 上記のプレビューにはnull値がありますが、**`COUNT(DISTINCT(*))`**はそのnull値を除外しました。
+-- MAGIC 上記のプレビューにはnull値がありますが、 **`COUNT(DISTINCT(*))`** はそのnull値を除外しました。
 -- MAGIC 
--- MAGIC 何行がこの**`DISTINCT`**コマンドを通過できたと思いますか？
+-- MAGIC 何行がこの **`DISTINCT`** コマンドを通過できたと思いますか？
 
 -- COMMAND ----------
 
@@ -194,7 +194,7 @@ SELECT COUNT(*) FROM users_deduped
 -- MAGIC 
 -- MAGIC 全く別の数字になったことにご注意ください。
 -- MAGIC 
--- MAGIC Sparkは、列の値をカウントするとき、またはフィールドのユニークな値をカウントするときにnull値をスキップしますが、**`DISTINCT`**クエリからnullのある行は省略しません。
+-- MAGIC Sparkは、列の値をカウントするとき、またはフィールドのユニークな値をカウントするときにnull値をスキップしますが、 **`DISTINCT`** クエリからnullのある行は省略しません。
 -- MAGIC 
 -- MAGIC 実際、以前のカウントより1多い新しい数値が表示される理由は、すべてnullである3つの行があるためです（ここでは単一のユニークな行として含まれています）。
 
@@ -214,7 +214,7 @@ WHERE
 -- MAGIC 
 -- MAGIC ## 特定の列に基づいて重複を排除する（Deduplicate Based on Specific Columns）
 -- MAGIC 
--- MAGIC **`user_id`**および**`user_first_touch_timestamp`**は、あるユーザーに初めて遭遇したときに生成されるため、固有タプルを構成します。
+-- MAGIC  **`user_id`** および **`user_first_touch_timestamp`** は、あるユーザーに初めて遭遇したときに生成されるため、固有タプルを構成します。
 -- MAGIC 
 -- MAGIC これらの各フィールドにいくつかのnull値があることが分かります。これらのフィールドのペアのユニークな数をカウントするときnullを除外すると、テーブル内のユニークな値の正しいカウントが得られます。
 
@@ -231,9 +231,9 @@ WHERE user_id IS NOT NULL
 -- MAGIC 
 -- MAGIC ここでは、ユニークなペアを使用してデータから不要な行を削除します。
 -- MAGIC 
--- MAGIC 以下のコードでは、**`GROUP BY`**を使用して、**`user_id`**と**`user_first_touch_timestamp`**に基づいて重複レコードを削除します。
+-- MAGIC 以下のコードでは、 **`GROUP BY`** を使用して、 **`user_id`** と **`user_first_touch_timestamp`** に基づいて重複レコードを削除します。
 -- MAGIC 
--- MAGIC 複数のレコードがあるとき、裏技としてnullでない値のメールアドレスアドレスを獲得するために、 **`email`**列に対して**`max()`**の集計関数を使用します。このバッチでは**`updated`**値は全部同じでしたが、この値をGROUP BYの結果に残すには集計関数を使用する必要があります。
+-- MAGIC 複数のレコードがあるとき、裏技としてnullでない値のメールアドレスアドレスを獲得するために、  **`email`** 列に対して **`max()`** の集計関数を使用します。このバッチでは **`updated`** 値は全部同じでしたが、この値をGROUP BYの結果に残すには集計関数を使用する必要があります。
 
 -- COMMAND ----------
 
@@ -253,9 +253,9 @@ SELECT count(*) FROM deduped_users
 -- MAGIC ## データセットの検証（Validate Datasets）
 -- MAGIC 手動で確認して、カウントが予想通りであることを目で確認しました。
 -- MAGIC 
--- MAGIC 以下では、単純なフィルタと**`WHERE`**句を使用してプログラムで検証を行います。
+-- MAGIC 以下では、単純なフィルタと **`WHERE`** 句を使用してプログラムで検証を行います。
 -- MAGIC 
--- MAGIC **`user_id`**が各行に対して固有であることを検証しましょう。
+-- MAGIC  **`user_id`** が各行に対して固有であることを検証しましょう。
 
 -- COMMAND ----------
 
@@ -270,7 +270,7 @@ SELECT max(row_count) <= 1 no_duplicate_ids FROM (
 -- MAGIC 
 -- MAGIC 
 -- MAGIC 
--- MAGIC 各メールアドレスが少なくとも1つの**`user_id`**と関連付けられていることを確認します。
+-- MAGIC 各メールアドレスが少なくとも1つの **`user_id`** と関連付けられていることを確認します。
 
 -- COMMAND ----------
 
@@ -289,9 +289,9 @@ SELECT max(user_id_count) <= 1 at_most_one_id FROM (
 -- MAGIC nullフィールドをなくして重複を排除しましたので、データからさらに価値を引き出しましょう。
 -- MAGIC 
 -- MAGIC 以下のコードは：
--- MAGIC - **`user_first_touch_timestamp`**を正しくスケーリングして有効なタイムスタンプに変換する
+-- MAGIC -  **`user_first_touch_timestamp`** を正しくスケーリングして有効なタイムスタンプに変換する
 -- MAGIC - このタイムスタンプのカレンダーデータと時刻を人間が読める形式で抽出する
--- MAGIC - **`regexp_extract`**を使用して、正規表現を介してメールアドレスの列からドメインを抽出します
+-- MAGIC -  **`regexp_extract`** を使用して、正規表現を介してメールアドレスの列からドメインを抽出します
 
 -- COMMAND ----------
 

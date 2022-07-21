@@ -18,13 +18,13 @@
 -- MAGIC ## 学習目標（Learning Objectives）
 -- MAGIC このラボでは、以下のことが学べます。
 -- MAGIC - 次の操作を含めて、Delta Lakeテーブルを作成および操作をするための標準的な操作を実行する：
--- MAGIC   - **`CREATE TABLE`**
--- MAGIC   - **`INSERT INTO`**
--- MAGIC   - **`SELECT FROM`**
--- MAGIC   - **`UPDATE`**
--- MAGIC   - **`DELETE`**
--- MAGIC   - **`MERGE`**
--- MAGIC   - **`DROP TABLE`**
+-- MAGIC   -  **`CREATE TABLE`** 
+-- MAGIC   -  **`INSERT INTO`** 
+-- MAGIC   -  **`SELECT FROM`** 
+-- MAGIC   -  **`UPDATE`** 
+-- MAGIC   -  **`DELETE`** 
+-- MAGIC   -  **`MERGE`** 
+-- MAGIC   -  **`DROP TABLE`** 
 
 -- COMMAND ----------
 
@@ -49,7 +49,7 @@
 -- MAGIC 
 -- MAGIC このノートブックでは、豆のコレクションを管理するためのテーブルを作成します。
 -- MAGIC 
--- MAGIC 以下のセルを使って、**`beans`**というのマネージドDelta Lakeテーブルを作成します。
+-- MAGIC 以下のセルを使って、 **`beans`** というのマネージドDelta Lakeテーブルを作成します。
 -- MAGIC 
 -- MAGIC 次のスキーマを指定します：
 -- MAGIC 
@@ -167,7 +167,7 @@ WHERE name = "jelly"
 -- MAGIC 
 -- MAGIC うっかり、うずら豆の重量を間違って入力したことに気づきます。
 -- MAGIC 
--- MAGIC このレコードの**`グラム`**列を正しい重量1500に更新してください。
+-- MAGIC このレコードの **`grams`** 列を正しい重量1500に更新してください。
 
 -- COMMAND ----------
 
@@ -251,7 +251,7 @@ SELECT * FROM new_beans
 -- MAGIC 
 -- MAGIC 
 -- MAGIC 
--- MAGIC 以下のセルでは、上のビューを使ってMERGE文を書き出し、1つのトランザクションとして**`beans`**テーブルを更新して新しいレコードを挿入します。
+-- MAGIC 以下のセルでは、上のビューを使ってMERGE文を書き出し、1つのトランザクションとして **`beans`** テーブルを更新して新しいレコードを挿入します。
 -- MAGIC 
 -- MAGIC ロジックを確認します：
 -- MAGIC - 名前**および**色で豆を一致させる
@@ -301,7 +301,7 @@ WHEN NOT MATCHED AND b.delicious = true THEN
 -- MAGIC 
 -- MAGIC **注**：このコースの後半で、ファイルのコレクションとしてDelta Lakeテーブルを取り扱い、さまざまな永続性を保証する外部テーブルについて学習します。
 -- MAGIC 
--- MAGIC 以下のセルに、クエリを書き込み、**`beans`**テーブルをドロップします。
+-- MAGIC 以下のセルに、クエリを書き込み、 **`beans`** テーブルをドロップします。
 
 -- COMMAND ----------
 

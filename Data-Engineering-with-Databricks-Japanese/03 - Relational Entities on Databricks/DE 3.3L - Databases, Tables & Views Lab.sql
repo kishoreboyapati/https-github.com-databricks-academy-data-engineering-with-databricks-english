@@ -73,7 +73,7 @@ FROM parquet.`${da.paths.working_dir}/weather`
 -- MAGIC 
 -- MAGIC ## データベースの作成（Create a Database）
 -- MAGIC 
--- MAGIC セットアップスクリプトで定義されている**`da.db_name`**変数を使用してデフォルトの場所にデータベースを作成します。
+-- MAGIC セットアップスクリプトで定義されている **`da.db_name`** 変数を使用してデフォルトの場所にデータベースを作成します。
 
 -- COMMAND ----------
 
@@ -88,7 +88,7 @@ FROM parquet.`${da.paths.working_dir}/weather`
 -- MAGIC 
 -- MAGIC ## 新しいデータベースに切り替える（Change to Your New Database）
 -- MAGIC 
--- MAGIC 新しく作成したデータベースを**`USE`**します。
+-- MAGIC 新しく作成したデータベースを **`USE`** します。
 
 -- COMMAND ----------
 
@@ -102,7 +102,7 @@ FROM parquet.`${da.paths.working_dir}/weather`
 -- MAGIC 
 -- MAGIC 
 -- MAGIC ## マネージドテーブルの作成（Create a Managed Table）
--- MAGIC CTAS文を使用して**`weather_managed`**というのマネージドテーブルを作成します。
+-- MAGIC CTAS文を使用して **`weather_managed`** というのマネージドテーブルを作成します。
 
 -- COMMAND ----------
 
@@ -119,7 +119,7 @@ FROM parquet.`${da.paths.working_dir}/weather`
 -- MAGIC 
 -- MAGIC ## 外部テーブルの作成（Create an External Table）
 -- MAGIC 
--- MAGIC 外部テーブルとマネージドテーブルの違いは場所の指定の有無です。 以下に**`weather_external`**というの外部テーブルを作成します。
+-- MAGIC 外部テーブルとマネージドテーブルの違いは場所の指定の有無です。 以下に **`weather_external`** というの外部テーブルを作成します。
 
 -- COMMAND ----------
 
@@ -136,7 +136,7 @@ FROM parquet.`${da.paths.working_dir}/weather`
 -- MAGIC 
 -- MAGIC 
 -- MAGIC ## テーブルの詳細を調べる（Examine Table Details）
--- MAGIC **`DESCRIBE EXTENDED table_name`**というSQLコマンドを使用して2つの天気テーブルを調べます。
+-- MAGIC  **`DESCRIBE EXTENDED table_name`** というSQLコマンドを使用して2つの天気テーブルを調べます。
 
 -- COMMAND ----------
 
@@ -198,7 +198,7 @@ DESCRIBE EXTENDED weather_external
 -- MAGIC 
 -- MAGIC 
 -- MAGIC ### データベースとすべてのテーブルを削除したらディレクトリの中身を確認する（Check Directory Contents after Dropping Database and All Tables）
--- MAGIC これは**`CASCADE`**キーワードを使用して実行できます。
+-- MAGIC これは **`CASCADE`** キーワードを使用して実行できます。
 
 -- COMMAND ----------
 
@@ -213,7 +213,7 @@ DESCRIBE EXTENDED weather_external
 -- MAGIC 
 -- MAGIC データベースを削除すると、ファイルも削除されます。
 -- MAGIC 
--- MAGIC 次のセルからコメントアウトを外して実行すると、ファイルが存在しない証拠として**`FileNotFoundException`**が投げられます。
+-- MAGIC 次のセルからコメントアウトを外して実行すると、ファイルが存在しない証拠として **`FileNotFoundException`** が投げられます。
 
 -- COMMAND ----------
 
@@ -249,7 +249,7 @@ DESCRIBE EXTENDED weather_external
 -- MAGIC 
 -- MAGIC ## パスが指定されているデータベースを作成する（Create a Database with a Specified Path）
 -- MAGIC 
--- MAGIC 前のステップでデータベースを削除した場合は、同じ**`データベース`**の名前を使用できます。
+-- MAGIC 前のステップでデータベースを削除した場合は、同じ **`データベース`** の名前を使用できます。
 
 -- COMMAND ----------
 
@@ -261,7 +261,7 @@ USE ${da.db_name};
 -- MAGIC %md
 -- MAGIC 
 -- MAGIC 
--- MAGIC この新しいデータベースに**`weather_managed`**テーブルを再作成して、このテーブルの場所を表示します。
+-- MAGIC この新しいデータベースに **`weather_managed`** テーブルを再作成して、このテーブルの場所を表示します。
 
 -- COMMAND ----------
 
@@ -279,7 +279,7 @@ USE ${da.db_name};
 -- MAGIC %md
 -- MAGIC 
 -- MAGIC 
--- MAGIC ここでは、DBFSルート上に作成された**`userhome`**ディレクトリを使用していますが、データベースディレクトリとして_どんなオブジェクトストアも_使用できます。 **ユーザーのグループ用にデータベースディレクトリを定義すると、誤ったデータ漏洩の確率を大幅に下げられます**。
+-- MAGIC ここでは、DBFSルート上に作成された **`userhome`** ディレクトリを使用していますが、データベースディレクトリとして_どんなオブジェクトストアも_使用できます。 **ユーザーのグループ用にデータベースディレクトリを定義すると、誤ったデータ漏洩の確率を大幅に下げられます**。
 
 -- COMMAND ----------
 
@@ -288,10 +288,10 @@ USE ${da.db_name};
 -- MAGIC 
 -- MAGIC ## ビューとその範囲（Views and their Scoping）
 -- MAGIC 
--- MAGIC 用意されている**`AS`**句を使用して次のものを登録します：
--- MAGIC - **`celsius`**というのビュー
--- MAGIC - **`celsius_temp`**というのテンポラリビュー
--- MAGIC - **`celsius_global`**というのグローバルテンポラリビュー
+-- MAGIC 用意されている **`AS`** 句を使用して次のものを登録します：
+-- MAGIC -  **`celsius`** というのビュー
+-- MAGIC -  **`celsius_temp`** というのテンポラリビュー
+-- MAGIC -  **`celsius_global`** というのグローバルテンポラリビュー
 
 -- COMMAND ----------
 
@@ -353,7 +353,7 @@ SHOW TABLES
 -- MAGIC 次のことに注意：
 -- MAGIC - ビューは現在のデータベースと関連付けられています。 このビューは、このデータベースにアクセスできるすべてのユーザーが利用でき、セッションの間保持されます。
 -- MAGIC - テンポラリビューはどんなデータベースとも関連付けられていません。 テンポラリビューは一時的で、現在のSparkSessionでしかアクセスできません。
--- MAGIC - グローバルのテンポラリビューはカタログには表示されません。 **グローバルのテンポラリビューは常に**`global_temp`**データベース**に登録されます。 **`global_temp`**データベースは一時的ですが、クラスタのライフタイムに依存しています。しかし、このデータベースは、データベースが作成されたクラスタにアタッチされているノートブックのみがアクセスできます。
+-- MAGIC - グローバルのテンポラリビューはカタログには表示されません。 **グローバルのテンポラリビューは常に **`global_temp`** データベース**に登録されます。  **`global_temp`** データベースは一時的ですが、クラスタのライフタイムに依存しています。しかし、このデータベースは、データベースが作成されたクラスタにアタッチされているノートブックのみがアクセスできます。
 
 -- COMMAND ----------
 
