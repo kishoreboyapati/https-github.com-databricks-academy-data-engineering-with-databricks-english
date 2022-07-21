@@ -1,10 +1,13 @@
 # Databricks notebook source
-# MAGIC %run ./_utility-methods
+# MAGIC %run ./_utility-methods $lesson="reset"
 
 # COMMAND ----------
 
-DA = DBAcademyHelper()
-DA.init(create_db=False)
+# MAGIC %run ./mount-datasets
+
+# COMMAND ----------
+
+DA.init()
 
 # COMMAND ----------
 
@@ -17,6 +20,16 @@ for row in rows:
 
 # COMMAND ----------
 
-if DA.paths.exists(DA.hidden.working_dir_root):
-    print(DA.hidden.working_dir_root)
-    dbutils.fs.rm(DA.hidden.working_dir_root, True)
+if DA.paths.exists(DA.working_dir_prefix):
+    print(DA.working_dir_prefix)
+    dbutils.fs.rm(DA.working_dir_prefix, True)
+
+# COMMAND ----------
+
+# Create the source database, install the datasets, whatever, so that we can run the other notebooks asyncronously
+install_dtavod_datasets(reinstall=True)
+install_eltwss_datasets(reinstall=True)
+
+# COMMAND ----------
+
+# MAGIC %run ./mount-datasets

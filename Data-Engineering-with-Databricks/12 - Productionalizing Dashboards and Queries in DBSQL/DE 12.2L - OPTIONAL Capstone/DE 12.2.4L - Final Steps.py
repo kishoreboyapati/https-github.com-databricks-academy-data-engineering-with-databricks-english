@@ -18,7 +18,7 @@
 # MAGIC 
 # MAGIC If everything is setup correctly, you should have:
 # MAGIC * A DLT Pipeline running in **Continuous** mode
-# MAGIC * A job that is feeding that pipeline new data every 2 minutes
+# MAGIC * A job that is feeding that pipline new data every 2 minutes
 # MAGIC * A series of Databricks SQL Queries analysing the outputs of that pipeline
 
 # COMMAND ----------
@@ -118,7 +118,7 @@
 # MAGIC 
 # MAGIC Note that Databricks Jobs, DLT Pipelines, and scheduled DBSQL queries and dashboards are all designed to provide sustained execution of production code. In this end-to-end demo, you were instructed to configure a Job and Pipeline for continuous data processing. To prevent these workloads from continuing to execute, you should **Pause** your Databricks Job and **Stop** your DLT pipeline. Deleting these assets will also ensure that production infrastructure is terminated.
 # MAGIC 
-# MAGIC **NOTE**: All instructions for DBSQL asset scheduling in previous lessons instructed users to set the update schedule to end tomorrow. You may choose to go back and also cancel these updates to prevent Databricks SQL warehouses from staying on until that time.
+# MAGIC **NOTE**: All instructions for DBSQL asset scheduling in previous lessons instructed users to set the update schedule to end tomorrow. You may choose to go back and also cancel these updates to prevent DBSQL endpoints from staying on until that time.
 
 # COMMAND ----------
 

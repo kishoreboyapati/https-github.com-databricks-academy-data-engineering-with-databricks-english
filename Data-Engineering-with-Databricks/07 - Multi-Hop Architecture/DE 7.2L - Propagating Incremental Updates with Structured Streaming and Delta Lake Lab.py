@@ -36,7 +36,7 @@
 # MAGIC 
 # MAGIC ## Ingest data
 # MAGIC 
-# MAGIC This lab uses a collection of customer-related CSV data from DBFS found in our **retail-org/customers** dataset which is identified by the variable **`dataset_source`**.
+# MAGIC This lab uses a collection of customer-related CSV data from DBFS found in */databricks-datasets/retail-org/customers/*.
 # MAGIC 
 # MAGIC Read this data using Auto Loader using its schema inference (use **`customers_checkpoint_path`** to store the schema info). Stream the raw data to a Delta table called **`bronze`**.
 
@@ -44,12 +44,11 @@
 
 # TODO
 customers_checkpoint_path = f"{DA.paths.checkpoints}/customers"
-dataset_source = f"{DA.paths.datasets}/retail-org/customers/"
 
 query = (spark
   .readStream
   <FILL-IN>
-  .load(dataset_source)
+  .load("/databricks-datasets/retail-org/customers/")
   .writeStream
   <FILL-IN>
   .table("bronze")
@@ -160,7 +159,7 @@ assert spark.table("silver").filter("postcode <= 0").count() == 0, "Null postcod
 # MAGIC 
 # MAGIC 
 # MAGIC 
-# MAGIC Let's create a streaming temporary view into the silver table, so that we can perform business-level aggregation using SQL.
+# MAGIC Let's create a streaming temporary view into the silver table, so that we can perform business-level using SQL.
 
 # COMMAND ----------
 

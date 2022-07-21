@@ -58,7 +58,7 @@ display(df)
 # MAGIC 
 # MAGIC 1. **Cmd 5** assigns a string to a variable. When a variable assignment is successful, no output is displayed to the notebook. A new variable is added to the current execution environment.
 # MAGIC 1. **Cmd 6** executes a SQL query and displays the schema for the DataFrame alongside the word **`DataFrame`**. In this case, the SQL query is just to select a string, so no changes to our environment occur. 
-# MAGIC 1. **Cmd 7** executes the same SQL query and displays the output of the DataFrame. This combination of **`display()`** and **`spark.sql()`** most closely mirrors executing logic in a **`%sql`** cell; the results will always be printed in a formatted table, assuming results are returned by the query; some queries will instead manipulate tables or databases, in which case the word **`OK`** will print to show successful execution. In this case, no changes to our environment occur from running this code.
+# MAGIC 1. **Cmd 7** executes the same SQL query and displays the output of the DataFrame. This combination of **`display()`** and **`spark.sql()`** most closely mirrors executing logic in a **`%sql`** cell; the results will always be printed in a formatted table, assuming results are returned by the query; some queries will instead manipulate tables or databases, in which case the work **`OK`** will print to show successful execution. In this case, no changes to our environment occur from running this code.
 
 # COMMAND ----------
 
@@ -67,7 +67,7 @@ display(df)
 # MAGIC 
 # MAGIC ## Setting Up a Development Environment
 # MAGIC 
-# MAGIC Throughout this course, we use logic similar to the following cell to capture information about the user currently executing the notebook and create an isolated development database.
+# MAGIC Throughout this course, we use logic similar to the follow cell to capture information about the user currently executing the notebook and create an isolated development database.
 # MAGIC 
 # MAGIC The **`re`** library is the <a href="https://docs.python.org/3/library/re.html" target="_blank">standard Python library for regex</a>.
 # MAGIC 

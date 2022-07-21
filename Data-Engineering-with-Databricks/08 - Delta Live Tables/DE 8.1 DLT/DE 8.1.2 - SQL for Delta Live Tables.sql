@@ -29,18 +29,6 @@
 
 -- MAGIC %md
 -- MAGIC 
--- MAGIC ## Run Setup
--- MAGIC 
--- MAGIC The following cell simply declares path variables to our datset
-
--- COMMAND ----------
-
--- MAGIC %run ../../Includes/Classroom-Setup-8.1.2
-
--- COMMAND ----------
-
--- MAGIC %md
--- MAGIC 
 -- MAGIC 
 -- MAGIC ## Declare Bronze Layer Tables
 -- MAGIC 
@@ -53,7 +41,7 @@
 -- MAGIC 
 -- MAGIC ### sales_orders_raw
 -- MAGIC 
--- MAGIC **`sales_orders_raw`** ingests JSON data incrementally from our **retail-org/sales_orders** dataset.
+-- MAGIC **`sales_orders_raw`** ingests JSON data incrementally from the example dataset found in  */databricks-datasets/retail-org/sales_orders/*.
 -- MAGIC 
 -- MAGIC Incremental processing via <a herf="https://docs.databricks.com/spark/latest/structured-streaming/auto-loader.html" target="_blank">Auto Loader</a> (which uses the same processing model as Structured Streaming), requires the addition of the **`STREAMING`** keyword in the declaration as seen below. The **`cloud_files()`** method enables Auto Loader to be used natively with SQL. This method takes the following positional parameters:
 -- MAGIC * The source location, as mentioned above
@@ -65,8 +53,8 @@
 -- COMMAND ----------
 
 CREATE OR REFRESH STREAMING LIVE TABLE sales_orders_raw
-COMMENT "The raw sales orders, ingested from retail-org/sales_orders."
-AS SELECT * FROM cloud_files("${DA.paths.datasets}/retail-org/sales_orders", "json", map("cloudFiles.inferColumnTypes", "true"))
+COMMENT "The raw sales orders, ingested from /databricks-datasets."
+AS SELECT * FROM cloud_files("/databricks-datasets/retail-org/sales_orders/", "json", map("cloudFiles.inferColumnTypes", "true"))
 
 -- COMMAND ----------
 
@@ -75,15 +63,13 @@ AS SELECT * FROM cloud_files("${DA.paths.datasets}/retail-org/sales_orders", "js
 -- MAGIC 
 -- MAGIC ### customers
 -- MAGIC 
--- MAGIC **`customers`** presents CSV customer data found in **retail-org/customers**.
--- MAGIC 
--- MAGIC This table will soon be used in a join operation to look up customer data based on sales records.
+-- MAGIC **`customers`** presents CSV customer data found in */databricks-datasets/retail-org/customers/*. This table will soon be used in a join operation to look up customer data based on sales records.
 
 -- COMMAND ----------
 
 CREATE OR REFRESH STREAMING LIVE TABLE customers
-COMMENT "The customers buying finished products, ingested from retail-org/customers."
-AS SELECT * FROM cloud_files("${DA.paths.datasets}/retail-org/customers/", "csv");
+COMMENT "The customers buying finished products, ingested from /databricks-datasets."
+AS SELECT * FROM cloud_files("/databricks-datasets/retail-org/customers/", "csv");
 
 -- COMMAND ----------
 

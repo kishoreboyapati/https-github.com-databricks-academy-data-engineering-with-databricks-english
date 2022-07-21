@@ -22,18 +22,6 @@
 
 -- MAGIC %md
 -- MAGIC 
--- MAGIC ## Run Setup
--- MAGIC 
--- MAGIC The following cell simply declares path variables to our datset
-
--- COMMAND ----------
-
--- MAGIC %run ../../Includes/Classroom-Setup-8.2.2
-
--- COMMAND ----------
-
--- MAGIC %md
--- MAGIC 
 -- MAGIC 
 -- MAGIC ## Declare Bronze Table
 -- MAGIC 

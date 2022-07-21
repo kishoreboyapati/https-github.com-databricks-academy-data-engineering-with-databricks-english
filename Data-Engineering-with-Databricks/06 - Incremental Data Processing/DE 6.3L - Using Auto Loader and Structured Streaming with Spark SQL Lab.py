@@ -38,20 +38,19 @@
 # MAGIC 
 # MAGIC ## Configure Streaming Read
 # MAGIC 
-# MAGIC This lab uses a collection of customer-related CSV data from DBFS found in our **retail-org/customers** dataset which is identified by the variable **`dataset_source`**.
+# MAGIC This lab uses a collection of customer-related CSV data from DBFS found in */databricks-datasets/retail-org/customers/*.
 # MAGIC 
 # MAGIC Read this data using <a href="https://docs.databricks.com/spark/latest/structured-streaming/auto-loader.html" target="_blank">Auto Loader</a> using its schema inference (use **`customers_checkpoint_path`** to store the schema info). Create a streaming temporary view called **`customers_raw_temp`**.
 
 # COMMAND ----------
 
 # TODO
-dataset_source = f"{DA.paths.datasets}/retail-org/customers/"
 customers_checkpoint_path = f"{DA.paths.checkpoints}/customers"
 
 (spark
   .readStream
   <FILL-IN>
-  .load(dataset_source)
+  .load("/databricks-datasets/retail-org/customers/")
   .createOrReplaceTempView("customers_raw_temp"))
 
 # COMMAND ----------

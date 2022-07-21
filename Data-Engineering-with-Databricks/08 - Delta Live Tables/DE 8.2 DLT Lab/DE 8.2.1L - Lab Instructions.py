@@ -64,9 +64,7 @@
 # MAGIC 
 # MAGIC 
 # MAGIC ## Land Initial Data
-# MAGIC Seed the landing zone with more data before proceeding.
-# MAGIC 
-# MAGIC You will re-run this command to land additional data later.
+# MAGIC Seed the landing zone with some data before proceeding. You will re-run this command to land additional data later.
 
 # COMMAND ----------
 
@@ -90,7 +88,7 @@ DA.print_pipeline_config()
 # MAGIC 
 # MAGIC ## Create and Configure a Pipeline
 # MAGIC 
-# MAGIC 1. Click the **Workflows** button on the sidebar, then select the **Delta Live Tables** tab.
+# MAGIC 1. Click the **Jobs** button on the sidebar, then select the **Delta Live Tables** tab.
 # MAGIC 1. Click **Create Pipeline**.
 # MAGIC 1. Leave **Product Edition** as **Advanced**.
 # MAGIC 1. Fill in a **Pipeline Name** - because these names must be unique, we suggest using the **Pipline Name** provided in the cell above.
@@ -103,27 +101,8 @@ DA.print_pipeline_config()
 # MAGIC 1. Enter the location printed next to **`Storage Location`** below in the **Storage Location** field.
 # MAGIC 1. Set **Pipeline Mode** to **Triggered**.
 # MAGIC 1. Disable autoscaling.
-# MAGIC 1. Set the number of **`workers`** to **`0`** (zero).
-# MAGIC 1. **OPTIONAL:** If your workspace admin provided you with a **cluster policy** to configure your DLT pipeline clusters:
-# MAGIC     * Retrieve the **policy_id** for the cluster policy provided by your workspace admin or instructor.    
-# MAGIC     * Click on the **JSON** button on the top right to edit your pipeline settings using JSON.
-# MAGIC     * Copy and paste the settings below to replace the **`clusters`** section of your pipeline's JSON definition, replacing **``<policy_id>``** with your cluster policy ID.
-# MAGIC 
-# MAGIC ```
-# MAGIC   "clusters": [
-# MAGIC       {
-# MAGIC           "label": "default",
-# MAGIC           "policy_id": "<policy_id>",
-# MAGIC           "num_workers": 0
-# MAGIC       },
-# MAGIC       {
-# MAGIC           "label": "maintenance",
-# MAGIC           "policy_id": "<policy_id>"
-# MAGIC       }
-# MAGIC   ]
-# MAGIC ```
-# MAGIC 
-# MAGIC Finally, click **Create**.
+# MAGIC 1. Set the number of **`workers`** to **`1`** (one).
+# MAGIC 1. Click **Create**.
 
 # COMMAND ----------
 
