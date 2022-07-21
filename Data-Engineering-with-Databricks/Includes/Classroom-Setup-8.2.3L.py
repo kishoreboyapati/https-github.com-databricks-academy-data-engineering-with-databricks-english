@@ -1,12 +1,9 @@
 # Databricks notebook source
-# MAGIC %run ./_utility-methods $lesson="dlt_lab_82"
+# MAGIC %run ./_utility-methods
 
 # COMMAND ----------
 
-# MAGIC %run ./mount-datasets
-
-# COMMAND ----------
-
+DA = DBAcademyHelper(lesson="dlt_lab_82")
 # Continuing from 8.2.3L, do not remove assets
 # DA.cleanup()
 DA.init()

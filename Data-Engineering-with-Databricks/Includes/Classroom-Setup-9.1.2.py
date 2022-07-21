@@ -1,12 +1,9 @@
 # Databricks notebook source
-# MAGIC %run ./_utility-methods $lesson="jobs_demo_91"
+# MAGIC %run ./_utility-methods
 
 # COMMAND ----------
 
-# MAGIC %run ./mount-datasets
-
-# COMMAND ----------
-
+DA = DBAcademyHelper(lesson="jobs_demo_91")
 DA.cleanup()
 DA.init()
 DA.data_factory = DltDataFactory()

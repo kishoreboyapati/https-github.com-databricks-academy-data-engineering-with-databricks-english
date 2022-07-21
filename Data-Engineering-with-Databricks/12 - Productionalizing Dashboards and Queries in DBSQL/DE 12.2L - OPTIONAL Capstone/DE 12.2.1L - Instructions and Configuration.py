@@ -69,7 +69,7 @@ print_pipeline_config()
 # MAGIC 
 # MAGIC 
 # MAGIC Steps:
-# MAGIC 1. Click the **Jobs** button on the sidebar.
+# MAGIC 1. Click the **Workflows** button on the sidebar.
 # MAGIC 1. Select the **Delta Live Tables** tab.
 # MAGIC 1. Click **Create Pipeline**.
 # MAGIC 1. Fill in a **Pipeline Name** - because these names must be unique, we suggest using the **Pipline Name** provided in the cell above.
@@ -113,7 +113,8 @@ print_job_config()
 # MAGIC 
 # MAGIC 
 # MAGIC Steps:
-# MAGIC 1. Navigate to the Jobs UI using the Databricks left side navigation bar.
+# MAGIC 1. Click the **Workflows** button on the sidebar
+# MAGIC 1. Select the **Jobs** tab.
 # MAGIC 1. Click the blue **Create Job** button
 # MAGIC 1. Configure the task:
 # MAGIC     1. Enter **Land-Data** for the task name
@@ -131,7 +132,7 @@ print_job_config()
 # MAGIC 
 # MAGIC ## Set a Chronological Schedule for your Job
 # MAGIC Steps:
-# MAGIC 1. Navigate to the **Jobs UI** and click on the job you just created.
+# MAGIC 1. Navigate to the **Jobs** tab in the Workflows UI and click on the job you just created.
 # MAGIC 1. Locate the **Schedule** section in the side panel on the right.
 # MAGIC 1. Click on the **Edit schedule** button to explore scheduling options.
 # MAGIC 1. Change the **Schedule type** field from **Manual** to **Scheduled**, which will bring up a chron scheduling UI.

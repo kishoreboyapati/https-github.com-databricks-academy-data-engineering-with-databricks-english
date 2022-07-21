@@ -267,7 +267,7 @@ DA.data_factory.load()
 # MAGIC %md
 # MAGIC 
 # MAGIC 
-# MAGIC Note that we're using **`.trigger(availableNow=True)`** below. This provides us the ability to continue to use the strengths of structured streaming while trigger this job one-time to process all available data in micro-batches. To recap, these strengths include:
+# MAGIC Note that we're using **`.trigger(availableNow=True)`** below. This provides us the ability to continue to use the strengths of Structured Streaming while triggering this job one-time to process all available data in micro-batches. To recap, these strengths include:
 # MAGIC - exactly once end-to-end fault tolerant processing
 # MAGIC - automatic detection of changes in upstream data sources
 # MAGIC 

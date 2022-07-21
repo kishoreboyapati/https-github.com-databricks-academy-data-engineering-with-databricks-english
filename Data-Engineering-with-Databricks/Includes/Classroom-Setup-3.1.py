@@ -1,8 +1,9 @@
 # Databricks notebook source
-# MAGIC %run ./_utility-methods $lesson="3.1"
+# MAGIC %run ./_utility-methods
 
 # COMMAND ----------
 
+DA = DBAcademyHelper()
 DA.cleanup()
 DA.init(create_db=False)
 install_dtavod_datasets(reinstall=False)

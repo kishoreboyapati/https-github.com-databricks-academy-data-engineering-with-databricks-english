@@ -1,9 +1,5 @@
 # Databricks notebook source
-# MAGIC %run ./_utility-methods $lesson="dlt_lab_82"
-
-# COMMAND ----------
-
-# MAGIC %run ./mount-datasets
+# MAGIC %run ./_utility-methods
 
 # COMMAND ----------
 
@@ -98,6 +94,7 @@ DA.start_pipeline = _start_pipeline
 
 # COMMAND ----------
 
+DA = DBAcademyHelper(lesson="dlt_lab_82")
 DA.cleanup()
 DA.init()
 
@@ -106,5 +103,6 @@ DA.init()
 # DA.paths.data_landing_location    = f"{DA.paths.working_dir}/source/tracker"
 
 DA.data_factory = DltDataFactory()
+DA.data_factory.load()
 DA.conclude_setup()
 

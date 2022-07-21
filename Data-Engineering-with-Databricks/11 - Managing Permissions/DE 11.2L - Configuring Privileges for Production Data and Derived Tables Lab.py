@@ -68,11 +68,11 @@ DA.generate_query()
 # MAGIC 1. Run the cell above
 # MAGIC 1. Copy the entire output to your clipboard
 # MAGIC 1. Navigate to the Databricks SQL workspace
-# MAGIC 1. Make sure that a DBSQL endpoint is running
+# MAGIC 1. Make sure that a SQL warehouse is running
 # MAGIC 1. Use the left sidebar to select the **SQL Editor**
 # MAGIC 1. Paste the query above and click the blue **Run** in the top right
 # MAGIC 
-# MAGIC **NOTE**: You will need to be connected to a DBSQL endpoint to execute these queries successfully. If you cannot connect to a DBSQL endpoint, you will need to contact your administrator to give you access.
+# MAGIC **NOTE**: You will need to be connected to a SQL warehouse to execute these queries successfully. If you cannot connect to a SQL warehouse, you will need to contact your administrator to give you access.
 
 # COMMAND ----------
 

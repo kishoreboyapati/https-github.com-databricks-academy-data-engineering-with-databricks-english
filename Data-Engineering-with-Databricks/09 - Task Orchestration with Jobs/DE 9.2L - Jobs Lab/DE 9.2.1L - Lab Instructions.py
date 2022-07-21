@@ -19,9 +19,9 @@
 # MAGIC 
 # MAGIC ## Learning Objectives
 # MAGIC By the end of this lab, you should be able to:
-# MAGIC * Schedule a notebook as a Databricks Job
-# MAGIC * Schedule a DLT pipeline as a Databricks Job
-# MAGIC * Configure linear dependencies between tasks using the Databricks Jobs UI
+# MAGIC * Schedule a notebook as a task in a Databricks Job
+# MAGIC * Schedule a DLT pipeline as a task in a Databricks Job
+# MAGIC * Configure linear dependencies between tasks using the Databricks Workflows UI
 
 # COMMAND ----------
 
@@ -62,7 +62,7 @@ print_pipeline_config()
 # MAGIC 
 # MAGIC 
 # MAGIC Steps:
-# MAGIC 1. Click the **Jobs** button on the sidebar.
+# MAGIC 1. Click the **Workflows** button on the sidebar.
 # MAGIC 1. Select the **Delta Live Tables** tab.
 # MAGIC 1. Click **Create Pipeline**.
 # MAGIC 1. Fill in a **Pipeline Name** - because these names must be unique, we suggest using the **Pipeline Name** provided in the cell above.
@@ -107,7 +107,8 @@ print_job_config()
 # MAGIC Here, we'll start by scheduling the notebook batch job.
 # MAGIC 
 # MAGIC Steps:
-# MAGIC 1. Navigate to the Jobs UI using the Databricks left side navigation bar.
+# MAGIC 1. Click the **Workflows** button on the sidebar
+# MAGIC 1. Select the **Jobs** tab.
 # MAGIC 1. Click the blue **Create Job** button
 # MAGIC 1. Configure the task:
 # MAGIC     1. Enter **Batch-Job** for the task name

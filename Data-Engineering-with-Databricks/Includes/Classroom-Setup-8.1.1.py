@@ -1,9 +1,5 @@
 # Databricks notebook source
-# MAGIC %run ./_utility-methods $lesson="dlt_demo_81"
-
-# COMMAND ----------
-
-# MAGIC %run ./mount-datasets
+# MAGIC %run ./_utility-methods
 
 # COMMAND ----------
 
@@ -90,6 +86,7 @@ DA.start_pipeline = _start_pipeline
 
 # COMMAND ----------
 
+DA = DBAcademyHelper(lesson="dlt_demo_81")
 DA.cleanup()
 DA.init()
 

@@ -23,7 +23,7 @@
 # MAGIC 
 # MAGIC In this section, we'll focus on exploring more DBSQL functionality to support production workloads. 
 # MAGIC 
-# MAGIC We'll start by focusing on leveraging Databricks SQL to configure queries that support last mile ETL for analytics. Note that while we'll be using the Databricks SQL UI for this demo, SQL Endpoints <a href="https://docs.databricks.com/integrations/partners.html" target="_blank">integrate with a number of other tools to allow external query execution</a>, as well as having <a href="https://docs.databricks.com/sql/api/index.html" target="_blank">full API support for executing arbitrary queries programmatically</a>.
+# MAGIC We'll start by focusing on leveraging Databricks SQL to configure queries that support last mile ETL for analytics. Note that while we'll be using the Databricks SQL UI for this demo, SQL Warehouses <a href="https://docs.databricks.com/integrations/partners.html" target="_blank">integrate with a number of other tools to allow external query execution</a>, as well as having <a href="https://docs.databricks.com/sql/api/index.html" target="_blank">full API support for executing arbitrary queries programmatically</a>.
 # MAGIC 
 # MAGIC From these query results, we'll generate a series of visualizations, which we'll combine into a dashboard.
 # MAGIC 
@@ -117,10 +117,12 @@ DA.generate_load()
 # MAGIC 
 # MAGIC Steps:
 # MAGIC 1. Locate the **Refresh Schedule** field at the bottom right of the SQL query editor box; click the blue **Never**
-# MAGIC 1. Use the drop down to change to Refresh every **1 minute**
+# MAGIC 1. Use the drop down to change to Refresh every **1 week** at **12:00**
 # MAGIC 1. For **Ends**, click the **On** radio button
 # MAGIC 1. Select tomorrow's date
 # MAGIC 1. Click **OK**
+# MAGIC 
+# MAGIC **NOTE:** Although we are using a refresh schedule of 1 week for classroom purposes, you'll likely see shorter trigger intervals in production, such as schedules to refresh every 1 minute.
 
 # COMMAND ----------
 

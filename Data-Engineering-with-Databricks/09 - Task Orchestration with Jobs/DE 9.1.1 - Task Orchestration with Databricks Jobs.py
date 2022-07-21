@@ -10,19 +10,19 @@
 # MAGIC %md
 # MAGIC 
 # MAGIC 
-# MAGIC # Orchestrating Jobs with Databricks
+# MAGIC # Orchestrating Jobs with Databricks Workflows
 # MAGIC 
 # MAGIC New updates to the Databricks Jobs UI have added the ability to schedule multiple tasks as part of a job, allowing Databricks Jobs to fully handle orchestration for most production workloads.
 # MAGIC 
-# MAGIC Here, we'll start by reviewing the steps for scheduling a notebook as a triggered standalone job, and then add a dependent job using a DLT pipeline. 
+# MAGIC Here, we'll start by reviewing the steps for scheduling a notebook task as a triggered standalone job, and then add a dependent task using a DLT pipeline. 
 # MAGIC 
 # MAGIC ## Learning Objectives
 # MAGIC By the end of this lesson, you should be able to:
-# MAGIC * Schedule a notebook as a Databricks Job
+# MAGIC * Schedule a notebook task in a Databricks Workflow Job
 # MAGIC * Describe job scheduling options and differences between cluster types
 # MAGIC * Review Job Runs to track progress and see results
-# MAGIC * Schedule a DLT pipeline as a Databricks Job
-# MAGIC * Configure linear dependencies between tasks using the Databricks Jobs UI
+# MAGIC * Schedule a DLT pipeline task in a Databricks Workflow Job
+# MAGIC * Configure linear dependencies between tasks using the Databricks Workflows UI
 
 # COMMAND ----------
 
@@ -52,7 +52,7 @@ print_pipeline_config()
 # MAGIC ## Create and configure a pipeline
 # MAGIC 
 # MAGIC Steps:
-# MAGIC 1. Click the **Jobs** button on the sidebar,
+# MAGIC 1. Click the **Workflows** button on the sidebar.
 # MAGIC 1. Select the **Delta Live Tables** tab.
 # MAGIC 1. Click **Create Pipeline**.
 # MAGIC 1. Fill in a **Pipeline Name** - because these names must be unique, we suggest using the **Pipeline Name** provided in the cell above.
@@ -89,11 +89,12 @@ print_job_config()
 # MAGIC %md
 # MAGIC 
 # MAGIC 
-# MAGIC Here, we'll start by scheduling the next notebook
+# MAGIC Here, we'll start by scheduling the next notebook.
 # MAGIC 
 # MAGIC Steps:
-# MAGIC 1. Navigate to the Jobs UI using the Databricks left side navigation bar.
-# MAGIC 1. Click the blue **`Create Job`** button
+# MAGIC 1. Click the **Workflows** button on the sidebar.
+# MAGIC 1. Select the **Jobs** tab.
+# MAGIC 1. Click the **Create Job** button.
 # MAGIC 1. Configure the task:
 # MAGIC     1. Enter **`reset`** for the task name
 # MAGIC     1. Select the notebook **`DE 9.1.2 - Reset`** using the notebook picker.
@@ -109,15 +110,15 @@ print_job_config()
 # MAGIC %md
 # MAGIC 
 # MAGIC 
-# MAGIC ## Chron Scheduling of Databricks Jobs
+# MAGIC ## Cron Scheduling of Databricks Jobs
 # MAGIC 
 # MAGIC Note that on the right hand side of the Jobs UI, directly under the **Job Details** section is a section labeled **Schedule**.
 # MAGIC 
 # MAGIC Click on the **Edit schedule** button to explore scheduling options.
 # MAGIC 
-# MAGIC Changing the **Schedule type** field from **Manual** to **Scheduled** will bring up a chron scheduling UI.
+# MAGIC Changing the **Schedule type** field from **Manual** to **Scheduled** will bring up a cron scheduling UI.
 # MAGIC 
-# MAGIC This UI provides extensive options for setting up chronological scheduling of your Jobs. Settings configured with the UI can also be output in chron syntax, which can be edited if custom configuration not available with the UI is needed.
+# MAGIC This UI provides extensive options for setting up chronological scheduling of your Jobs. Settings configured with the UI can also be output in cron syntax, which can be edited if custom configuration not available with the UI is needed.
 # MAGIC 
 # MAGIC At this time, we'll leave our job set with **Manual** scheduling.
 
@@ -133,7 +134,7 @@ print_job_config()
 # MAGIC To Review the Job Run
 # MAGIC 1. Select the **Runs** tab in the top-left of the screen (you should currently be on the **Tasks** tab)
 # MAGIC 1. Find your job. If **the job is still running**, it will be under the **Active runs** section. If **the job finished running**, it will be under the **Completed runs** section
-# MAGIC 1. Open the Output details by click on the timestamp field under the **Start time** column
+# MAGIC 1. Open the Output details by clicking on the timestamp field under the **Start time** column
 # MAGIC 1. If **the job is still running**, you will see the active state of the notebook with a **Status** of **`Pending`** or **`Running`** in the right side panel. If **the job has completed**, you will see the full execution of the notebook with a **Status** of **`Succeeded`** or **`Failed`** in the right side panel
 # MAGIC   
 # MAGIC The notebook employs the magic command **`%run`** to call an additional notebook using a relative path. Note that while not covered in this course, <a href="https://docs.databricks.com/repos.html#work-with-non-notebook-files-in-a-databricks-repo" target="_blank">new functionality added to Databricks Repos allows loading Python modules using relative paths</a>.

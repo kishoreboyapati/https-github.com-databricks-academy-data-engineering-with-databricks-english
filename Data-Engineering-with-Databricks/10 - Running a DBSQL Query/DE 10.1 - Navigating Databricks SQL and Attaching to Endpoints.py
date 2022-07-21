@@ -10,21 +10,21 @@
 # MAGIC %md
 # MAGIC 
 # MAGIC 
-# MAGIC # Navigating Databricks SQL and Attaching to Endpoints
+# MAGIC # Navigating Databricks SQL and Attaching to SQL Warehouses
 # MAGIC 
 # MAGIC * Navigate to Databricks SQL  
 # MAGIC   * Make sure that SQL is selected from the workspace option in the sidebar (directly below the Databricks logo)
-# MAGIC * Make sure a SQL endpoint is on and accessible
-# MAGIC   * Navigate to SQL endpoints in the sidebar
-# MAGIC   * If a SQL endpoint exists and has the State **`Running`**, you'll use this endpoint
-# MAGIC   * If a SQL endpoint exists but is **`Stopped`**, click the **`Start`** button if you have this option (**NOTE**: Start the smallest endpoint you have available to you) 
-# MAGIC   * If no endpoints exist and you have the option, click **`Create SQL Endpoint`**; name the endpoint something you'll recognize and set the cluster size to 2X-Small. Leave all other options as default.
-# MAGIC   * If you have no way to create or attach to a SQL endpoint, you'll need to contact a workspace administrator and request access to compute resources in Databricks SQL to continue.
+# MAGIC * Make sure a SQL warehouse is on and accessible
+# MAGIC   * Navigate to SQL Warehouses in the sidebar
+# MAGIC   * If a SQL warehouse exists and has the State **`Running`**, you'll use this SQL warehouse
+# MAGIC   * If a SQL warehouse exists but is **`Stopped`**, click the **`Start`** button if you have this option (**NOTE**: Start the smallest SQL warehouse you have available to you) 
+# MAGIC   * If no SQL warehouses exist and you have the option, click **`Create SQL Warehouse`**; name the SQL warehouse something you'll recognize and set the cluster size to 2X-Small. Leave all other options as default.
+# MAGIC   * If you have no way to create or attach to a SQL warehouse, you'll need to contact a workspace administrator and request access to compute resources in Databricks SQL to continue.
 # MAGIC * Navigate to home page in Databricks SQL
 # MAGIC   * Click the Databricks logo at the top of the side nav bar
 # MAGIC * Locate the **Sample dashboards** and click **`Visit gallery`**
 # MAGIC * Click **`Import`** next to the **Retail Revenue & Supply Chain** option
-# MAGIC   * Assuming you have a SQL endpoint available, this should load a dashboard and immediately display results
+# MAGIC   * Assuming you have a SQL warehouse available, this should load a dashboard and immediately display results
 # MAGIC   * Click **Refresh** in the top right (the underlying data has not changed, but this is the button that would be used to pick up changes)
 # MAGIC 
 # MAGIC # Updating a DBSQL Dashboard
@@ -61,7 +61,7 @@
 # MAGIC 
 # MAGIC * Use the sidebar to navigate to **Queries**
 # MAGIC * Click the **`Create Query`** button
-# MAGIC * Make sure you are connected to an endpoint. In the **Schema Browser**, click on the current metastore and select **`samples`**. 
+# MAGIC * Make sure you are connected to a SQL warehouse. In the **Schema Browser**, click on the current metastore and select **`samples`**. 
 # MAGIC   * Select the **`tpch`** database
 # MAGIC   * Click on the **`partsupp`** table to get a preview of the schema
 # MAGIC   * While hovering over the **`partsupp`** table name, click the **>>** button to insert the table name into your query text

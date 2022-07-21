@@ -1,5 +1,5 @@
 # Databricks notebook source
-# MAGIC %run ./_utility-methods $lesson="3.2"
+# MAGIC %run ./_utility-methods
 
 # COMMAND ----------
 
@@ -10,6 +10,7 @@ tags = sc._jvm.scala.collection.JavaConversions.mapAsJavaMap(dbutils.entry_point
 is_job = "jobId" in tags
 if is_job: print("Mocking global temp view")
 
+DA = DBAcademyHelper()
 DA.init(create_db=is_job)
 
 if is_job:

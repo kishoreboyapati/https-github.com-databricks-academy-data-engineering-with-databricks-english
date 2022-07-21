@@ -1,8 +1,9 @@
 # Databricks notebook source
-# MAGIC %run ./_utility-methods $lesson="4.8"
+# MAGIC %run ./_utility-methods
 
 # COMMAND ----------
 
+DA = DBAcademyHelper()
 DA.cleanup()
 DA.init()
 DA.conclude_setup()

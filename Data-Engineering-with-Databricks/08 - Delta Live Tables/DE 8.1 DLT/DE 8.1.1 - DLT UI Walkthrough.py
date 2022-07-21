@@ -55,7 +55,7 @@ DA.print_pipeline_config()
 # MAGIC 
 # MAGIC In this section you will create a pipeline using a notebook provided with the courseware. We'll explore the contents of the notebook in the following lesson.
 # MAGIC 
-# MAGIC 1. Click the **Jobs** button on the sidebar.
+# MAGIC 1. Click the **Workflows** button on the sidebar.
 # MAGIC 1. Select the **Delta Live Tables** tab.
 # MAGIC 1. Click **Create Pipeline**.
 # MAGIC 1. Leave **Product Edition** as **Advanced**.
@@ -74,9 +74,29 @@ DA.print_pipeline_config()
 # MAGIC    * This field specifies how the pipeline will be run.
 # MAGIC    * **Triggered** pipelines run once and then shut down until the next manual or scheduled update.
 # MAGIC    * **Continuous** pipelines run continuously, ingesting new data as it arrives. Choose the mode based on latency and cost requirements.
-# MAGIC 1. Uncheck the **Enable autoscaling** box, and set the number of workers to **`1`** (one).
+# MAGIC 1. Uncheck the **Enable autoscaling** box, and set the number of workers to **`0`** (zero).
+# MAGIC    * This will create **Single Node** clusters, which we will use for DLT pipelines in this course.
 # MAGIC    * **Enable autoscaling**, **Min Workers** and **Max Workers** control the worker configuration for the underlying cluster processing the pipeline. Notice the DBU estimate provided, similar to that provided when configuring interactive clusters.
-# MAGIC 1. Click **Create**.
+# MAGIC 1. **OPTIONAL:** If your workspace admin provided you with a **cluster policy** to configure your DLT pipeline clusters, you can specify this in the JSON definition for your pipeline.
+# MAGIC     * Retrieve the **policy_id** for the cluster policy provided by your workspace admin or instructor.    
+# MAGIC     * Click on the **JSON** button on the top right to edit your pipeline settings using JSON.
+# MAGIC     * Copy and paste the settings below to replace the **`clusters`** section of your pipeline's JSON definition, replacing **``<policy_id>``** with your cluster policy ID.
+# MAGIC 
+# MAGIC ```
+# MAGIC   "clusters": [
+# MAGIC       {
+# MAGIC           "label": "default",
+# MAGIC           "policy_id": "<policy_id>",
+# MAGIC           "num_workers": 0
+# MAGIC       },
+# MAGIC       {
+# MAGIC           "label": "maintenance",
+# MAGIC           "policy_id": "<policy_id>"
+# MAGIC       }
+# MAGIC   ]
+# MAGIC ```
+# MAGIC 
+# MAGIC Finally, click **Create**.
 
 # COMMAND ----------
 

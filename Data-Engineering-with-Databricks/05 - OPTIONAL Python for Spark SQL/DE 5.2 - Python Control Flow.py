@@ -239,7 +239,7 @@ assert type(2) == int
 # MAGIC 
 # MAGIC 
 # MAGIC 
-# MAGIC Uncomment the following cell and then run it to assert that the string **`"2"`"** is an integer.
+# MAGIC Uncomment the following cell and then run it to assert that the string **`"2"`** is an integer.
 # MAGIC 
 # MAGIC It should throw an **`AssertionError`**.
 
@@ -578,7 +578,7 @@ secure_query_function(query)
 # MAGIC %md
 # MAGIC 
 # MAGIC 
-# MAGIC But prevent execution when when bad logic is run.
+# MAGIC But prevent execution when bad logic is run.
 
 # COMMAND ----------
 

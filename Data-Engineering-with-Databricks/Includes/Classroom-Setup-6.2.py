@@ -1,9 +1,5 @@
 # Databricks notebook source
-# MAGIC %run ./_utility-methods $lesson="6.2"
-
-# COMMAND ----------
-
-# MAGIC %run ./mount-datasets
+# MAGIC %run ./_utility-methods
 
 # COMMAND ----------
 
@@ -51,6 +47,7 @@ class DataFactory:
 
 # COMMAND ----------
 
+DA = DBAcademyHelper()
 DA.init()
 DA.paths.checkpoints = f"{DA.paths.working_dir}/_checkpoints"    
 DA.data_factory = DataFactory()

@@ -1,9 +1,5 @@
 # Databricks notebook source
-# MAGIC %run ./_utility-methods $lesson="dlt_lab"
-
-# COMMAND ----------
-
-# MAGIC %run ./mount-datasets
+# MAGIC %run ./_utility-methods
 
 # COMMAND ----------
 
@@ -85,6 +81,7 @@ class DataFactory:
 
 # COMMAND ----------
 
+DA = DBAcademyHelper(lesson="dlt_lab")
 DA.init()
 
 DA.paths.data_source = "/mnt/training/healthcare"

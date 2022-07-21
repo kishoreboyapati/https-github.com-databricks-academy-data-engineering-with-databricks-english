@@ -1,9 +1,5 @@
 # Databricks notebook source
-# MAGIC %run ./_utility-methods $lesson="cap_12"
-
-# COMMAND ----------
-
-# MAGIC %run ./mount-datasets
+# MAGIC %run ./_utility-methods
 
 # COMMAND ----------
 
@@ -76,6 +72,7 @@ def print_job_config():
 
 # COMMAND ----------
 
+DA = DBAcademyHelper()
 DA.cleanup()
 DA.init()
 DA.data_factory = DltDataFactory()
