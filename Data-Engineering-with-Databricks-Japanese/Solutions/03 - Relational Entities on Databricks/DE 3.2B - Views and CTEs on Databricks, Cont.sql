@@ -141,7 +141,7 @@ WHERE
 -- MAGIC %md
 -- MAGIC 
 -- MAGIC 
--- MAGIC 次はCTE定義でのCTEの例です。
+-- MAGIC 次はCTE定義の例です。
 
 -- COMMAND ----------
 

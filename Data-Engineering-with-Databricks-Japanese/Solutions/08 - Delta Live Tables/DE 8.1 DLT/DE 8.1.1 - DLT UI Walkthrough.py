@@ -48,18 +48,6 @@ DA.print_pipeline_config()
 
 # COMMAND ----------
 
-# ANSWER
-
-# This function is provided for students who do not 
-# want to work through the exercise of creating the pipeline.
-DA.create_pipeline()
-
-# This function is provided to start the pipeline and block 
-# until it has completed, canceled or failed
-DA.start_pipeline()
-
-# COMMAND ----------
-
 # MAGIC %md
 # MAGIC 
 # MAGIC 
@@ -91,6 +79,18 @@ DA.start_pipeline()
 
 # COMMAND ----------
 
+# ANSWER
+
+# This function is provided for students who do not 
+# want to work through the exercise of creating the pipeline.
+DA.create_pipeline()
+
+# COMMAND ----------
+
+DA.validate_pipeline_config()
+
+# COMMAND ----------
+
 # MAGIC %md
 # MAGIC 
 # MAGIC 
@@ -106,6 +106,14 @@ DA.start_pipeline()
 # MAGIC クラスタが用意されている間、最初の実行には数分程度の時間が掛かります。
 # MAGIC 
 # MAGIC その後の実行では、速度が急激に速くなります。
+
+# COMMAND ----------
+
+# ANSWER
+
+# This function is provided to start the pipeline and block 
+# until it has completed, canceled or failed
+DA.start_pipeline()
 
 # COMMAND ----------
 

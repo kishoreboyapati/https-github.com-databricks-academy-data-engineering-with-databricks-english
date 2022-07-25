@@ -126,7 +126,7 @@ WHEN NOT MATCHED AND b.delicious = true THEN
 -- MAGIC | 5     | DELETE       |
 -- MAGIC | 6     | MERGE        |
 -- MAGIC 
--- MAGIC  **`operationsParameters`** 列で、更新、削除、マージに使用した述語を確認できます。 The  **`operationMetrics`** 列は、各操作で追加された行とファイルの数を示しています。
+-- MAGIC  **`operationsParameters`** 列で、更新、削除、マージに使用した述語を確認できます。 **`operationMetrics`** 列は、各操作で追加された行とファイルの数を示しています。
 -- MAGIC 
 -- MAGIC 時間をとってDelta Lakeの履歴を確認し、どのテーブルバージョンがどのトランザクションと一致しているかを理解してください。
 -- MAGIC 

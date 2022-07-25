@@ -83,18 +83,6 @@ DA.print_pipeline_config()
 
 # COMMAND ----------
 
-# ANSWER
-
-# This function is provided for those students that do not 
-# want to work through the exercise of creating the pipline.
-DA.create_pipeline()
-
-# This function is provided to start the pipline and block 
-# until it has comleted, is canceled or failed
-DA.start_pipeline()
-
-# COMMAND ----------
-
 # MAGIC %md
 # MAGIC 
 # MAGIC 
@@ -115,6 +103,18 @@ DA.start_pipeline()
 # MAGIC 1. オートスケールを無効化します。
 # MAGIC 1. **`ワーカー`** の数を **`1`** （1つ）に設定します。
 # MAGIC 1. **作成**をクリックします。
+
+# COMMAND ----------
+
+# ANSWER
+
+# This function is provided for those students that do not 
+# want to work through the exercise of creating the pipline.
+DA.create_pipeline()
+
+# COMMAND ----------
+
+DA.validate_pipeline_config()
 
 # COMMAND ----------
 
@@ -141,6 +141,14 @@ DA.start_pipeline()
 # MAGIC Delta Live Tablesは、すべての必要なインフラストラクチャを自動でデプロイし、すべてのデータセット間の依存関係を特定します。
 # MAGIC 
 # MAGIC **注**：最初のテーブルの更新では、関係を特定しインフラをデプロイするため、数分程度の時間を要する場合があります。
+
+# COMMAND ----------
+
+# ANSWER
+
+# This function is provided to start the pipline and block 
+# until it has comleted, is canceled or failed
+DA.start_pipeline()
 
 # COMMAND ----------
 

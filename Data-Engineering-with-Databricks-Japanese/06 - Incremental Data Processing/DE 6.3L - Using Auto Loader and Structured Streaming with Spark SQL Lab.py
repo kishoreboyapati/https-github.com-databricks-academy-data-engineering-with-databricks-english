@@ -50,7 +50,7 @@ customers_checkpoint_path = f"{DA.paths.checkpoints}/customers"
 (spark
   .readStream
   <FILL-IN>
-  .load("/databricks-datasets/retail-org/customers/")
+  .load(f"/databricks-datasets/retail-org/customers/")
   .createOrReplaceTempView("customers_raw_temp"))
 
 # COMMAND ----------

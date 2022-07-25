@@ -15,8 +15,8 @@
 # MAGIC # Project Information
 # MAGIC 
 # MAGIC * Name: **Data Engineering with Databricks**
-# MAGIC * Version:  **2.2.1-JA.2**
-# MAGIC * Built On: **Jul 21, 2022 at 23:21:48 UTC**
+# MAGIC * Version:  **2.2.1-JA.3**
+# MAGIC * Built On: **Jul 25, 2022 at 03:31:51 UTC**
 
 # COMMAND ----------
 

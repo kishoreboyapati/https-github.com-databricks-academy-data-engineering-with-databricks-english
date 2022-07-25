@@ -79,6 +79,10 @@ DA.print_pipeline_config()
 
 # COMMAND ----------
 
+DA.validate_pipeline_config()
+
+# COMMAND ----------
+
 # MAGIC %md
 # MAGIC 
 # MAGIC 

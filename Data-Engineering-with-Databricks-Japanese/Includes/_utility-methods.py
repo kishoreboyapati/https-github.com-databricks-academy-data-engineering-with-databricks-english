@@ -27,8 +27,11 @@ class Paths():
 class DBAcademyHelper():
     def __init__(self, lesson=None):
         import re, time
+        from dbacademy.dbrest import DBAcademyRestClient
 
         self.start = int(time.time())
+        
+        self.client = DBAcademyRestClient()
         
         self.course_name = "dewd"
         self.lesson = lesson.lower()
@@ -264,4 +267,75 @@ class DltDataFactory:
 
             dbutils.fs.cp(f"{self.source}/{curr_file}", target_dir)
             self.curr_mo += 1
+
+# COMMAND ----------
+
+def update_user_specific_grants():
+    from dbacademy import dbgems
+    from dbacademy.dbrest import DBAcademyRestClient
+    
+    job_name = f"DA-{DA.course_name}-Configure-Permissions"
+    DA.client.jobs().delete_by_name(job_name, success_only=False)
+
+    notebook_path = f"{dbgems.get_notebook_dir()}/Configure-Permissions"
+
+    params = {
+        "name": job_name,
+        "tags": {
+            "dbacademy.course": DA.course_name,
+            "dbacademy.source": DA.course_name
+        },
+        "email_notifications": {},
+        "timeout_seconds": 7200,
+        "max_concurrent_runs": 1,
+        "format": "MULTI_TASK",
+        "tasks": [
+            {
+                "task_key": "Configure-Permissions",
+                "description": "Configure all users's permissions for user-specific databases.",
+                "libraries": [],
+                "notebook_task": {
+                    "notebook_path": notebook_path,
+                    "base_parameters": []
+                },
+                "new_cluster": {
+                    "num_workers": "0",
+                    "spark_conf": {
+                        "spark.master": "local[*]",
+                        "spark.databricks.acl.dfAclsEnabled": "true",
+                        "spark.databricks.repl.allowedLanguages": "sql,python",
+                        "spark.databricks.cluster.profile": "serverless"             
+                    },
+                    "runtime_engine": "STANDARD",
+                    "spark_env_vars": {
+                        "WSFS_ENABLE_WRITE_SUPPORT": "true"
+                    },
+                },
+            },
+        ],
+    }
+    cluster_params = params.get("tasks")[0].get("new_cluster")
+    cluster_params["spark_version"] = DA.client.clusters().get_current_spark_version()
+    
+    if DA.client.clusters().get_current_instance_pool_id() is not None:
+        cluster_params["instance_pool_id"] = DA.client.clusters().get_current_instance_pool_id()
+    else:
+        cluster_params["node_type_id"] = DA.client.clusters().get_current_node_type_id()
+               
+    create_response = DA.client.jobs().create(params)
+    job_id = create_response.get("job_id")
+
+    run_response = DA.client.jobs().run_now(job_id)
+    run_id = run_response.get("run_id")
+
+    final_response = DA.client.runs().wait_for(run_id)
+    
+    final_state = final_response.get("state").get("result_state")
+    assert final_state == "SUCCESS", f"Expected the final state to be SUCCESS, found {final_state}"
+    
+    DA.client.jobs().delete_by_name(job_name, success_only=False)
+    
+    print()
+    print("Update completed successfully.")
+
 

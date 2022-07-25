@@ -161,9 +161,9 @@ print("Hello Python!")
 # MAGIC 
 # MAGIC これは緊急放送システムのテストです。 これは単なるテストです。
 # MAGIC 
-# MAGIC これは**太字の**単語を含むテキストです。
+# MAGIC これは **太字の** 単語を含むテキストです。
 # MAGIC 
-# MAGIC これは、*イタリック体*の単語を含むテキストです。
+# MAGIC これは、*イタリック体* の単語を含むテキストです。
 # MAGIC 
 # MAGIC これは順序付きリストです
 # MAGIC 0. 一
@@ -179,7 +179,7 @@ print("Hello Python!")
 # MAGIC 
 # MAGIC 画像： ![Sparkエンジン](https://files.training.databricks.com/images/Apache-Spark-Logo_TM_200px.png)
 # MAGIC 
-# MAGIC そしてもちろん、テーブル：
+# MAGIC テーブル：
 # MAGIC 
 # MAGIC | 名前     | 値 |
 # MAGIC | ------ | - |
