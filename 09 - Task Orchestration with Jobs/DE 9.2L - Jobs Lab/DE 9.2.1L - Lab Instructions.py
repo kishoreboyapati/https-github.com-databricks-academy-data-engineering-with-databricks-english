@@ -54,7 +54,7 @@ DA.data_factory.load()
 
 # COMMAND ----------
 
-print_pipeline_config()
+DA.print_pipeline_config()
 
 # COMMAND ----------
 
@@ -66,23 +66,27 @@ print_pipeline_config()
 # MAGIC 1. Select the **Delta Live Tables** tab.
 # MAGIC 1. Click **Create Pipeline**.
 # MAGIC 1. Fill in a **Pipeline Name** - because these names must be unique, we suggest using the **Pipeline Name** provided in the cell above.
-# MAGIC 1. For **Notebook Libraries**, use the navigator to locate and select the companion notebook called **DE 9.2.3L - DLT Job**.
-# MAGIC     * Alternatively, you can copy the **Notebook Path** specified above and paste it into the field provided.
-# MAGIC 1. Configure the Source
-# MAGIC     * Click **`Add configuration`**
-# MAGIC     * Enter the word **`source`** in the **Key** field
-# MAGIC     * Enter the **Source** value specified above to the **`Value`** field
-# MAGIC 1. In the **Target** field, specify the database name printed out next to **Target** in the cell above.<br/>
-# MAGIC This should follow the pattern **`dbacademy_<username>_dewd_jobs_lab_92`**
+# MAGIC 1. For **Notebook Libraries**, use the navigator to locate and select the companion notebook provided in the cell above.
+# MAGIC 1. Under **Configuration**, add the three configuration parameters:
+# MAGIC    * Click **Add configuration**, set the "key" to **spark.master** and the "value" to **local[\*]**.
+# MAGIC    * Click **Add configuration**, set the "key" to **datasets_path** and the "value" to the value provided in the cell above.
+# MAGIC    * Click **Add configuration**, set the "key" to **source** and the "value" to the value provided in the cell above.
+# MAGIC 1. In the **Target** field, enter the database name provided in the cell above.<br/>
+# MAGIC This should follow the pattern **`da_<name>_<hash>_dewd_jobs_lab_92`**
 # MAGIC 1. In the **Storage location** field, copy the directory as printed above.
 # MAGIC 1. For **Pipeline Mode**, select **Triggered**
 # MAGIC 1. Uncheck the **Enable autoscaling** box
-# MAGIC 1. Set the number of workers to **`1`** (one)
-# MAGIC 1. Click **Create**.
+# MAGIC 1. Set the number of **`workers`** to **`0`** (zero).
+# MAGIC 1. Enable **Photon Acceleration**.
 # MAGIC 
+# MAGIC Finally, click **Create**.
 # MAGIC 
 # MAGIC <img src="https://files.training.databricks.com/images/icon_note_24.png"> **Note**: we won't be executing this pipline directly as it will be executed by our job later in this lesson,<br/>
 # MAGIC but if you want to test it real quick, you can click the **Start** button now.
+
+# COMMAND ----------
+
+DA.validate_pipeline_config()
 
 # COMMAND ----------
 
@@ -97,14 +101,14 @@ print_pipeline_config()
 
 # COMMAND ----------
 
-print_job_config()
+DA.print_job_config()
 
 # COMMAND ----------
 
 # MAGIC %md
 # MAGIC 
 # MAGIC 
-# MAGIC Here, we'll start by scheduling the notebook batch job.
+# MAGIC Here, we'll start by scheduling the next notebook.
 # MAGIC 
 # MAGIC Steps:
 # MAGIC 1. Click the **Workflows** button on the sidebar
@@ -112,11 +116,12 @@ print_job_config()
 # MAGIC 1. Click the blue **Create Job** button
 # MAGIC 1. Configure the task:
 # MAGIC     1. Enter **Batch-Job** for the task name
-# MAGIC     1. Select the notebook **DE 9.2.2L - Batch Job** using the notebook picker
-# MAGIC     1. From the **Cluster** dropdown, under **Existing All Purpose Cluster**, select your cluster
+# MAGIC     1. For **Type**, select **Notebook**
+# MAGIC     1. For **Path**, select the **Batch Notebook Path** value provided in the cell above
+# MAGIC     1. From the **Cluster** dropdown, under **Existing All Purpose Clusters**, select your cluster
 # MAGIC     1. Click **Create**
-# MAGIC 1. In the top-left of the screen rename the job (not the task) from **`Batch-Job`** (the defaulted value) to the **Job Name** provided for you in the previous cell.    
-# MAGIC 1. Click the blue **Run now** button in the top right to start the job to test the job real quick.
+# MAGIC 1. In the top-left of the screen, rename the job (not the task) from **`Batch-Job`** (the defaulted value) to the **Job Name** value provided in the cell above.
+# MAGIC 1. Click the blue **Run now** button in the top right to start the job.
 # MAGIC 
 # MAGIC <img src="https://files.training.databricks.com/images/icon_note_24.png"> **Note**: When selecting your all purpose cluster, you will get a warning about how this will be billed as all purpose compute. Production jobs should always be scheduled against new job clusters appropriately sized for the workload, as this is billed at a much lower rate.
 
@@ -130,19 +135,19 @@ print_job_config()
 # MAGIC In this step, we'll add a DLT pipeline to execute after the success of the task we configured at the start of this lesson.
 # MAGIC 
 # MAGIC Steps:
-# MAGIC 1. At the top left of your screen, click the **Tasks** tab if it is not already selected.
+# MAGIC 1. At the top left of your screen, you'll see the **Runs** tab is currently selected; click the **Tasks** tab.
 # MAGIC 1. Click the large blue circle with a **+** at the center bottom of the screen to add a new task
-# MAGIC     1. Specify the **Task name** as **DLT-Pipeline**
-# MAGIC     1. From **Type**, select **`Delta Live Tables pipeline`**
-# MAGIC     1. Click the **Pipeline** field and select the DLT pipeline you configured previously<br/>
-# MAGIC     Note: The pipeline will start with **Jobs-Labs-92** and will end with your email address.
-# MAGIC     1. The **Depends on** field defaults to your previously defined task but may have renamed itself from the value **reset** that you specified previously to something like **Jobs-Lab-92-youremailaddress**.
+# MAGIC 1. Configure the task:
+# MAGIC     1. Enter **DLT** for the task name
+# MAGIC     1. For **Type**, select  **Delta Live Tables pipeline**
+# MAGIC     1. For **Pipeline**, select the DLT pipeline you configured previously in this exercise<br/>
+# MAGIC     Note: The pipeline will start with **DLT-Job-Lab-92** and will end with your email address.
+# MAGIC     1. The **Depends on** field defaults to your previously defined task, **Batch-Job** - leave this value as-is.
 # MAGIC     1. Click the blue **Create task** button
 # MAGIC 
 # MAGIC You should now see a screen with 2 boxes and a downward arrow between them. 
 # MAGIC 
-# MAGIC Your **`Batch-Job`** task (possibly renamed to something like **Jobs-Labs-92-youremailaddress**) will be at the top, 
-# MAGIC leading into your **`DLT-Pipeline`** task.
+# MAGIC Your **`Batch-Job`** task will be at the top, leading into your **`DLT`** task.
 
 # COMMAND ----------
 
@@ -156,20 +161,25 @@ print_job_config()
 # MAGIC We'll add this as a final task in our job.
 # MAGIC 
 # MAGIC Steps:
-# MAGIC 1. At the top left of your screen, click the **Tasks** tab if it is not already selected.
 # MAGIC 1. Click the large blue circle with a **+** at the center bottom of the screen to add a new task
-# MAGIC     1. Specify the **Task name** as **Query-Results**
-# MAGIC     1. Leave the **Type** set to **Notebook**
-# MAGIC     1. Select the notebook **DE 9.2.4L - Query Results Job** using the notebook picker
-# MAGIC     1. Note that the **Depends on** field defaults to your previously defined task, **DLT-Pipeline**
-# MAGIC     1. From the **Cluster** dropdown, under **Existing All Purpose Cluster**, select your cluster
+# MAGIC Steps:
+# MAGIC 1. Configure the task:
+# MAGIC     1. Enter **Query-Results** for the task name
+# MAGIC     1. For **Type**, select **Notebook**
+# MAGIC     1. For **Path**, select the **Query Notebook Path** value provided in the cell above
+# MAGIC     1. From the **Cluster** dropdown, under **Existing All Purpose Clusters**, select your cluster
+# MAGIC     1. The **Depends on** field defaults to your previously defined task, **DLT** - leave this value as-is.
 # MAGIC     1. Click the blue **Create task** button
-# MAGIC 
+# MAGIC     
 # MAGIC Click the blue **Run now** button in the top right of the screen to run this job.
 # MAGIC 
 # MAGIC From the **Runs** tab, you will be able to click on the start time for this run under the **Active runs** section and visually track task progress.
 # MAGIC 
 # MAGIC Once all your tasks have succeeded, review the contents of each task to confirm expected behavior.
+
+# COMMAND ----------
+
+DA.validate_job_config()
 
 # COMMAND ----------
 

@@ -95,14 +95,13 @@ DA.print_pipeline_config()
 # MAGIC 1. Click **Create Pipeline**.
 # MAGIC 1. Leave **Product Edition** as **Advanced**.
 # MAGIC 1. Fill in a **Pipeline Name** - because these names must be unique, we suggest using the **Pipline Name** provided in the cell above.
-# MAGIC 1. For **Notebook Libraries**, use the navigator to locate and select the notebook **`DE 8.2.2L - Migrating a SQL Pipeline to DLT Lab`**.
-# MAGIC    * Alternatively, you can copy the **`Notebook Path`** provided by the cell above and paste it into the provided field.
+# MAGIC 1. For **Notebook Libraries**, use the navigator to locate and select the notebook specified above.
 # MAGIC 1. Under **Configuration**, add three configuration parameters:
 # MAGIC    * Click **Add configuration**, set the "key" to **spark.master** and the "value" to **local[\*]**.
 # MAGIC    * Click **Add configuration**, set the "key" to **datasets_path** and the "value" to the value provided in the cell above.
 # MAGIC    * Click **Add configuration**, set the "key" to **source** and the "value" to the value provided in the cell above.
 # MAGIC 1. In the **Target** field, enter the database name provided in the cell above.<br/>
-# MAGIC This should follow the pattern **`dbacademy_<username>_dewd_dlt_lab_82`**
+# MAGIC This should follow the pattern **`da_<name_<hash>_dewd_dlt_lab_82`**
 # MAGIC 1. In the **Storage location** field, enter the path provided in the cell above.
 # MAGIC 1. Enter the location printed next to **`Storage Location`** below in the **Storage Location** field.
 # MAGIC 1. For **Pipeline Mode**, select **Triggered**.
@@ -157,8 +156,8 @@ DA.validate_pipeline_config()
 
 # ANSWER
 
-# This function is provided to start the pipline and  
-# block until it has comleted, is canceled or failed
+# This function is provided to start the pipeline and  
+# block until it has completed, is cancelled or failed
 DA.start_pipeline()
 
 # COMMAND ----------

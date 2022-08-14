@@ -11,7 +11,7 @@ AS SELECT current_timestamp() receipt_time, input_file_name() source_file, *
 
 CREATE OR REFRESH STREAMING LIVE TABLE pii
 AS SELECT *
-  FROM cloud_files("${DA.paths.datasets}/healthcare/patient", "csv", map("header", "true", "cloudFiles.inferColumnTypes", "true"))
+  FROM cloud_files("${datasets_path}/healthcare/patient", "csv", map("header", "true", "cloudFiles.inferColumnTypes", "true"))
 
 -- COMMAND ----------
 

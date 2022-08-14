@@ -8,8 +8,7 @@ def get_pipeline_config(self):
     path = "/".join(path.split("/")[:-1]) + "/DE 8.2.2L - Migrating a SQL Pipeline to DLT Lab"
     
     pipeline_name = f"DLT-Lab-82L-{DA.username}"
-    source = f"{DA.paths.working_dir}/source/tracker"
-    return pipeline_name, path, source
+    return pipeline_name, path
 
 DBAcademyHelper.monkey_patch(get_pipeline_config)
 
@@ -17,7 +16,7 @@ DBAcademyHelper.monkey_patch(get_pipeline_config)
 
 def print_pipeline_config(self):
     "Provided by DBAcademy, this function renders the configuration of the pipeline as HTML"
-    pipeline_name, path, source = self.get_pipeline_config()
+    pipeline_name, path = self.get_pipeline_config()
     
     displayHTML(f"""<table style="width:100%">
     <tr>
@@ -35,7 +34,7 @@ def print_pipeline_config(self):
     </tr>
     <tr>
         <td style="white-space:nowrap; width:1em">Source:</td>
-        <td><input type="text" value="{source}" style="width:100%"></td>
+        <td><input type="text" value="{DA.paths.stream_path}" style="width:100%"></td>
     <tr>
         <td style="white-space:nowrap; width:1em">Datasets Path:</td>
         <td><input type="text" value="{DA.paths.datasets}" style="width:100%"></td></tr>
@@ -49,7 +48,7 @@ DBAcademyHelper.monkey_patch(print_pipeline_config)
 def create_pipeline(self):
     "Provided by DBAcademy, this function creates the prescribed pipline"
     
-    pipeline_name, path, source = self.get_pipeline_config()
+    pipeline_name, path = self.get_pipeline_config()
 
     # We need to delete the existing pipline so that we can apply updates
     # because some attributes are not mutable after creation.
@@ -61,7 +60,7 @@ def create_pipeline(self):
         target = DA.db_name, 
         notebooks = [path],
         configuration = {
-            "source": source,
+            "source": DA.paths.stream_path,
             "spark.master": "local[*]",
             "datasets_path": DA.paths.datasets,
         },
@@ -78,7 +77,7 @@ def validate_pipeline_config(self):
     "Provided by DBAcademy, this function validates the configuration of the pipeline"
     import json
     
-    pipeline_name, path, source = self.get_pipeline_config()
+    pipeline_name, path = self.get_pipeline_config()
 
     pipeline = self.client.pipelines().get_by_name(pipeline_name)
     assert pipeline is not None, f"The pipline named \"{pipeline_name}\" doesn't exist. Double check the spelling."
@@ -106,7 +105,7 @@ def validate_pipeline_config(self):
     spark_master = configuration.get("spark.master")
     assert spark_master == f"local[*]", f"Invalid spark.master value. Expected \"local[*]\", found \"{spark_master}\"."
     config_source = configuration.get("source")
-    assert config_source == source, f"Invalid source value. Expected \"{source}\", found \"{config_source}\"."
+    assert config_source == DA.paths.stream_path, f"Invalid source value. Expected \"{DA.paths.stream_path}\", found \"{config_source}\"."
     
     cluster = spec.get("clusters")[0]
     autoscale = cluster.get("autoscale")
@@ -139,7 +138,7 @@ def validate_pipeline_config(self):
                                                target = DA.db_name,
                                                notebooks = [path],
                                                configuration = {
-                                                   "source": source,
+                                                   "source": DA.paths.stream_path,
                                                    "spark.master": "local[*]",
                                                    "datasets_path": DA.paths.datasets,
                                                },
@@ -157,7 +156,7 @@ def start_pipeline(self):
     from dbacademy.dbrest import DBAcademyRestClient
     self.client = DBAcademyRestClient()
 
-    pipeline_name, path, source = self.get_pipeline_config()
+    pipeline_name, path = self.get_pipeline_config()
 
     pipeline = self.client.pipelines().get_by_name(pipeline_name)
     pipeline_id = pipeline.get("pipeline_id")
@@ -189,11 +188,11 @@ DA = DBAcademyHelper(lesson="dlt_lab_82")
 DA.cleanup()
 DA.init()
 
+DA.paths.stream_path = f"{DA.paths.working_dir}/stream"
 DA.paths.storage_location = f"{DA.paths.working_dir}/storage"
-# DA.paths.data_source = "/mnt/training/healthcare"
-# DA.paths.data_landing_location    = f"{DA.paths.working_dir}/source/tracker"
 
-DA.data_factory = DltDataFactory()
+DA.data_factory = DltDataFactory(DA.paths.stream_path)
 DA.data_factory.load()
+
 DA.conclude_setup()
 

@@ -6,13 +6,13 @@
 CREATE OR REFRESH STREAMING LIVE TABLE sales_orders_raw
 COMMENT "The raw sales orders, ingested from retail-org/sales_orders."
 AS
-SELECT * FROM cloud_files("${DA.paths.datasets}/retail-org/sales_orders/", "json", map("cloudFiles.inferColumnTypes", "true"))
+SELECT * FROM cloud_files("${datasets_path}/retail-org/sales_orders/", "json", map("cloudFiles.inferColumnTypes", "true"))
 
 -- COMMAND ----------
 
 CREATE OR REFRESH STREAMING LIVE TABLE customers
 COMMENT "The customers buying finished products, ingested from retail-org/customers."
-AS SELECT * FROM cloud_files("${DA.paths.datasets}/retail-org/customers/", "csv");
+AS SELECT * FROM cloud_files("${datasets_path}/retail-org/customers/", "csv");
 
 -- COMMAND ----------
 

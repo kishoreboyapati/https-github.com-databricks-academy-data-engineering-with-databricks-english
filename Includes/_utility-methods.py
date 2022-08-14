@@ -1,12 +1,17 @@
 # Databricks notebook source
 # MAGIC %pip install \
-# MAGIC git+https://github.com/databricks-academy/dbacademy-gems@abcf150c368aba530e51670faf548604f78d0c49 \
-# MAGIC git+https://github.com/databricks-academy/dbacademy-rest@793bffab12d92eacf97309d18b46b68595e96d7a \
+# MAGIC git+https://github.com/databricks-academy/dbacademy-gems@c3032c2df47472f1600d368523f052d2920b406d \
+# MAGIC git+https://github.com/databricks-academy/dbacademy-rest@e729b6dbb566de2958cba60fe4bd50e1b9e7f25b \
+# MAGIC git+https://github.com/databricks-academy/dbacademy-helper@6dca89c8f951edd950b5ab47356d545f809da8e5 \
 # MAGIC --quiet --disable-pip-version-check
 
 # COMMAND ----------
 
 # MAGIC %run ./_remote_files
+
+# COMMAND ----------
+
+from dbacademy_gems import dbgems
 
 # COMMAND ----------
 
@@ -162,6 +167,14 @@ class DBAcademyHelper():
         
         setattr(DBAcademyHelper, function_ref.__name__, function_ref)
         if delete: del function_ref        
+
+    @staticmethod
+    def is_smoke_test():
+        """
+        Helper method to indentify when we are running as a smoke test
+        :return: Returns true if the notebook is running as a smoke test.
+        """
+        return dbgems.get_spark_session().conf.get("dbacademy.smoke-test", "false").lower() == "true"
 
 
 # COMMAND ----------
@@ -513,7 +526,8 @@ def update_user_specific_grants(self):
                     "base_parameters": []
                 },
                 "new_cluster": {
-                    "num_workers": "0",
+                    "num_workers": 0,
+                    "cluster_name": "",
                     "spark_conf": {
                         "spark.master": "local[*]",
                         "spark.databricks.acl.dfAclsEnabled": "true",
@@ -528,8 +542,9 @@ def update_user_specific_grants(self):
             },
         ],
     }
-    cluster_params = params.get("tasks")[0].get("new_cluster")
-    cluster_params["spark_version"] = DA.client.clusters().get_current_spark_version()
+    cluster_params = params.get("tasks")[0].get("new_cluster") # This doesn't work with Photon for some reason.
+    cluster_params["spark_version"] = DA.client.clusters().get_current_spark_version().replace("-photon-", "-")
+    
     
     if DA.client.clusters().get_current_instance_pool_id() is not None:
         cluster_params["instance_pool_id"] = DA.client.clusters().get_current_instance_pool_id()
@@ -553,6 +568,36 @@ def update_user_specific_grants(self):
     print("Update completed successfully.")
 
 DBAcademyHelper.monkey_patch(update_user_specific_grants)
+
+# COMMAND ----------
+
+@DBAcademyHelper.monkey_patch
+def update_cluster_params(self, params: dict, task_indexes: list):
+
+    if not self.is_smoke_test():
+        return params
+    
+    for task_index in task_indexes:
+        # Need to modify the parameters to run run as a smoke-test.
+        task = params.get("tasks")[task_index]
+        del task["existing_cluster_id"]
+
+        cluster_params =         {
+            "num_workers": "0",
+            "spark_version": self.client.clusters().get_current_spark_version(),
+            "spark_conf": {
+              "spark.master": "local[*]"
+            },
+        }
+
+        instance_pool_id = self.client.clusters().get_current_instance_pool_id()
+        if instance_pool_id is not None: cluster_params["instance_pool_id"] = self.client.clusters().get_current_instance_pool_id()
+        else:                            cluster_params["node_type_id"] = self.client.clusters().get_current_node_type_id()
+
+        task["new_cluster"] = cluster_params
+        
+    return params
+
 
 # COMMAND ----------
 
@@ -641,11 +686,11 @@ def create_eltwss_users_update():
 # COMMAND ----------
 
 class DltDataFactory:
-    def __init__(self):
+    def __init__(self, stream_path):
+        self.stream_path = stream_path
         self.source = f"{DA.paths.datasets}/healthcare/tracker/streaming"
-        self.userdir = f"{DA.paths.working_dir}/source/tracker"
         try:
-            self.curr_mo = 1 + int(max([x[1].split(".")[0] for x in dbutils.fs.ls(self.userdir)]))
+            self.curr_mo = 1 + int(max([x[1].split(".")[0] for x in dbutils.fs.ls(self.stream_path)]))
         except:
             self.curr_mo = 1
     
@@ -655,13 +700,13 @@ class DltDataFactory:
         elif continuous == True:
             while self.curr_mo <= 12:
                 curr_file = f"{self.curr_mo:02}.json"
-                target_dir = f"{self.userdir}/{curr_file}"
+                target_dir = f"{self.stream_path}/{curr_file}"
                 print(f"Loading the file {curr_file} to the {target_dir}")
                 dbutils.fs.cp(f"{self.source}/{curr_file}", target_dir)
                 self.curr_mo += 1
         else:
             curr_file = f"{str(self.curr_mo).zfill(2)}.json"
-            target_dir = f"{self.userdir}/{curr_file}"
+            target_dir = f"{self.stream_path}/{curr_file}"
             print(f"Loading the file {curr_file} to the {target_dir}")
 
             dbutils.fs.cp(f"{self.source}/{curr_file}", target_dir)

@@ -184,7 +184,7 @@ assert spark.table("silver").filter("postcode <= 0").count() == 0, "Null postcod
 # MAGIC 
 # MAGIC ## Gold tables
 # MAGIC 
-# MAGIC Using CTAS syntax, define a new streaming view called **`customer_count_temp`** that counts customers per state.
+# MAGIC Using CTAS syntax, define a new streaming view called **`customer_count_temp`** that counts customers per state in a column named **`customer_count`**.
 
 # COMMAND ----------
 

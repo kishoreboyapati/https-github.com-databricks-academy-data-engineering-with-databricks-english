@@ -60,15 +60,14 @@ DA.print_pipeline_config()
 # MAGIC 1. Click **Create Pipeline**.
 # MAGIC 1. Leave **Product Edition** as **Advanced**.
 # MAGIC 1. Fill in a **Pipeline Name** - because these names must be unique, we suggest using the **`Pipeline Name`** provided by the cell above.
-# MAGIC 1. For **Notebook Libraries**, use the navigator to locate and select the companion notebook called **DE 8.1.2 - SQL for Delta Live Tables**.   
-# MAGIC    * Alternatively, you can copy the **`Notebook Path`** provided by the cell above and paste it into the provided field.
+# MAGIC 1. For **Notebook Libraries**, use the navigator to locate and select the notebook specified above.
 # MAGIC    * Even though this document is a standard Databricks Notebook, the SQL syntax is specialized to DLT table declarations.
 # MAGIC    * We will be exploring the syntax in the exercise that follows.
 # MAGIC 1. Under **Configuration**, add two configuration parameters:
 # MAGIC    * Click **Add configuration**, set the "key" to **spark.master** and the "value" to **local[\*]**.
 # MAGIC    * Click **Add configuration**, set the "key" to **datasets_path** and the "value" to the value provided in the cell above.
 # MAGIC 1. In the **Target** field, enter the database name provided in the cell above.<br/>
-# MAGIC This should follow the pattern **`dbacademy_<username>_dewd_dlt_demo_81`**
+# MAGIC This should follow the pattern **`da_<name>_<hash>_dewd_dlt_demo_81`**
 # MAGIC    * This field is optional; if not specified, then tables will not be registered to a metastore, but will still be available in the DBFS. Refer to the <a href="https://docs.databricks.com/data-engineering/delta-live-tables/delta-live-tables-user-guide.html#publish-tables" target="_blank">documentation</a> for more information on this option.
 # MAGIC 1. In the **Storage location** field, enter the path provided in the cell above.
 # MAGIC    * This optional field allows the user to specify a location to store logs, tables, and other information related to pipeline execution. 

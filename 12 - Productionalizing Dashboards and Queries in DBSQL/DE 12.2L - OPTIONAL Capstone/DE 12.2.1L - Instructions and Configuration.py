@@ -72,23 +72,27 @@ DA.print_pipeline_config()
 # MAGIC 1. Click the **Workflows** button on the sidebar.
 # MAGIC 1. Select the **Delta Live Tables** tab.
 # MAGIC 1. Click **Create Pipeline**.
-# MAGIC 1. Fill in a **Pipeline Name** - because these names must be unique, we suggest using the **Pipline Name** provided in the cell above.
-# MAGIC 1. For **Notebook Libraries**, use the navigator to locate and select the notebook **DE 12.2.2L - DLT Task**.
-# MAGIC     * Alternatively, you can copy the **Notebook Path** specified above and paste it into the field provided.
-# MAGIC 1. Configure the Source
-# MAGIC     * Click **`Add configuration`**
-# MAGIC     * Enter the word **`source`** in the **Key** field
-# MAGIC     * Enter the **Source** value specified above to the **`Value`** field
-# MAGIC 1. In the **Target** field, specify the database name printed out next to **Target** in the cell above.<br/>
-# MAGIC This should follow the pattern **`dbacademy_<username>_dewd_cap_12`**
+# MAGIC 1. Fill in a **Pipeline Name** - because these names must be unique, we suggest using the **Pipeline Name** provided in the cell above.
+# MAGIC 1. For **Notebook Libraries**, use the navigator to locate and select the companion notebook provided in the cell above.
+# MAGIC 1. Under **Configuration**, add the three configuration parameters:
+# MAGIC    * Click **Add configuration**, set the "key" to **spark.master** and the "value" to **local[\*]**.
+# MAGIC    * Click **Add configuration**, set the "key" to **datasets_path** and the "value" to the value provided in the cell above.
+# MAGIC    * Click **Add configuration**, set the "key" to **source** and the "value" to the value provided in the cell above.
+# MAGIC 1. In the **Target** field, enter the database name provided in the cell above.<br/>
+# MAGIC This should follow the pattern **`da_<name>_<hash>_dewd_cap_12`**
 # MAGIC 1. In the **Storage location** field, copy the directory as printed above.
 # MAGIC 1. For **Pipeline Mode**, select **Continuous**
 # MAGIC 1. Uncheck the **Enable autoscaling** box
-# MAGIC 1. Set the number of workers to **`1`** (one)
+# MAGIC 1. Set the number of **`workers`** to **`0`** (zero).
+# MAGIC 1. Enable **Photon Acceleration**.
 # MAGIC 1. Click **Create**.
 # MAGIC 1. After the UI updates, change from **Development** to **Production** mode
 # MAGIC 
 # MAGIC This should begin the deployment of infrastructure.
+
+# COMMAND ----------
+
+DA.validate_pipeline_config()
 
 # COMMAND ----------
 
@@ -118,8 +122,9 @@ DA.print_job_config()
 # MAGIC 1. Click the blue **Create Job** button
 # MAGIC 1. Configure the task:
 # MAGIC     1. Enter **Land-Data** for the task name
-# MAGIC     1. Select the notebook **DE 12.2.3L - Land New Data** using the notebook picker
-# MAGIC     1. From the **Cluster** dropdown, under **Existing All Purpose Cluster**, select your cluster
+# MAGIC     1. For **Type**, select **Notebook**
+# MAGIC     1. For **Path**, select the **Notebook Path** value provided in the cell above
+# MAGIC     1. From the **Cluster** dropdown, under **Existing All Purpose Clusters**, select your cluster
 # MAGIC     1. Click **Create**
 # MAGIC 1. In the top-left of the screen rename the job (not the task) from **`Land-Data`** (the defaulted value) to the **Job Name** provided for you in the previous cell.    
 # MAGIC 
@@ -132,14 +137,17 @@ DA.print_job_config()
 # MAGIC 
 # MAGIC ## Set a Chronological Schedule for your Job
 # MAGIC Steps:
-# MAGIC 1. Navigate to the **Jobs** tab in the Workflows UI and click on the job you just created.
 # MAGIC 1. Locate the **Schedule** section in the side panel on the right.
 # MAGIC 1. Click on the **Edit schedule** button to explore scheduling options.
-# MAGIC 1. Change the **Schedule type** field from **Manual** to **Scheduled**, which will bring up a chron scheduling UI.
-# MAGIC 1. Set the schedule to update **Every 2**, **Minutes** from **00** 
+# MAGIC 1. Change the **Schedule type** field from **Manual (Paused)** to **Scheduled**, which will bring up a chron scheduling UI.
+# MAGIC 1. Set the schedule to update **Every 2**, **Minutes** from **0 minutes past the hour** 
 # MAGIC 1. Click **Save**
 # MAGIC 
 # MAGIC **NOTE**: If you wish, you can click **Run now** to trigger the first run, or wait until the top of the next minute to make sure your scheduling has worked successfully.
+
+# COMMAND ----------
+
+DA.validate_job_config()
 
 # COMMAND ----------
 

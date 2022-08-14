@@ -42,31 +42,48 @@
 
 # COMMAND ----------
 
-print_pipeline_config()    
+DA.print_pipeline_config()
 
 # COMMAND ----------
 
 # MAGIC %md
 # MAGIC 
 # MAGIC 
-# MAGIC ## Create and configure a pipeline
+# MAGIC ## Create and configure a Pipeline
 # MAGIC 
 # MAGIC Steps:
 # MAGIC 1. Click the **Workflows** button on the sidebar.
 # MAGIC 1. Select the **Delta Live Tables** tab.
 # MAGIC 1. Click **Create Pipeline**.
 # MAGIC 1. Fill in a **Pipeline Name** - because these names must be unique, we suggest using the **Pipeline Name** provided in the cell above.
-# MAGIC 1. For **Notebook Libraries**, use the navigator to locate and select the companion notebook called **DE 9.1.3 - DLT Job**. Alternatively, you can copy the **Notebook Path** and paste it into the field provided.
-# MAGIC 1. In the **Target** field, specify the database name printed out next to **Target** in the cell above.<br/>
-# MAGIC This should follow the pattern **`dbacademy_<username>_dewd_dlt_demo_91`**
+# MAGIC 1. For **Notebook Libraries**, use the navigator to locate and select the companion notebook provided in the cell above.
+# MAGIC 1. Under **Configuration**, add the two configuration parameters:
+# MAGIC    * Click **Add configuration**, set the "key" to **spark.master** and the "value" to **local[\*]**.
+# MAGIC    * Click **Add configuration**, set the "key" to **datasets_path** and the "value" to the value provided in the cell above.
+# MAGIC 1. In the **Target** field, enter the database name provided in the cell above.<br/>
+# MAGIC This should follow the pattern **`da_<name>_<hash>_dewd_jobs_demo_91`**
 # MAGIC 1. In the **Storage location** field, copy the directory as printed above.
 # MAGIC 1. For **Pipeline Mode**, select **Triggered**
 # MAGIC 1. Uncheck the **Enable autoscaling** box
-# MAGIC 1. Set the number of workers to **`1`** (one)
-# MAGIC 1. Click **Create**.
+# MAGIC 1. Set the number of **`workers`** to **`0`** (zero).
+# MAGIC 1. Enable **Photon Acceleration**.
+# MAGIC 
+# MAGIC Finally, click **Create**.
 # MAGIC 
 # MAGIC <img src="https://files.training.databricks.com/images/icon_note_24.png"> **Note**: we won't be executing this pipline directly as it will be executed by our job later in this lesson,<br/>
 # MAGIC but if you want to test it real quick, you can click the **Start** button now.
+
+# COMMAND ----------
+
+# ANSWER
+
+# This function is provided for students who do not 
+# want to work through the exercise of creating the pipeline.
+DA.create_pipeline()
+
+# COMMAND ----------
+
+DA.validate_pipeline_config()
 
 # COMMAND ----------
 
@@ -82,12 +99,11 @@ print_pipeline_config()
 
 # COMMAND ----------
 
-print_job_config()
+DA.print_job_config_task_reset()
 
 # COMMAND ----------
 
 # MAGIC %md
-# MAGIC 
 # MAGIC 
 # MAGIC Here, we'll start by scheduling the next notebook.
 # MAGIC 
@@ -96,14 +112,27 @@ print_job_config()
 # MAGIC 1. Select the **Jobs** tab.
 # MAGIC 1. Click the **Create Job** button.
 # MAGIC 1. Configure the task:
-# MAGIC     1. Enter **`reset`** for the task name
-# MAGIC     1. Select the notebook **`DE 9.1.2 - Reset`** using the notebook picker.
+# MAGIC     1. Enter **Reset** for the task name
+# MAGIC     1. For **Type**, select **Notebook**
+# MAGIC     1. For **Path**, select the **Reset Notebook Path** value provided in the cell above
 # MAGIC     1. From the **Cluster** dropdown, under **Existing All Purpose Clusters**, select your cluster
 # MAGIC     1. Click **Create**
-# MAGIC 1. In the top-left of the screen rename the job (not the task) from **`reset`** (the defaulted value) to the **Job Name** provided for you in the previous cell.
+# MAGIC 1. In the top-left of the screen, rename the job (not the task) from **`Reset`** (the defaulted value) to the **Job Name** value provided in the cell above.
 # MAGIC 1. Click the blue **Run now** button in the top right to start the job.
 # MAGIC 
 # MAGIC <img src="https://files.training.databricks.com/images/icon_note_24.png"> **Note**: When selecting your all-purpose cluster, you will get a warning about how this will be billed as all-purpose compute. Production jobs should always be scheduled against new job clusters appropriately sized for the workload, as this is billed at a much lower rate.
+
+# COMMAND ----------
+
+# ANSWER
+
+# This function is provided for students who do not 
+# want to work through the exercise of creating the job.
+DA.create_job_v1()
+
+# COMMAND ----------
+
+DA.validate_job_v1_config()
 
 # COMMAND ----------
 
@@ -120,7 +149,7 @@ print_job_config()
 # MAGIC 
 # MAGIC This UI provides extensive options for setting up chronological scheduling of your Jobs. Settings configured with the UI can also be output in cron syntax, which can be edited if custom configuration not available with the UI is needed.
 # MAGIC 
-# MAGIC At this time, we'll leave our job set with **Manual** scheduling.
+# MAGIC At this time, we'll leave our job set to the **Manual (Paused)** scheduling type.
 
 # COMMAND ----------
 
@@ -153,23 +182,43 @@ print_job_config()
 # MAGIC Steps:
 # MAGIC 1. At the top left of your screen, you'll see the **Runs** tab is currently selected; click the **Tasks** tab.
 # MAGIC 1. Click the large blue circle with a **+** at the center bottom of the screen to add a new task
-# MAGIC     1. Specify the **Task name** as **`dlt`**
-# MAGIC     1. From **Type**, select **`Delta Live Tables pipeline`**
-# MAGIC     1. Click the **Pipeline** field and select the DLT pipeline you configured previously<br/>
-# MAGIC     Note: The pipeline will start with **Jobs-Demo-91** and will end with your email address.
-# MAGIC     1. The **Depends on** field defaults to your previously defined task but may have renamed itself from the value **reset** that you specified previously to something like **Jobs-Demo-91-youremailaddress**.
+# MAGIC 1. Configure the task:
+# MAGIC     1. Enter **DLT** for the task name
+# MAGIC     1. For **Type**, select  **Delta Live Tables pipeline**
+# MAGIC     1. For **Pipeline**, select the DLT pipeline you configured previously in this exercise<br/>
+# MAGIC     Note: The pipeline will start with **DLT-Job-Demo-91** and will end with your email address.
+# MAGIC     1. The **Depends on** field defaults to your previously defined task, **Reset** - leave this value as-is.
 # MAGIC     1. Click the blue **Create task** button
 # MAGIC 
 # MAGIC You should now see a screen with 2 boxes and a downward arrow between them. 
 # MAGIC 
-# MAGIC Your **`reset`** task (possibly renamed to something like **Jobs-Demo-91-youremailaddress**) will be at the top, 
-# MAGIC leading into your **`dlt`** task. 
+# MAGIC Your **`Reset`** task will be at the top, leading into your **`DLT`** task. 
 # MAGIC 
 # MAGIC This visualization represents the dependencies between these tasks.
 # MAGIC 
 # MAGIC Click **Run now** to execute your job.
 # MAGIC 
 # MAGIC **NOTE**: You may need to wait a few minutes as infrastructure for your job and pipeline is deployed.
+
+# COMMAND ----------
+
+# ANSWER
+
+# This function is provided for students who do not 
+# want to work through the exercise of creating the job.
+DA.create_job_v2()
+
+# COMMAND ----------
+
+DA.validate_job_v2_config()
+
+# COMMAND ----------
+
+# ANSWER
+
+# This function is provided to start the pipeline and  
+# block until it has completed, canceled or failed
+DA.start_job()
 
 # COMMAND ----------
 

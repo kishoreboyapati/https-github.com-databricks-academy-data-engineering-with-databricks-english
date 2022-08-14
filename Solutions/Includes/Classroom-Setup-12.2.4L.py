@@ -3,7 +3,7 @@
 
 # COMMAND ----------
 
-DA = DBAcademyHelper()
+DA = DBAcademyHelper(lesson="cap_12")
 # Don't clean up, continue where we left off.
 # DA.cleanup()
 DA.init(create_db=False)

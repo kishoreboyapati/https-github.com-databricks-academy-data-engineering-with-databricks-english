@@ -73,7 +73,9 @@ DA.generate_config()
 # MAGIC %md
 # MAGIC 
 # MAGIC 
-# MAGIC **NOTE**: The queries above are only designed to be run once after resetting the demo completely to reconfigure the environment. Users will need to have **`CREATE`** and **`USAGE`** permissions on the catalog to execute them.
+# MAGIC **NOTE**: The queries above are only designed to be run once after resetting the demo completely to reconfigure the environment. 
+# MAGIC 
+# MAGIC Users will need to have **`CREATE`** and **`USAGE`** permissions on the catalog to execute them.
 
 # COMMAND ----------
 

@@ -80,7 +80,7 @@
 # MAGIC 1. **`name = "John"`**
 # MAGIC 2. **`print(f"Hello {name}")`**
 # MAGIC 3. **`full_name = f"{name} Doe"`**
-# MAGIC 4. **`print(f"Welcome back {full_name}`**
+# MAGIC 4. **`print(f"Welcome back {full_name}")`**
 # MAGIC 
 # MAGIC And thus providing the expected behavior:
 # MAGIC * **`Hello John`**
@@ -122,20 +122,6 @@ print(my_name)
 # COMMAND ----------
 
 display(example_df)
-
-# COMMAND ----------
-
-# MAGIC %md
-# MAGIC 
-# MAGIC 
-# MAGIC 
-# MAGIC # Detach and Reattach a Cluster
-# MAGIC 
-# MAGIC While attaching to clusters is a fairly common task, sometimes it is useful to detach and re-attach in one single operation. The main side-effect this achieves is clearing the execution state. This can be useful when you want to test cells in isolation, or you simply want to reset the execution state.
-# MAGIC 
-# MAGIC Revisit the cluster dropdown. In the menu item representing the currently attached cluster, select the **Detach & Re-attach** link.
-# MAGIC 
-# MAGIC Notice that the output from the cell above remains since results and execution state are unrelated, but the execution state is cleared. This can be verified by attempting to re-run the cell above. This fails, since the **`example_df`** variable has been cleared, along with the rest of the state.
 
 # COMMAND ----------
 
@@ -194,6 +180,23 @@ display(files)
 
 files = dbutils.fs.ls(f"{DA.paths.datasets}/nyctaxi-with-zipcodes/data")
 display(files)
+
+# COMMAND ----------
+
+# MAGIC %md
+# MAGIC 
+# MAGIC 
+# MAGIC # Clearing notebook state
+# MAGIC 
+# MAGIC Sometimes it is useful to clear all variables defined in the notebook and start from the begining.  This can be useful when you want to test cells in isolation, or you simply want to reset the execution state.
+# MAGIC 
+# MAGIC Visit the **Clear** menu and select the **Clear State & Cell Outputs**.
+# MAGIC 
+# MAGIC Now try running the cell below and notice the variables defined earlier are no longer defined, until you rerun the earlier cells above.
+
+# COMMAND ----------
+
+print(my_name)
 
 # COMMAND ----------
 

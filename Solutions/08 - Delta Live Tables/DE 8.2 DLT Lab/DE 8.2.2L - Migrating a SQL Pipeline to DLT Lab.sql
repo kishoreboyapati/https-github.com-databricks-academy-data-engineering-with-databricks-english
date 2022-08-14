@@ -120,10 +120,10 @@ AS SELECT
 
 -- ANSWER
 
-CREATE OR REFRESH STREAMING LIVE TABLE daily_patient_avg
+CREATE OR REFRESH LIVE TABLE daily_patient_avg
   COMMENT "Daily mean heartrates by patient"
   AS SELECT mrn, name, MEAN(heartrate) avg_heartrate, DATE(time) `date`
-    FROM STREAM(live.recordings_enriched)
+    FROM live.recordings_enriched
     GROUP BY mrn, name, DATE(time)
 
 -- COMMAND ----------

@@ -127,6 +127,7 @@ policy = DA.client.cluster_policies.create_or_update("Student's All-Purpose Poli
         "type": "range",
         "minValue": 1,
         "maxValue": 120,
+        "defaultValue": 120,
         "hidden": False
     },
     "spark_conf.spark.databricks.cluster.profile": {

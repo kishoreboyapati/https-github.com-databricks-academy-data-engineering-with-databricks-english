@@ -10,18 +10,18 @@
 -- MAGIC %md
 -- MAGIC 
 -- MAGIC 
--- MAGIC # Databases and Tables on Databricks
--- MAGIC In this demonstration, you will create and explore databases and tables.
+-- MAGIC # Schemas and Tables on Databricks
+-- MAGIC In this demonstration, you will create and explore schemas and tables.
 -- MAGIC 
 -- MAGIC ## Learning Objectives
 -- MAGIC By the end of this lesson, you should be able to:
--- MAGIC * Use Spark SQL DDL to define databases and tables
+-- MAGIC * Use Spark SQL DDL to define schemas and tables
 -- MAGIC * Describe how the **`LOCATION`** keyword impacts the default storage directory
 -- MAGIC 
 -- MAGIC 
 -- MAGIC 
 -- MAGIC **Resources**
--- MAGIC * <a href="https://docs.databricks.com/user-guide/tables.html" target="_blank">Databases and Tables - Databricks Docs</a>
+-- MAGIC * <a href="https://docs.databricks.com/user-guide/tables.html" target="_blank">Schemas and Tables - Databricks Docs</a>
 -- MAGIC * <a href="https://docs.databricks.com/user-guide/tables.html#managed-and-unmanaged-tables" target="_blank">Managed and Unmanaged Tables</a>
 -- MAGIC * <a href="https://docs.databricks.com/user-guide/tables.html#create-a-table-using-the-ui" target="_blank">Creating a Table with the UI</a>
 -- MAGIC * <a href="https://docs.databricks.com/user-guide/tables.html#create-a-local-table" target="_blank">Create a Local Table</a>
@@ -60,51 +60,51 @@ SELECT "${da.db_name}" AS db_name,
 -- MAGIC %md
 -- MAGIC 
 -- MAGIC 
--- MAGIC Because you may be working in a shared workspace, this course uses variables derived from your username so the databases don't conflict with other users. Again, consider this use of Hive variables a hack for our lesson environment rather than a good practice for development.
+-- MAGIC Because you may be working in a shared workspace, this course uses variables derived from your username so the schemas don't conflict with other users. Again, consider this use of Hive variables a hack for our lesson environment rather than a good practice for development.
 
 -- COMMAND ----------
 
 -- MAGIC %md
 -- MAGIC 
 -- MAGIC  
--- MAGIC ## Databases
--- MAGIC Let's start by creating two databases:
+-- MAGIC ## Schemas
+-- MAGIC Let's start by creating two schemas:
 -- MAGIC - One with no **`LOCATION`** specified
 -- MAGIC - One with **`LOCATION`** specified
 
 -- COMMAND ----------
 
-CREATE DATABASE IF NOT EXISTS ${da.db_name}_default_location;
-CREATE DATABASE IF NOT EXISTS ${da.db_name}_custom_location LOCATION '${da.paths.working_dir}/_custom_location.db';
+CREATE SCHEMA IF NOT EXISTS ${da.db_name}_default_location;
+CREATE SCHEMA IF NOT EXISTS ${da.db_name}_custom_location LOCATION '${da.paths.working_dir}/_custom_location.db';
 
 -- COMMAND ----------
 
 -- MAGIC %md
 -- MAGIC 
 -- MAGIC  
--- MAGIC Note that the location of the first database is in the default location under **`dbfs:/user/hive/warehouse/`** and that the database directory is the name of the database with the **`.db`** extension
+-- MAGIC Note that the location of the first schema is in the default location under **`dbfs:/user/hive/warehouse/`** and that the schema directory is the name of the schema with the **`.db`** extension
 
 -- COMMAND ----------
 
-DESCRIBE DATABASE EXTENDED ${da.db_name}_default_location;
+DESCRIBE SCHEMA EXTENDED ${da.db_name}_default_location;
 
 -- COMMAND ----------
 
 -- MAGIC %md
 -- MAGIC 
 -- MAGIC 
--- MAGIC Note that the location of the second database is in the directory specified after the **`LOCATION`** keyword.
+-- MAGIC Note that the location of the second schema is in the directory specified after the **`LOCATION`** keyword.
 
 -- COMMAND ----------
 
-DESCRIBE DATABASE EXTENDED ${da.db_name}_custom_location;
+DESCRIBE SCHEMA EXTENDED ${da.db_name}_custom_location;
 
 -- COMMAND ----------
 
 -- MAGIC %md
 -- MAGIC 
 -- MAGIC  
--- MAGIC We will create a table in the database with default location and insert data. 
+-- MAGIC We will create a table in the schema with default location and insert data. 
 -- MAGIC 
 -- MAGIC Note that the schema must be provided because there is no data from which to infer the schema.
 
@@ -126,14 +126,14 @@ SELECT * FROM managed_table_in_db_with_default_location;
 
 -- COMMAND ----------
 
-DESCRIBE EXTENDED managed_table_in_db_with_default_location;
+DESCRIBE DETAIL managed_table_in_db_with_default_location;
 
 -- COMMAND ----------
 
 -- MAGIC %md
 -- MAGIC 
 -- MAGIC 
--- MAGIC By default, managed tables in a database without the location specified will be created in the **`dbfs:/user/hive/warehouse/<database_name>.db/`** directory.
+-- MAGIC By default, managed tables in a schema without the location specified will be created in the **`dbfs:/user/hive/warehouse/<schema_name>.db/`** directory.
 -- MAGIC 
 -- MAGIC We can see that, as expected, the data and metadata for our Delta Table are stored in that location.
 
@@ -166,7 +166,7 @@ DROP TABLE managed_table_in_db_with_default_location;
 -- MAGIC %md
 -- MAGIC 
 -- MAGIC  
--- MAGIC Note the table's directory and its log and data files are deleted. Only the database directory remains.
+-- MAGIC Note the table's directory and its log and data files are deleted. Only the schema directory remains.
 
 -- COMMAND ----------
 
@@ -181,7 +181,7 @@ DROP TABLE managed_table_in_db_with_default_location;
 -- MAGIC %md
 -- MAGIC 
 -- MAGIC  
--- MAGIC We now create a table in  the database with custom location and insert data. 
+-- MAGIC We now create a table in the schema with custom location and insert data. 
 -- MAGIC 
 -- MAGIC Note that the schema must be provided because there is no data from which to infer the schema.
 
@@ -202,14 +202,14 @@ SELECT * FROM managed_table_in_db_with_custom_location;
 
 -- COMMAND ----------
 
-DESCRIBE EXTENDED managed_table_in_db_with_custom_location;
+DESCRIBE DETAIL managed_table_in_db_with_custom_location;
 
 -- COMMAND ----------
 
 -- MAGIC %md
 -- MAGIC 
 -- MAGIC  
--- MAGIC As expected, this managed table is created in the path specified with the **`LOCATION`** keyword during database creation. As such, the data and metadata for the table are persisted in a directory here.
+-- MAGIC As expected, this managed table is created in the path specified with the **`LOCATION`** keyword during schema creation. As such, the data and metadata for the table are persisted in a directory here.
 
 -- COMMAND ----------
 
@@ -240,7 +240,7 @@ DROP TABLE managed_table_in_db_with_custom_location;
 -- MAGIC  
 -- MAGIC Note the table's folder and the log file and data file are deleted.  
 -- MAGIC   
--- MAGIC Only the database location remains
+-- MAGIC Only the schema location remains
 
 -- COMMAND ----------
 
@@ -317,12 +317,12 @@ DROP TABLE external_table;
 -- MAGIC 
 -- MAGIC  
 -- MAGIC ## Clean up
--- MAGIC Drop both databases.
+-- MAGIC Drop both schemas.
 
 -- COMMAND ----------
 
-DROP DATABASE ${da.db_name}_default_location CASCADE;
-DROP DATABASE ${da.db_name}_custom_location CASCADE;
+DROP SCHEMA ${da.db_name}_default_location CASCADE;
+DROP SCHEMA ${da.db_name}_custom_location CASCADE;
 
 -- COMMAND ----------
 
