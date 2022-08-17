@@ -36,7 +36,7 @@
 -- ANSWER
 CREATE OR REFRESH STREAMING LIVE TABLE recordings_bronze
 AS SELECT current_timestamp() receipt_time, input_file_name() source_file, *
-  FROM cloud_files("${source}", "json", map("cloudFiles.schemaHints", "time DOUBLE"))
+  FROM cloud_files("${source}", "json", map("cloudFiles.schemaHints", "time DOUBLE, mrn INTEGER"))
 
 -- COMMAND ----------
 

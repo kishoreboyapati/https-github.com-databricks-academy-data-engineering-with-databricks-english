@@ -10,7 +10,7 @@
 # MAGIC %md
 # MAGIC 
 # MAGIC # Workspace Setup
-# MAGIC This notebook should be ran by instructors to prepare the workspace for a class.
+# MAGIC This notebook should be run by instructors to prepare the workspace for a class.
 # MAGIC 
 # MAGIC The key changes this notebook makes includes:
 # MAGIC * Updating user-specific grants such that they can create databases/schemas against the current catalog when they are not workspace-admins.

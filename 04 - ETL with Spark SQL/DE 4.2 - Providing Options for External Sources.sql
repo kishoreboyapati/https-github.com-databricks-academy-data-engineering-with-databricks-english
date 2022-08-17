@@ -47,7 +47,7 @@
 
 -- COMMAND ----------
 
-SELECT * FROM csv.`${da.paths.datasets}/ecommerce/raw/sales-csv`
+SELECT * FROM csv.`${DA.paths.sales_csv}`
 
 -- COMMAND ----------
 
@@ -103,14 +103,16 @@ OPTIONS (
   header = "true",
   delimiter = "|"
 )
-LOCATION "${da.paths.datasets}/ecommerce/raw/sales-csv"
+LOCATION "${DA.paths.sales_csv}"
 
 -- COMMAND ----------
 
 -- MAGIC %md
 -- MAGIC 
 -- MAGIC 
--- MAGIC Note that no data has moved during table declaration. Similar to when we directly queried our files and created a view, we are still just pointing to files stored in an external location.
+-- MAGIC Note that no data has moved during table declaration. 
+-- MAGIC 
+-- MAGIC Similar to when we directly queried our files and created a view, we are still just pointing to files stored in an external location.
 -- MAGIC 
 -- MAGIC Run the following cell to confirm that data is now being loaded correctly.
 
@@ -156,10 +158,10 @@ DESCRIBE EXTENDED sales_csv
 -- MAGIC (spark.read
 -- MAGIC       .option("header", "true")
 -- MAGIC       .option("delimiter", "|")
--- MAGIC       .table("sales_csv")
+-- MAGIC       .csv(DA.paths.sales_csv)
 -- MAGIC       .write.mode("append")
 -- MAGIC       .format("csv")
--- MAGIC       .save(f"{DA.paths.working_dir}/sales-csv"))
+-- MAGIC       .save(DA.paths.sales_csv))
 
 -- COMMAND ----------
 

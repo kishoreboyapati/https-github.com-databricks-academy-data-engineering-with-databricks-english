@@ -36,7 +36,7 @@
 -- TODO
 CREATE <FILL-IN>
 AS SELECT <FILL-IN>
-  FROM cloud_files("${source}", "json", map("cloudFiles.schemaHints", "time DOUBLE"))
+  FROM cloud_files("${source}", "json", map("cloudFiles.schemaHints", "time DOUBLE, mrn INTEGER"))
 
 -- COMMAND ----------
 
