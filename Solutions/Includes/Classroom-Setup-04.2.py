@@ -12,8 +12,9 @@ DA.init()
 import os, time, shutil, sqlite3
 import pandas as pd
 
-# copy_source_dataset(f"{DA.paths.datasets}/ecommerce/raw/sales-csv",
-#                     f"{DA.paths.working_dir}/sales-csv", "csv", "sales-csv")
+# Create a user-specific copy of the sales-csv.
+DA.paths.sales_csv = f"{DA.paths.working_dir}/sales-csv"
+dbutils.fs.cp(f"{DA.paths.datasets}/ecommerce/raw/sales-csv", DA.paths.sales_csv, True)
 
 start = int(time.time())
 print(f"Creating the users table", end="...")

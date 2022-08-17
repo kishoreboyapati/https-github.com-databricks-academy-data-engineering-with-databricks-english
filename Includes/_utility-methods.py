@@ -2,7 +2,7 @@
 # MAGIC %pip install \
 # MAGIC git+https://github.com/databricks-academy/dbacademy-gems@c3032c2df47472f1600d368523f052d2920b406d \
 # MAGIC git+https://github.com/databricks-academy/dbacademy-rest@e729b6dbb566de2958cba60fe4bd50e1b9e7f25b \
-# MAGIC git+https://github.com/databricks-academy/dbacademy-helper@6dca89c8f951edd950b5ab47356d545f809da8e5 \
+# MAGIC git+https://github.com/databricks-academy/dbacademy-helper@fd1619a8b6f22adb3b7b54e2897cbdc5c3f161a4 \
 # MAGIC --quiet --disable-pip-version-check
 
 # COMMAND ----------
@@ -501,7 +501,7 @@ def update_user_specific_grants(self):
     from dbacademy import dbgems
     from dbacademy.dbrest import DBAcademyRestClient
     
-    job_name = f"DA-{DA.course_name}-Configure-Permissions"
+    job_name = f"DA-{DA.course_code}-Configure-Permissions"
     DA.client.jobs().delete_by_name(job_name, success_only=False)
 
     notebook_path = f"{dbgems.get_notebook_dir()}/Configure-Permissions"
