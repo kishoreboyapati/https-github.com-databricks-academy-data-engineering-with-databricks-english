@@ -7,7 +7,7 @@
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="0c4e00b2-1879-4e05-8bad-70f2e471691c" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC # Managing Permissions for Databases, Tables, and Views
@@ -30,7 +30,7 @@
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="86552e2b-b893-4633-990e-4dd27255daa9" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC ## Generate Setup Statements
@@ -45,7 +45,7 @@ DA.generate_users_table()
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="0369413a-e3d4-4fe1-8948-143fb950584b" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC Steps:
@@ -60,7 +60,7 @@ DA.generate_users_table()
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="c0629565-2278-4384-9919-f3d6f946eb11" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC ## Using Data Explorer
@@ -122,10 +122,11 @@ DA.generate_users_table()
 # MAGIC | READ_METADATA | gives ability to view an object and its metadata. |
 # MAGIC | USAGE | does not give any abilities, but is an additional requirement to perform any action on a database object. |
 # MAGIC | CREATE | gives ability to create an object (for example, a table in a database). |
+# MAGIC | CREATE_NAMED_FUNCTION | gives ability to create a named UDF in an existing catalog or schema. |
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="e82e2a15-0fdd-4af1-9383-9681a2cddbb8" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC ## Review the Default Permissions
@@ -137,7 +138,7 @@ DA.generate_users_table()
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="87339040-a0f3-4889-bc16-065f1c8a25b6" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC ## Assigning Ownership
@@ -148,7 +149,7 @@ DA.generate_users_table()
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="86f51802-f151-4fe1-8835-a793a3ce5756" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC ## Change Database Permissions
@@ -166,7 +167,7 @@ DA.generate_users_table()
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="f3026810-bf59-4558-bfd0-eb46636ceafb" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC ## Change View Permissions
@@ -187,7 +188,7 @@ DA.generate_users_table()
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="957dfb39-747b-45f3-86c3-c6d23496e19d" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC ## Run a Query to Confirm
@@ -202,7 +203,7 @@ DA.generate_users_table()
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="5fece6bf-b060-46b3-bf10-1052baf1b6fe" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC ## Change Table Permissions
@@ -219,7 +220,7 @@ DA.generate_users_table()
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="77c59af7-3bcc-4e46-97c2-64bd3dc77d34" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC ## Have Users Attempt to **`DROP TABLE`**
@@ -230,7 +231,7 @@ DA.generate_users_table()
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="bc4d8d86-00a5-416e-a482-c843e58052d2" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC ## Create a Database for Derivative Datasets
@@ -247,7 +248,7 @@ DA.generate_create_database_with_grants()
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="5f0e0657-1cf3-4728-9a31-07c0d57199e4" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC ## Have Users Create New Tables or Views
@@ -258,7 +259,7 @@ DA.generate_create_database_with_grants()
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="9e468552-03bc-4c5a-b0e7-fcf5052cc478" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC ## Admin Configuration

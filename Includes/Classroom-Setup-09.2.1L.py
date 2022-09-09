@@ -66,7 +66,7 @@ def create_pipeline(self):
         clusters=[{ "label": "default", "num_workers": 0 }])
     
     pipeline_id = response.get("pipeline_id")
-    print(f"Created pipline {pipeline_id}")
+    print(f"Created pipline \"{pipeline_name}\" (#{pipeline_id})")
 
 # COMMAND ----------
 
@@ -116,7 +116,7 @@ def validate_pipeline_config(self):
     assert development == True, f"The pipline mode should be set to \"Development\"."
     
     channel = spec.get("channel")
-    assert channel is None or channel == "CURRENT", f"Expected the channel to be Current but found {channel}."
+    assert channel is None or channel == "CURRENT", f"Expected the channel to be \"Current\" but found \"{channel}\"."
     
     photon = spec.get("photon")
     assert photon == True, f"Expected Photon to be enabled."
@@ -237,14 +237,13 @@ def create_job(self):
     }
     params = self.update_cluster_params(params, [0,2])
     
-    import json
-    print(json.dumps(params, indent=4))
+    #import json
+    #print(json.dumps(params, indent=4))
     
     create_response = self.client.jobs().create(params)
     job_id = create_response.get("job_id")
     
-    print(f"Created job #{job_id}")
-
+    print(f"Created job \"{job_name}\" (#{job_id})")
 
 # COMMAND ----------
 
@@ -267,17 +266,18 @@ def validate_job_config(self):
 
     
     
-    # Reset Task
-    task_name = tasks[0].get("task_key", None)
-    assert task_name == "Batch-Job" #, f"Expected the first task to have the name \"Reset\", found \"{task_name}\""
+    # Batch-Job Task
+    batch_task = tasks[0]
+    task_name = batch_task.get("task_key", None)
+    assert task_name == "Batch-Job", f"Expected the first task to have the name \"Batch-Job\", found \"{task_name}\""
     
-    notebook_path = tasks[0].get("notebook_task", {}).get("notebook_path")
+    notebook_path = batch_task.get("notebook_task", {}).get("notebook_path")
     assert notebook_path == notebook_1, f"Invalid Notebook Path for the first task. Found \"{notebook_path}\", expected \"{notebook_1}\" "
 
     if not self.is_smoke_test():
         # Don't check the actual_cluster_id when running as a smoke test
         
-        actual_cluster_id = tasks[0].get("existing_cluster_id", None)
+        actual_cluster_id = batch_task.get("existing_cluster_id", None)
         assert actual_cluster_id is not None, f"The first task is not configured to use the current All-Purpose cluster"
 
         expected_cluster_id = dbgems.get_tags().get("clusterId")
@@ -289,10 +289,11 @@ def validate_job_config(self):
     
     
     # DLT
-    task_name = tasks[1].get("task_key", None)
+    dlt_task = tasks[1]
+    task_name = dlt_task.get("task_key", None)
     assert task_name == "DLT", f"Expected the second task to have the name \"DLT\", found \"{task_name}\""
 
-    actual_pipeline_id = tasks[1].get("pipeline_task", {}).get("pipeline_id", None)
+    actual_pipeline_id = dlt_task.get("pipeline_task", {}).get("pipeline_id", None)
     assert actual_pipeline_id is not None, f"The second task is not configured to use a Delta Live Tables pipeline"
     
     expected_pipeline = self.client.pipelines().get_by_name(pipeline_name)
@@ -300,25 +301,32 @@ def validate_job_config(self):
     actual_name = actual_pipeline.get("spec").get("name", "Oops")
     assert actual_pipeline_id == expected_pipeline.get("pipeline_id"), f"The second task is not configured to use the correct pipeline, expected \"{pipeline_name}\", found \"{actual_name}\""
     
-    depends_on = tasks[1].get("depends_on", [])
-    assert len(depends_on) > 0, f"The \"DLT\" task does not depend on the \"Reset\" task"
-    assert len(depends_on) == 1, f"The \"DLT\" task depends on more than just the \"Reset\" task"
+    depends_on = dlt_task.get("depends_on", [])
+    assert len(depends_on) > 0, f"The \"DLT\" task does not depend on the \"Batch-Job\" task"
+    assert len(depends_on) == 1, f"The \"DLT\" task depends on more than just the \"Batch-Job\" task"
     depends_task_key = depends_on[0].get("task_key")
-    assert depends_task_key == "Batch-Job", f"The \"DLT\" task doesn't depend on the \"Reset\" task, found {depends_task_key}"
+    assert depends_task_key == "Batch-Job", f"The \"DLT\" task doesn't depend on the \"Batch-Job\" task, found \"{depends_task_key}\"."
     
     
     
     # Query Task
-    task_name = tasks[2].get("task_key", None)
+    query_task = tasks[2] 
+    task_name = query_task.get("task_key", None)
     assert task_name == "Query-Results", f"Expected the third task to have the name \"Query-Results\", found \"{task_name}\""
     
-    notebook_path = tasks[2].get("notebook_task", {}).get("notebook_path")
+    notebook_path = query_task.get("notebook_task", {}).get("notebook_path")
     assert notebook_path == notebook_2, f"Invalid Notebook Path for the thrid task. Found \"{notebook_path}\", expected \"{notebook_2}\" "
+    
+    depends_on = query_task.get("depends_on", [])
+    assert len(depends_on) > 0, f"The \"Query-Results\" task does not depend on the \"DLT\" task"
+    assert len(depends_on) == 1, f"The \"Query-Results\" task depends on more than just the \"DLT\" task"
+    depends_task_key = depends_on[0].get("task_key")
+    assert depends_task_key == "DLT", f"The \"Query-Results\" task doesn't depend on the \"DLT\" task, found \"{depends_task_key}\"."
 
     if not self.is_smoke_test():
         # Don't check the actual_cluster_id when running as a smoke test
         
-        actual_cluster_id = tasks[2].get("existing_cluster_id", None)
+        actual_cluster_id = query_task.get("existing_cluster_id", None)
         assert actual_cluster_id is not None, f"The second task is not configured to use the current All-Purpose cluster"
 
         expected_cluster_id = dbgems.get_tags().get("clusterId")
@@ -343,9 +351,9 @@ def start_job(self):
 
 # COMMAND ----------
 
-DA = DBAcademyHelper(lesson="jobs_lab_92")
-DA.cleanup()
-DA.init()
+DA = DBAcademyHelper(lesson="jobs_lab_92", **helper_arguments)
+DA.reset_environment()
+DA.init(install_datasets=True, create_db=True)
 
 DA.paths.stream_path = f"{DA.paths.working_dir}/stream"
 DA.paths.storage_location = f"{DA.paths.working_dir}/storage"

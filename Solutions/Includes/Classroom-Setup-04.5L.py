@@ -3,8 +3,8 @@
 
 # COMMAND ----------
 
-DA = DBAcademyHelper()
-DA.cleanup()
-DA.init()
+DA = DBAcademyHelper(**helper_arguments)
+DA.reset_environment()
+DA.init(install_datasets=True, create_db=True)
 DA.conclude_setup()
 

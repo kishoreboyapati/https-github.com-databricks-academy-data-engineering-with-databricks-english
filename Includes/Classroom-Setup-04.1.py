@@ -3,11 +3,12 @@
 
 # COMMAND ----------
 
-DA = DBAcademyHelper()
-DA.cleanup()
-DA.init()
+DA = DBAcademyHelper(**helper_arguments) # Create the DA object
+DA.reset_environment()                   # Reset by removing databases and files from other lessons
+DA.init(install_datasets=True,           # Initialize, install and validate the datasets
+        create_db=True)                  # Continue initialization, create the user-db
 
 DA.paths.kafka_events = f"{DA.paths.datasets}/ecommerce/raw/events-kafka"
 
-DA.conclude_setup()
+DA.conclude_setup()                      # Conclude setup by advertising environmental changes
 

@@ -1,5 +1,5 @@
 # Databricks notebook source
-# MAGIC %md
+# MAGIC %md <i18n value="46a8383a-807d-42a9-9bdc-09a34e0b7bd0" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC # Exploring the Results of a DLT Pipeline
@@ -17,7 +17,7 @@ display(files)
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="4b109d6f-b0d4-4ded-ac54-a12f722599a9" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC The **`system`** directory captures events associated with the pipeline.
@@ -29,7 +29,7 @@ display(files)
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="fd83d9bb-db62-456a-8a51-33e8680c0d47" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC These event logs are stored as a Delta table. Let's query the table.
@@ -41,7 +41,7 @@ display(files)
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="b0c12205-fc10-4a63-a73e-d5cded65ef51" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC Let's view the contents of the *tables* directory.
@@ -53,7 +53,7 @@ display(files)
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="e5072a3f-3a1f-4e4d-89fa-bda3926cb6ba" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC Let's query the gold table.
@@ -65,7 +65,7 @@ display(files)
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="69333106-f421-45f0-a846-1c3d4fc8ddcb" version="2.3.3" />
 # MAGIC 
 # MAGIC  
 # MAGIC Run the following cell to delete the tables and files associated with this lesson.

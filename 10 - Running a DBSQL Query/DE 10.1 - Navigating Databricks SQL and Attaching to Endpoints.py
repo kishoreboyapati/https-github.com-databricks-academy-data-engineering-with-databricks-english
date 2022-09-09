@@ -7,7 +7,7 @@
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="cbd3eef7-fc50-4393-bed5-44d7711f8052" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC # Navigating Databricks SQL and Attaching to SQL Warehouses
@@ -52,7 +52,7 @@
 # MAGIC   * Leave all other settings as defaults
 # MAGIC   * Click **Save**
 # MAGIC * Back in the query editor, click the default name for this visualization to edit it; change the visualization name to **`Stacked Price`**
-# MAGIC * Add the bottom of the screen, click the three vertical dots to the left of the **`Edit Visualization`** button
+# MAGIC * Click the three vertical dots to the right of the name of the visualization you just changed
 # MAGIC   * Select **Add to Dashboard** from the menu
 # MAGIC   * Select your **`Retail Revenue & Supply Chain`** dashboard
 # MAGIC * Navigate back to your dashboard to view this change

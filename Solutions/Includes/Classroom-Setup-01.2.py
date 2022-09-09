@@ -3,8 +3,9 @@
 
 # COMMAND ----------
 
+@DBAcademyHelper.monkey_patch
 def create_demo_tmp_vw(self):
-    print("Creating the temp view demo_tmp_vw")
+    print("\nCreating the temp view \"demo_tmp_vw\"")
 
     spark.sql("""
         CREATE OR REPLACE TEMP VIEW demo_tmp_vw(name, value) AS VALUES
@@ -13,13 +14,14 @@ def create_demo_tmp_vw(self):
         ("Selina", 3)
         """)
 
-DBAcademyHelper.monkey_patch(create_demo_tmp_vw)
-
 # COMMAND ----------
 
-DA = DBAcademyHelper()      # Create the DA object with the specified lesson
-DA.cleanup(validate=False)  # Remove the existing database and files
-DA.init(create_db=False)
-DA.create_demo_tmp_vw()
-DA.conclude_setup()
+DA = DBAcademyHelper(**helper_arguments) # Create the DA object
+DA.reset_environment()                   # Reset by removing databases and files from other lessons
+DA.init(install_datasets=True,           # Initialize, install and validate the datasets
+        create_db=False)                 # Continue initialization, create the user-db
+
+DA.create_demo_tmp_vw()                  # Create demo table
+
+DA.conclude_setup()                      # Conclude setup by advertising environmental changes
 

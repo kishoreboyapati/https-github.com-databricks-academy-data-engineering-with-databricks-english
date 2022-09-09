@@ -1,5 +1,5 @@
 -- Databricks notebook source
--- MAGIC %run ../Includes/Classroom-Setup-09.1.3
+-- MAGIC %run ../../Includes/Classroom-Setup-09.1.3
 
 -- COMMAND ----------
 

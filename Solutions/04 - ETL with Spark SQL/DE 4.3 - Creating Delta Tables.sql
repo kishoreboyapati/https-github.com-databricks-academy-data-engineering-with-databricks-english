@@ -7,7 +7,7 @@
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="25ac8d75-ee97-4c88-8028-94ba991d0dba" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC # Creating Delta Tables
@@ -28,7 +28,7 @@
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="ae119ec7-0185-469d-8986-75c0e3d0a68f" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC ## Run Setup
@@ -41,7 +41,7 @@
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="26c0731b-b738-4034-acdc-0dd2761031e4" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC 
@@ -58,7 +58,7 @@ DESCRIBE EXTENDED sales;
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="db0df24b-95f8-45bc-8651-44e4af4537e2" version="2.3.3" />
 -- MAGIC 
 -- MAGIC  
 -- MAGIC CTAS statements automatically infer schema information from query results and do **not** support manual schema declaration. 
@@ -78,7 +78,7 @@ SELECT * FROM sales_unparsed;
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="2d99fed5-4e51-45ea-bcbf-e6da504c5e93" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC To correctly ingest this data to a Delta Lake table, we'll need to use a reference to the files that allows us to specify options.
@@ -103,7 +103,7 @@ SELECT * FROM sales_delta
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="3f6875ab-5363-43df-8c36-faeff2933cbe" version="2.3.3" />
 -- MAGIC 
 -- MAGIC  
 -- MAGIC ## Filtering and Renaming Columns from Existing Tables
@@ -124,7 +124,7 @@ SELECT * FROM purchases
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="e2eb9bb3-e6ec-4842-85a9-895007411f02" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC Note that we could have accomplished this same goal with a view, as shown below.
@@ -139,7 +139,7 @@ SELECT * FROM purchases_vw
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="5961066a-e322-415f-9ddf-0cc34247f5cf" version="2.3.3" />
 -- MAGIC 
 -- MAGIC  
 -- MAGIC ## Declare Schema with Generated Columns
@@ -157,7 +157,7 @@ SELECT * FROM purchases_vw
 
 CREATE OR REPLACE TABLE purchase_dates (
   id STRING, 
-  transaction_timestamp STRING, 
+  transaction_timestamp LONG, 
   price STRING,
   date DATE GENERATED ALWAYS AS (
     cast(cast(transaction_timestamp/1e6 AS TIMESTAMP) AS DATE))
@@ -165,7 +165,7 @@ CREATE OR REPLACE TABLE purchase_dates (
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="13084a7f-10a0-453f-aa53-1f75a7e74dd9" version="2.3.3" />
 -- MAGIC 
 -- MAGIC  
 -- MAGIC 
@@ -185,7 +185,7 @@ WHEN NOT MATCHED THEN
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="4d535b90-f71e-49ac-8101-45f328ec0349" version="2.3.3" />
 -- MAGIC 
 -- MAGIC  
 -- MAGIC We can see below that all dates were computed correctly as data was inserted, although neither our source data or insert query specified the values in this field.
@@ -198,7 +198,7 @@ SELECT * FROM purchase_dates
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="7035036b-6829-4a4e-bbea-9c9bbdc85776" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC 
@@ -213,7 +213,7 @@ SELECT * FROM purchase_dates
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="f8f1d9d6-be28-493e-9736-c6384cbbe944" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC ## Add a Table Constraint
@@ -236,7 +236,7 @@ ALTER TABLE purchase_dates ADD CONSTRAINT valid_date CHECK (date > '2020-01-01')
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="604861c2-0d45-434e-be65-41c1da7b2bbf" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC Table constraints are shown in the **`TBLPROPERTIES`** field.
@@ -247,7 +247,7 @@ DESCRIBE EXTENDED purchase_dates
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="3de6a201-9b87-4d79-9bb1-4fc2f122d55e" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC ## Enrich Tables with Additional Options and Metadata
@@ -265,7 +265,7 @@ DESCRIBE EXTENDED purchase_dates
 -- MAGIC The **`CREATE TABLE`** clause contains several options:
 -- MAGIC * A **`COMMENT`** is added to allow for easier discovery of table contents
 -- MAGIC * A **`LOCATION`** is specified, which will result in an external (rather than managed) table
--- MAGIC * The table is **`PARTITIONED BY`** a date column; this means that the data from each data will exist within its own directory in the target storage location
+-- MAGIC * The table is **`PARTITIONED BY`** a date column; this means that the data from each date will exist within its own directory in the target storage location
 -- MAGIC 
 -- MAGIC **NOTE**: Partitioning is shown here primarily to demonstrate syntax and impact. Most Delta Lake tables (especially small-to-medium sized data) will not benefit from partitioning. Because partitioning physically separates data files, this approach can result in a small files problem and prevent file compaction and efficient data skipping. The benefits observed in Hive or HDFS do not translate to Delta Lake, and you should consult with an experienced Delta Lake architect before partitioning tables.
 -- MAGIC 
@@ -288,7 +288,7 @@ SELECT * FROM users_pii;
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="c1aa43f4-9681-4104-824d-c4ce4bc72914" version="2.3.3" />
 -- MAGIC 
 -- MAGIC  
 -- MAGIC The metadata fields added to the table provide useful information to understand when records were inserted and from where. This can be especially helpful if troubleshooting problems in the source data becomes necessary.
@@ -303,7 +303,7 @@ DESCRIBE EXTENDED users_pii
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="afad6329-9739-4397-b410-7b49ad9118ce" version="2.3.3" />
 -- MAGIC 
 -- MAGIC  
 -- MAGIC Listing the location used for the table reveals that the unique values in the partition column **`first_touch_date`** are used to create data directories.
@@ -316,7 +316,7 @@ DESCRIBE EXTENDED users_pii
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="ac7e881c-3076-4997-8dcc-4daa5c84a226" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC ## Cloning Delta Lake Tables
@@ -331,7 +331,7 @@ DEEP CLONE purchases
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="a42c51a7-ac07-4e67-94ea-ed06b6db126c" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC Because all the data files must be copied over, this can take quite a while for large datasets.
@@ -345,14 +345,14 @@ SHALLOW CLONE purchases
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="e9b91c6a-2581-4a0b-8f84-2e100f053980" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC In either case, data modifications applied to the cloned version of the table will be tracked and stored separately from the source. Cloning is a great way to set up tables for testing SQL code while still in development.
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="64bb6112-b07c-424c-a668-da4cfa29be1f" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC ## Summary
@@ -361,7 +361,7 @@ SHALLOW CLONE purchases
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="c78f9f19-f13b-49b4-9ad0-20181528f924" version="2.3.3" />
 -- MAGIC 
 -- MAGIC  
 -- MAGIC Run the following cell to delete the tables and files associated with this lesson.

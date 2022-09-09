@@ -7,7 +7,7 @@
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="73b4cbc8-b2b3-4d51-8443-0280a10127e9" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC # Views and CTEs on Databricks
@@ -26,7 +26,7 @@
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="c297b643-5e56-4ed9-928a-b4261b206461" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC ## Classroom Setup
@@ -38,7 +38,7 @@
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="f94b665d-e3c5-4dc7-8f40-6e892bdbe71a" version="2.3.3" />
 -- MAGIC 
 -- MAGIC  
 -- MAGIC We start by creating a table of data we can use for the demonstration.
@@ -57,7 +57,7 @@ SELECT * FROM external_table;
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="8bc49e5c-12e9-4458-90aa-88b67091f6f7" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC 
@@ -69,7 +69,7 @@ SHOW TABLES;
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="b80b82c4-c65f-47fe-8968-4c3051f59ba1" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC 
@@ -81,7 +81,7 @@ SHOW TABLES;
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="ead94707-a156-4282-9f11-b4976c39470d" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC ### Views
@@ -98,7 +98,7 @@ SELECT * FROM view_delays_abq_lax;
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="f7cc0d7b-eb93-406a-8925-60ea057466ea" version="2.3.3" />
 -- MAGIC 
 -- MAGIC  
 -- MAGIC  
@@ -110,7 +110,7 @@ SHOW TABLES;
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="6badc00c-9bf4-47cb-aac8-a474d678e4f6" version="2.3.3" />
 -- MAGIC 
 -- MAGIC  
 -- MAGIC ### Temporary Views
@@ -128,7 +128,7 @@ SELECT * FROM temp_view_delays_gt_120;
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="b19e8641-b379-4bab-83e7-3aff6dacd8ec" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC 
@@ -142,7 +142,7 @@ SHOW TABLES;
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="7ac13dd9-3f9f-4a41-8945-3405d7a1e86a" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC 
@@ -163,7 +163,7 @@ SELECT * FROM global_temp.global_temp_view_dist_gt_1000;
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="83ab4417-60d5-4077-8947-ad53d6eb1dce" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC 
@@ -175,7 +175,7 @@ SHOW TABLES;
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="acf19ac9-f423-4ce6-85c1-e313672645e2" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC 
@@ -187,7 +187,7 @@ SHOW TABLES IN global_temp;
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="4b98c78a-c415-4a5c-a4cc-980d28e216b7" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC 

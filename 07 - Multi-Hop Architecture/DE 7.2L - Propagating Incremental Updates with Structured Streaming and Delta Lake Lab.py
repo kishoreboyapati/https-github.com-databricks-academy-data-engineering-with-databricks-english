@@ -7,7 +7,7 @@
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="0e458ce0-d210-41e2-8d96-836d7355de16" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC # Propagating Incremental Updates with Structured Streaming and Delta Lake
@@ -18,7 +18,7 @@
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="8cf2e657-3b59-4f53-a86e-6acabcd8aa16" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC ## Setup
@@ -30,7 +30,7 @@
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="4d9563b5-a6dc-4106-a5bf-168d374a968e" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -61,7 +61,7 @@ DA.block_until_stream_is_ready(query)
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="8b05f1fa-9046-4eba-8698-004b6c10fb79" version="2.3.3" />
 # MAGIC 
 # MAGIC Run the cell below to check your work.
 
@@ -73,7 +73,7 @@ assert spark.table("bronze").dtypes ==  [('customer_id', 'string'), ('tax_id', '
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="f999d572-86c1-4c0a-afbe-dad08cc7eb5a" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -88,7 +88,7 @@ assert spark.table("bronze").dtypes ==  [('customer_id', 'string'), ('tax_id', '
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="14a123fc-6cae-4780-b2fb-08ffa1da4989" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC ## Clean and enhance data
@@ -108,7 +108,7 @@ assert spark.table("bronze").dtypes ==  [('customer_id', 'string'), ('tax_id', '
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="4369381f-b2e0-4d88-9ccd-bcd6ff100f98" version="2.3.3" />
 # MAGIC 
 # MAGIC Run the cell below to check your work.
 
@@ -121,7 +121,7 @@ assert spark.table("bronze_enhanced_temp").isStreaming, "Not a streaming table"
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="ff38de01-61d2-4ffc-a5ca-aac815d8fb1e" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC ## Silver table
@@ -143,7 +143,7 @@ DA.block_until_stream_is_ready(query)
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="41b4d01f-c855-40da-86a9-6d36de39d48a" version="2.3.3" />
 # MAGIC 
 # MAGIC Run the cell below to check your work.
 
@@ -156,7 +156,7 @@ assert spark.table("silver").filter("postcode <= 0").count() == 0, "Null postcod
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="e8fef108-ec3e-4404-9307-84cc3b593f99" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -171,7 +171,7 @@ assert spark.table("silver").filter("postcode <= 0").count() == 0, "Null postcod
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="e37aaafc-d774-4635-9ca4-163446d98ac7" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -189,7 +189,7 @@ assert spark.table("silver").filter("postcode <= 0").count() == 0, "Null postcod
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="7b1502ab-f64b-4491-8104-fa46521c4dc0" version="2.3.3" />
 # MAGIC 
 # MAGIC Run the cell below to check your work.
 
@@ -201,7 +201,7 @@ assert spark.table("customer_count_temp").dtypes ==  [('state', 'string'), ('cus
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="413fe655-e9c0-42ca-8bd9-e7f45c98d2ad" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC Finally, stream the data from the **`customer_count_temp`** view to a Delta table called **`gold_customer_count_by_state`**.
@@ -223,7 +223,7 @@ DA.block_until_stream_is_ready(query)
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="a4073245-d0e0-41a2-b107-16357064b596" version="2.3.3" />
 # MAGIC 
 # MAGIC Run the cell below to check your work.
 
@@ -236,7 +236,7 @@ assert spark.table("gold_customer_count_by_state").count() == 51, "Incorrect num
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="28b96faa-5b44-4e66-bc49-58ad9fa80f2e" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -251,7 +251,7 @@ assert spark.table("gold_customer_count_by_state").count() == 51, "Incorrect num
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="c6bbef1b-0139-41c5-889b-f1cf1a56f907" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC ## Wrapping Up
@@ -264,7 +264,7 @@ DA.cleanup()
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="971fb9e2-1315-47d1-bb18-ae0835b5bcde" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC By completing this lab, you should now feel comfortable:

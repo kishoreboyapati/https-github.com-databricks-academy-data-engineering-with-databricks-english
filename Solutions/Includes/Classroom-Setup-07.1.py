@@ -30,22 +30,11 @@ class DataFactory:
 
 # COMMAND ----------
 
-DA = DBAcademyHelper()
-DA.init()
-DA.paths.checkpoints = f"{DA.paths.working_dir}/_checkpoints"    
-#DA.paths.data_source = f"{DA.paths.datasets}healthcare"
+DA = DBAcademyHelper(**helper_arguments)
+DA.reset_environment()
+DA.init(install_datasets=True, create_db=True)
+
 DA.paths.data_landing_location    = f"{DA.paths.working_dir}/source/tracker"
-
-# bronzePath             = f"{DA.paths.wokring_dir}/bronze"
-# recordingsParsedPath   = f"{DA.paths.wokring_dir}/silver/recordings_parsed"
-# recordingsEnrichedPath = f"{DA.paths.wokring_dir}/silver/recordings_enriched"
-# dailyAvgPath           = f"{DA.paths.wokring_dir}/gold/dailyAvg"
-
-# checkpointPath               = f"{DA.paths.wokring_dir}/checkpoints"
-#bronzeCheckpoint             = f"{DA.paths.checkpoints}/bronze"
-# recordingsParsedCheckpoint   = f"{DA.paths.checkpoints}/recordings_parsed"
-# recordingsEnrichedCheckpoint = f"{DA.paths.checkpoints}/recordings_enriched"
-# dailyAvgCheckpoint           = f"{DA.paths.checkpoints}/dailyAvgPath"
 
 DA.data_factory = DataFactory()
 DA.conclude_setup()

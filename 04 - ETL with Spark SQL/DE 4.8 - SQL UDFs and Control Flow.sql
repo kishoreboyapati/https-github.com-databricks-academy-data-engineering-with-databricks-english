@@ -7,7 +7,7 @@
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="931bf77d-810b-4930-b45c-b00c184029a0" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC # SQL UDFs and Control Flow
@@ -27,7 +27,7 @@
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="df80ac46-fb12-44ed-bb37-dcc5a4d73d4a" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC ## Setup
@@ -39,7 +39,7 @@
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="f4fec594-3cd7-43c9-b88e-3ccd3a99c6be" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC ## Create a Simple Dataset
@@ -58,7 +58,7 @@ SELECT * FROM foods
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="65577a77-c917-441c-895b-8ba146c837ff" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC ## SQL UDFs
@@ -74,7 +74,7 @@ RETURN concat(upper(text), "!!!")
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="4cffc92d-3133-45ba-97c8-b0bc4c9e419b" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC Note that this function is applied to all values of the column in a parallel fashion within the Spark processing engine. SQL UDFs are an efficient way to define custom logic that is optimized for execution on Databricks.
@@ -85,7 +85,7 @@ SELECT yelling(food) FROM foods
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="e1749d08-2186-4e1c-9214-18c8199388af" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC ## Scoping and Permissions of SQL UDFs
@@ -100,7 +100,7 @@ DESCRIBE FUNCTION yelling
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="6a6eb6c6-ffc8-49d9-a39a-a5e1f6c230af" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC By describing extended, we can get even more information. 
@@ -113,7 +113,7 @@ DESCRIBE FUNCTION EXTENDED yelling
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="a31a4ad1-5608-4bfb-aae4-a411fe460385" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC SQL UDFs exist as objects in the metastore and are governed by the same Table ACLs as databases, tables, or views.
@@ -122,7 +122,7 @@ DESCRIBE FUNCTION EXTENDED yelling
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="155c70b7-ed5e-47d2-9832-963aa18f3869" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC ## CASE/WHEN
@@ -144,7 +144,7 @@ FROM foods
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="50bc0847-94d2-4167-befe-66e42b287ad0" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC ## Simple Control Flow Functions
@@ -166,7 +166,7 @@ END;
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="05cb00cc-097c-4607-8738-ab4353536dda" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC Using this method on our data provides the desired outcome.
@@ -177,7 +177,7 @@ SELECT foods_i_like(food) FROM foods
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="24ee3267-9ddb-4cf5-9081-273502f5252a" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC While the example provided here are simple string methods, these same basic principles can be used to add custom computations and logic for native execution in Spark SQL. 
@@ -186,7 +186,7 @@ SELECT foods_i_like(food) FROM foods
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="9405ddea-5fb0-4168-9fd2-2b462d5809d9" version="2.3.3" />
 -- MAGIC 
 -- MAGIC  
 -- MAGIC Run the following cell to delete the tables and files associated with this lesson.

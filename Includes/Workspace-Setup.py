@@ -7,7 +7,7 @@
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="1fb32f72-2ccc-4206-98d9-907287fc3262" version="2.3.3" />
 # MAGIC 
 # MAGIC # Workspace Setup
 # MAGIC This notebook should be run by instructors to prepare the workspace for a class.
@@ -27,11 +27,15 @@
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="86c0a995-1251-473e-976c-ba8288c0b2d3" version="2.3.3" />
 # MAGIC # Get Class Config
-# MAGIC The two variables defined by these widgets are used to configure our environment as a means of controlling class cost.
+# MAGIC The three variables defined by these widgets are used to configure our environment as a means of controlling class cost.
 
 # COMMAND ----------
+
+# Setup the widgets to collect required parameters.
+from dbacademy_helper.workspace_helper import ALL_USERS # no other option for this course
+dbutils.widgets.dropdown("configure_for", ALL_USERS, [ALL_USERS], "Configure Workspace For")
 
 # students_count is the reasonable estiamte to the maximum number of students
 dbutils.widgets.text("students_count", "", "Number of Students")
@@ -41,7 +45,7 @@ dbutils.widgets.text("event_name", "", "Event Name/Class Number")
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="b1d39e1d-aa44-4c05-b378-837a1b432128" version="2.3.3" />
 # MAGIC 
 # MAGIC # Init Script & Install Datasets
 # MAGIC The main affect of this call is to pre-install the datasets.
@@ -50,173 +54,40 @@ dbutils.widgets.text("event_name", "", "Event Name/Class Number")
 
 # COMMAND ----------
 
-DA = DBAcademyHelper()     # Create the DA object with the specified lesson
-DA.cleanup(validate=False) # Remove the existing database and files
-DA.init(create_db=False)   # True is the default
-DA.install_datasets()      # Install (if necissary) and validate the datasets
-DA.conclude_setup()        # Conclude the setup by printing the DA object's final state
+DA = DBAcademyHelper(**helper_arguments) # Create the DA object
+DA.reset_environment()                   # Reset by removing databases and files from other lessons
+DA.init(install_datasets=True,           # Initialize, install and validate the datasets
+        create_db=False)                 # Continue initialization, create the user-db
+DA.conclude_setup()                      # Conclude setup by advertising environmental changes
 
 # COMMAND ----------
 
-# Initilize the remaining parameters for this script
-from dbacademy import dbgems
-
-# Special logic for when we are running under test.
-is_smoke_test = spark.conf.get("dbacademy.smoke-test", "false") == "true"
-
-students_count = dbutils.widgets.get("students_count").strip()
-user_count = len(DA.client.scim.users.list())
-
-students_count = max(int(students_count), user_count) if students_count.isnumeric() else user_count
-    
-workspace = dbgems.get_browser_host_name() if dbgems.get_browser_host_name() else dbgems.get_notebooks_api_endpoint()
-workspace = DA.clean_string(workspace)
-
-org_id = dbgems.get_tag("orgId", "unknown")
-org_id = DA.clean_string(org_id)
-
-import math
-autoscale_min = 1 if is_smoke_test else math.ceil(students_count/20)
-autoscale_max = 1 if is_smoke_test else math.ceil(students_count/5)
-
-event_name = "Smoke Test" if is_smoke_test else dbutils.widgets.get("event_name")
-assert event_name is not None and len(event_name) >= 3, f"The parameter event_name must be specified with min-length of 3"
-event_name = DA.clean_string(event_name)
-
-# COMMAND ----------
-
-# MAGIC %md
+# MAGIC %md <i18n value="485ff12c-7286-4d14-a90e-3c29d87f8920" version="2.3.3" />
 # MAGIC 
 # MAGIC ## Create Class Instance Pools
 # MAGIC The following cell configures the instance pool used for this class
 
 # COMMAND ----------
 
-# Do not change these values.
-tags = [("dbacademy.event_name",     DA.clean_string(event_name)),
-        ("dbacademy.students_count", DA.clean_string(students_count)),
-        ("dbacademy.workspace",      DA.clean_string(workspace)),
-        ("dbacademy.org_id",         DA.clean_string(org_id))]
-
-pool = DA.client.instance_pools.create_or_update(instance_pool_name = "Student's Pool",
-                                                 idle_instance_autotermination_minutes = 15, 
-                                                 min_idle_instances = 0,
-                                                 tags = tags)
-instance_pool_id = pool.get("instance_pool_id")
-
-# With the pool created, make sure that all users can attach to it.
-DA.client.permissions.pools.update_group(instance_pool_id, "users", "CAN_ATTACH_TO")
-
-print(instance_pool_id)
+instance_pool_id = DA.workspace.clusters.create_instance_pools()
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="04ae9a73-8b48-4823-8738-31e337864cf4" version="2.3.3" />
 # MAGIC 
 # MAGIC ## Create The Three Class-Specific Cluster Policies
 # MAGIC The following cells create the various cluster policies used by the class
 
 # COMMAND ----------
 
-policy = DA.client.cluster_policies.create_or_update("Student's All-Purpose Policy", {
-    "cluster_type": {
-        "type": "fixed",
-        "value": "all-purpose"
-    },
-    "autotermination_minutes": {
-        "type": "range",
-        "minValue": 1,
-        "maxValue": 120,
-        "defaultValue": 120,
-        "hidden": False
-    },
-    "spark_conf.spark.databricks.cluster.profile": {
-        "type": "fixed",
-        "value": "singleNode",
-        "hidden": False
-    },
-    "instance_pool_id": {
-        "type": "fixed",
-        "value": instance_pool_id,
-        "hidden": False
-    }
-})
-policy_id = policy.get("policy_id")
-
-# With the pool created, make sure that all users can attach to it.
-DA.client.permissions.cluster_policies.update_group(policy_id, "users", "CAN_USE")
-
-print(policy_id)
+DA.workspace.clusters.create_all_purpose_policy(instance_pool_id)
+DA.workspace.clusters.create_jobs_policy(instance_pool_id)
+DA.workspace.clusters.create_dlt_policy(instance_pool_id)
+None
 
 # COMMAND ----------
 
-policy = DA.client.cluster_policies.create_or_update("Student's Jobs-Only Policy", {
-    "cluster_type": {
-        "type": "fixed",
-        "value": "job"
-    },
-    "spark_conf.spark.databricks.cluster.profile": {
-        "type": "fixed",
-        "value": "singleNode",
-        "hidden": False
-    },
-    "instance_pool_id": {
-        "type": "fixed",
-        "value": instance_pool_id,
-        "hidden": False
-    },
-})
-policy_id = policy.get("policy_id")
-
-# With the pool created, make sure that all users can attach to it.
-DA.client.permissions.cluster_policies.update_group(policy_id, "users", "CAN_USE")
-
-print(policy_id)
-
-# COMMAND ----------
-
-policy = DA.client.cluster_policies.create_or_update("Student's DLT-Only Policy", {
-    "cluster_type": {
-        "type": "fixed",
-        "value": "dlt"
-    },
-    "spark_conf.spark.databricks.cluster.profile": {
-        "type": "fixed",
-        "value": "singleNode",
-        "hidden": False
-    },
-    "custom_tags.dbacademy.event_name": {
-        "type": "fixed",
-        "value": DA.clean_string(event_name),
-        "hidden": False
-    },
-    "custom_tags.dbacademy.students_count": {
-        "type": "fixed",
-        "value": DA.clean_string(students_count),
-        "hidden": False
-    },
-    "custom_tags.dbacademy.workspace": {
-        "type": "fixed",
-        "value": DA.clean_string(workspace),
-        "hidden": False
-    },
-    "custom_tags.dbacademy.org_id": {
-        "type": "fixed",
-        "value": DA.clean_string(org_id),
-        "hidden": False
-    }
-})
-
-policy_id = policy.get("policy_id")
-
-# With the pool created, make sure that all users can attach to it.
-DA.client.permissions.cluster_policies.update_group(policy_id, "users", "CAN_USE")
-
-print(policy_id)
-
-# COMMAND ----------
-
-# MAGIC %md
+# MAGIC %md <i18n value="2f010a4b-af3c-4b3f-96a0-d8b3556ec728" version="2.3.3" />
 # MAGIC 
 # MAGIC ## Create Class-Shared Databricks SQL Warehouse/Endpoint
 # MAGIC Creates a single wharehouse to be used by all students.
@@ -225,35 +96,11 @@ print(policy_id)
 
 # COMMAND ----------
 
-from dbacademy.dbrest.sql.endpoints import RELIABILITY_OPTIMIZED, CHANNEL_NAME_CURRENT, CLUSTER_SIZE_2X_SMALL
-
-warehouse = DA.client.sql.endpoints.create_or_update(
-    name = "Starter Warehouse",
-    cluster_size = CLUSTER_SIZE_2X_SMALL,
-    enable_serverless_compute = False, # Due to a bug with Free-Trial workspaces
-    min_num_clusters = autoscale_min,
-    max_num_clusters = autoscale_max,
-    auto_stop_mins = 120,
-    enable_photon = True,
-    spot_instance_policy = RELIABILITY_OPTIMIZED,
-    channel = CHANNEL_NAME_CURRENT,
-    tags = {
-        "dbacademy.event_name":     DA.clean_string(event_name),
-        "dbacademy.students_count": DA.clean_string(students_count),
-        "dbacademy.workspace":      DA.clean_string(workspace),
-        "dbacademy.org_id":         DA.clean_string(org_id)
-    })
-
-warehouse_id = warehouse.get("id")
-
-# # With the warehouse created, make sure that all users can attach to it.
-DA.client.permissions.warehouses.update_group(warehouse_id, "users", "CAN_USE")
-
-print(warehouse_id)
+DA.workspace.warehouses.create_shared_sql_warehouse()
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="a382c82f-6e5a-453c-b612-946e184d576c" version="2.3.3" />
 # MAGIC 
 # MAGIC ## Configure User Entitlements
 # MAGIC 
@@ -261,13 +108,12 @@ print(warehouse_id)
 
 # COMMAND ----------
 
-group = DA.client.scim.groups.get_by_name("users")
-DA.client.scim.groups.add_entitlement(group.get("id"), "databricks-sql-access")
-None
+DA.workspace.add_entitlement_workspace_access()
+DA.workspace.add_entitlement_databricks_sql_access()
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="74b76ae9-3bbb-4bd4-b1c6-6d76d85a5baa" version="2.3.3" />
 # MAGIC 
 # MAGIC ## Update Grants
 # MAGIC This operation executes **`GRANT CREATE ON CATALOG TO users`** to ensure that students can create databases as required by this course when they are not admins.
@@ -278,7 +124,15 @@ None
 
 # Ensures that all users can create databases on the current catalog 
 # for cases wherein the user/student is not an admin.
-DA.update_user_specific_grants()
+job_id = DA.workspace.databases.configure_permissions("Configure-Permissions")
+
+# COMMAND ----------
+
+DA.client.jobs().delete_by_id(job_id)
+
+# COMMAND ----------
+
+DA.setup_completed()
 
 # COMMAND ----------
 

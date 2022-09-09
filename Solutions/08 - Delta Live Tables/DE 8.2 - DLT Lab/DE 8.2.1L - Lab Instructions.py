@@ -7,7 +7,7 @@
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="2eb97b71-b2ab-4b68-afdc-1663ec49e9d4" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC # Lab: Migrating SQL Notebooks to Delta Live Tables
@@ -20,7 +20,7 @@
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="782da0e9-5fc2-4deb-b7a4-939af49e38ed" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC ## Datasets Used
@@ -47,7 +47,7 @@
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="b691e21b-24a5-46bc-97d8-a43e9ae6e268" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC ## Getting Started
@@ -60,7 +60,7 @@
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="c68290ac-56ad-4d6e-afec-b0a61c35386f" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC ## Land Initial Data
@@ -74,7 +74,7 @@ DA.data_factory.load()
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="7cb98302-06c2-4384-bdf7-2260cbf2662d" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC Execute the following cell to print out values that will be used during the following configuration steps.
@@ -85,7 +85,7 @@ DA.print_pipeline_config()
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="784d3bc4-5c4e-4ef8-ab56-3ebaa92238b0" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC ## Create and Configure a Pipeline
@@ -94,7 +94,7 @@ DA.print_pipeline_config()
 # MAGIC 1. Select the **Delta Live Tables** tab.
 # MAGIC 1. Click **Create Pipeline**.
 # MAGIC 1. Leave **Product Edition** as **Advanced**.
-# MAGIC 1. Fill in a **Pipeline Name** - because these names must be unique, we suggest using the **Pipline Name** provided in the cell above.
+# MAGIC 1. Fill in a **Pipeline Name** - because these names must be unique, we suggest using the **Pipeline Name** provided in the cell above.
 # MAGIC 1. For **Notebook Libraries**, use the navigator to locate and select the notebook specified above.
 # MAGIC 1. Under **Configuration**, add three configuration parameters:
 # MAGIC    * Click **Add configuration**, set the "key" to **spark.master** and the "value" to **local[\*]**.
@@ -113,11 +113,19 @@ DA.print_pipeline_config()
 
 # COMMAND ----------
 
+# ANSWER
+
+# This function is provided for those students that do not 
+# want to work through the exercise of creating the pipeline.
+DA.create_pipeline()
+
+# COMMAND ----------
+
 DA.validate_pipeline_config()
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="3340e93d-1fad-4549-bf79-ec239b1d59d4" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC ## Open and Complete DLT Pipeline Notebook
@@ -130,7 +138,7 @@ DA.validate_pipeline_config()
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="90a66079-16f8-4503-ab48-840cbdd07914" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC ## Run your Pipeline
@@ -146,7 +154,15 @@ DA.validate_pipeline_config()
 
 # COMMAND ----------
 
-# MAGIC %md
+# ANSWER
+
+# This function is provided to start the pipeline and  
+# block until it has completed, is cancelled or failed
+DA.start_pipeline()
+
+# COMMAND ----------
+
+# MAGIC %md <i18n value="d1797d22-692c-43ce-b146-1e0248e65da3" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC ## Troubleshooting Code in Development Mode

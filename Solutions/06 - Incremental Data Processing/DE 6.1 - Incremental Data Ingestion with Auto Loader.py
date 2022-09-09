@@ -7,7 +7,7 @@
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="82f45276-7911-4045-b57d-c2891df6f785" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC # Incremental Data Ingestion with Auto Loader
@@ -19,6 +19,8 @@
 # MAGIC Historically, ingesting files from a data lake into a database has been a complicated process.
 # MAGIC 
 # MAGIC Databricks Auto Loader provides an easy-to-use mechanism for incrementally and efficiently processing new data files as they arrive in cloud file storage. In this notebook, you'll see Auto Loader in action.
+# MAGIC 
+# MAGIC ![](https://files.training.databricks.com/images/autoloader-detection-modes.png)
 # MAGIC 
 # MAGIC Due to the benefits and scalability that Auto Loader delivers, Databricks recommends its use as general **best practice** when ingesting data from cloud object storage.
 # MAGIC 
@@ -40,7 +42,7 @@
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="3b8b82a4-9dd3-4b4d-a591-dca88bd064c6" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -54,7 +56,7 @@
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="188f9a32-fc72-40da-844a-b87cd14e358e" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC ## Using Auto Loader
@@ -90,7 +92,7 @@ def autoload_to_table(data_source, source_format, table_name, checkpoint_directo
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="cf70df0f-f945-4efb-b8d0-e90d86d0bf9b" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC In the following cell, we use the previously defined function and some path variables defined in the setup script to begin an Auto Loader stream.
@@ -107,7 +109,7 @@ query = autoload_to_table(data_source = f"{DA.paths.working_dir}/tracker",
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="6d136721-85f1-474f-aaa1-3de8c2981e21" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC Because Auto Loader uses Spark Structured Streaming to load data incrementally, the code above doesn't appear to finish executing.
@@ -116,7 +118,7 @@ query = autoload_to_table(data_source = f"{DA.paths.working_dir}/tracker",
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="96a80d56-2fea-4865-8d80-73aea7a0169a" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC ## Helper Function for Streaming Lessons
@@ -138,7 +140,7 @@ block_until_stream_is_ready(query)
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="56f6dfa2-c638-4812-8d7b-d4d480f97364" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC ## Query Target Table
@@ -152,7 +154,7 @@ block_until_stream_is_ready(query)
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="2bcece5b-7175-4b55-ab2c-40a67115a764" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC Note that the **`_rescued_data`** column is added by Auto Loader automatically to capture any data that might be malformed and not fit into the table otherwise.
@@ -166,7 +168,7 @@ block_until_stream_is_ready(query)
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="96d695c6-45f5-4d3e-b822-2fec12d72664" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC Use the cell below to define a temporary view that summarizes the recordings in our target table.
@@ -185,7 +187,7 @@ block_until_stream_is_ready(query)
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="8048e413-c4c9-406c-be74-c541f976c8e3" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC ## Land New Data
@@ -201,7 +203,7 @@ display(files)
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="f7573e55-b6ab-46ad-9eae-cd037b4f554f" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC At present, you should see a single JSON file listed in this location.
@@ -214,7 +216,7 @@ DA.data_factory.load()
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="a8eeb778-e14e-42fc-90d1-86ed69ad06fb" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC List the contents of the **`source_path`** again using the cell below. You should see an additional JSON file for each time you ran the previous cell.
@@ -226,7 +228,7 @@ display(files)
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="d8323fbe-942c-405a-b3f1-5f4a3785ad95" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC ## Tracking Ingestion Progress
@@ -244,7 +246,7 @@ display(files)
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="b630929e-6d09-46d8-9cd0-2d5418b5840c" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC The Auto Loader query we configured earlier automatically detects and processes records from the source directory into the target table. There is a slight delay as records are ingested, but an Auto Loader query executing with default streaming configuration should update results in near real time.
@@ -258,7 +260,7 @@ display(files)
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="a01651f5-70c8-45a4-859e-f9976eacf7a1" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC ## Clean Up

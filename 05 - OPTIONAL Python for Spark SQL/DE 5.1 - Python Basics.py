@@ -7,7 +7,7 @@
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="54f96b76-aa49-4769-b067-4f5232dc4b58" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC # Just Enough Python for Databricks SQL
@@ -26,7 +26,7 @@
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="ae07e616-51d4-4ccb-ae28-6c22b7a203e6" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC ## Strings
@@ -38,7 +38,7 @@
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="f6b947f5-3dbd-4def-ab31-fa7f3692145f" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC To preview how a string will render, we can call **`print()`**.
@@ -49,7 +49,7 @@ print("This is a string")
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="5d9d751f-e0c3-434a-9bf4-5b8741131a2b" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC By wrapping a string in triple quotes (**`"""`**), it's possible to use multiple lines.
@@ -66,7 +66,7 @@ string
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="4f3b441e-39a7-42b8-982c-3d27e1a4f5d5" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC This makes it easy to turn SQL queries into Python strings.
@@ -80,7 +80,7 @@ FROM test_table
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="825c71d8-26ee-4c90-910c-64b0a3d6600a" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC When we execute SQL from a Python cell, we will pass a string as an argument to **`spark.sql()`**.
@@ -91,7 +91,7 @@ spark.sql("SELECT 1 AS test")
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="86cfbbf7-5e50-4d93-99bd-794b790be9d3" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC To render a query the way it would appear in a normal SQL notebook, we call **`display()`** on this function.
@@ -102,7 +102,7 @@ display(spark.sql("SELECT 1 AS test"))
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="6af577e2-3621-4871-b12b-25716defbaba" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC **NOTE**: Executing a cell with only a Python string in it will just print the string. Using **`print()`** with a string just renders it back to the notebook.
@@ -111,7 +111,7 @@ display(spark.sql("SELECT 1 AS test"))
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="6182d5b6-59e8-401f-acb1-d4d57c5b6018" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC ## Variables
@@ -129,7 +129,7 @@ my_string = "This is a string"
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="a0d528ec-e75e-4978-ad2e-c8bd2f8d2454" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC Executing a cell with this variable will return its value.
@@ -140,7 +140,7 @@ my_string
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="e579ffd9-9053-4c28-bd69-e0ccb66f2225" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC The output here is the same as if we typed **`"This is a string"`** into the cell and ran it.
@@ -153,7 +153,7 @@ print(my_string)
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="cc95571a-ebbd-4d64-8d6a-8ef34db4161b" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC This variable can be used the same way a string would be.
@@ -166,7 +166,7 @@ print("This is a new string and " + my_string)
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="8c371bcd-a3a2-466e-aef8-b76dbb61c3cd" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC We can join string variables with other string variables.
@@ -178,7 +178,7 @@ print(new_string + my_string)
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="0a43629e-d3a8-4b47-97ca-f1ac4087ca4e" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC ## Functions
@@ -195,7 +195,7 @@ def print_string(arg):
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="7cc9b4bf-3bd9-4bca-aed9-f2edd1a8dbcf" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC When we pass a string as the argument, it will be printed.
@@ -206,7 +206,7 @@ print_string("foo")
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="8be00c15-f836-440d-9c78-df661f63f5db" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC We can also pass a variable as an argument.
@@ -217,7 +217,7 @@ print_string(my_string)
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="e32021af-f1ad-4372-a25e-0e0bcad7c058" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC Oftentimes we want to return the results of our function for use elsewhere. For this we use the **`return`** keyword.
@@ -231,7 +231,7 @@ def return_new_string(string_arg):
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="91f4a773-4f34-4775-b279-1b34cc0ed5d2" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC Running this function returns the output.
@@ -242,7 +242,7 @@ return_new_string("foobar")
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="75eb96a6-81eb-4eee-b02f-f2f5b75a52f9" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC Assigning it to a variable captures the output for reuse elsewhere.
@@ -253,7 +253,7 @@ function_output = return_new_string("foobar")
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="dee0b420-4c7d-4144-8d76-144be3600c08" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC This variable doesn't contain our function, just the results of our function (a string).
@@ -264,7 +264,7 @@ function_output
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="e74d9e23-a516-405a-94bb-b6c92bfdfc37" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC ## F-strings
@@ -278,7 +278,7 @@ f"I can substitute {my_string} here"
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="da4b6564-4016-4c2a-99a7-117d3a8a5876" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC The following cell inserts the string returned by a function.
@@ -289,7 +289,7 @@ f"I can substitute functions like {return_new_string('foobar')} here"
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="1d51c2c3-518c-4c51-a48d-09af1113cbe9" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC Combine this with triple quotes and you can format a paragraph or list, like below.
@@ -306,7 +306,7 @@ print(multi_line_string)
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="5c613732-30bc-4ca8-918d-fed64f39bb5c" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC Or you could format a SQL query.

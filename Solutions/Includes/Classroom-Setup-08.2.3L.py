@@ -3,10 +3,9 @@
 
 # COMMAND ----------
 
-DA = DBAcademyHelper(lesson="dlt_lab_82")
-# Continuing from 8.2.3L, do not remove assets
-# DA.cleanup()
-DA.init()
+DA = DBAcademyHelper(lesson="dlt_lab_82", **helper_arguments)
+# DA.reset_environment()  # We don't want to reset the environment
+DA.init(install_datasets=True, create_db=True)
 
 DA.paths.stream_path = f"{DA.paths.working_dir}/stream"
 DA.paths.storage_location = f"{DA.paths.working_dir}/storage"

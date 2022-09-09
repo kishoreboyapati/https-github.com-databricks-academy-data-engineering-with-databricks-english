@@ -7,7 +7,7 @@
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="48031791-53af-4737-8c15-280e45fb9226" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC # Notebook Basics
@@ -30,7 +30,7 @@
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="96041d75-d411-45db-8add-986022e62159" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC ## Attach to a Cluster
@@ -43,7 +43,7 @@
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="9f021e76-692f-4df7-8e80-fec41d03c719" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC ## Notebooks Basics
@@ -64,14 +64,14 @@ print("I'm running Python!")
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="cea571b2-8a27-495f-a1ee-7e270d688d62" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC **NOTE**: Cell-by-cell code execution means that cells can be executed multiple times or out of order. Unless explicitly instructed, you should always assume that the notebooks in this course are intended to be run one cell at a time from top to bottom. If you encounter an error, make sure you read the text before and after a cell to ensure that the error wasn't an intentional learning moment before you try to troubleshoot. Most errors can be resolved by either running earlier cells in a notebook that were missed or re-executing the entire notebook from the top.
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="702cb769-7d37-4b1a-8131-292f37d4c8e6" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC ### Setting the Default Notebook Language
@@ -92,7 +92,7 @@ print("I'm running Python!")
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="0e12c7f2-4169-40d6-b065-5b6e1454ae2a" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC ### Create and Run a SQL Cell
@@ -107,7 +107,7 @@ print("I'm running Python!")
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="828d14d2-a661-45e4-a555-0b86896c31d4" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC ## Magic Commands
@@ -120,7 +120,7 @@ print("I'm running Python!")
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="19380cb5-20d3-4bd6-abd6-ae09082f2451" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC ### Language Magics
@@ -146,7 +146,7 @@ print("Hello Python!")
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="81f29d75-0c8f-47d3-a052-7664f3e2bc83" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -191,7 +191,7 @@ print("Hello Python!")
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="8bdf271e-346f-4ec8-b49c-a7593a5f1f6c" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC ### %run
@@ -201,7 +201,7 @@ print("Hello Python!")
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="739cd1b9-dac7-40f7-8c33-9a3c91eec348" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC Uncommenting and executing the following cell will generate the following error:<br/>
@@ -214,7 +214,7 @@ print("Hello Python!")
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="d9e357e2-f605-4aae-be7d-9254361e2147" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC But we can declare it and a handful of other variables and functions buy running this cell:
@@ -225,7 +225,7 @@ print("Hello Python!")
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="e7a9c7ec-1d61-42d6-91c9-ece07d2aa2a3" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC The **`../Includes/Classroom-Setup-01.2`** notebook we referenced includes logic to create and **`USE`** a database, as well as creating the temp view **`demo_temp_vw`**.
@@ -239,7 +239,7 @@ print("Hello Python!")
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="fd9afa7b-7efd-421e-9a22-61e7d6533a52" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC We'll use this pattern of "setup" notebooks throughout the course to help configure the environment for lessons and labs.
@@ -261,7 +261,7 @@ print(f"DA.db_name:           {DA.db_name}")
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="f28a5e07-c955-460c-8779-6eb3f7306b19" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC In addition to this, these same variables are "injected" into the SQL context so that we can use them in SQL statements.
@@ -279,7 +279,7 @@ print(f"DA.db_name:           {DA.db_name}")
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="cf6ff3b4-2f4b-4fed-9d56-1e5f1b4fbb83" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC ## Databricks Utilities
@@ -294,7 +294,7 @@ dbutils.fs.ls(path)
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="b58df4d5-09b7-4a63-89d8-69363d32e37b" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC ## display()
@@ -313,7 +313,7 @@ display(files)
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="4ee5258a-3c18-47d5-823c-01596b4787c4" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC The **`display()`** command has the following capabilities and limitations:
@@ -323,7 +323,7 @@ display(files)
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="b1e79003-3240-4a4e-84e3-a7902f969631" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC ## Downloading Notebooks
@@ -359,7 +359,7 @@ display(files)
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="37f4f2b0-5f6e-45d6-9ee4-3f90348f8277" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC ## Learning More
@@ -377,7 +377,7 @@ display(files)
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="b3cc4b2f-a3ee-4602-bee8-b2b8fad2684a" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC ## One more note! 

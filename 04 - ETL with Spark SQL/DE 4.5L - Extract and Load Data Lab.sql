@@ -7,7 +7,7 @@
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="d2c3cdc2-5fcf-4edc-8101-2964a9355000" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC # Extract and Load Data Lab
@@ -23,7 +23,7 @@
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="e261fd97-ffd7-44b2-b1ca-61b843ee8961" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC ## Run Setup
@@ -36,7 +36,7 @@
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="d7759322-f9b9-4abe-9b30-25f5a7e30d9c" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC ## Overview of the Data
@@ -58,7 +58,7 @@
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="f2cd70fe-65a1-4dce-b264-c0c7d225640a" version="2.3.3" />
 -- MAGIC 
 -- MAGIC  
 -- MAGIC ## Extract Raw Events From JSON Files
@@ -73,7 +73,7 @@
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="07ce3850-fdc7-4dea-9335-2a093c2e200c" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC **NOTE**: We'll use Python to run checks occasionally throughout the lab. The following cell will return an error with a message on what needs to change if you have not followed instructions. No output from cell execution means that you have completed this step.
@@ -90,7 +90,7 @@
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="ae3b8554-d0e7-4fd7-b25a-27bfbc5f7c13" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC 
@@ -104,7 +104,7 @@
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="3d56975b-47ba-4678-ae7b-7c5e4ac20a97" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC 
@@ -120,7 +120,7 @@
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="61815a62-6d4f-47fb-98a9-73c39842ac56" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC 
@@ -133,7 +133,7 @@
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="4f545052-31c6-442b-a5e8-4c5892ec912f" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC Manually review the table contents to ensure data was written as expected.
@@ -145,7 +145,7 @@
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="0d66f26b-3df6-4819-9d84-22da9f55aeaa" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC 
@@ -159,7 +159,7 @@
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="e9565088-1762-4f89-a06f-49576a53526a" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC 
@@ -174,7 +174,7 @@
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="9f1ad20f-1238-4a12-ad2a-f10169ed6475" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC 
@@ -188,7 +188,7 @@
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="c24885ea-010e-4b76-9e9d-cc749f10993a" version="2.3.3" />
 -- MAGIC 
 -- MAGIC  
 -- MAGIC Run the following cell to delete the tables and files associated with this lesson.

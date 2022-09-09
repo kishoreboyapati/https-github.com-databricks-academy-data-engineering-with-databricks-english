@@ -7,7 +7,7 @@
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="8c3bda3d-9889-40cc-9b21-f42cab247b73" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC # Configuring Privileges for Production Data and Derived Tables
@@ -28,7 +28,7 @@
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="ed6459eb-0045-4614-9639-d3e3ff6dff2a" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC ## Exchange User Names with your Partner
@@ -44,7 +44,7 @@ print(f"Your username: {DA.username}")
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="6541f150-07b2-4acb-931b-3c33e66cdce0" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC ## Generate Setup Statements
@@ -61,7 +61,7 @@ DA.generate_query()
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="3c5a67e7-b871-49be-8097-998c2e698ee3" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC Steps:
@@ -76,7 +76,7 @@ DA.generate_query()
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="b2ddfe82-c24e-474a-b3ec-0786e095dc69" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC ## Find Your Database
@@ -90,7 +90,7 @@ DA.generate_query()
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="8a89aab0-2d1e-45e9-a24b-44e1106ebc39" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC ## Change Database Permissions
@@ -106,7 +106,7 @@ DA.generate_query()
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="b5803c49-52ce-4155-a448-10fc98a589fc" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC ## Run a Query to Confirm
@@ -126,7 +126,7 @@ DA.generate_confirmation_query("FILL_IN")
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="3c23d5fc-0400-49fb-9e1e-fabd00f875f2" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC ## Execute a Query to Generate the Union of Your Beans
@@ -141,7 +141,7 @@ DA.generate_union_query()
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="de0c1434-fa02-4296-aae0-f253e006e9f5" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC ## Register a Derivative View to Your Database
@@ -154,7 +154,7 @@ DA.generate_derivative_view()
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="0f32f538-b1dc-4d47-9ba9-4f1ccddf5e6f" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC ## Query Your Partner's View
@@ -168,7 +168,7 @@ DA.generate_partner_view("FILL_IN")
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="c06b7d01-464e-4265-b0a3-0fc5691e4073" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC ## Add Modify Permissions
@@ -195,7 +195,7 @@ DA.generate_delete_query("FILL_IN")
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="1b4b0745-e3d2-4024-ab59-8afd2f5b803f" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC This query should successfully drop all records from the target table.

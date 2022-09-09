@@ -27,12 +27,13 @@ class DataFactory:
 
 # COMMAND ----------
 
-DA = DBAcademyHelper()
-DA.init()
-DA.paths.checkpoints = f"{DA.paths.working_dir}/checkpoints"    
-DA.data_factory = DataFactory()
+DA = DBAcademyHelper(**helper_arguments)
+DA.reset_environment()
+DA.init(install_datasets=True, create_db=True)
 
+DA.data_factory = DataFactory()
 print()
+
 DA.data_factory.load()
 DA.conclude_setup()
 

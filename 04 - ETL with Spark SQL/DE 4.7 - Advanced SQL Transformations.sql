@@ -7,7 +7,7 @@
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="bc50b1e9-781a-405d-bed4-c80dbd97e0d1" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC # Advanced SQL Transformations
@@ -27,7 +27,7 @@
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="4c84edde-f73e-4873-aa45-aca0cf4c7159" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC ## Run Setup
@@ -40,7 +40,7 @@
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="836f7278-abe6-42e5-8e54-73410c439a55" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC ## Interacting with JSON Data
@@ -59,7 +59,7 @@ SELECT * FROM events_strings
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="c758863e-eb79-4b7b-b397-255b78699287" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC Spark SQL has built-in functionality to directly interact with JSON data stored as strings. We can use the **`:`** syntax to traverse nested data structures.
@@ -71,7 +71,7 @@ FROM events_strings
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="773a02a1-6208-4f7c-ad6a-e50850be0055" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC Spark SQL also has the ability to parse JSON objects into struct types (a native Spark type with nested attributes).
@@ -88,7 +88,7 @@ LIMIT 1
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="99cdb6bd-f03b-487d-a581-98ecf5fb86a3" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC Spark SQL also has a **`schema_of_json`** function to derive the JSON schema from an example. Here, we copy and paste an example JSON to the function and chain it into the **`from_json`** function to cast our **`value`** field to a struct type.
@@ -103,7 +103,7 @@ SELECT * FROM parsed_events
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="72757378-3490-4160-af61-cc8e86986633" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC Once a JSON string is unpacked to a struct type, Spark supports **`*`** (star) unpacking to flatten fields into columns.
@@ -118,7 +118,7 @@ SELECT * FROM new_events_final
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="71294bed-5a75-4577-8e34-d6cf319f7925" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC ## Explore Data Structures
@@ -133,7 +133,7 @@ DESCRIBE events
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="50bc40ad-f9fc-42f9-bb00-e1afecceff26" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC The **`ecommerce`** field is a struct that contains a double and 2 longs.
@@ -148,24 +148,43 @@ WHERE ecommerce.purchase_revenue_in_usd IS NOT NULL
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="0c5d4757-46c8-4ddd-8ad0-b81bcfd6d178" version="2.3.3" />
 -- MAGIC 
--- MAGIC  
--- MAGIC ## Explode Arrays
+-- MAGIC ## Working with Arrays
 -- MAGIC The **`items`** field in the **`events`** table is an array of structs.
 -- MAGIC 
 -- MAGIC Spark SQL has a number of functions specifically to deal with arrays.
 -- MAGIC 
--- MAGIC The **`explode`** function lets us put each element in an array on its own row.
+-- MAGIC For example, the **`size`** function provides a count of the number of elements in an array for each row.
+-- MAGIC 
+-- MAGIC Let's use this to filter for event records with arrays containing 3 or more items.
 
 -- COMMAND ----------
 
-SELECT user_id, event_timestamp, event_name, explode(items) AS item 
+SELECT user_id, event_timestamp, event_name, items
 FROM events
+WHERE size(items) > 2
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="0167fd9c-9374-4b86-90cf-53ae9feae297" version="2.3.3" />
+-- MAGIC 
+-- MAGIC  
+-- MAGIC ## Explode Arrays
+-- MAGIC 
+-- MAGIC The **`explode`** function lets us put each element in an array on its own row.
+-- MAGIC 
+-- MAGIC Let's use this to explode event records with 3 or more items into separate rows, one for each item in the array.
+
+-- COMMAND ----------
+
+SELECT user_id, event_timestamp, event_name, explode(items) AS item
+FROM events
+WHERE size(items) > 2
+
+-- COMMAND ----------
+
+-- MAGIC %md <i18n value="df218c13-c1e9-4644-8859-d1d66106f224" version="2.3.3" />
 -- MAGIC 
 -- MAGIC  
 -- MAGIC ## Collect Arrays
@@ -188,7 +207,7 @@ GROUP BY user_id
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="211f8b57-6202-4fdb-a60c-50dab87f48ca" version="2.3.3" />
 -- MAGIC 
 -- MAGIC  
 -- MAGIC ## Join Tables
@@ -211,7 +230,7 @@ SELECT * FROM sales_enriched
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="ee523edb-b563-41af-82e1-f9b28a076989" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC ## Set Operators
@@ -229,7 +248,7 @@ SELECT * FROM new_events_final
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="99487e80-251a-4468-98e2-6f7d25b147ef" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC **`INTERSECT`** returns all rows found in both relations.
@@ -242,7 +261,7 @@ SELECT * FROM new_events_final
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="c00adc33-1831-407b-b787-8d3bfaddadf9" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC The above query returns no results because our two datasets have no values in common.
@@ -251,7 +270,7 @@ SELECT * FROM new_events_final
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="e43bb5f8-d2d6-440f-a8f5-15387bd5bff1" version="2.3.3" />
 -- MAGIC 
 -- MAGIC  
 -- MAGIC 
@@ -302,7 +321,7 @@ SELECT * FROM transactions
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="d1ed83fa-4d2f-4138-b343-4d070c0d0e40" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC 
@@ -317,7 +336,7 @@ SELECT * FROM transactions
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="5fcad266-d5a0-4255-9c6b-be3634ea9e79" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC ## Filter
@@ -343,7 +362,7 @@ FROM sales
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="7ef7b728-dfad-4cdf-8f41-8c72a76d4310" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC You may write a filter that produces a lot of empty arrays in the created column. When that happens, it can be useful to use a **`WHERE`** clause to show only non-empty array values in the returned column. 
@@ -366,7 +385,7 @@ SELECT * FROM king_size_sales
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="e30bf997-6eb6-4ee7-94b8-6827ecdcce7d" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC ## Transform
@@ -397,7 +416,7 @@ SELECT * FROM king_item_revenues
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="6c15bff7-7667-4118-9b72-27068d6fa6be" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC ## Summary
@@ -407,7 +426,7 @@ SELECT * FROM king_item_revenues
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="2f9ae39d-2908-4ee1-9609-594c3d043a38" version="2.3.3" />
 -- MAGIC 
 -- MAGIC  
 -- MAGIC Run the following cell to delete the tables and files associated with this lesson.

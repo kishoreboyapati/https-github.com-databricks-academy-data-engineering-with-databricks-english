@@ -3,14 +3,15 @@
 
 # COMMAND ----------
 
+@DBAcademyHelper.monkey_patch
 def print_sql(self, rows, sql):
     html = f"""<textarea style="width:100%" rows="{rows}"> \n{sql.strip()}</textarea>"""
     displayHTML(html)
-    
-DBAcademyHelper.monkey_patch(print_sql)
+
 
 # COMMAND ----------
 
+@DBAcademyHelper.monkey_patch
 def generate_users_table(self):
     self.print_sql(20, f"""
 CREATE DATABASE IF NOT EXISTS {DA.db_name}
@@ -33,10 +34,10 @@ CREATE VIEW ny_users_vw
 AS SELECT * FROM users WHERE state = 'NY';
 """)
     
-DBAcademyHelper.monkey_patch(generate_users_table)
 
 # COMMAND ----------
 
+@DBAcademyHelper.monkey_patch
 def generate_create_database_with_grants(self):
     self.print_sql(7, f"""
 CREATE DATABASE {DA.db_name}_derivative;
@@ -45,12 +46,11 @@ GRANT USAGE, READ_METADATA, CREATE, MODIFY, SELECT ON DATABASE `{DA.db_name}_der
 
 SHOW GRANT ON DATABASE `{DA.db_name}_derivative`;""")    
     
-DBAcademyHelper.monkey_patch(generate_create_database_with_grants)
 
 # COMMAND ----------
 
-DA = DBAcademyHelper()
-DA.cleanup()
-DA.init(create_db=False)
+DA = DBAcademyHelper(**helper_arguments)
+DA.reset_environment()
+DA.init(install_datasets=True, create_db=False)
 DA.conclude_setup()
 

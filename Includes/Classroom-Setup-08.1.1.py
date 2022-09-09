@@ -3,16 +3,16 @@
 
 # COMMAND ----------
 
+@DBAcademyHelper.monkey_patch
 def get_pipeline_config(self):
     path = dbutils.entry_point.getDbutils().notebook().getContext().notebookPath().getOrElse(None)
     path = "/".join(path.split("/")[:-1]) + "/DE 8.1.2 - SQL for Delta Live Tables"
     
     return f"DLT-Demo-81-{DA.username}", path
 
-DBAcademyHelper.monkey_patch(get_pipeline_config)
-
 # COMMAND ----------
 
+@DBAcademyHelper.monkey_patch
 def print_pipeline_config(self):
     "Provided by DBAcademy, this function renders the configuration of the pipeline as HTML"
     pipeline_name, path = self.get_pipeline_config()
@@ -35,10 +35,10 @@ def print_pipeline_config(self):
         <td><input type="text" value="{DA.paths.datasets}" style="width:100%"></td></tr>
     </table>""")
     
-DBAcademyHelper.monkey_patch(print_pipeline_config)
 
 # COMMAND ----------
 
+@DBAcademyHelper.monkey_patch
 def create_pipeline(self):
     "Provided by DBAcademy, this function creates the prescribed pipline"
     
@@ -62,10 +62,10 @@ def create_pipeline(self):
     pipeline_id = response.get("pipeline_id")
     print(f"Created pipline {pipeline_id}")
     
-DBAcademyHelper.monkey_patch(create_pipeline)
 
 # COMMAND ----------
 
+@DBAcademyHelper.monkey_patch
 def validate_pipeline_config(self):
     "Provided by DBAcademy, this function validates the configuration of the pipeline"
     import json
@@ -135,10 +135,10 @@ def validate_pipeline_config(self):
                                                clusters=[cluster])
     print("All tests passed!")
     
-DBAcademyHelper.monkey_patch(validate_pipeline_config)
 
 # COMMAND ----------
 
+@DBAcademyHelper.monkey_patch
 def start_pipeline(self):
     "Provided by DBAcademy, this function starts the pipline and then blocks until it has completed, failed or was canceled"
 
@@ -170,13 +170,11 @@ def start_pipeline(self):
     print(f"The final state is {state}.")    
     assert state == "COMPLETED", f"Expected the state to be COMPLETED, found {state}"
 
-DBAcademyHelper.monkey_patch(start_pipeline)
-
 # COMMAND ----------
 
-DA = DBAcademyHelper(lesson="dlt_demo_81")
-DA.cleanup()
-DA.init()
+DA = DBAcademyHelper(lesson="dlt_demo_81", **helper_arguments)
+DA.reset_environment() # First in a series
+DA.init(install_datasets=True, create_db=True)
 
 DA.paths.stream_path = f"{DA.paths.working_dir}/stream"
 DA.paths.storage_location = f"{DA.paths.working_dir}/storage"

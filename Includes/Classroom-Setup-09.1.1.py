@@ -405,9 +405,9 @@ def start_job(self):
 
 # jobs_demo_91 is specifically referenced in the lesson
 
-DA = DBAcademyHelper(lesson="jobs_demo_91")
-DA.cleanup()
-DA.init()
+DA = DBAcademyHelper(lesson="jobs_demo_91", **helper_arguments)
+DA.reset_environment() # First in a series
+DA.init(install_datasets=True, create_db=True)
 
 DA.paths.stream_path = f"{DA.paths.working_dir}/stream"
 DA.paths.storage_location = f"{DA.paths.working_dir}/storage"

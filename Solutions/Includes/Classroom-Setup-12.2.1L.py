@@ -3,21 +3,21 @@
 
 # COMMAND ----------
 
+@DBAcademyHelper.monkey_patch
 def print_sql(self, rows, sql):
     displayHTML(f"""<body><textarea style="width:100%" rows={rows}> \n{sql.strip()}</textarea></body>""")
     
-DBAcademyHelper.monkey_patch(print_sql)
 
 # COMMAND ----------
 
+@DBAcademyHelper.monkey_patch
 def generate_daily_patient_avg(self):
     sql = f"SELECT * FROM {DA.db_name}.daily_patient_avg"
     self.print_sql(3, sql)
 
-DBAcademyHelper.monkey_patch(generate_daily_patient_avg)
-
 # COMMAND ----------
 
+@DBAcademyHelper.monkey_patch
 def generate_visualization_query(self):
     sql = f"""
 SELECT flow_name, timestamp, int(details:flow_progress:metrics:num_output_rows) num_output_rows
@@ -26,12 +26,11 @@ ORDER BY timestamp DESC;"""
     
     self.print_sql(5, sql)
 
-DBAcademyHelper.monkey_patch(generate_visualization_query)
-
 # COMMAND ----------
 
 generate_register_dlt_event_metrics_sql_string = ""
 
+@DBAcademyHelper.monkey_patch
 def generate_register_dlt_event_metrics_sql(self):
     global generate_register_dlt_event_metrics_sql_string
     
@@ -50,7 +49,6 @@ ORDER BY timestamp DESC;""".strip()
     
     self.print_sql(13, generate_register_dlt_event_metrics_sql_string)
     
-DBAcademyHelper.monkey_patch(generate_register_dlt_event_metrics_sql)
 
 # COMMAND ----------
 
@@ -335,9 +333,9 @@ def start_job(self):
 
 # COMMAND ----------
 
-DA = DBAcademyHelper(lesson="cap_12")
-DA.cleanup()
-DA.init()
+DA = DBAcademyHelper(lesson="cap_12", **helper_arguments)
+DA.reset_environment()
+DA.init(install_datasets=True, create_db=True)
 
 DA.paths.stream_path = f"{DA.paths.working_dir}/stream"
 DA.paths.storage_location = f"{DA.paths.working_dir}/storage"

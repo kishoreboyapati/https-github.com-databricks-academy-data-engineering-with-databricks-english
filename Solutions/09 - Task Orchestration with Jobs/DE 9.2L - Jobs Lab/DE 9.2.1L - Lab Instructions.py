@@ -7,7 +7,7 @@
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="51f698bd-880b-4a85-b187-9b96d8c2cf18" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC # Lab: Orchestrating Jobs with Databricks
@@ -29,7 +29,7 @@
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="b7163714-376c-41fd-8e38-80a7247fa923" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC ## Land Initial Data
@@ -41,7 +41,7 @@ DA.data_factory.load()
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="6bc33560-37f4-4f91-910d-669a1708ba66" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC ## Create and Configure a Pipeline
@@ -58,7 +58,7 @@ DA.print_pipeline_config()
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="c8b235db-10cf-4a56-92d9-330b80da4f0f" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC Steps:
@@ -98,7 +98,7 @@ DA.validate_pipeline_config()
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="f98768ac-cbcc-42a2-8c51-ffdc3778aa11" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC ## Schedule a Notebook Job
@@ -113,7 +113,7 @@ DA.print_job_config()
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="fab2a427-5d5a-4a82-8947-c809d815c2a3" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC Here, we'll start by scheduling the next notebook.
@@ -135,7 +135,7 @@ DA.print_job_config()
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="1ab345ce-dff4-4a99-ad45-209793ddc581" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC ## Schedule a DLT Pipeline as a Task
@@ -159,7 +159,7 @@ DA.print_job_config()
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="dd4e16c5-1842-4642-8159-117cfc84d4b4" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC ## Schedule an Additional Notebook Task

@@ -7,7 +7,7 @@
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="7d67b345-b680-4f39-a384-31655b390a78" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC # Reshaping Data Lab
@@ -23,7 +23,7 @@
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="db657989-4a07-41c5-acc8-18d6ceabbc85" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC ## Run Setup
@@ -36,7 +36,7 @@
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="3b76127f-ef49-4024-a970-67ac52a1fa63" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC ## Reshape Datasets to Create Click Paths
@@ -46,7 +46,7 @@
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="a4124fa1-e5cc-467f-8a7c-fb5978fefad1" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC 
@@ -96,7 +96,7 @@ SELECT * FROM (
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="8646882a-e334-4293-ba4d-550e86a2ed79" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC 
@@ -112,7 +112,7 @@ SELECT * FROM (
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="75fd31d6-3674-48c4-bc6b-c321a47ade9b" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC 
@@ -126,7 +126,7 @@ SELECT * FROM (
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="bb41e6ea-aeae-4f4f-97c5-cad043d151cd" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC 
@@ -169,7 +169,7 @@ JOIN transactions b
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="db501e67-0444-4988-a850-e7f374b38f3e" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC 
@@ -183,7 +183,7 @@ JOIN transactions b
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="ed22d836-9233-469c-8aa1-4bea42f84517" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC ## Flag Types of Products Purchased
@@ -212,7 +212,7 @@ FROM sales
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="3d56b9b4-957d-4ea2-8c49-f4e92a4918c9" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC 
@@ -227,7 +227,7 @@ FROM sales
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="e78c6d7f-bd25-4af8-8d01-a6943f24b8d6" version="2.3.3" />
 -- MAGIC 
 -- MAGIC  
 -- MAGIC Run the following cell to delete the tables and files associated with this lesson.

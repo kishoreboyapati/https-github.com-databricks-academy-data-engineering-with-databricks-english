@@ -7,7 +7,7 @@
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="a209ac48-08a6-4b89-b728-084a515fd335" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC 
@@ -28,7 +28,7 @@
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="6582dbcd-72c7-496b-adbd-23aef98e20e9" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC 
@@ -41,7 +41,7 @@
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="0607f2ed-cfe6-4a38-baa4-e6754ec1c664" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC 
@@ -67,7 +67,7 @@
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="2167d7d7-93d1-4704-a7cb-a0335eaf8da7" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC 
@@ -82,7 +82,7 @@
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="89004ef0-db16-474b-8cce-eff85c225a65" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC ## Insert Data
@@ -98,7 +98,7 @@ INSERT INTO beans VALUES
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="48d649a1-cde1-491f-a90d-95d2e336e140" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC 
@@ -111,7 +111,7 @@ INSERT INTO beans VALUES
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="f0406eef-6973-47c9-8f89-a667c53cfea7" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC 
@@ -127,7 +127,7 @@ INSERT INTO beans VALUES
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="e1764f9f-8052-47bb-a862-b52ca438378a" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC 
@@ -142,7 +142,7 @@ INSERT INTO beans VALUES
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="e38adafa-bd10-4191-9c69-e6a4363532ec" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC 
@@ -160,7 +160,7 @@ WHERE name = "jelly"
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="d8637fab-6d23-4458-bc08-ff777021e30c" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC 
@@ -175,7 +175,7 @@ WHERE name = "jelly"
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="954bf892-4db6-4b25-9a9a-83b0f6ecc123" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC 
@@ -192,7 +192,7 @@ WHERE name = "jelly"
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="f36d551a-f588-43e4-84a2-6aa49a420c04" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC 
@@ -209,7 +209,7 @@ WHERE name = "jelly"
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="1c8d924c-3e97-49a0-b5e4-0378c5acd3c8" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC 
@@ -223,7 +223,7 @@ WHERE name = "jelly"
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="903473f1-ddca-41ea-ae2f-dc2fac64936e" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC 
@@ -243,7 +243,7 @@ SELECT * FROM new_beans
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="58d50e50-65f1-403b-b74e-1143cde49356" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC 
@@ -261,7 +261,7 @@ SELECT * FROM new_beans
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="9fbb65eb-9119-482f-ab77-35e11af5fb24" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC 
@@ -281,7 +281,7 @@ SELECT * FROM new_beans
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="4a668d7c-e16b-4061-a5b7-1ec732236308" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC 
@@ -300,7 +300,7 @@ SELECT * FROM new_beans
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="4cc5c126-5e56-423e-a814-f6c422312802" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC 
@@ -313,7 +313,7 @@ SELECT * FROM new_beans
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="f4d330e3-dc40-4b6e-9911-34902bab22ae" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC 
@@ -324,7 +324,7 @@ SELECT * FROM new_beans
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="d59f9828-9b13-4e0e-ae98-7e852cd32198" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC 

@@ -7,7 +7,7 @@
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="3c915a05-b7c2-4834-a192-220b12581266" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC # Lab: Conclusion
@@ -19,7 +19,7 @@
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="c8724cfa-436c-4b5a-9bfb-a8ec0eb8bdb8" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC ## Display Results
@@ -35,7 +35,7 @@
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="9aa6b45d-5830-4ce0-be11-4b0efb7201c9" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC Trigger another file arrival with the following cell. 
@@ -52,7 +52,7 @@ DA.data_factory.load()
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="7241d8fc-02f5-4b2a-883c-91691fe4909b" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC ## Wrapping Up
@@ -65,7 +65,7 @@ DA.cleanup()
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="2e81a24b-7230-4565-8179-ad11dc3463ab" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC ## Summary
@@ -74,7 +74,7 @@ DA.cleanup()
 
 # COMMAND ----------
 
-# MAGIC %md
+# MAGIC %md <i18n value="28dd19b4-019c-4995-b79a-7aba5b36a69f" version="2.3.3" />
 # MAGIC 
 # MAGIC 
 # MAGIC ## Additional Topics & Resources

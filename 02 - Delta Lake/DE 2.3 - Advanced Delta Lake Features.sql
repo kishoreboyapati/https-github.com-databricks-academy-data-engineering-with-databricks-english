@@ -7,7 +7,7 @@
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="d2b35611-0c56-4262-b664-3a89a1d62662" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC # Advanced Delta Lake Features
@@ -31,7 +31,7 @@
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="75224cfc-51b5-4c3d-8eb3-4db08469c99f" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC ## Run Setup
@@ -43,7 +43,7 @@
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="7e85feea-be41-41f7-9cd7-df2c140d6286" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC ## Creating a Delta Table with History
@@ -92,7 +92,7 @@ WHEN NOT MATCHED AND u.type = "insert"
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="5f6b0330-42f2-4307-9ff2-0b534947b286" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC ## Examine Table Details
@@ -107,7 +107,7 @@ DESCRIBE EXTENDED students
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="5495f382-2841-4cf5-b872-db4dd3828ee5" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC **`DESCRIBE DETAIL`** is another command that allows us to explore table metadata.
@@ -118,7 +118,7 @@ DESCRIBE DETAIL students
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="4ab0fa4f-72cb-4f3b-8ea3-228b13be1baf" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC Note the **`Location`** field.
@@ -127,7 +127,7 @@ DESCRIBE DETAIL students
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="10e37764-bbfd-4669-a967-addd58041d47" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC ## Explore Delta Lake Files
@@ -143,7 +143,7 @@ DESCRIBE DETAIL students
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="075483eb-7ddd-46ef-bbb1-33ee7005923b" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC Note that our directory contains a number of Parquet data files and a directory named **`_delta_log`**.
@@ -161,14 +161,14 @@ DESCRIBE DETAIL students
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="1bcbb8d1-f871-451a-ad16-762dfa91c0a3" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC Each transaction results in a new JSON file being written to the Delta Lake transaction log. Here, we can see that there are 8 total transactions against this table (Delta Lake is 0 indexed).
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="c2fbd6d7-ea8e-4000-9702-e21408f3ef78" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC ## Reasoning about Data Files
@@ -183,7 +183,7 @@ DESCRIBE DETAIL students
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="adf1dc55-37a4-4376-86df-78895bfcf6b8" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC Here we see that our table currently contains 4 data files in its present version. So what are all those other Parquet files doing in our table directory? 
@@ -199,7 +199,7 @@ DESCRIBE DETAIL students
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="85e8bce8-c168-4ac6-9835-f694cab5b43c" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC The **`add`** column contains a list of all the new files written to our table; the **`remove`** column indicates those files that no longer should be included in our table.
@@ -208,7 +208,7 @@ DESCRIBE DETAIL students
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="c69bbf45-e75e-419f-a149-fd18f76daab6" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC ## Compacting Small Files and Indexing
@@ -228,14 +228,14 @@ ZORDER BY id
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="15475907-e307-491c-9bab-4d8afc363ec5" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC Given how small our data is, **`ZORDER`** does not provide any benefit, but we can see all of the metrics that result from this operation.
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="5684dfb4-0b33-49f1-a4f8-cb2f8d88bf09" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC ## Reviewing Delta Lake Transactions
@@ -248,7 +248,7 @@ DESCRIBE HISTORY students
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="56de8919-b5d0-4d1f-81d8-ccf22fdf6da0" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC As expected, **`OPTIMIZE`** created another version of our table, meaning that version 8 is our most current version.
@@ -266,14 +266,14 @@ FROM students VERSION AS OF 3
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="0499f01b-7700-4381-80cc-9b4fb093017a" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC What's important to note about time travel is that we're not recreating a previous state of the table by undoing transactions against our current version; rather, we're just querying all those data files that were indicated as valid as of the specified version.
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="f569a57f-24cc-403a-88ab-709b4f1a7548" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC ## Rollback Versions
@@ -286,7 +286,7 @@ DELETE FROM students
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="b7d46e40-1c41-4e8a-8f25-25325da065cb" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC Note that when we see a **`-1`** for number of rows affected by a delete, this means an entire directory of data has been removed.
@@ -299,7 +299,7 @@ SELECT * FROM students
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="0477fb25-7248-4552-98a1-ffee4cd7b5b0" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC Deleting all the records in your table is probably not a desired outcome. Luckily, we can simply rollback this commit.
@@ -310,14 +310,14 @@ RESTORE TABLE students TO VERSION AS OF 8
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="4fbc3b91-8b73-4644-95cb-f9ca2f1ac6a3" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC Note that a **`RESTORE`** <a href="https://docs.databricks.com/spark/latest/spark-sql/language-manual/delta-restore.html" target="_blank">command</a> is recorded as a transaction; you won't be able to completely hide the fact that you accidentally deleted all the records in the table, but you will be able to undo the operation and bring your table back to a desired state.
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="789ca5cf-5eb1-4a81-a595-624994a512f1" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC ## Cleaning Up Stale Files
@@ -336,7 +336,7 @@ RESTORE TABLE students TO VERSION AS OF 8
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="6a3b0b37-1387-4b41-86bf-3f181ddc1562" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC By default, **`VACUUM`** will prevent you from deleting files less than 7 days old, just to ensure that no long-running operations are still referencing any of the files to be deleted. If you run **`VACUUM`** on a Delta table, you lose the ability time travel back to a version older than the specified data retention period.  In our demos, you may see Databricks executing code that specifies a retention of **`0 HOURS`**. This is simply to demonstrate the feature and is not typically done in production.  
@@ -355,7 +355,7 @@ VACUUM students RETAIN 0 HOURS DRY RUN
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="be50e096-ba08-43be-8056-d56ad5ae7914" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC By running **`VACUUM`** and deleting the 10 files above, we will permanently remove access to versions of the table that require these files to materialize.
@@ -366,7 +366,7 @@ VACUUM students RETAIN 0 HOURS
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="a847e55a-0ecf-4b10-85ab-5aa8566ff4e1" version="2.3.3" />
 -- MAGIC 
 -- MAGIC 
 -- MAGIC Check the table directory to show that files have been successfully deleted.
@@ -378,7 +378,7 @@ VACUUM students RETAIN 0 HOURS
 
 -- COMMAND ----------
 
--- MAGIC %md
+-- MAGIC %md <i18n value="b854a50f-635b-4cdc-8f18-38c5ab595648" version="2.3.3" />
 -- MAGIC 
 -- MAGIC  
 -- MAGIC Run the following cell to delete the tables and files associated with this lesson.
