@@ -7,7 +7,7 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="85ab95fa-7d86-4b8b-9c7e-9f9b82dd637a" version="2.3.3" />
+# MAGIC %md <i18n value="85ab95fa-7d86-4b8b-9c7e-9f9b82dd637a"/>
 # MAGIC 
 # MAGIC 
 # MAGIC # Last Mile ETL with Databricks SQL
@@ -39,7 +39,7 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="d6f21ada-50df-44ac-8551-72eca61d5af7" version="2.3.3" />
+# MAGIC %md <i18n value="d6f21ada-50df-44ac-8551-72eca61d5af7"/>
 # MAGIC 
 # MAGIC 
 # MAGIC ## Run Setup Script
@@ -51,7 +51,7 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="5c6209ed-ee86-40bb-bbf9-8d9a8663f21c" version="2.3.3" />
+# MAGIC %md <i18n value="5c6209ed-ee86-40bb-bbf9-8d9a8663f21c"/>
 # MAGIC 
 # MAGIC 
 # MAGIC ## Create a Demo Database
@@ -70,7 +70,7 @@ DA.generate_config()
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="d6a42a10-ba37-431d-82e2-f41f1d196e12" version="2.3.3" />
+# MAGIC %md <i18n value="d6a42a10-ba37-431d-82e2-f41f1d196e12"/>
 # MAGIC 
 # MAGIC 
 # MAGIC **NOTE**: The queries above are only designed to be run once after resetting the demo completely to reconfigure the environment. 
@@ -79,7 +79,7 @@ DA.generate_config()
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="8ee7715b-c65f-47d4-9109-f57438bed8a8" version="2.3.3" />
+# MAGIC %md <i18n value="8ee7715b-c65f-47d4-9109-f57438bed8a8"/>
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -88,7 +88,7 @@ DA.generate_config()
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="eba9ff4a-b242-4cd5-82a6-d004a5dacd8f" version="2.3.3" />
+# MAGIC %md <i18n value="eba9ff4a-b242-4cd5-82a6-d004a5dacd8f"/>
 # MAGIC 
 # MAGIC 
 # MAGIC ## Create a Query to Load Data
@@ -103,7 +103,7 @@ DA.generate_load()
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="f417b0ba-5c46-4f3a-8392-fe4cf2157e81" version="2.3.3" />
+# MAGIC %md <i18n value="f417b0ba-5c46-4f3a-8392-fe4cf2157e81"/>
 # MAGIC 
 # MAGIC 
 # MAGIC Executing the query should load some data and return a preview of the data in the table.
@@ -112,7 +112,7 @@ DA.generate_load()
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="030532dc-d29d-4974-99a0-4485467d9135" version="2.3.3" />
+# MAGIC %md <i18n value="030532dc-d29d-4974-99a0-4485467d9135"/>
 # MAGIC 
 # MAGIC 
 # MAGIC ## Set a Query Refresh Schedule
@@ -128,7 +128,7 @@ DA.generate_load()
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="e2e67230-afa7-4bbc-8506-bf226b5f6848" version="2.3.3" />
+# MAGIC %md <i18n value="e2e67230-afa7-4bbc-8506-bf226b5f6848"/>
 # MAGIC 
 # MAGIC 
 # MAGIC ## Create a Query to Track Total Records
@@ -143,7 +143,7 @@ DA.generate_user_counts()
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="59774aed-7953-4c3e-82c0-eada95504895" version="2.3.3" />
+# MAGIC %md <i18n value="59774aed-7953-4c3e-82c0-eada95504895"/>
 # MAGIC 
 # MAGIC 
 # MAGIC ## Create a Bar Graph Visualization
@@ -157,7 +157,7 @@ DA.generate_user_counts()
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="c2eb4e36-df48-4137-94e5-6ae708ccef96" version="2.3.3" />
+# MAGIC %md <i18n value="c2eb4e36-df48-4137-94e5-6ae708ccef96"/>
 # MAGIC 
 # MAGIC 
 # MAGIC ## Create a New Dashboard
@@ -171,7 +171,7 @@ DA.generate_user_counts()
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="84ba9714-dcc2-4c06-803a-f566ad868c39" version="2.3.3" />
+# MAGIC %md <i18n value="84ba9714-dcc2-4c06-803a-f566ad868c39"/>
 # MAGIC 
 # MAGIC 
 # MAGIC ## Create a Query to Calculate the Recent Average Ping
@@ -186,7 +186,7 @@ DA.generate_avg_ping()
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="2b7bc15b-cead-4e5f-b36a-a635597c5358" version="2.3.3" />
+# MAGIC %md <i18n value="2b7bc15b-cead-4e5f-b36a-a635597c5358"/>
 # MAGIC 
 # MAGIC 
 # MAGIC ## Add a Line Plot Visualization to your Dashboard
@@ -205,7 +205,7 @@ DA.generate_avg_ping()
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="99c42ddb-7993-4c6f-a3cf-842be65b02ed" version="2.3.3" />
+# MAGIC %md <i18n value="99c42ddb-7993-4c6f-a3cf-842be65b02ed"/>
 # MAGIC 
 # MAGIC 
 # MAGIC ## Create a Query to Report Summary Statistics
@@ -220,7 +220,7 @@ DA.generate_summary()
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="353d04dd-997d-44b0-84f8-8352dcabdc53" version="2.3.3" />
+# MAGIC %md <i18n value="353d04dd-997d-44b0-84f8-8352dcabdc53"/>
 # MAGIC 
 # MAGIC 
 # MAGIC ## Add the Summary Table to your Dashboard
@@ -232,7 +232,7 @@ DA.generate_summary()
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="87c5be59-847a-4e0d-b608-ad50f5f9415a" version="2.3.3" />
+# MAGIC %md <i18n value="87c5be59-847a-4e0d-b608-ad50f5f9415a"/>
 # MAGIC 
 # MAGIC 
 # MAGIC ## Review and Refresh your Dashboard
@@ -247,7 +247,7 @@ DA.generate_summary()
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="9ea31415-a5e2-445c-9e1d-46f0aab374a6" version="2.3.3" />
+# MAGIC %md <i18n value="9ea31415-a5e2-445c-9e1d-46f0aab374a6"/>
 # MAGIC 
 # MAGIC 
 # MAGIC ## Share your Dashboard
@@ -263,7 +263,7 @@ DA.generate_summary()
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="b5146776-0448-4f5d-a72c-e83b39ff4b98" version="2.3.3" />
+# MAGIC %md <i18n value="b5146776-0448-4f5d-a72c-e83b39ff4b98"/>
 # MAGIC 
 # MAGIC 
 # MAGIC ## Set Up an Alert
@@ -283,7 +283,7 @@ DA.generate_summary()
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="08e96878-726f-44b7-8bfb-7effd43bbee3" version="2.3.3" />
+# MAGIC %md <i18n value="08e96878-726f-44b7-8bfb-7effd43bbee3"/>
 # MAGIC 
 # MAGIC 
 # MAGIC ## Review Alert Destination Options

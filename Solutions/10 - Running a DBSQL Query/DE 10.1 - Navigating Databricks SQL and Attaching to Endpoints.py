@@ -7,7 +7,7 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="cbd3eef7-fc50-4393-bed5-44d7711f8052" version="2.3.3" />
+# MAGIC %md <i18n value="cbd3eef7-fc50-4393-bed5-44d7711f8052"/>
 # MAGIC 
 # MAGIC 
 # MAGIC # Navigating Databricks SQL and Attaching to SQL Warehouses

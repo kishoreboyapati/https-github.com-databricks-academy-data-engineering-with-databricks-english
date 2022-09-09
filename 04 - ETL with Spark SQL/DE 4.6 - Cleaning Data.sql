@@ -7,7 +7,7 @@
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="84dff2fc-1e27-46ea-8120-0a501795da47" version="2.3.3" />
+-- MAGIC %md <i18n value="84dff2fc-1e27-46ea-8120-0a501795da47"/>
 -- MAGIC 
 -- MAGIC  
 -- MAGIC # Cleaning Data
@@ -33,7 +33,7 @@
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="763d80d3-b7ed-4baf-98f1-ec6e0fb03d67" version="2.3.3" />
+-- MAGIC %md <i18n value="763d80d3-b7ed-4baf-98f1-ec6e0fb03d67"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC ## Run Setup
@@ -46,7 +46,7 @@
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="fe2033f4-7752-408a-9175-1dc28d63b445" version="2.3.3" />
+-- MAGIC %md <i18n value="fe2033f4-7752-408a-9175-1dc28d63b445"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC We'll work with new users records in **`users_dirty`** table for this lesson.
@@ -57,7 +57,7 @@ SELECT * FROM users_dirty
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="9b9352ce-28ed-420c-814d-dbf773067e32" version="2.3.3" />
+-- MAGIC %md <i18n value="9b9352ce-28ed-420c-814d-dbf773067e32"/>
 -- MAGIC 
 -- MAGIC  
 -- MAGIC ## Inspect Data
@@ -71,7 +71,7 @@ FROM users_dirty
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="1770892b-4fc9-40a8-a03a-c72353507b01" version="2.3.3" />
+-- MAGIC %md <i18n value="1770892b-4fc9-40a8-a03a-c72353507b01"/>
 -- MAGIC 
 -- MAGIC  
 -- MAGIC Note that **`count(col)`** skips **`NULL`** values when counting specific columns or expressions.
@@ -91,14 +91,14 @@ FROM users_dirty
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="7e48564f-85a8-4c9c-8b0a-2f1c1606109b" version="2.3.3" />
+-- MAGIC %md <i18n value="7e48564f-85a8-4c9c-8b0a-2f1c1606109b"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC Clearly there are at least a handful of null values in all of our fields. Let's try to discover what is causing this.
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="f6662ed5-cb5e-44a9-ad9e-d036cbc9df26" version="2.3.3" />
+-- MAGIC %md <i18n value="f6662ed5-cb5e-44a9-ad9e-d036cbc9df26"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC ## Distinct Records
@@ -117,7 +117,7 @@ FROM users_dirty
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="df59b9d2-9931-472c-9149-1d1bd33a2995" version="2.3.3" />
+-- MAGIC %md <i18n value="df59b9d2-9931-472c-9149-1d1bd33a2995"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC Because **`user_id`** is generated alongside the **`user_first_touch_timestamp`**, these fields should always be in parity for counts.
@@ -129,7 +129,7 @@ FROM users_dirty
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="4814a464-6333-445f-b178-1bf65c62a7d5" version="2.3.3" />
+-- MAGIC %md <i18n value="4814a464-6333-445f-b178-1bf65c62a7d5"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC Here we note that while there are some duplicate records relative to our total row count, we have a much higher number of distinct values.
@@ -151,7 +151,7 @@ FROM users_dirty
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="e83d57db-b194-444a-bcd7-7ff748da4983" version="2.3.3" />
+-- MAGIC %md <i18n value="e83d57db-b194-444a-bcd7-7ff748da4983"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC Based on the above summary, we know:
@@ -161,7 +161,7 @@ FROM users_dirty
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="240c6103-ced1-4b14-a772-4172e01f39bd" version="2.3.3" />
+-- MAGIC %md <i18n value="240c6103-ced1-4b14-a772-4172e01f39bd"/>
 -- MAGIC 
 -- MAGIC  
 -- MAGIC ## Deduplicate Rows
@@ -176,7 +176,7 @@ SELECT * FROM users_deduped
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="363ae50a-0345-4b86-9dee-8a0c277872f9" version="2.3.3" />
+-- MAGIC %md <i18n value="363ae50a-0345-4b86-9dee-8a0c277872f9"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC Note in the preview above that there appears to be null values, even though our **`COUNT(DISTINCT(*))`** ignored these nulls.
@@ -189,7 +189,7 @@ SELECT COUNT(*) FROM users_deduped
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="61822099-55ff-4c28-8f34-51bf22e46e73" version="2.3.3" />
+-- MAGIC %md <i18n value="61822099-55ff-4c28-8f34-51bf22e46e73"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC Note that we now have a completely new number.
@@ -209,7 +209,7 @@ WHERE
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="ef1c4bde-aa99-4cde-bd49-f976a770e071" version="2.3.3" />
+-- MAGIC %md <i18n value="ef1c4bde-aa99-4cde-bd49-f976a770e071"/>
 -- MAGIC 
 -- MAGIC   
 -- MAGIC ## Deduplicate Based on Specific Columns
@@ -226,7 +226,7 @@ WHERE user_id IS NOT NULL
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="08631519-40fe-45f5-bdf7-3267ec3229c3" version="2.3.3" />
+-- MAGIC %md <i18n value="08631519-40fe-45f5-bdf7-3267ec3229c3"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC Here, we'll use these distinct pairs to remove unwanted rows from our data.
@@ -247,7 +247,7 @@ SELECT count(*) FROM deduped_users
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="09a6b88a-e02c-4835-ab62-0e82a1162c22" version="2.3.3" />
+-- MAGIC %md <i18n value="09a6b88a-e02c-4835-ab62-0e82a1162c22"/>
 -- MAGIC 
 -- MAGIC  
 -- MAGIC ## Validate Datasets
@@ -266,7 +266,7 @@ SELECT max(row_count) <= 1 no_duplicate_ids FROM (
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="39a69a24-b1e1-42cc-83f1-115b69a2b891" version="2.3.3" />
+-- MAGIC %md <i18n value="39a69a24-b1e1-42cc-83f1-115b69a2b891"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC 
@@ -282,7 +282,7 @@ SELECT max(user_id_count) <= 1 at_most_one_id FROM (
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="17288207-e22e-43cc-8785-4d993cf71a1c" version="2.3.3" />
+-- MAGIC %md <i18n value="17288207-e22e-43cc-8785-4d993cf71a1c"/>
 -- MAGIC 
 -- MAGIC  
 -- MAGIC ## Date Format and Regex
@@ -307,7 +307,7 @@ FROM (
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="8678a7d8-2d31-4022-84b6-785a6ae260e9" version="2.3.3" />
+-- MAGIC %md <i18n value="8678a7d8-2d31-4022-84b6-785a6ae260e9"/>
 -- MAGIC 
 -- MAGIC  
 -- MAGIC Run the following cell to delete the tables and files associated with this lesson.

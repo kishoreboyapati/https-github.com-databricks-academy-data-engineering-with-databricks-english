@@ -1,5 +1,5 @@
 -- Databricks notebook source
--- MAGIC %md <i18n value="dba9ce4f-16fd-4879-ae52-eec0809a7119" version="2.3.3" />
+-- MAGIC %md <i18n value="dba9ce4f-16fd-4879-ae52-eec0809a7119"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC # Views and CTEs on Databricks, Cont'
@@ -9,7 +9,7 @@
 
 -- COMMAND ----------
 
--- MAGIC %md-sandbox <i18n value="e47c5b24-e7be-4829-b4e2-090c1768e0ab" version="2.3.3" />
+-- MAGIC %md-sandbox <i18n value="e47c5b24-e7be-4829-b4e2-090c1768e0ab"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC 
@@ -17,7 +17,7 @@
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="bf4f1bbd-1e0b-4275-8b50-59b3203c7939" version="2.3.3" />
+-- MAGIC %md <i18n value="bf4f1bbd-1e0b-4275-8b50-59b3203c7939"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC 
@@ -31,7 +31,7 @@
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="bc121186-a49e-41e9-bd17-521c17b303ce" version="2.3.3" />
+-- MAGIC %md <i18n value="bc121186-a49e-41e9-bd17-521c17b303ce"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC 
@@ -43,7 +43,7 @@ USE ${da.db_name};
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="961c1d5a-f611-4e44-a4d0-b5c04b5f4fb1" version="2.3.3" />
+-- MAGIC %md <i18n value="961c1d5a-f611-4e44-a4d0-b5c04b5f4fb1"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC 
@@ -66,7 +66,7 @@ SHOW TABLES IN global_temp;
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="908cef33-0f97-472a-9bb5-10c1f9a2b33a" version="2.3.3" />
+-- MAGIC %md <i18n value="908cef33-0f97-472a-9bb5-10c1f9a2b33a"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC 
@@ -80,7 +80,7 @@ SHOW TABLES IN global_temp;
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="1cf155bd-1953-49e3-8c2b-f2db695f93af" version="2.3.3" />
+-- MAGIC %md <i18n value="1cf155bd-1953-49e3-8c2b-f2db695f93af"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC 
@@ -98,7 +98,7 @@ SELECT * FROM global_temp.global_temp_view_dist_gt_1000;
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="2aaa6c4a-8b04-4b56-97c2-9a653f5fb5eb" version="2.3.3" />
+-- MAGIC %md <i18n value="2aaa6c4a-8b04-4b56-97c2-9a653f5fb5eb"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC 
@@ -108,7 +108,7 @@ SELECT * FROM global_temp.global_temp_view_dist_gt_1000;
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="30eadd27-c9ea-4c5c-8c9b-7cfa9476a054" version="2.3.3" />
+-- MAGIC %md <i18n value="30eadd27-c9ea-4c5c-8c9b-7cfa9476a054"/>
 -- MAGIC 
 -- MAGIC  
 -- MAGIC ## Common Table Expressions (CTEs)
@@ -139,7 +139,7 @@ WHERE
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="ae0fbf5e-e72d-4647-8074-01547c3a54ae" version="2.3.3" />
+-- MAGIC %md <i18n value="ae0fbf5e-e72d-4647-8074-01547c3a54ae"/>
 -- MAGIC 
 -- MAGIC  
 -- MAGIC Next, is an example of a CTE in a CTE definition.
@@ -169,7 +169,7 @@ FROM
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="8c21831e-55c8-4225-b905-91c6238fdad0" version="2.3.3" />
+-- MAGIC %md <i18n value="8c21831e-55c8-4225-b905-91c6238fdad0"/>
 -- MAGIC 
 -- MAGIC  
 -- MAGIC Now, here is an example of a CTE in a subquery.
@@ -194,7 +194,7 @@ FROM
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="b722389c-c57b-47e0-9918-d8930990f5fe" version="2.3.3" />
+-- MAGIC %md <i18n value="b722389c-c57b-47e0-9918-d8930990f5fe"/>
 -- MAGIC 
 -- MAGIC  
 -- MAGIC We can also use a CTE in a subquery expression.
@@ -214,7 +214,7 @@ SELECT
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="21377157-d4e9-4783-abf9-f2fa95fa683c" version="2.3.3" />
+-- MAGIC %md <i18n value="21377157-d4e9-4783-abf9-f2fa95fa683c"/>
 -- MAGIC 
 -- MAGIC  
 -- MAGIC Finally, here is a CTE in a **`CREATE VIEW`** statement.
@@ -231,7 +231,7 @@ SELECT count(origin_airport) AS `Number of Delayed Flights from BOS to LAX` FROM
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="123c2fbd-3b51-4466-8e9d-59c78d479bd9" version="2.3.3" />
+-- MAGIC %md <i18n value="123c2fbd-3b51-4466-8e9d-59c78d479bd9"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC ## Clean up 
@@ -243,7 +243,7 @@ DROP DATABASE ${da.db_name} CASCADE;
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="abe1b8ee-976f-4960-b56b-ce963a822eea" version="2.3.3" />
+-- MAGIC %md <i18n value="abe1b8ee-976f-4960-b56b-ce963a822eea"/>
 -- MAGIC 
 -- MAGIC  
 -- MAGIC Run the following cell to delete the tables and files associated with this lesson.

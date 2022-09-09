@@ -7,7 +7,7 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="01f3c782-1973-4a69-812a-7f9721099941" version="2.3.3" />
+# MAGIC %md <i18n value="01f3c782-1973-4a69-812a-7f9721099941"/>
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -29,7 +29,7 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="f9cf3bbc-aa6a-45c2-9d26-a3785e350e1f" version="2.3.3" />
+# MAGIC %md <i18n value="f9cf3bbc-aa6a-45c2-9d26-a3785e350e1f"/>
 # MAGIC 
 # MAGIC 
 # MAGIC ## Run Setup
@@ -41,7 +41,7 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="3fe92b6e-3e10-4771-8eef-8f4b060dd48f" version="2.3.3" />
+# MAGIC %md <i18n value="3fe92b6e-3e10-4771-8eef-8f4b060dd48f"/>
 # MAGIC 
 # MAGIC 
 # MAGIC ## Land Initial Data
@@ -53,7 +53,7 @@ DA.data_factory.load()
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="806818f8-e931-45ba-b86f-d65cdf76f215" version="2.3.3" />
+# MAGIC %md <i18n value="806818f8-e931-45ba-b86f-d65cdf76f215"/>
 # MAGIC 
 # MAGIC 
 # MAGIC ## Create and Configure a DLT Pipeline
@@ -65,7 +65,7 @@ DA.print_pipeline_config()
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="e1663032-caa8-4b99-af1a-3ab27deaf130" version="2.3.3" />
+# MAGIC %md <i18n value="e1663032-caa8-4b99-af1a-3ab27deaf130"/>
 # MAGIC 
 # MAGIC 
 # MAGIC Steps:
@@ -104,7 +104,7 @@ DA.validate_pipeline_config()
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="6c8bd13c-938a-4283-b15a-bc1a598fb070" version="2.3.3" />
+# MAGIC %md <i18n value="6c8bd13c-938a-4283-b15a-bc1a598fb070"/>
 # MAGIC 
 # MAGIC 
 # MAGIC ## Schedule a Notebook Job
@@ -121,7 +121,7 @@ DA.print_job_config()
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="df989e07-97d4-4a34-9729-fad02399a908" version="2.3.3" />
+# MAGIC %md <i18n value="df989e07-97d4-4a34-9729-fad02399a908"/>
 # MAGIC 
 # MAGIC 
 # MAGIC Steps:
@@ -140,7 +140,7 @@ DA.print_job_config()
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="3994f3ee-e335-48c7-8770-64e1ef0dfab7" version="2.3.3" />
+# MAGIC %md <i18n value="3994f3ee-e335-48c7-8770-64e1ef0dfab7"/>
 # MAGIC 
 # MAGIC 
 # MAGIC ## Set a Chronological Schedule for your Job
@@ -175,7 +175,7 @@ DA.start_job()
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="30df4ffa-22b9-4e2c-b8d8-54aa09a8d4ed" version="2.3.3" />
+# MAGIC %md <i18n value="30df4ffa-22b9-4e2c-b8d8-54aa09a8d4ed"/>
 # MAGIC 
 # MAGIC 
 # MAGIC ## Register DLT Event Metrics for Querying with DBSQL
@@ -192,7 +192,7 @@ DA.generate_register_dlt_event_metrics_sql()
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="e035ddc7-4af9-4e9c-81f8-530e8db7c504" version="2.3.3" />
+# MAGIC %md <i18n value="e035ddc7-4af9-4e9c-81f8-530e8db7c504"/>
 # MAGIC 
 # MAGIC 
 # MAGIC ## Define a Query on the Gold Table
@@ -207,7 +207,7 @@ DA.generate_daily_patient_avg()
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="679db36c-b257-4248-b2fe-56b85099d0b9" version="2.3.3" />
+# MAGIC %md <i18n value="679db36c-b257-4248-b2fe-56b85099d0b9"/>
 # MAGIC 
 # MAGIC 
 # MAGIC ## Add a Line Plot Visualization
@@ -223,7 +223,7 @@ DA.generate_daily_patient_avg()
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="7351e179-68f8-4091-a6ee-647974f010ce" version="2.3.3" />
+# MAGIC %md <i18n value="7351e179-68f8-4091-a6ee-647974f010ce"/>
 # MAGIC 
 # MAGIC 
 # MAGIC ## Track Data Processing Progress
@@ -243,7 +243,7 @@ DA.generate_visualization_query()
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="5f94b102-d42e-40f1-8253-c14cbf86d717" version="2.3.3" />
+# MAGIC %md <i18n value="5f94b102-d42e-40f1-8253-c14cbf86d717"/>
 # MAGIC 
 # MAGIC 
 # MAGIC ## Refresh your Dashboard and Track Results
@@ -254,7 +254,7 @@ DA.generate_visualization_query()
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="b61bf387-2c1b-4ae6-8968-c4189beb477f" version="2.3.3" />
+# MAGIC %md <i18n value="b61bf387-2c1b-4ae6-8968-c4189beb477f"/>
 # MAGIC 
 # MAGIC 
 # MAGIC 

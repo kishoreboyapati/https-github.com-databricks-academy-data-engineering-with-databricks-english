@@ -7,7 +7,7 @@
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="047624c1-1764-4d00-8f75-2640a0b9ad8e" version="2.3.3" />
+-- MAGIC %md <i18n value="047624c1-1764-4d00-8f75-2640a0b9ad8e"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC # Databases, Tables, and Views Lab
@@ -28,7 +28,7 @@
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="702fc20d-b0bf-4138-9045-49571c496cc0" version="2.3.3" />
+-- MAGIC %md <i18n value="702fc20d-b0bf-4138-9045-49571c496cc0"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC ### Getting Started
@@ -41,7 +41,7 @@
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="306e4a60-45cf-40af-850f-4339700000b8" version="2.3.3" />
+-- MAGIC %md <i18n value="306e4a60-45cf-40af-850f-4339700000b8"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC ## Overview of the Data
@@ -68,7 +68,7 @@ FROM parquet.`${DA.paths.datasets}/weather/StationData-parquet`
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="9b640cc4-561c-4f2e-8db4-806496e0300f" version="2.3.3" />
+-- MAGIC %md <i18n value="9b640cc4-561c-4f2e-8db4-806496e0300f"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC ## Create a Database
@@ -82,7 +82,7 @@ CREATE DATABASE IF NOT EXISTS ${da.db_name}
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="eb27d1be-83d9-44d6-a3c5-a330d58f4d1b" version="2.3.3" />
+-- MAGIC %md <i18n value="eb27d1be-83d9-44d6-a3c5-a330d58f4d1b"/>
 -- MAGIC 
 -- MAGIC Run the cell below to check your work.
 
@@ -93,7 +93,7 @@ CREATE DATABASE IF NOT EXISTS ${da.db_name}
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="4007b86a-f1c2-4431-9605-278256a18502" version="2.3.3" />
+-- MAGIC %md <i18n value="4007b86a-f1c2-4431-9605-278256a18502"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC ## Change to Your New Database
@@ -107,7 +107,7 @@ USE ${da.db_name}
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="a1799160-4921-48a9-84fd-d6b30eda2294" version="2.3.3" />
+-- MAGIC %md <i18n value="a1799160-4921-48a9-84fd-d6b30eda2294"/>
 -- MAGIC 
 -- MAGIC Run the cell below to check your work.
 
@@ -118,7 +118,7 @@ USE ${da.db_name}
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="29616225-cd27-4d1f-abf3-70257760ba80" version="2.3.3" />
+-- MAGIC %md <i18n value="29616225-cd27-4d1f-abf3-70257760ba80"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC ## Create a Managed Table
@@ -134,7 +134,7 @@ FROM parquet.`${DA.paths.datasets}/weather/StationData-parquet`
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="77e8b20b-0627-49a9-9d59-cf7e02225a64" version="2.3.3" />
+-- MAGIC %md <i18n value="77e8b20b-0627-49a9-9d59-cf7e02225a64"/>
 -- MAGIC 
 -- MAGIC Run the cell below to check your work.
 
@@ -146,7 +146,7 @@ FROM parquet.`${DA.paths.datasets}/weather/StationData-parquet`
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="155e14f1-65cf-40be-9d01-68b3775c2381" version="2.3.3" />
+-- MAGIC %md <i18n value="155e14f1-65cf-40be-9d01-68b3775c2381"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC ## Create an External Table
@@ -164,7 +164,7 @@ FROM parquet.`${DA.paths.datasets}/weather/StationData-parquet`
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="b7853935-465f-406f-8742-46a2a00ad3b5" version="2.3.3" />
+-- MAGIC %md <i18n value="b7853935-465f-406f-8742-46a2a00ad3b5"/>
 -- MAGIC 
 -- MAGIC Run the cell below to check your work.
 
@@ -176,7 +176,7 @@ FROM parquet.`${DA.paths.datasets}/weather/StationData-parquet`
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="3992398d-0f77-4fc2-8b9e-2f4064f10480" version="2.3.3" />
+-- MAGIC %md <i18n value="3992398d-0f77-4fc2-8b9e-2f4064f10480"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC ## Examine Table Details
@@ -192,7 +192,7 @@ DESCRIBE EXTENDED weather_external
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="6996903c-737b-4b88-8d51-3e0a01b347be" version="2.3.3" />
+-- MAGIC %md <i18n value="6996903c-737b-4b88-8d51-3e0a01b347be"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC Run the following helper code to extract and compare the table locations.
@@ -219,7 +219,7 @@ DESCRIBE EXTENDED weather_external
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="63b73ebc-ccd0-460b-87ae-e09addada714" version="2.3.3" />
+-- MAGIC %md <i18n value="63b73ebc-ccd0-460b-87ae-e09addada714"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC List the contents of these directories to confirm that data exists in both locations.
@@ -238,7 +238,7 @@ DESCRIBE EXTENDED weather_external
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="09f43b5b-e050-4e58-9769-e2e01829ddbc" version="2.3.3" />
+-- MAGIC %md <i18n value="09f43b5b-e050-4e58-9769-e2e01829ddbc"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC ### Check Directory Contents after Dropping Database and All Tables
@@ -251,7 +251,7 @@ DROP DATABASE ${da.db_name} CASCADE
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="e7babacd-bed8-47d7-ad52-7cc644e4f06a" version="2.3.3" />
+-- MAGIC %md <i18n value="e7babacd-bed8-47d7-ad52-7cc644e4f06a"/>
 -- MAGIC 
 -- MAGIC Run the cell below to check your work.
 
@@ -262,7 +262,7 @@ DROP DATABASE ${da.db_name} CASCADE
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="7d7053b8-e1b9-421a-9687-b205feadbf68" version="2.3.3" />
+-- MAGIC %md <i18n value="7d7053b8-e1b9-421a-9687-b205feadbf68"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC With the database dropped, the files will have been deleted as well.
@@ -289,7 +289,7 @@ DROP DATABASE ${da.db_name} CASCADE
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="5b66fbc5-c641-40e1-90a9-d69271bc0e8b" version="2.3.3" />
+-- MAGIC %md <i18n value="5b66fbc5-c641-40e1-90a9-d69271bc0e8b"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC **This highlights the main differences between managed and external tables.** By default, the files associated with managed tables will be stored to this location on the root DBFS storage linked to the workspace, and will be deleted when a table is dropped.
@@ -298,7 +298,7 @@ DROP DATABASE ${da.db_name} CASCADE
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="1928eede-5218-47df-affe-b6a7654524ab" version="2.3.3" />
+-- MAGIC %md <i18n value="1928eede-5218-47df-affe-b6a7654524ab"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC ## Create a Database with a Specified Path
@@ -312,7 +312,7 @@ USE ${da.db_name};
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="5b5dbf00-f9ee-4bc5-964e-22376e09be79" version="2.3.3" />
+-- MAGIC %md <i18n value="5b5dbf00-f9ee-4bc5-964e-22376e09be79"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC Recreate your **`weather_managed`** table in this new database and print out the location of this table.
@@ -332,7 +332,7 @@ FROM parquet.`${DA.paths.datasets}/weather/StationData-parquet`
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="91684fed-3851-4979-be1d-ba8af8cfe314" version="2.3.3" />
+-- MAGIC %md <i18n value="91684fed-3851-4979-be1d-ba8af8cfe314"/>
 -- MAGIC 
 -- MAGIC Run the cell below to check your work.
 
@@ -344,14 +344,14 @@ FROM parquet.`${DA.paths.datasets}/weather/StationData-parquet`
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="7ddc86a3-fbc4-4373-aacb-2f510c1eb708" version="2.3.3" />
+-- MAGIC %md <i18n value="7ddc86a3-fbc4-4373-aacb-2f510c1eb708"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC While here we're using the **`working_dir`** directory created on the DBFS root, _any_ object store can be used as the database directory. **Defining database directories for groups of users can greatly reduce the chances of accidental data exfiltration**.
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="07f87efe-13e4-48c3-84a7-576828359464" version="2.3.3" />
+-- MAGIC %md <i18n value="07f87efe-13e4-48c3-84a7-576828359464"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC ## Views and their Scoping
@@ -374,7 +374,7 @@ AS (SELECT *
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="14937501-7f2a-469d-b47f-db0c656d8da3" version="2.3.3" />
+-- MAGIC %md <i18n value="14937501-7f2a-469d-b47f-db0c656d8da3"/>
 -- MAGIC 
 -- MAGIC Run the cell below to check your work.
 
@@ -386,7 +386,7 @@ AS (SELECT *
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="1465024c-c6c9-4043-9bfa-54a5e9ad8b04" version="2.3.3" />
+-- MAGIC %md <i18n value="1465024c-c6c9-4043-9bfa-54a5e9ad8b04"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC Now create a temporary view.
@@ -402,7 +402,7 @@ AS (SELECT *
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="5593edb6-0a98-4b8f-af24-4c9caa65dac2" version="2.3.3" />
+-- MAGIC %md <i18n value="5593edb6-0a98-4b8f-af24-4c9caa65dac2"/>
 -- MAGIC 
 -- MAGIC Run the cell below to check your work.
 
@@ -414,7 +414,7 @@ AS (SELECT *
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="a89de892-1615-4f60-a8d2-0da7aebfda14" version="2.3.3" />
+-- MAGIC %md <i18n value="a89de892-1615-4f60-a8d2-0da7aebfda14"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC Now register a global temp view.
@@ -430,7 +430,7 @@ AS (SELECT *
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="4cb8cfe6-f058-48df-8807-1338907261f7" version="2.3.3" />
+-- MAGIC %md <i18n value="4cb8cfe6-f058-48df-8807-1338907261f7"/>
 -- MAGIC 
 -- MAGIC Run the cell below to check your work.
 
@@ -441,7 +441,7 @@ AS (SELECT *
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="dde3cbe9-3ed4-497a-b778-ca6268b57973" version="2.3.3" />
+-- MAGIC %md <i18n value="dde3cbe9-3ed4-497a-b778-ca6268b57973"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC Views will be displayed alongside tables when listing from the catalog.
@@ -452,7 +452,7 @@ SHOW TABLES
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="6cf76f7b-8577-4cfe-b3a1-dc08a9ac24de" version="2.3.3" />
+-- MAGIC %md <i18n value="6cf76f7b-8577-4cfe-b3a1-dc08a9ac24de"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC Note the following:
@@ -466,14 +466,14 @@ SELECT * FROM global_temp.celsius_global
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="eda8a0b1-94f8-4c61-bf07-c86a016746ba" version="2.3.3" />
+-- MAGIC %md <i18n value="eda8a0b1-94f8-4c61-bf07-c86a016746ba"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC While no job was triggered when defining these views, a job is triggered _each time_ a query is executed against the view.
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="1723a769-272c-47ca-93e8-7b3a9b0674dd" version="2.3.3" />
+-- MAGIC %md <i18n value="1723a769-272c-47ca-93e8-7b3a9b0674dd"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC ## Clean Up
@@ -485,7 +485,7 @@ DROP DATABASE ${da.db_name} CASCADE
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="03511454-16d6-40e6-a62a-cd8bdb7de57d" version="2.3.3" />
+-- MAGIC %md <i18n value="03511454-16d6-40e6-a62a-cd8bdb7de57d"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC ## Synopsis
@@ -497,7 +497,7 @@ DROP DATABASE ${da.db_name} CASCADE
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="de458d67-efe9-4d5e-87d7-240093072332" version="2.3.3" />
+-- MAGIC %md <i18n value="de458d67-efe9-4d5e-87d7-240093072332"/>
 -- MAGIC 
 -- MAGIC  
 -- MAGIC Run the following cell to delete the tables and files associated with this lesson.

@@ -7,7 +7,7 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="bfb2d018-5d5a-4475-bf1e-293e2a5b0100" version="2.3.3" />
+# MAGIC %md <i18n value="bfb2d018-5d5a-4475-bf1e-293e2a5b0100"/>
 # MAGIC 
 # MAGIC # Data Engineering with Databricks
 # MAGIC 
@@ -31,7 +31,7 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="2fbffe4f-04e7-46db-8ed0-af4991565700" version="2.3.3" />
+# MAGIC %md <i18n value="2fbffe4f-04e7-46db-8ed0-af4991565700"/>
 # MAGIC 
 # MAGIC ## Course Agenda
 # MAGIC 
@@ -61,7 +61,7 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="8bcc5220-9489-49ec-ba62-8260e9871f38" version="2.3.3" />
+# MAGIC %md <i18n value="8bcc5220-9489-49ec-ba62-8260e9871f38"/>
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -72,7 +72,7 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="c57df770-302b-4b87-ad3b-c34bdef01029" version="2.3.3" />
+# MAGIC %md <i18n value="c57df770-302b-4b87-ad3b-c34bdef01029"/>
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -84,7 +84,7 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="6ed0e37b-3299-47fe-b78d-7f7e5fca9396" version="2.3.3" />
+# MAGIC %md <i18n value="6ed0e37b-3299-47fe-b78d-7f7e5fca9396"/>
 # MAGIC 
 # MAGIC 
 # MAGIC ## 03 - Relational Entities on Databricks
@@ -94,7 +94,7 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="f958dddc-d0e2-4c21-82ad-db6aaebabda4" version="2.3.3" />
+# MAGIC %md <i18n value="f958dddc-d0e2-4c21-82ad-db6aaebabda4"/>
 # MAGIC 
 # MAGIC 
 # MAGIC ## 04 - ETL with Spark SQL
@@ -110,7 +110,7 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="ce1da17d-44fa-47f4-bd66-af6e0c0f179d" version="2.3.3" />
+# MAGIC %md <i18n value="ce1da17d-44fa-47f4-bd66-af6e0c0f179d"/>
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -121,7 +121,7 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="8fbeed27-4056-4024-afc7-859873916b70" version="2.3.3" />
+# MAGIC %md <i18n value="8fbeed27-4056-4024-afc7-859873916b70"/>
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -132,7 +132,7 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="2d9f1a05-fd79-4766-a492-74c21c1d6bad" version="2.3.3" />
+# MAGIC %md <i18n value="2d9f1a05-fd79-4766-a492-74c21c1d6bad"/>
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -142,7 +142,7 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="c633fc58-9310-48e0-bcfa-974b30b75849" version="2.3.3" />
+# MAGIC %md <i18n value="c633fc58-9310-48e0-bcfa-974b30b75849"/>
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -159,7 +159,7 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="74e6ecb4-6268-4c2c-a6a1-726b02cf392e" version="2.3.3" />
+# MAGIC %md <i18n value="74e6ecb4-6268-4c2c-a6a1-726b02cf392e"/>
 # MAGIC 
 # MAGIC 
 # MAGIC ## 09 - Task Orchestration with Jobs
@@ -176,14 +176,14 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="498a81f3-4eda-49ac-aadb-ac33360af496" version="2.3.3" />
+# MAGIC %md <i18n value="498a81f3-4eda-49ac-aadb-ac33360af496"/>
 # MAGIC 
 # MAGIC ## 10 - Running a DBSQL Query
 # MAGIC * [DE 10.1 - Navigating Databricks SQL and Attaching to Endpoints]($./10 - Running a DBSQL Query/DE 10.1 - Navigating Databricks SQL and Attaching to Endpoints)
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="ea5067ca-80b5-44d0-9446-8c591649d515" version="2.3.3" />
+# MAGIC %md <i18n value="ea5067ca-80b5-44d0-9446-8c591649d515"/>
 # MAGIC 
 # MAGIC 
 # MAGIC ## 11 - Managing Permissions
@@ -192,7 +192,7 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="76d731fd-01f1-4602-9d7b-4554eed88b8f" version="2.3.3" />
+# MAGIC %md <i18n value="76d731fd-01f1-4602-9d7b-4554eed88b8f"/>
 # MAGIC 
 # MAGIC 
 # MAGIC ## 12 - Productionalizing Dashboards and Queries in DBSQL

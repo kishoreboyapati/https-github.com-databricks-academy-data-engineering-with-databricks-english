@@ -7,7 +7,7 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="36722caa-e827-436b-8c45-3e85619fd2d0" version="2.3.3" />
+# MAGIC %md <i18n value="36722caa-e827-436b-8c45-3e85619fd2d0"/>
 # MAGIC 
 # MAGIC 
 # MAGIC # Orchestrating Jobs with Databricks Workflows
@@ -30,7 +30,7 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="f1dc94ee-1f34-40b1-b2ba-49de9801b0d1" version="2.3.3" />
+# MAGIC %md <i18n value="f1dc94ee-1f34-40b1-b2ba-49de9801b0d1"/>
 # MAGIC 
 # MAGIC 
 # MAGIC ## Create and configure a pipeline
@@ -46,7 +46,7 @@ DA.print_pipeline_config()
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="b1f23965-ab36-40da-8907-e8f1fdc53aed" version="2.3.3" />
+# MAGIC %md <i18n value="b1f23965-ab36-40da-8907-e8f1fdc53aed"/>
 # MAGIC 
 # MAGIC 
 # MAGIC ## Create and configure a Pipeline
@@ -87,7 +87,7 @@ DA.validate_pipeline_config()
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="ed9ed553-77e7-4ff2-a9dc-12466e30c994" version="2.3.3" />
+# MAGIC %md <i18n value="ed9ed553-77e7-4ff2-a9dc-12466e30c994"/>
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -103,7 +103,7 @@ DA.print_job_config_task_reset()
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="8c3c501e-0334-412a-91b3-bf250dfe8856" version="2.3.3" />
+# MAGIC %md <i18n value="8c3c501e-0334-412a-91b3-bf250dfe8856"/>
 # MAGIC 
 # MAGIC Here, we'll start by scheduling the next notebook.
 # MAGIC 
@@ -136,7 +136,7 @@ DA.validate_job_v1_config()
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="8ebdf7c7-4b4a-49a9-b9d4-25dff82ed169" version="2.3.3" />
+# MAGIC %md <i18n value="8ebdf7c7-4b4a-49a9-b9d4-25dff82ed169"/>
 # MAGIC 
 # MAGIC 
 # MAGIC ## Cron Scheduling of Databricks Jobs
@@ -153,7 +153,7 @@ DA.validate_job_v1_config()
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="50665a01-dd6c-4767-b8ef-56ee02dbd9db" version="2.3.3" />
+# MAGIC %md <i18n value="50665a01-dd6c-4767-b8ef-56ee02dbd9db"/>
 # MAGIC 
 # MAGIC 
 # MAGIC ## Review Run
@@ -172,7 +172,7 @@ DA.validate_job_v1_config()
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="3dbff1a3-1c13-46f9-91c4-55aefb95be20" version="2.3.3" />
+# MAGIC %md <i18n value="3dbff1a3-1c13-46f9-91c4-55aefb95be20"/>
 # MAGIC 
 # MAGIC 
 # MAGIC ## Schedule a DLT Pipeline as a Task
@@ -222,7 +222,7 @@ DA.start_job()
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="4fecba69-f1cf-4413-8bc6-7b50d32b2456" version="2.3.3" />
+# MAGIC %md <i18n value="4fecba69-f1cf-4413-8bc6-7b50d32b2456"/>
 # MAGIC 
 # MAGIC 
 # MAGIC ## Review Multi-Task Run Results

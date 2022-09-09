@@ -7,7 +7,7 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="988e4844-2372-4e5c-b603-bf59f9c0c638" version="2.3.3" />
+# MAGIC %md <i18n value="988e4844-2372-4e5c-b603-bf59f9c0c638"/>
 # MAGIC 
 # MAGIC 
 # MAGIC # Reasoning about Incremental Data
@@ -36,7 +36,7 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="203d2cf2-e366-4b68-8e45-e17186a9503b" version="2.3.3" />
+# MAGIC %md <i18n value="203d2cf2-e366-4b68-8e45-e17186a9503b"/>
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -50,7 +50,7 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="bb701ed4-32db-4e97-bd72-0b90acaeca16" version="2.3.3" />
+# MAGIC %md <i18n value="bb701ed4-32db-4e97-bd72-0b90acaeca16"/>
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -74,7 +74,7 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="08b87ec8-7f2b-4638-a93f-c6cf132ab1f0" version="2.3.3" />
+# MAGIC %md <i18n value="08b87ec8-7f2b-4638-a93f-c6cf132ab1f0"/>
 # MAGIC 
 # MAGIC 
 # MAGIC ## Basic Concepts
@@ -92,7 +92,7 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="c0f129fa-daf9-4d01-8454-fa040442457f" version="2.3.3" />
+# MAGIC %md <i18n value="c0f129fa-daf9-4d01-8454-fa040442457f"/>
 # MAGIC 
 # MAGIC 
 # MAGIC ## End-to-end Fault Tolerance
@@ -113,7 +113,7 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="57f9dadd-71ff-41cd-bf26-a3b968e68fba" version="2.3.3" />
+# MAGIC %md <i18n value="57f9dadd-71ff-41cd-bf26-a3b968e68fba"/>
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -135,7 +135,7 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="4fadee61-b02e-4601-a3b8-26c2c9f06160" version="2.3.3" />
+# MAGIC %md <i18n value="4fadee61-b02e-4601-a3b8-26c2c9f06160"/>
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -152,7 +152,7 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="147067e0-bb54-4556-849f-00b9710e7c48" version="2.3.3" />
+# MAGIC %md <i18n value="147067e0-bb54-4556-849f-00b9710e7c48"/>
 # MAGIC 
 # MAGIC 
 # MAGIC You will recognize the data as being the same as the Delta table written out in our previous lesson.
@@ -168,7 +168,7 @@ for s in spark.streams.active:
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="2daca6ba-fca5-40d9-ba5f-b97cf609b20e" version="2.3.3" />
+# MAGIC %md <i18n value="2daca6ba-fca5-40d9-ba5f-b97cf609b20e"/>
 # MAGIC 
 # MAGIC 
 # MAGIC ## Working with Streaming Data
@@ -187,7 +187,7 @@ for s in spark.streams.active:
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="99d062fc-28c0-4b88-955e-f7d6e80ee472" version="2.3.3" />
+# MAGIC %md <i18n value="99d062fc-28c0-4b88-955e-f7d6e80ee472"/>
 # MAGIC 
 # MAGIC 
 # MAGIC Before continuing, click **`Stop Execution`** at the top of the notebook, **`Cancel`** immediately under the cell, or run the following cell to stop all active streaming queries.
@@ -201,7 +201,7 @@ for s in spark.streams.active:
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="c257cb96-badc-473c-873a-0fb4ced7c825" version="2.3.3" />
+# MAGIC %md <i18n value="c257cb96-badc-473c-873a-0fb4ced7c825"/>
 # MAGIC 
 # MAGIC 
 # MAGIC ## Unsupported Operations
@@ -223,7 +223,7 @@ for s in spark.streams.active:
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="fbde5075-43da-4c12-882c-e6da63bdb026" version="2.3.3" />
+# MAGIC %md <i18n value="fbde5075-43da-4c12-882c-e6da63bdb026"/>
 # MAGIC 
 # MAGIC 
 # MAGIC ## Persisting Streaming Results
@@ -243,7 +243,7 @@ for s in spark.streams.active:
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="db473405-f8b5-4fc7-9f87-c669b3d8e7d8" version="2.3.3" />
+# MAGIC %md <i18n value="db473405-f8b5-4fc7-9f87-c669b3d8e7d8"/>
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -289,7 +289,7 @@ for s in spark.streams.active:
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="a8df4901-05f0-41cd-944d-935c21fd40fc" version="2.3.3" />
+# MAGIC %md <i18n value="a8df4901-05f0-41cd-944d-935c21fd40fc"/>
 # MAGIC 
 # MAGIC 
 # MAGIC ## Pulling It All Together
@@ -311,7 +311,7 @@ for s in spark.streams.active:
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="0e13fc25-53ff-4c40-a93b-e3c3c5dc2644" version="2.3.3" />
+# MAGIC %md <i18n value="0e13fc25-53ff-4c40-a93b-e3c3c5dc2644"/>
 # MAGIC 
 # MAGIC 
 # MAGIC Below, we change our trigger method to change this query from a triggered incremental batch to an always-on query triggered every 4 seconds.
@@ -332,7 +332,7 @@ DA.block_until_stream_is_ready(query)
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="d42a3739-71d7-4b9c-a1d2-a32feea1228f" version="2.3.3" />
+# MAGIC %md <i18n value="d42a3739-71d7-4b9c-a1d2-a32feea1228f"/>
 # MAGIC 
 # MAGIC 
 # MAGIC ## Querying the Output
@@ -348,7 +348,7 @@ DA.block_until_stream_is_ready(query)
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="a7d8882f-825c-4b16-a788-6a30f8696cf7" version="2.3.3" />
+# MAGIC %md <i18n value="a7d8882f-825c-4b16-a788-6a30f8696cf7"/>
 # MAGIC 
 # MAGIC 
 # MAGIC ## Land New Data
@@ -363,7 +363,7 @@ DA.data_factory.load()
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="9e62e0fc-7705-4ee4-8407-07cc908cbfdc" version="2.3.3" />
+# MAGIC %md <i18n value="9e62e0fc-7705-4ee4-8407-07cc908cbfdc"/>
 # MAGIC 
 # MAGIC 
 # MAGIC Query the target table again to see the updated counts for each **`device_id`**.
@@ -376,7 +376,7 @@ DA.data_factory.load()
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="9d17fa00-4a3f-48a0-a15e-8ac39df11550" version="2.3.3" />
+# MAGIC %md <i18n value="9d17fa00-4a3f-48a0-a15e-8ac39df11550"/>
 # MAGIC 
 # MAGIC 
 # MAGIC ## Clean Up

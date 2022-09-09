@@ -7,7 +7,7 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="1fb32f72-2ccc-4206-98d9-907287fc3262" version="2.3.3" />
+# MAGIC %md <i18n value="1fb32f72-2ccc-4206-98d9-907287fc3262"/>
 # MAGIC 
 # MAGIC 
 # MAGIC # Using the Delta Live Tables UI
@@ -24,7 +24,7 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="c950ed75-9a93-4340-a82c-e00505222d15" version="2.3.3" />
+# MAGIC %md <i18n value="c950ed75-9a93-4340-a82c-e00505222d15"/>
 # MAGIC 
 # MAGIC 
 # MAGIC ## Run Setup
@@ -37,7 +37,7 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="0a719ade-b4b5-49b5-89bf-8fc2b0b7d63c" version="2.3.3" />
+# MAGIC %md <i18n value="0a719ade-b4b5-49b5-89bf-8fc2b0b7d63c"/>
 # MAGIC 
 # MAGIC 
 # MAGIC Execute the following cell to print out values that will be used during the following configuration steps.
@@ -48,7 +48,7 @@ DA.print_pipeline_config()
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="71b010a3-80be-4909-9b44-6f68029f16c0" version="2.3.3" />
+# MAGIC %md <i18n value="71b010a3-80be-4909-9b44-6f68029f16c0"/>
 # MAGIC 
 # MAGIC 
 # MAGIC ## Create and Configure a Pipeline
@@ -102,7 +102,7 @@ DA.validate_pipeline_config()
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="a7e4b2fc-83a1-4509-8269-9a4c5791de21" version="2.3.3" />
+# MAGIC %md <i18n value="a7e4b2fc-83a1-4509-8269-9a4c5791de21"/>
 # MAGIC 
 # MAGIC 
 # MAGIC ## Run a Pipeline
@@ -128,7 +128,7 @@ DA.start_pipeline()
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="4b92f93e-7a7f-4169-a1d2-9df3ac440674" version="2.3.3" />
+# MAGIC %md <i18n value="4b92f93e-7a7f-4169-a1d2-9df3ac440674"/>
 # MAGIC 
 # MAGIC 
 # MAGIC ## Exploring the DAG

@@ -7,7 +7,7 @@
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="ba5cb184-9677-4b79-b000-f42c5fff9044" version="2.3.3" />
+-- MAGIC %md <i18n value="ba5cb184-9677-4b79-b000-f42c5fff9044"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC # Extracting Data Directly from Files
@@ -23,7 +23,7 @@
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="e9800a3a-c96c-4ce2-a835-b5f058e26ead" version="2.3.3" />
+-- MAGIC %md <i18n value="e9800a3a-c96c-4ce2-a835-b5f058e26ead"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC ## Run Setup
@@ -36,7 +36,7 @@
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="fedca70d-2bf7-415b-8ab9-1691c2366b24" version="2.3.3" />
+-- MAGIC %md <i18n value="fedca70d-2bf7-415b-8ab9-1691c2366b24"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC ## Data Overview
@@ -56,7 +56,7 @@
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="00f263ec-293b-4adf-bf4b-b81f04de6e31" version="2.3.3" />
+-- MAGIC %md <i18n value="00f263ec-293b-4adf-bf4b-b81f04de6e31"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC Note that our source directory contains many JSON files.
@@ -71,7 +71,7 @@
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="f4cbde61-2f10-4758-82ca-786e16606d60" version="2.3.3" />
+-- MAGIC %md <i18n value="f4cbde61-2f10-4758-82ca-786e16606d60"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC Here, we'll be using relative file paths to data that's been written to the DBFS root. 
@@ -84,7 +84,7 @@
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="8e04a0d2-4d79-4547-b2b2-765eefaf6285" version="2.3.3" />
+-- MAGIC %md <i18n value="8e04a0d2-4d79-4547-b2b2-765eefaf6285"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC ## Query a Single File
@@ -101,14 +101,14 @@ SELECT * FROM json.`${DA.paths.kafka_events}/001.json`
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="02c296c6-80be-4bd8-99cc-29f2e44e1d2d" version="2.3.3" />
+-- MAGIC %md <i18n value="02c296c6-80be-4bd8-99cc-29f2e44e1d2d"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC Note that our preview displays all 321 rows of our source file.
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="01cd5a22-a236-4ef6-bf65-7c40379d7ef9" version="2.3.3" />
+-- MAGIC %md <i18n value="01cd5a22-a236-4ef6-bf65-7c40379d7ef9"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC ## Query a Directory of Files
@@ -121,14 +121,14 @@ SELECT * FROM json.`${DA.paths.kafka_events}`
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="f36c3a77-4b84-41a0-95ae-a8f999a0f60e" version="2.3.3" />
+-- MAGIC %md <i18n value="f36c3a77-4b84-41a0-95ae-a8f999a0f60e"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC By default, this query will only show the first 1000 rows.
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="46590bb8-cf4b-4c3d-a9c6-e431bad4a5e9" version="2.3.3" />
+-- MAGIC %md <i18n value="46590bb8-cf4b-4c3d-a9c6-e431bad4a5e9"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC ## Create References to Files
@@ -145,7 +145,7 @@ SELECT * FROM events_temp_view
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="0a627f4b-ec2c-4002-bf9b-07a788956f03" version="2.3.3" />
+-- MAGIC %md <i18n value="0a627f4b-ec2c-4002-bf9b-07a788956f03"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC ## Extract Text Files as Raw Strings
@@ -158,7 +158,7 @@ SELECT * FROM text.`${DA.paths.kafka_events}`
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="ffae0f7a-b956-431d-b1cb-6d2be33b4f6c" version="2.3.3" />
+-- MAGIC %md <i18n value="ffae0f7a-b956-431d-b1cb-6d2be33b4f6c"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC ## Extract the Raw Bytes and Metadata of a File
@@ -173,7 +173,7 @@ SELECT * FROM binaryFile.`${DA.paths.kafka_events}`
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="fa8fcc72-31c0-4825-ae6f-bf194d715f14" version="2.3.3" />
+-- MAGIC %md <i18n value="fa8fcc72-31c0-4825-ae6f-bf194d715f14"/>
 -- MAGIC 
 -- MAGIC  
 -- MAGIC Run the following cell to delete the tables and files associated with this lesson.

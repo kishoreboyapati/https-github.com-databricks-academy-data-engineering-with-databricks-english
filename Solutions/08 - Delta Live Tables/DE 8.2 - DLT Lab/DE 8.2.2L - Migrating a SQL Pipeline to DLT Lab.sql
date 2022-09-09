@@ -7,7 +7,7 @@
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="cffedc4f-a6a4-4412-8193-46a7a8a6a213" version="2.3.3" />
+-- MAGIC %md <i18n value="cffedc4f-a6a4-4412-8193-46a7a8a6a213"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC # Lab: Migrating a SQL Pipeline to Delta Live Tables
@@ -20,7 +20,7 @@
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="01e06565-56e7-4581-8833-14bc0db8c281" version="2.3.3" />
+-- MAGIC %md <i18n value="01e06565-56e7-4581-8833-14bc0db8c281"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC ## Declare Bronze Table
@@ -40,7 +40,7 @@ AS SELECT current_timestamp() receipt_time, input_file_name() source_file, *
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="57422f74-b830-4abb-b4a9-969d0ab90be6" version="2.3.3" />
+-- MAGIC %md <i18n value="57422f74-b830-4abb-b4a9-969d0ab90be6"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC ### PII File
@@ -65,7 +65,7 @@ AS SELECT *
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="3573b6a4-233a-4f23-a002-aab072eb5096" version="2.3.3" />
+-- MAGIC %md <i18n value="3573b6a4-233a-4f23-a002-aab072eb5096"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC ## Declare Silver Tables
@@ -102,7 +102,7 @@ AS SELECT
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="3b9309a8-9e1d-46a2-a0eb-e95fe698d23b" version="2.3.3" />
+-- MAGIC %md <i18n value="3b9309a8-9e1d-46a2-a0eb-e95fe698d23b"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC ## Gold Table

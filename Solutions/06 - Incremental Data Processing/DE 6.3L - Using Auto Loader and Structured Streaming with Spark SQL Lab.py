@@ -7,7 +7,7 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="e6dedae8-1335-494e-acdf-4a1906f8c826" version="2.3.3" />
+# MAGIC %md <i18n value="e6dedae8-1335-494e-acdf-4a1906f8c826"/>
 # MAGIC 
 # MAGIC 
 # MAGIC # Using Auto Loader and Structured Streaming with Spark SQL
@@ -20,7 +20,7 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="ab5018b7-17b9-4f66-a32d-9c86860f6f30" version="2.3.3" />
+# MAGIC %md <i18n value="ab5018b7-17b9-4f66-a32d-9c86860f6f30"/>
 # MAGIC 
 # MAGIC 
 # MAGIC ## Setup
@@ -32,7 +32,7 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="03347519-151b-4304-8cda-1cbd91af0737" version="2.3.3" />
+# MAGIC %md <i18n value="03347519-151b-4304-8cda-1cbd91af0737"/>
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -82,7 +82,7 @@ assert spark.table("customers_raw_temp").dtypes ==  [('customer_id', 'string'),
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="4582665f-8192-4751-83f8-8ae1a4d55f22" version="2.3.3" />
+# MAGIC %md <i18n value="4582665f-8192-4751-83f8-8ae1a4d55f22"/>
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -110,7 +110,7 @@ assert spark.table("customer_count_by_state_temp").dtypes == [('state', 'string'
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="bef919d7-d681-4233-8da5-39ca94c49a8b" version="2.3.3" />
+# MAGIC %md <i18n value="bef919d7-d681-4233-8da5-39ca94c49a8b"/>
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -141,7 +141,7 @@ assert spark.table("customer_count_by_state").dtypes == [('state', 'string'), ('
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="f74f262f-10c4-4f2f-84d6-f69e56c54ac6" version="2.3.3" />
+# MAGIC %md <i18n value="f74f262f-10c4-4f2f-84d6-f69e56c54ac6"/>
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -157,7 +157,7 @@ assert spark.table("customer_count_by_state").dtypes == [('state', 'string'), ('
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="e2cf644d-96f9-47f7-ad81-780125d3ad4b" version="2.3.3" />
+# MAGIC %md <i18n value="e2cf644d-96f9-47f7-ad81-780125d3ad4b"/>
 # MAGIC 
 # MAGIC 
 # MAGIC ## Wrapping Up
@@ -170,7 +170,7 @@ DA.cleanup()
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="8f3c4c52-b5d9-4f8a-974c-ce5db6430c43" version="2.3.3" />
+# MAGIC %md <i18n value="8f3c4c52-b5d9-4f8a-974c-ce5db6430c43"/>
 # MAGIC 
 # MAGIC 
 # MAGIC By completing this lab, you should now feel comfortable:

@@ -7,7 +7,7 @@
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="469222b4-7728-4980-a105-a850e5234a3c" version="2.3.3" />
+-- MAGIC %md <i18n value="469222b4-7728-4980-a105-a850e5234a3c"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC # Providing Options for External Sources
@@ -23,7 +23,7 @@
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="b0456896-d5ed-416c-bfab-7d4f54a24288" version="2.3.3" />
+-- MAGIC %md <i18n value="b0456896-d5ed-416c-bfab-7d4f54a24288"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC ## Run Setup
@@ -36,7 +36,7 @@
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="7ba475f1-5a89-46ee-b400-b8846699d5b5" version="2.3.3" />
+-- MAGIC %md <i18n value="7ba475f1-5a89-46ee-b400-b8846699d5b5"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC ## When Direct Queries Don't Work 
@@ -51,7 +51,7 @@ SELECT * FROM csv.`${DA.paths.sales_csv}`
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="7ae3fe20-46e7-42be-95d6-4f933b758ef7" version="2.3.3" />
+-- MAGIC %md <i18n value="7ae3fe20-46e7-42be-95d6-4f933b758ef7"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC We can see from the above that:
@@ -62,7 +62,7 @@ SELECT * FROM csv.`${DA.paths.sales_csv}`
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="f371955b-5e96-41d3-b413-ed5bb51820fc" version="2.3.3" />
+-- MAGIC %md <i18n value="f371955b-5e96-41d3-b413-ed5bb51820fc"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC ## Registering Tables on External Data with Read Options
@@ -84,7 +84,7 @@ SELECT * FROM csv.`${DA.paths.sales_csv}`
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="ea38261e-12c1-4bba-9670-9c4144c19494" version="2.3.3" />
+-- MAGIC %md <i18n value="ea38261e-12c1-4bba-9670-9c4144c19494"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC The cell below demonstrates using Spark SQL DDL to create a table against an external CSV source, specifying:
@@ -107,7 +107,7 @@ LOCATION "${DA.paths.sales_csv}"
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="a9b747d0-1811-4bbe-b6d6-c89671289286" version="2.3.3" />
+-- MAGIC %md <i18n value="a9b747d0-1811-4bbe-b6d6-c89671289286"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC Note that no data has moved during table declaration. 
@@ -126,7 +126,7 @@ SELECT COUNT(*) FROM sales_csv
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="d0ad4268-b339-40cc-88be-1b07e9759d5e" version="2.3.3" />
+-- MAGIC %md <i18n value="d0ad4268-b339-40cc-88be-1b07e9759d5e"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC All the metadata and options passed during table declaration will be persisted to the metastore, ensuring that data in the location will always be read with these options.
@@ -141,7 +141,7 @@ DESCRIBE EXTENDED sales_csv
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="39ee6311-f095-4f86-8fe5-c5be569b6a10" version="2.3.3" />
+-- MAGIC %md <i18n value="39ee6311-f095-4f86-8fe5-c5be569b6a10"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC ## Limits of Tables with External Data Sources
@@ -165,7 +165,7 @@ DESCRIBE EXTENDED sales_csv
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="cad47cd2-c64d-4658-9b95-400ea7303f7f" version="2.3.3" />
+-- MAGIC %md <i18n value="cad47cd2-c64d-4658-9b95-400ea7303f7f"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC If we look at the current count of records in our table, the number we see will not reflect these newly inserted rows.
@@ -176,7 +176,7 @@ SELECT COUNT(*) FROM sales_csv
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="e9bb05a1-81db-4360-a131-bd14453af87e" version="2.3.3" />
+-- MAGIC %md <i18n value="e9bb05a1-81db-4360-a131-bd14453af87e"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC At the time we previously queried this data source, Spark automatically cached the underlying data in local storage. This ensures that on subsequent queries, Spark will provide the optimal performance by just querying this local cache.
@@ -191,7 +191,7 @@ REFRESH TABLE sales_csv
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="b7005568-3b03-4c4a-9ed0-122f14de6f7b" version="2.3.3" />
+-- MAGIC %md <i18n value="b7005568-3b03-4c4a-9ed0-122f14de6f7b"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC Note that refreshing our table will invalidate our cache, meaning that we'll need to rescan our original data source and pull all data back into memory. 
@@ -204,7 +204,7 @@ SELECT COUNT(*) FROM sales_csv
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="524835ab-53b7-435e-8c3a-9abcc81bab2e" version="2.3.3" />
+-- MAGIC %md <i18n value="524835ab-53b7-435e-8c3a-9abcc81bab2e"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC ## Extracting Data from SQL Databases
@@ -242,7 +242,7 @@ OPTIONS (
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="1f4c4ac6-dd8f-4198-a552-e2a65ce140d0" version="2.3.3" />
+-- MAGIC %md <i18n value="1f4c4ac6-dd8f-4198-a552-e2a65ce140d0"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC Now we can query this table as if it were defined locally.
@@ -253,7 +253,7 @@ SELECT * FROM users_jdbc
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="4d1ac331-1a39-4cca-b834-e4f848dd3e64" version="2.3.3" />
+-- MAGIC %md <i18n value="4d1ac331-1a39-4cca-b834-e4f848dd3e64"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC Looking at the table metadata reveals that we have captured the schema information from the external system.
@@ -266,7 +266,7 @@ DESCRIBE EXTENDED users_jdbc
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="2b8ce5b8-d76a-4be9-a2d3-9284ab701db7" version="2.3.3" />
+-- MAGIC %md <i18n value="2b8ce5b8-d76a-4be9-a2d3-9284ab701db7"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC While the table is listed as **`MANAGED`**, listing the contents of the specified location confirms that no data is being persisted locally.
@@ -284,7 +284,7 @@ DESCRIBE EXTENDED users_jdbc
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="2a090fa9-b419-43cb-8249-0b0bc8f92918" version="2.3.3" />
+-- MAGIC %md <i18n value="2a090fa9-b419-43cb-8249-0b0bc8f92918"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC Note that some SQL systems such as data warehouses will have custom drivers. Spark will interact with various external databases differently, but the two basic approaches can be summarized as either:
@@ -297,7 +297,7 @@ DESCRIBE EXTENDED users_jdbc
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="7084cc69-4fea-45b7-9ab3-27ad8cd3e84c" version="2.3.3" />
+-- MAGIC %md <i18n value="7084cc69-4fea-45b7-9ab3-27ad8cd3e84c"/>
 -- MAGIC 
 -- MAGIC  
 -- MAGIC Run the following cell to delete the tables and files associated with this lesson.

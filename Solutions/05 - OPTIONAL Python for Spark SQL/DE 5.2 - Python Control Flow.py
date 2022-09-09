@@ -7,7 +7,7 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="16687081-02b3-482b-be71-197120e12a05" version="2.3.3" />
+# MAGIC %md <i18n value="16687081-02b3-482b-be71-197120e12a05"/>
 # MAGIC 
 # MAGIC 
 # MAGIC # Just Enough Python for Databricks SQL
@@ -21,7 +21,7 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="92eb3275-1f6e-4bc1-a80b-67508df888de" version="2.3.3" />
+# MAGIC %md <i18n value="92eb3275-1f6e-4bc1-a80b-67508df888de"/>
 # MAGIC 
 # MAGIC 
 # MAGIC ## if/else
@@ -42,7 +42,7 @@ food = "beans"
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="9c791b4a-4ee3-4bbb-939f-9ed31759da7f" version="2.3.3" />
+# MAGIC %md <i18n value="9c791b4a-4ee3-4bbb-939f-9ed31759da7f"/>
 # MAGIC 
 # MAGIC 
 # MAGIC Working with **`if`** and **`else`** is all about evaluating whether or not certain conditions are true in your execution environment.
@@ -69,7 +69,7 @@ else:
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="052f07cc-5c35-4b36-84d0-c9d74de7ff08" version="2.3.3" />
+# MAGIC %md <i18n value="052f07cc-5c35-4b36-84d0-c9d74de7ff08"/>
 # MAGIC 
 # MAGIC 
 # MAGIC As expected, because the variable **`food`** is the string literal **`"beans"`**, the **`if`** statement evaluated to **`True`** and the first print statement evaluated.
@@ -82,7 +82,7 @@ food = "beef"
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="8c0092e9-4e2a-4d93-a30e-78dcba746b3b" version="2.3.3" />
+# MAGIC %md <i18n value="8c0092e9-4e2a-4d93-a30e-78dcba746b3b"/>
 # MAGIC 
 # MAGIC 
 # MAGIC Now the first condition will evaluate as **`False`**. 
@@ -98,7 +98,7 @@ else:
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="5c76cfb8-9264-4ddc-92cf-0aa63b567c49" version="2.3.3" />
+# MAGIC %md <i18n value="5c76cfb8-9264-4ddc-92cf-0aa63b567c49"/>
 # MAGIC 
 # MAGIC 
 # MAGIC Note that each time we assign a new value to a variable, this completely erases the old variable.
@@ -110,7 +110,7 @@ print(food)
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="f60f08b3-72db-4b52-8376-4dcf8d252a78" version="2.3.3" />
+# MAGIC %md <i18n value="f60f08b3-72db-4b52-8376-4dcf8d252a78"/>
 # MAGIC 
 # MAGIC 
 # MAGIC The Python keyword **`elif`** (short for **`else`** + **`if`**) allows us to evaluate multiple conditions.
@@ -135,7 +135,7 @@ else:
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="d0051774-0569-4847-bb8f-1a2a8db975e8" version="2.3.3" />
+# MAGIC %md <i18n value="d0051774-0569-4847-bb8f-1a2a8db975e8"/>
 # MAGIC 
 # MAGIC 
 # MAGIC By encapsulating the above logic in a function, we can reuse this logic and formatting with arbitrary arguments rather than referencing globally-defined variables.
@@ -154,7 +154,7 @@ def foods_i_like(food):
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="54f912f7-b9fb-4f1a-8187-b76052aaa634" version="2.3.3" />
+# MAGIC %md <i18n value="54f912f7-b9fb-4f1a-8187-b76052aaa634"/>
 # MAGIC 
 # MAGIC 
 # MAGIC Here, we pass the string **`"bread"`** to the function.
@@ -165,7 +165,7 @@ foods_i_like("bread")
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="2b1d135a-b98c-4072-b828-b4169653c505" version="2.3.3" />
+# MAGIC %md <i18n value="2b1d135a-b98c-4072-b828-b4169653c505"/>
 # MAGIC 
 # MAGIC 
 # MAGIC As we evaluate the function, we locally assign the string **`"bread"`** to the **`food`** variable, and the logic behaves as expected.
@@ -178,7 +178,7 @@ food
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="946fc15f-2c44-4010-9688-f165f93e8aeb" version="2.3.3" />
+# MAGIC %md <i18n value="946fc15f-2c44-4010-9688-f165f93e8aeb"/>
 # MAGIC 
 # MAGIC 
 # MAGIC ## try/except
@@ -194,7 +194,7 @@ def three_times(number):
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="6a348bd2-426e-4d37-878f-fe8e8b11e1b0" version="2.3.3" />
+# MAGIC %md <i18n value="6a348bd2-426e-4d37-878f-fe8e8b11e1b0"/>
 # MAGIC 
 # MAGIC 
 # MAGIC Let's assume that the desired use of this function is to multiply an integer value by 3.
@@ -207,7 +207,7 @@ three_times(2)
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="9d553980-52df-4cc7-bc7c-b9310281da00" version="2.3.3" />
+# MAGIC %md <i18n value="9d553980-52df-4cc7-bc7c-b9310281da00"/>
 # MAGIC 
 # MAGIC 
 # MAGIC Note what happens if a string is passed to the function.
@@ -218,7 +218,7 @@ three_times("2")
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="eac6727b-22a1-4703-9e51-940b3bbbf175" version="2.3.3" />
+# MAGIC %md <i18n value="eac6727b-22a1-4703-9e51-940b3bbbf175"/>
 # MAGIC 
 # MAGIC 
 # MAGIC In this case, we don't get an error, but we also do not get the desired outcome.
@@ -235,7 +235,7 @@ assert type(2) == int
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="b450adca-eb4f-44ef-abcc-1a106d84e42b" version="2.3.3" />
+# MAGIC %md <i18n value="b450adca-eb4f-44ef-abcc-1a106d84e42b"/>
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -249,7 +249,7 @@ assert type(2) == int
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="082bea6b-a032-4d49-9f44-a4ee942633af" version="2.3.3" />
+# MAGIC %md <i18n value="082bea6b-a032-4d49-9f44-a4ee942633af"/>
 # MAGIC 
 # MAGIC 
 # MAGIC As expected, the string **`"2"`** is not an integer.
@@ -262,7 +262,7 @@ assert "2".isnumeric()
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="eec0771a-d4c7-4a78-a78a-4afd93ba1cc8" version="2.3.3" />
+# MAGIC %md <i18n value="eec0771a-d4c7-4a78-a78a-4afd93ba1cc8"/>
 # MAGIC 
 # MAGIC 
 # MAGIC String numbers are common; you may see them as results from an API query, raw records in a JSON or CSV file, or returned by a SQL query.
@@ -277,7 +277,7 @@ int("2")
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="38f8fcf7-6042-4cd9-a241-671e5cfa9e62" version="2.3.3" />
+# MAGIC %md <i18n value="38f8fcf7-6042-4cd9-a241-671e5cfa9e62"/>
 # MAGIC 
 # MAGIC 
 # MAGIC While Python will gladly cast a string containing numeric characters to a numeric type, it will not allow you to change other strings to numbers.
@@ -290,7 +290,7 @@ int("2")
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="2e3e2928-05a7-48f5-9d25-ba2f65cc2686" version="2.3.3" />
+# MAGIC %md <i18n value="2e3e2928-05a7-48f5-9d25-ba2f65cc2686"/>
 # MAGIC 
 # MAGIC 
 # MAGIC Note that errors will stop the execution of a notebook script; all cells after an error will be skipped when a notebook is scheduled as a production job.
@@ -312,7 +312,7 @@ def try_int(num_string):
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="f218c24b-706b-4b5b-ad79-b7b7f6986ea5" version="2.3.3" />
+# MAGIC %md <i18n value="f218c24b-706b-4b5b-ad79-b7b7f6986ea5"/>
 # MAGIC 
 # MAGIC 
 # MAGIC When a numeric string is passed, the function will return the result as an integer.
@@ -323,7 +323,7 @@ try_int("2")
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="fa07607e-bf17-4e4b-bfa3-171469da787d" version="2.3.3" />
+# MAGIC %md <i18n value="fa07607e-bf17-4e4b-bfa3-171469da787d"/>
 # MAGIC 
 # MAGIC 
 # MAGIC When a non-numeric string is passed, an informative message is printed out.
@@ -336,7 +336,7 @@ try_int("two")
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="8355bfb5-25c7-4f70-b4c1-dfa1216d058e" version="2.3.3" />
+# MAGIC %md <i18n value="8355bfb5-25c7-4f70-b4c1-dfa1216d058e"/>
 # MAGIC 
 # MAGIC 
 # MAGIC Below, our earlier function is updated to include logic for handling errors to return an informative message.
@@ -353,7 +353,7 @@ def three_times(number):
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="ec8b637c-e44e-4ff4-8c08-d5ed16fc926f" version="2.3.3" />
+# MAGIC %md <i18n value="ec8b637c-e44e-4ff4-8c08-d5ed16fc926f"/>
 # MAGIC 
 # MAGIC 
 # MAGIC Now our function can process numbers passed as strings.
@@ -364,7 +364,7 @@ three_times("2")
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="bd26b679-0f99-4b8f-974e-944f21cf569e" version="2.3.3" />
+# MAGIC %md <i18n value="bd26b679-0f99-4b8f-974e-944f21cf569e"/>
 # MAGIC 
 # MAGIC 
 # MAGIC And prints an informative message when a string is passed.
@@ -375,14 +375,14 @@ three_times("two")
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="cfcaaa1b-c7b5-4e86-bb90-4fce11b9a489" version="2.3.3" />
+# MAGIC %md <i18n value="cfcaaa1b-c7b5-4e86-bb90-4fce11b9a489"/>
 # MAGIC 
 # MAGIC 
 # MAGIC Note that as implemented, this logic would only be useful for interactive execution of this logic (the message isn't currently being logged anywhere, and the code will not return the data in the desired format; human intervention would be required to act upon the printed message).
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="196be391-f129-4571-800a-e8d49925e57d" version="2.3.3" />
+# MAGIC %md <i18n value="196be391-f129-4571-800a-e8d49925e57d"/>
 # MAGIC 
 # MAGIC 
 # MAGIC ## Applying Python Control Flow for SQL Queries
@@ -403,7 +403,7 @@ three_times("two")
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="0ccc4fe8-a8bf-4f53-89ff-64f89444f3cf" version="2.3.3" />
+# MAGIC %md <i18n value="0ccc4fe8-a8bf-4f53-89ff-64f89444f3cf"/>
 # MAGIC 
 # MAGIC 
 # MAGIC Run the SQL cell below to preview the contents of this temp view.
@@ -415,7 +415,7 @@ three_times("two")
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="12630b87-da36-4bd5-aa87-1a73c41403f9" version="2.3.3" />
+# MAGIC %md <i18n value="12630b87-da36-4bd5-aa87-1a73c41403f9"/>
 # MAGIC 
 # MAGIC 
 # MAGIC Running SQL in a Python cell simply requires passing the string query to **`spark.sql()`**.
@@ -427,7 +427,7 @@ spark.sql(query)
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="5308c8e6-7796-4232-b6c6-d87ae3bd97bb" version="2.3.3" />
+# MAGIC %md <i18n value="5308c8e6-7796-4232-b6c6-d87ae3bd97bb"/>
 # MAGIC 
 # MAGIC 
 # MAGIC But recall that executing a query with **`spark.sql()`** returns the results as a DataFrame rather than displaying them; below, the code is augmented to capture the result and display it.
@@ -440,7 +440,7 @@ display(result)
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="86cdef19-25f1-44e1-93d0-49c8c172e25e" version="2.3.3" />
+# MAGIC %md <i18n value="86cdef19-25f1-44e1-93d0-49c8c172e25e"/>
 # MAGIC 
 # MAGIC 
 # MAGIC Using a simple **`if`** clause with a function allows us to execute arbitrary SQL queries, optionally displaying the results, and always returning the resultant DataFrame.
@@ -459,7 +459,7 @@ result = simple_query_function(query)
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="76d7f722-62a9-4513-9adb-398062a0e75c" version="2.3.3" />
+# MAGIC %md <i18n value="76d7f722-62a9-4513-9adb-398062a0e75c"/>
 # MAGIC 
 # MAGIC 
 # MAGIC Below, we execute a different query and set preview to **`False`**, as the purpose of the query is to create a temp view rather than return a preview of data.
@@ -472,7 +472,7 @@ simple_query_function(new_query, preview=False)
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="b71d2371-2659-468e-85fa-5ce5f54bc500" version="2.3.3" />
+# MAGIC %md <i18n value="b71d2371-2659-468e-85fa-5ce5f54bc500"/>
 # MAGIC 
 # MAGIC 
 # MAGIC We now have a simple extensible function that could be further parameterized depending on the needs of our organization.
@@ -485,7 +485,7 @@ injection_query = "SELECT * FROM demo_tmp_vw; DROP DATABASE prod_db CASCADE; SEL
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="153c01d2-ac1a-4093-9902-1f8af8b0d12c" version="2.3.3" />
+# MAGIC %md <i18n value="153c01d2-ac1a-4093-9902-1f8af8b0d12c"/>
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -497,7 +497,7 @@ injection_query.find(";")
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="44ecbf92-2b32-4043-9ed3-4703375d855c" version="2.3.3" />
+# MAGIC %md <i18n value="44ecbf92-2b32-4043-9ed3-4703375d855c"/>
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -509,7 +509,7 @@ injection_query.find("x")
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="bb33efe0-e629-40f3-86fa-505fdb6d7d75" version="2.3.3" />
+# MAGIC %md <i18n value="bb33efe0-e629-40f3-86fa-505fdb6d7d75"/>
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -524,7 +524,7 @@ def injection_check(query):
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="546a4926-18ac-4303-ab28-bd1538c8058f" version="2.3.3" />
+# MAGIC %md <i18n value="546a4926-18ac-4303-ab28-bd1538c8058f"/>
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -536,7 +536,7 @@ def injection_check(query):
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="f687ed3f-fce2-48ff-8634-c344aa3a60e1" version="2.3.3" />
+# MAGIC %md <i18n value="f687ed3f-fce2-48ff-8634-c344aa3a60e1"/>
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -548,7 +548,7 @@ def injection_check(query):
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="d9dd7b85-cab2-47e5-81dc-70b334662d62" version="2.3.3" />
+# MAGIC %md <i18n value="d9dd7b85-cab2-47e5-81dc-70b334662d62"/>
 # MAGIC 
 # MAGIC 
 # MAGIC If we add this method to our earlier query function, we now have a more robust function that will assess each query for potential threats before execution.
@@ -564,7 +564,7 @@ def secure_query_function(query, preview=True):
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="5360d17d-8596-4639-b504-46f1fadaeba6" version="2.3.3" />
+# MAGIC %md <i18n value="5360d17d-8596-4639-b504-46f1fadaeba6"/>
 # MAGIC 
 # MAGIC 
 # MAGIC As expected, we see normal performance with a safe query.
@@ -575,7 +575,7 @@ secure_query_function(query)
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="4ae1b084-4cc3-4acf-ad16-3a0ad45b0c22" version="2.3.3" />
+# MAGIC %md <i18n value="4ae1b084-4cc3-4acf-ad16-3a0ad45b0c22"/>
 # MAGIC 
 # MAGIC 
 # MAGIC But prevent execution when bad logic is run.

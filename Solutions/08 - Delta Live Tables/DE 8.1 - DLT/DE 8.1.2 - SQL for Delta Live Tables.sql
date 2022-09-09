@@ -7,7 +7,7 @@
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="b9ee68dd-a00f-45a6-9c7a-9c59a41fef6a" version="2.3.3" />
+-- MAGIC %md <i18n value="b9ee68dd-a00f-45a6-9c7a-9c59a41fef6a"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC # SQL for Delta Live Tables
@@ -27,7 +27,7 @@
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="1cc1fe77-a235-40dd-beb5-bacc94425b96" version="2.3.3" />
+-- MAGIC %md <i18n value="1cc1fe77-a235-40dd-beb5-bacc94425b96"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC ## Declare Bronze Layer Tables
@@ -36,7 +36,7 @@
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="458afeb2-4472-4ed2-a4c7-6dea2338c3f2" version="2.3.3" />
+-- MAGIC %md <i18n value="458afeb2-4472-4ed2-a4c7-6dea2338c3f2"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC ### sales_orders_raw
@@ -58,7 +58,7 @@ AS SELECT * FROM cloud_files("${datasets_path}/retail-org/sales_orders", "json",
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="57accbe1-e96d-44ca-8937-8849634d1da2" version="2.3.3" />
+-- MAGIC %md <i18n value="57accbe1-e96d-44ca-8937-8849634d1da2"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC ### customers
@@ -75,7 +75,7 @@ AS SELECT * FROM cloud_files("${datasets_path}/retail-org/customers/", "csv");
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="09bc5c4d-1408-47f8-8102-ddaf0a96a6c0" version="2.3.3" />
+-- MAGIC %md <i18n value="09bc5c4d-1408-47f8-8102-ddaf0a96a6c0"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC 
@@ -85,7 +85,7 @@ AS SELECT * FROM cloud_files("${datasets_path}/retail-org/customers/", "csv");
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="eb20ea4d-1115-4536-adac-7bbd85491726" version="2.3.3" />
+-- MAGIC %md <i18n value="eb20ea4d-1115-4536-adac-7bbd85491726"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC ### sales_orders_cleaned
@@ -129,7 +129,7 @@ AS
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="ae062501-5a39-4183-976a-53662619d516" version="2.3.3" />
+-- MAGIC %md <i18n value="ae062501-5a39-4183-976a-53662619d516"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC ## Declare Gold Table
@@ -152,7 +152,7 @@ AS
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="c3efd15d-6587-4cd4-9758-37643dcfd694" version="2.3.3" />
+-- MAGIC %md <i18n value="c3efd15d-6587-4cd4-9758-37643dcfd694"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC ## Explore Results
@@ -167,7 +167,7 @@ AS
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="77c262ce-1b24-4ca2-a931-e481927d1739" version="2.3.3" />
+-- MAGIC %md <i18n value="77c262ce-1b24-4ca2-a931-e481927d1739"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC ## Update Pipeline

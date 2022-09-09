@@ -7,7 +7,7 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="405115f0-8ffe-4a64-861b-b4a6772972be" version="2.3.3" />
+# MAGIC %md <i18n value="405115f0-8ffe-4a64-861b-b4a6772972be"/>
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -27,7 +27,7 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="ce3151f0-a3dc-4cd5-9f92-a075c851101a" version="2.3.3" />
+# MAGIC %md <i18n value="ce3151f0-a3dc-4cd5-9f92-a075c851101a"/>
 # MAGIC 
 # MAGIC 
 # MAGIC ## Execute a Query to Repair Broken Data
@@ -44,7 +44,7 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="25e86690-7fc4-45ea-b567-c6a229cef220" version="2.3.3" />
+# MAGIC %md <i18n value="25e86690-7fc4-45ea-b567-c6a229cef220"/>
 # MAGIC 
 # MAGIC 
 # MAGIC For the purposes of our demo, let's assume that thorough manual review of our data and systems has demonstrated that occasionally otherwise valid heartrate recordings are returned as negative values.
@@ -58,7 +58,7 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="6f853894-27ff-4edb-8e64-ff2fa3c0be39" version="2.3.3" />
+# MAGIC %md <i18n value="6f853894-27ff-4edb-8e64-ff2fa3c0be39"/>
 # MAGIC 
 # MAGIC 
 # MAGIC To complete our dataset, we wish to insert these fixed records into the silver **`recordings_enriched`** table.
@@ -84,7 +84,7 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="03ebb8bd-781d-4d5d-87ff-f4a842e2419a" version="2.3.3" />
+# MAGIC %md <i18n value="03ebb8bd-781d-4d5d-87ff-f4a842e2419a"/>
 # MAGIC 
 # MAGIC 
 # MAGIC Use the cell below to manually or programmatically confirm that this update has been successful.
@@ -98,7 +98,7 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="9b9685f0-dc1a-490c-92e9-ec068c7064d5" version="2.3.3" />
+# MAGIC %md <i18n value="9b9685f0-dc1a-490c-92e9-ec068c7064d5"/>
 # MAGIC 
 # MAGIC 
 # MAGIC ## Consider Production Data Permissions
@@ -111,7 +111,7 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="15d7d859-5788-4c66-88f8-f276dba39347" version="2.3.3" />
+# MAGIC %md <i18n value="15d7d859-5788-4c66-88f8-f276dba39347"/>
 # MAGIC 
 # MAGIC 
 # MAGIC ## Shut Down Production Infrastructure

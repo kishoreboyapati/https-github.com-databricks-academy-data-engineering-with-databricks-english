@@ -7,7 +7,7 @@
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="7aa87ebc-24dd-4b39-bb02-7c59fa083a14" version="2.3.3" />
+-- MAGIC %md <i18n value="7aa87ebc-24dd-4b39-bb02-7c59fa083a14"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC 
@@ -29,7 +29,7 @@
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="add37b8c-6a95-423f-a09a-876e489ef17d" version="2.3.3" />
+-- MAGIC %md <i18n value="add37b8c-6a95-423f-a09a-876e489ef17d"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC ## Run Setup
@@ -41,7 +41,7 @@
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="3b9c0755-bf72-480e-a836-18a4eceb97d2" version="2.3.3" />
+-- MAGIC %md <i18n value="3b9c0755-bf72-480e-a836-18a4eceb97d2"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC 
@@ -63,7 +63,7 @@ CREATE TABLE students
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="a00174f3-bbcd-4ee3-af0e-b8d4ccb58481" version="2.3.3" />
+-- MAGIC %md <i18n value="a00174f3-bbcd-4ee3-af0e-b8d4ccb58481"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC 
@@ -78,7 +78,7 @@ CREATE TABLE IF NOT EXISTS students
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="408b1c71-b26b-43c0-b144-d5e92064a5ac" version="2.3.3" />
+-- MAGIC %md <i18n value="408b1c71-b26b-43c0-b144-d5e92064a5ac"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC 
@@ -95,7 +95,7 @@ INSERT INTO students VALUES (3, "Elia", 3.3);
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="853dd803-9f64-42d7-b5e8-5477ea61029e" version="2.3.3" />
+-- MAGIC %md <i18n value="853dd803-9f64-42d7-b5e8-5477ea61029e"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC 
@@ -111,7 +111,7 @@ VALUES
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="7972982a-05be-46ce-954e-e9d29e3b7329" version="2.3.3" />
+-- MAGIC %md <i18n value="7972982a-05be-46ce-954e-e9d29e3b7329"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC 
@@ -119,7 +119,7 @@ VALUES
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="121bd36c-10c4-41fc-b730-2a6fb626c6af" version="2.3.3" />
+-- MAGIC %md <i18n value="121bd36c-10c4-41fc-b730-2a6fb626c6af"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC 
@@ -133,7 +133,7 @@ SELECT * FROM students
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="4ecaf351-d4a4-4803-8990-5864995287a4" version="2.3.3" />
+-- MAGIC %md <i18n value="4ecaf351-d4a4-4803-8990-5864995287a4"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC 
@@ -143,7 +143,7 @@ SELECT * FROM students
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="8a379d8d-7c48-43b0-8e25-3e653d8d6e86" version="2.3.3" />
+-- MAGIC %md <i18n value="8a379d8d-7c48-43b0-8e25-3e653d8d6e86"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC 
@@ -161,7 +161,7 @@ WHERE name LIKE "T%"
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="b307b3e7-5ed2-4df8-bdd5-6c25acfd072f" version="2.3.3" />
+-- MAGIC %md <i18n value="b307b3e7-5ed2-4df8-bdd5-6c25acfd072f"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC 
@@ -173,7 +173,7 @@ SELECT * FROM students
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="d581b9a2-f450-43dc-bff3-2ea9cc46ad4c" version="2.3.3" />
+-- MAGIC %md <i18n value="d581b9a2-f450-43dc-bff3-2ea9cc46ad4c"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC 
@@ -190,7 +190,7 @@ WHERE value > 6
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="b5b346b8-a3df-45f2-88a7-8cf8dea6d815" version="2.3.3" />
+-- MAGIC %md <i18n value="b5b346b8-a3df-45f2-88a7-8cf8dea6d815"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC 
@@ -214,7 +214,7 @@ SELECT * FROM updates;
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="6fe009d5-513f-4b93-994f-1ae9a0f30a80" version="2.3.3" />
+-- MAGIC %md <i18n value="6fe009d5-513f-4b93-994f-1ae9a0f30a80"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC 
@@ -240,7 +240,7 @@ WHEN NOT MATCHED AND u.type = "insert"
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="77cee0a0-f94b-4016-a20b-08e4857d13db" version="2.3.3" />
+-- MAGIC %md <i18n value="77cee0a0-f94b-4016-a20b-08e4857d13db"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC 
@@ -250,7 +250,7 @@ WHEN NOT MATCHED AND u.type = "insert"
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="4eca2c53-e457-4964-875e-d39d9205c3c6" version="2.3.3" />
+-- MAGIC %md <i18n value="4eca2c53-e457-4964-875e-d39d9205c3c6"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC 
@@ -266,7 +266,7 @@ DROP TABLE students
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="08cbbda5-96b2-4ae8-889f-b1f4c04d1496" version="2.3.3" />
+-- MAGIC %md <i18n value="08cbbda5-96b2-4ae8-889f-b1f4c04d1496"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC 

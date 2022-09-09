@@ -7,7 +7,7 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="5f2cfc0b-1998-4182-966d-8efed6020eb2" version="2.3.3" />
+# MAGIC %md <i18n value="5f2cfc0b-1998-4182-966d-8efed6020eb2"/>
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -25,7 +25,7 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="05dca5e4-6c50-4b39-a497-a35cd6d99434" version="2.3.3" />
+# MAGIC %md <i18n value="05dca5e4-6c50-4b39-a497-a35cd6d99434"/>
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -35,7 +35,7 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="f07b8dd7-436d-4719-9c17-18cd47f493fe" version="2.3.3" />
+# MAGIC %md <i18n value="f07b8dd7-436d-4719-9c17-18cd47f493fe"/>
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -49,7 +49,7 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="68805a5e-3b2c-4f79-819f-273d4ca95137" version="2.3.3" />
+# MAGIC %md <i18n value="68805a5e-3b2c-4f79-819f-273d4ca95137"/>
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -88,7 +88,7 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="260e99b3-4126-41b7-8210-b6ff01b98790" version="2.3.3" />
+# MAGIC %md <i18n value="260e99b3-4126-41b7-8210-b6ff01b98790"/>
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -111,7 +111,7 @@ print(my_name)
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="ece094f7-d013-4b24-aa54-e934f4ab7dbd" version="2.3.3" />
+# MAGIC %md <i18n value="ece094f7-d013-4b24-aa54-e934f4ab7dbd"/>
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -125,7 +125,7 @@ display(example_df)
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="ce392afd-2e73-4a51-adc4-7d654dad6215" version="2.3.3" />
+# MAGIC %md <i18n value="ce392afd-2e73-4a51-adc4-7d654dad6215"/>
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -137,7 +137,7 @@ display(example_df)
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="dfce7fd1-08e8-4cc3-92ac-a2eb74f804ef" version="2.3.3" />
+# MAGIC %md <i18n value="dfce7fd1-08e8-4cc3-92ac-a2eb74f804ef"/>
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -150,7 +150,7 @@ display(example_df)
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="a54470bc-2a69-4a34-acbb-fe28c4dee284" version="2.3.3" />
+# MAGIC %md <i18n value="a54470bc-2a69-4a34-acbb-fe28c4dee284"/>
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -165,7 +165,7 @@ display(example_df)
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="7499c6b6-b3f3-4641-88d9-5a260d3c11f8" version="2.3.3" />
+# MAGIC %md <i18n value="7499c6b6-b3f3-4641-88d9-5a260d3c11f8"/>
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -178,7 +178,7 @@ display(files)
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="a17b5667-53bc-4f8a-8601-5599f4ebb819" version="2.3.3" />
+# MAGIC %md <i18n value="a17b5667-53bc-4f8a-8601-5599f4ebb819"/>
 # MAGIC 
 # MAGIC 
 # MAGIC # Clearing notebook state
@@ -195,7 +195,7 @@ print(my_name)
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="8bff18c2-3ecf-484a-9a8c-dadab7eaf0a1" version="2.3.3" />
+# MAGIC %md <i18n value="8bff18c2-3ecf-484a-9a8c-dadab7eaf0a1"/>
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -210,7 +210,7 @@ print(my_name)
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="cb3c335a-dd4c-4620-9f10-6946250f2e02" version="2.3.3" />
+# MAGIC %md <i18n value="cb3c335a-dd4c-4620-9f10-6946250f2e02"/>
 # MAGIC 
 # MAGIC 
 # MAGIC 

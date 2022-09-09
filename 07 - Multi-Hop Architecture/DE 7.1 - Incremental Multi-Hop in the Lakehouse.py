@@ -7,7 +7,7 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="c84bb70e-0f3a-4cb9-a8b4-882200c7c940" version="2.3.3" />
+# MAGIC %md <i18n value="c84bb70e-0f3a-4cb9-a8b4-882200c7c940"/>
 # MAGIC 
 # MAGIC 
 # MAGIC # Incremental Multi-Hop in the Lakehouse
@@ -23,7 +23,7 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="8f7d994a-fe1f-4628-825e-30c35b9ff187" version="2.3.3" />
+# MAGIC %md <i18n value="8f7d994a-fe1f-4628-825e-30c35b9ff187"/>
 # MAGIC 
 # MAGIC 
 # MAGIC ## Incremental Updates in the Lakehouse
@@ -46,7 +46,7 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="9008b325-00b1-41a3-bc43-9c693bade882" version="2.3.3" />
+# MAGIC %md <i18n value="9008b325-00b1-41a3-bc43-9c693bade882"/>
 # MAGIC 
 # MAGIC 
 # MAGIC ## Datasets Used
@@ -73,7 +73,7 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="7b621659-663d-4fea-b26c-5eefdf4d025a" version="2.3.3" />
+# MAGIC %md <i18n value="7b621659-663d-4fea-b26c-5eefdf4d025a"/>
 # MAGIC 
 # MAGIC 
 # MAGIC ## Getting Started
@@ -86,7 +86,7 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="045c9907-e803-4506-8e69-4e370f06cd1d" version="2.3.3" />
+# MAGIC %md <i18n value="045c9907-e803-4506-8e69-4e370f06cd1d"/>
 # MAGIC 
 # MAGIC 
 # MAGIC ## Data Simulator
@@ -100,7 +100,7 @@ DA.data_factory.load()
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="d5d9393e-0a91-41f5-95f3-82f1be290add" version="2.3.3" />
+# MAGIC %md <i18n value="d5d9393e-0a91-41f5-95f3-82f1be290add"/>
 # MAGIC 
 # MAGIC 
 # MAGIC ## Bronze Table: Ingesting Raw JSON Recordings
@@ -123,7 +123,7 @@ DA.data_factory.load()
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="7fdec7ea-277e-4df4-911b-b2a4d3761b6a" version="2.3.3" />
+# MAGIC %md <i18n value="7fdec7ea-277e-4df4-911b-b2a4d3761b6a"/>
 # MAGIC 
 # MAGIC 
 # MAGIC Here, we'll enrich our raw data with additional metadata describing the source file and the time it was ingested. This additional metadata can be ignored during downstream processing while providing useful information for troubleshooting errors if corrupt data is encountered.
@@ -138,7 +138,7 @@ DA.data_factory.load()
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="6f60f3aa-65ff-4204-9cf8-00f456d4497b" version="2.3.3" />
+# MAGIC %md <i18n value="6f60f3aa-65ff-4204-9cf8-00f456d4497b"/>
 # MAGIC 
 # MAGIC 
 # MAGIC The code below passes our enriched raw data back to PySpark API to process an incremental write to a Delta Lake table.
@@ -154,7 +154,7 @@ DA.data_factory.load()
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="6fd28dc4-1516-4f6a-8478-290d366a342c" version="2.3.3" />
+# MAGIC %md <i18n value="6fd28dc4-1516-4f6a-8478-290d366a342c"/>
 # MAGIC 
 # MAGIC 
 # MAGIC Trigger another file arrival with the following cell and you'll see the changes immediately detected by the streaming query you've written.
@@ -165,7 +165,7 @@ DA.data_factory.load()
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="4d7848cc-ecff-474d-be27-21717d9f08d1" version="2.3.3" />
+# MAGIC %md <i18n value="4d7848cc-ecff-474d-be27-21717d9f08d1"/>
 # MAGIC 
 # MAGIC 
 # MAGIC ### Load Static Lookup Table
@@ -189,7 +189,7 @@ DA.data_factory.load()
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="00ed3fc7-7c17-44f0-b56f-5e824a72bd9c" version="2.3.3" />
+# MAGIC %md <i18n value="00ed3fc7-7c17-44f0-b56f-5e824a72bd9c"/>
 # MAGIC 
 # MAGIC 
 # MAGIC ## Silver Table: Enriched Recording Data
@@ -225,7 +225,7 @@ DA.data_factory.load()
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="f7f66dc8-f5b5-4682-bfb6-e97aab650874" version="2.3.3" />
+# MAGIC %md <i18n value="f7f66dc8-f5b5-4682-bfb6-e97aab650874"/>
 # MAGIC 
 # MAGIC 
 # MAGIC Trigger another new file and wait for it propagate through both previous queries.
@@ -241,7 +241,7 @@ DA.data_factory.load()
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="d6a2ecd9-043e-4488-8a70-3ee3389cf681" version="2.3.3" />
+# MAGIC %md <i18n value="d6a2ecd9-043e-4488-8a70-3ee3389cf681"/>
 # MAGIC 
 # MAGIC 
 # MAGIC ## Gold Table: Daily Averages
@@ -264,7 +264,7 @@ DA.data_factory.load()
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="de6370ea-e1a0-4212-98eb-53fd012e73b0" version="2.3.3" />
+# MAGIC %md <i18n value="de6370ea-e1a0-4212-98eb-53fd012e73b0"/>
 # MAGIC 
 # MAGIC 
 # MAGIC Note that we're using **`.trigger(availableNow=True)`** below. This provides us the ability to continue to use the strengths of Structured Streaming while triggering this job one-time to process all available data in micro-batches. To recap, these strengths include:
@@ -287,7 +287,7 @@ DA.data_factory.load()
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="5ffbd353-850f-431e-8455-827f87cad2ca" version="2.3.3" />
+# MAGIC %md <i18n value="5ffbd353-850f-431e-8455-827f87cad2ca"/>
 # MAGIC 
 # MAGIC 
 # MAGIC #### Important Considerations for complete Output with Delta
@@ -305,7 +305,7 @@ DA.data_factory.load()
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="bcca7247-9716-44ed-8424-e72170f0a2dc" version="2.3.3" />
+# MAGIC %md <i18n value="bcca7247-9716-44ed-8424-e72170f0a2dc"/>
 # MAGIC 
 # MAGIC 
 # MAGIC Note the above table includes all days for all users. If the predicates for our ad hoc queries match the data encoded here, we can push down our predicates to files at the source and very quickly generate more limited aggregate views.
@@ -319,7 +319,7 @@ DA.data_factory.load()
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="0822f785-38af-4b30-9154-8d82eb9fe000" version="2.3.3" />
+# MAGIC %md <i18n value="0822f785-38af-4b30-9154-8d82eb9fe000"/>
 # MAGIC 
 # MAGIC 
 # MAGIC ## Process Remaining Records
@@ -331,7 +331,7 @@ DA.data_factory.load(continuous=True)
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="f1f576bc-2b5d-46cf-9acb-6c7c4807c1af" version="2.3.3" />
+# MAGIC %md <i18n value="f1f576bc-2b5d-46cf-9acb-6c7c4807c1af"/>
 # MAGIC 
 # MAGIC 
 # MAGIC ## Wrapping Up
@@ -344,7 +344,7 @@ DA.cleanup()
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="82928cc5-5e2b-4368-90bd-dff62a27ff12" version="2.3.3" />
+# MAGIC %md <i18n value="82928cc5-5e2b-4368-90bd-dff62a27ff12"/>
 # MAGIC 
 # MAGIC 
 # MAGIC ## Summary
@@ -353,7 +353,7 @@ DA.cleanup()
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="e60b0dac-92ed-4480-a969-d0568ce83494" version="2.3.3" />
+# MAGIC %md <i18n value="e60b0dac-92ed-4480-a969-d0568ce83494"/>
 # MAGIC 
 # MAGIC 
 # MAGIC ## Additional Topics & Resources

@@ -7,7 +7,7 @@
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="ce4b28fc-fbe2-47d3-976a-776345ac869b" version="2.3.3" />
+-- MAGIC %md <i18n value="ce4b28fc-fbe2-47d3-976a-776345ac869b"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC # Delta Lake Versioning, Optimization, and Vacuuming
@@ -23,7 +23,7 @@
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="f75fd28d-aa78-4d58-b9b7-b8ea93a99b1b" version="2.3.3" />
+-- MAGIC %md <i18n value="f75fd28d-aa78-4d58-b9b7-b8ea93a99b1b"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC ## Setup
@@ -35,7 +35,7 @@
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="ea2fae13-227c-4c03-8617-87e06826526e" version="2.3.3" />
+-- MAGIC %md <i18n value="ea2fae13-227c-4c03-8617-87e06826526e"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC ## Recreate the History of your Bean Collection
@@ -93,7 +93,7 @@ WHEN NOT MATCHED AND b.delicious = true THEN
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="ec611b15-e52e-4bce-8a74-7d55e72d3189" version="2.3.3" />
+-- MAGIC %md <i18n value="ec611b15-e52e-4bce-8a74-7d55e72d3189"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC ## Review the Table History
@@ -109,7 +109,7 @@ DESCRIBE HISTORY beans
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="6c5aaad5-d6ac-4a46-943f-81720d7d1d92" version="2.3.3" />
+-- MAGIC %md <i18n value="6c5aaad5-d6ac-4a46-943f-81720d7d1d92"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC If all the previous operations were completed as described you should see 7 versions of the table (**NOTE**: Delta Lake versioning starts with 0, so the max version number will be 6).
@@ -134,7 +134,7 @@ DESCRIBE HISTORY beans
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="4cb66440-1d20-4f76-8110-6f872dc59800" version="2.3.3" />
+-- MAGIC %md <i18n value="4cb66440-1d20-4f76-8110-6f872dc59800"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC ## Query a Specific Version
@@ -149,7 +149,7 @@ SELECT * FROM beans VERSION AS OF 1
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="3043618d-abb4-46db-9b13-bd1c4a02d235" version="2.3.3" />
+-- MAGIC %md <i18n value="3043618d-abb4-46db-9b13-bd1c4a02d235"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC And now review the current state of your data.
@@ -160,7 +160,7 @@ SELECT * FROM beans
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="91947cec-f2ff-4590-9bdb-d996fa93cd04" version="2.3.3" />
+-- MAGIC %md <i18n value="91947cec-f2ff-4590-9bdb-d996fa93cd04"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC You want to review the weights of your beans before you deleted any records.
@@ -179,7 +179,7 @@ SELECT * FROM pre_delete_vw
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="b10dccdf-cf1e-43fe-bed0-1da2166f0884" version="2.3.3" />
+-- MAGIC %md <i18n value="b10dccdf-cf1e-43fe-bed0-1da2166f0884"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC Run the cell below to check that you have captured the correct version.
@@ -193,7 +193,7 @@ SELECT * FROM pre_delete_vw
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="bcedb128-6a39-46a6-b418-c889a2587751" version="2.3.3" />
+-- MAGIC %md <i18n value="bcedb128-6a39-46a6-b418-c889a2587751"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC ## Restore a Previous Version
@@ -209,7 +209,7 @@ RESTORE TABLE beans TO VERSION AS OF 5
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="b0ca1fc8-da6f-444e-9105-f0d6bc7893d9" version="2.3.3" />
+-- MAGIC %md <i18n value="b0ca1fc8-da6f-444e-9105-f0d6bc7893d9"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC Review the history of your table. Make note of the fact that restoring to a previous version adds another table version.
@@ -227,7 +227,7 @@ DESCRIBE HISTORY beans
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="e16c9c00-1ac7-444e-9f99-6ceccb7795d3" version="2.3.3" />
+-- MAGIC %md <i18n value="e16c9c00-1ac7-444e-9f99-6ceccb7795d3"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC ## File Compaction
@@ -245,7 +245,7 @@ ZORDER BY name
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="f97af267-9d81-4035-803b-2d54e5f037af" version="2.3.3" />
+-- MAGIC %md <i18n value="f97af267-9d81-4035-803b-2d54e5f037af"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC Your data should have been compacted to a single file; confirm this manually by running the following cell.
@@ -256,7 +256,7 @@ DESCRIBE DETAIL beans
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="4510898e-045e-493b-8882-26d1366219ff" version="2.3.3" />
+-- MAGIC %md <i18n value="4510898e-045e-493b-8882-26d1366219ff"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC Run the cell below to check that you've successfully optimized and indexed your table.
@@ -270,7 +270,7 @@ DESCRIBE DETAIL beans
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="2704d55d-c54a-4e44-baf8-6bf186363870" version="2.3.3" />
+-- MAGIC %md <i18n value="2704d55d-c54a-4e44-baf8-6bf186363870"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC ## Cleaning Up Stale Data Files
@@ -294,7 +294,7 @@ SET spark.databricks.delta.vacuum.logging.enabled = true;
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="b4aa9f86-b65a-4b58-a303-01ce01c1dda9" version="2.3.3" />
+-- MAGIC %md <i18n value="b4aa9f86-b65a-4b58-a303-01ce01c1dda9"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC Before permanently deleting data files, review them manually using the **`DRY RUN`** option.
@@ -305,7 +305,7 @@ VACUUM beans RETAIN 0 HOURS DRY RUN
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="d9ebfa03-c7b2-4eba-8e25-71b41a78965d" version="2.3.3" />
+-- MAGIC %md <i18n value="d9ebfa03-c7b2-4eba-8e25-71b41a78965d"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC All data files not in the current version of the table will be shown in the preview above.
@@ -320,7 +320,7 @@ VACUUM beans RETAIN 0 HOURS
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="21bb3d2d-5c7b-4e49-ad16-b27eeecbd915" version="2.3.3" />
+-- MAGIC %md <i18n value="21bb3d2d-5c7b-4e49-ad16-b27eeecbd915"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC Because **`VACUUM`** can be such a destructive act for important datasets, it's always a good idea to turn the retention duration check back on. Run the cell below to reactive this setting.
@@ -331,7 +331,7 @@ SET spark.databricks.delta.retentionDurationCheck.enabled = true
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="fdd81ce0-d88a-4cf4-9fe3-6bfdd2319a9b" version="2.3.3" />
+-- MAGIC %md <i18n value="fdd81ce0-d88a-4cf4-9fe3-6bfdd2319a9b"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC Note that the table history will indicate the user that completed the **`VACUUM`** operation, the number of files deleted, and log that the retention check was disabled during this operation.
@@ -342,7 +342,7 @@ DESCRIBE HISTORY beans
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="c28d1de2-ff12-426c-9c97-11fced9145cc" version="2.3.3" />
+-- MAGIC %md <i18n value="c28d1de2-ff12-426c-9c97-11fced9145cc"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC Query your table again to confirm you still have access to the current version.
@@ -353,7 +353,7 @@ SELECT * FROM beans
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="a9d17cf0-7d2e-4537-93ed-35c37801bdae" version="2.3.3" />
+-- MAGIC %md <i18n value="a9d17cf0-7d2e-4537-93ed-35c37801bdae"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC <img src="https://files.training.databricks.com/images/icon_warn_32.png"> Because Delta Cache stores copies of files queried in the current session on storage volumes deployed to your currently active cluster, you may still be able to temporarily access previous table versions (though systems should **not** be designed to expect this behavior). 
@@ -369,7 +369,7 @@ SELECT * FROM beans
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="6381dbea-0e05-4dae-9015-cfa9c8bdf40a" version="2.3.3" />
+-- MAGIC %md <i18n value="6381dbea-0e05-4dae-9015-cfa9c8bdf40a"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC By completing this lab, you should now feel comfortable:
@@ -381,7 +381,7 @@ SELECT * FROM beans
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="6fa65337-c805-4e8e-a3ab-13820a60e6fb" version="2.3.3" />
+-- MAGIC %md <i18n value="6fa65337-c805-4e8e-a3ab-13820a60e6fb"/>
 -- MAGIC 
 -- MAGIC  
 -- MAGIC Run the following cell to delete the tables and files associated with this lesson.

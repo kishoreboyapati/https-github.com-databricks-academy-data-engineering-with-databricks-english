@@ -7,7 +7,7 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="358d2c22-9d78-4888-a7ec-54b7d5f3db64" version="2.3.3" />
+# MAGIC %md <i18n value="358d2c22-9d78-4888-a7ec-54b7d5f3db64"/>
 # MAGIC 
 # MAGIC 
 # MAGIC # Just Enough Python for Databricks SQL Lab
@@ -24,7 +24,7 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="97cba873-1459-478f-831b-b52fc54265eb" version="2.3.3" />
+# MAGIC %md <i18n value="97cba873-1459-478f-831b-b52fc54265eb"/>
 # MAGIC 
 # MAGIC 
 # MAGIC # Reviewing Python Basics
@@ -53,7 +53,7 @@ display(df)
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="bc8fda28-92ad-4cd5-aa24-34022269698a" version="2.3.3" />
+# MAGIC %md <i18n value="bc8fda28-92ad-4cd5-aa24-34022269698a"/>
 # MAGIC 
 # MAGIC 
 # MAGIC 1. **Cmd 5** assigns a string to a variable. When a variable assignment is successful, no output is displayed to the notebook. A new variable is added to the current execution environment.
@@ -62,7 +62,7 @@ display(df)
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="ef0b350e-c470-4e89-9617-948e49dd1710" version="2.3.3" />
+# MAGIC %md <i18n value="ef0b350e-c470-4e89-9617-948e49dd1710"/>
 # MAGIC 
 # MAGIC 
 # MAGIC ## Setting Up a Development Environment
@@ -90,7 +90,7 @@ print(f"working_dir: {working_dir}")
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="1273f7a3-823a-4b1f-914a-ce6eaaa867b3" version="2.3.3" />
+# MAGIC %md <i18n value="1273f7a3-823a-4b1f-914a-ce6eaaa867b3"/>
 # MAGIC 
 # MAGIC 
 # MAGIC Below, we add a simple control flow statement to this logic to create and use this user-specific database. 
@@ -122,14 +122,14 @@ create_database(course)
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="cfa0adf3-cc23-4ba1-8daf-2c70af7fa079" version="2.3.3" />
+# MAGIC %md <i18n value="cfa0adf3-cc23-4ba1-8daf-2c70af7fa079"/>
 # MAGIC 
 # MAGIC 
 # MAGIC While this logic as defined is geared toward isolating students in shared workspaces for instructional purposes, the same basic design could be leveraged for testing new logic in an isolated environment before pushing to production.
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="1c994e19-2b72-45c3-a174-8a7e21701688" version="2.3.3" />
+# MAGIC %md <i18n value="1c994e19-2b72-45c3-a174-8a7e21701688"/>
 # MAGIC 
 # MAGIC 
 # MAGIC ## Handling Errors Gracefully
@@ -161,7 +161,7 @@ def query_or_make_demo_table(table_name):
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="5a449d08-9811-4b0d-9004-74b8bb04eef5" version="2.3.3" />
+# MAGIC %md <i18n value="5a449d08-9811-4b0d-9004-74b8bb04eef5"/>
 # MAGIC 
 # MAGIC 
 # MAGIC Try to identify the following before executing the next cell:
@@ -175,7 +175,7 @@ query_or_make_demo_table("demo_table")
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="8ddb2ea1-9e4e-4ac7-a369-ff984114653f" version="2.3.3" />
+# MAGIC %md <i18n value="8ddb2ea1-9e4e-4ac7-a369-ff984114653f"/>
 # MAGIC 
 # MAGIC 
 # MAGIC Now answer the same three questions before running the same query below.
@@ -186,7 +186,7 @@ query_or_make_demo_table("demo_table")
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="6efbda51-9c51-440a-aaaf-7276ad175398" version="2.3.3" />
+# MAGIC %md <i18n value="6efbda51-9c51-440a-aaaf-7276ad175398"/>
 # MAGIC 
 # MAGIC 
 # MAGIC - On the first execution, the table **`demo_table`** did not yet exist. As such, the attempt to return the contents of the table created an error, which resulted in our **`except`** block of logic executing. This block:
@@ -197,7 +197,7 @@ query_or_make_demo_table("demo_table")
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="a0f957ea-7604-46b9-9b06-d672b73efcec" version="2.3.3" />
+# MAGIC %md <i18n value="a0f957ea-7604-46b9-9b06-d672b73efcec"/>
 # MAGIC 
 # MAGIC 
 # MAGIC ## Adapting SQL to Python
@@ -212,7 +212,7 @@ query_or_make_demo_table("demo_table")
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="c4abcb35-3733-4565-8f8c-0df4b23f1e71" version="2.3.3" />
+# MAGIC %md <i18n value="c4abcb35-3733-4565-8f8c-0df4b23f1e71"/>
 # MAGIC 
 # MAGIC 
 # MAGIC 
@@ -225,7 +225,7 @@ display(results)
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="6a4e7e96-c53a-4b8e-abf5-412fe4170c27" version="2.3.3" />
+# MAGIC %md <i18n value="6a4e7e96-c53a-4b8e-abf5-412fe4170c27"/>
 # MAGIC 
 # MAGIC 
 # MAGIC Let's use this simple example to practice creating a Python function that adds optional functionality.
@@ -263,7 +263,7 @@ def preview_values(state=None, render_results=False):
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="060207a1-a34c-4817-abee-f6e0b9c3b48a" version="2.3.3" />
+# MAGIC %md <i18n value="060207a1-a34c-4817-abee-f6e0b9c3b48a"/>
 # MAGIC 
 # MAGIC 
 # MAGIC The assert statements below can be used to check whether or not your function works as intended.

@@ -7,7 +7,7 @@
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="3a66b3fc-6b92-436c-8b22-95b91bddeac3" version="2.3.3" />
+-- MAGIC %md <i18n value="3a66b3fc-6b92-436c-8b22-95b91bddeac3"/>
 -- MAGIC 
 -- MAGIC  
 -- MAGIC # Writing to Delta Tables
@@ -24,7 +24,7 @@
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="3fa1b6f1-9faa-453f-b033-c5f2cf011703" version="2.3.3" />
+-- MAGIC %md <i18n value="3fa1b6f1-9faa-453f-b033-c5f2cf011703"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC ## Run Setup
@@ -37,7 +37,7 @@
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="3a8cba57-5d9e-4514-b589-d263a2f02f74" version="2.3.3" />
+-- MAGIC %md <i18n value="3a8cba57-5d9e-4514-b589-d263a2f02f74"/>
 -- MAGIC 
 -- MAGIC  
 -- MAGIC ## Complete Overwrites
@@ -61,7 +61,7 @@ SELECT * FROM parquet.`${da.paths.datasets}/ecommerce/raw/events-historical`
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="a4090f92-557e-4d23-a808-155356270d1b" version="2.3.3" />
+-- MAGIC %md <i18n value="a4090f92-557e-4d23-a808-155356270d1b"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC Reviewing the table history shows a previous version of this table was replaced.
@@ -72,7 +72,7 @@ DESCRIBE HISTORY events
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="06628fba-431d-4cb7-bd52-449fdc203cb2" version="2.3.3" />
+-- MAGIC %md <i18n value="06628fba-431d-4cb7-bd52-449fdc203cb2"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC **`INSERT OVERWRITE`** provides a nearly identical outcome as above: data in the target table will be replaced by data from the query. 
@@ -90,7 +90,7 @@ SELECT * FROM parquet.`${da.paths.datasets}/ecommerce/raw/sales-historical/`
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="c668da22-a355-441f-aeab-a513997b8d71" version="2.3.3" />
+-- MAGIC %md <i18n value="c668da22-a355-441f-aeab-a513997b8d71"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC Note that different metrics are displayed than a CRAS statement; the table history also records the operation differently.
@@ -101,7 +101,7 @@ DESCRIBE HISTORY sales
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="4fa20011-e560-45d5-85c0-c82930974804" version="2.3.3" />
+-- MAGIC %md <i18n value="4fa20011-e560-45d5-85c0-c82930974804"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC A primary difference here has to do with how Delta Lake enforces schema on write.
@@ -117,7 +117,7 @@ DESCRIBE HISTORY sales
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="02c9c3f2-2996-42b5-9d56-60967a0031c0" version="2.3.3" />
+-- MAGIC %md <i18n value="02c9c3f2-2996-42b5-9d56-60967a0031c0"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC 
@@ -134,7 +134,7 @@ SELECT * FROM parquet.`${da.paths.datasets}/ecommerce/raw/sales-30m`
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="3a0a94f8-43fa-4dc3-be0c-110b07f1db89" version="2.3.3" />
+-- MAGIC %md <i18n value="3a0a94f8-43fa-4dc3-be0c-110b07f1db89"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC 
@@ -142,7 +142,7 @@ SELECT * FROM parquet.`${da.paths.datasets}/ecommerce/raw/sales-30m`
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="cad7b32f-3e35-4962-a911-823d92f2f653" version="2.3.3" />
+-- MAGIC %md <i18n value="cad7b32f-3e35-4962-a911-823d92f2f653"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC 
@@ -168,7 +168,7 @@ FROM parquet.`${da.paths.datasets}/ecommerce/raw/users-30m`
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="edc2f42c-8cd2-47c6-a8e6-09b1541e1e00" version="2.3.3" />
+-- MAGIC %md <i18n value="edc2f42c-8cd2-47c6-a8e6-09b1541e1e00"/>
 -- MAGIC 
 -- MAGIC  
 -- MAGIC The main benefits of **`MERGE`**:
@@ -191,14 +191,14 @@ WHEN NOT MATCHED THEN INSERT *
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="90e330ce-5596-4fa8-a474-78442e48ae67" version="2.3.3" />
+-- MAGIC %md <i18n value="90e330ce-5596-4fa8-a474-78442e48ae67"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC Note that we explicitly specify the behavior of this function for both the **`MATCHED`** and **`NOT MATCHED`** conditions; the example demonstrated here is just an example of logic that can be applied, rather than indicative of all **`MERGE`** behavior.
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="493c7f22-4011-4b08-ad79-4b2a4ef2a12f" version="2.3.3" />
+-- MAGIC %md <i18n value="493c7f22-4011-4b08-ad79-4b2a4ef2a12f"/>
 -- MAGIC 
 -- MAGIC 
 -- MAGIC ## Insert-Only Merge for Deduplication
@@ -221,7 +221,7 @@ WHEN NOT MATCHED AND b.traffic_source = 'email' THEN
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="1162da2b-3c56-42ff-b6b8-2532276b03cd" version="2.3.3" />
+-- MAGIC %md <i18n value="1162da2b-3c56-42ff-b6b8-2532276b03cd"/>
 -- MAGIC 
 -- MAGIC  
 -- MAGIC ## Load Incrementally
@@ -244,7 +244,7 @@ FILEFORMAT = PARQUET
 
 -- COMMAND ----------
 
--- MAGIC %md <i18n value="567f82f1-956b-42c5-98d7-7914675b105e" version="2.3.3" />
+-- MAGIC %md <i18n value="567f82f1-956b-42c5-98d7-7914675b105e"/>
 -- MAGIC 
 -- MAGIC  
 -- MAGIC Run the following cell to delete the tables and files associated with this lesson.

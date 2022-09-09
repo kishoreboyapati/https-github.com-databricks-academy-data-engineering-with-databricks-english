@@ -7,7 +7,7 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="014a6669-786f-416d-ac00-9c2e4e9eecfe" version="2.3.3" />
+# MAGIC %md <i18n value="014a6669-786f-416d-ac00-9c2e4e9eecfe"/>
 # MAGIC   
 # MAGIC # Create and Manage Interactive Clusters
 # MAGIC 
@@ -26,7 +26,7 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="cb2cc2e0-3923-4969-bc01-11698cd1761c" version="2.3.3" />
+# MAGIC %md <i18n value="cb2cc2e0-3923-4969-bc01-11698cd1761c"/>
 # MAGIC   
 # MAGIC ## Create Cluster
 # MAGIC 
@@ -49,7 +49,7 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="21e3f0c5-0ced-4742-8f25-07775db546fd" version="2.3.3" />
+# MAGIC %md <i18n value="21e3f0c5-0ced-4742-8f25-07775db546fd"/>
 # MAGIC 
 # MAGIC ### <img src="https://files.training.databricks.com/images/icon_warn_24.png"> Single-Node Cluster Required for This Course
 # MAGIC **IMPORTANT:** This course requires you to run notebooks on a single-node cluster. 
@@ -58,7 +58,7 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="d1a8cf77-f6e8-40df-8355-3a598441457a" version="2.3.3" />
+# MAGIC %md <i18n value="d1a8cf77-f6e8-40df-8355-3a598441457a"/>
 # MAGIC 
 # MAGIC ## Manage Clusters
 # MAGIC 
@@ -72,7 +72,7 @@
 
 # COMMAND ----------
 
-# MAGIC %md <i18n value="b7ce6ce1-4d68-4a91-b325-3831c1653c67" version="2.3.3" />
+# MAGIC %md <i18n value="b7ce6ce1-4d68-4a91-b325-3831c1653c67"/>
 # MAGIC 
 # MAGIC ## Restart, Terminate, and Delete
 # MAGIC 
