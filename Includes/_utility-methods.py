@@ -2,7 +2,7 @@
 # MAGIC %pip install \
 # MAGIC git+https://github.com/databricks-academy/dbacademy-gems@e8183eed9481624f25b34436810cf6666b4438c0 \
 # MAGIC git+https://github.com/databricks-academy/dbacademy-rest@bc48bdb21810c4fd69d27154bfff2076cc4d02cc \
-# MAGIC git+https://github.com/databricks-academy/dbacademy-helper@736460d3f40ef5dfdd04c2554dd02cbdc5f256f5 \
+# MAGIC git+https://github.com/databricks-academy/dbacademy-helper@e0e819d661e6bf972c6fb1872c1ae1a7d2a74b23 \
 # MAGIC --quiet --disable-pip-version-check
 
 # COMMAND ----------
