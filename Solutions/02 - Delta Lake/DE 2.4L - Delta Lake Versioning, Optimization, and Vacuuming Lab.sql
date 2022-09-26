@@ -231,7 +231,7 @@ DESCRIBE HISTORY beans
 -- MAGIC 
 -- MAGIC 
 -- MAGIC ## File Compaction
--- MAGIC Looking at the transaction metrics during your reversion, you are surprised you have some many files for such a small collection of data.
+-- MAGIC Looking at the transaction metrics during your reversion, you are surprised you have so many files for such a small collection of data.
 -- MAGIC 
 -- MAGIC While indexing on a table of this size is unlikely to improve performance, you decide to add a Z-order index on the **`name`** field in anticipation of your bean collection growing exponentially over time.
 -- MAGIC 

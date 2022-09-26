@@ -190,7 +190,7 @@ AS SELECT * FROM parquet.`${da.paths.datasets}/ecommerce/raw/item-lookup`
 
 -- MAGIC %python
 -- MAGIC assert spark.table("item_lookup").count() == 12, "The table should have 12 records"
--- MAGIC assert set(row['item_id'] for row in spark.table("item_lookup").select("item_id").limit(5).collect()) == {'M_PREM_F', 'M_PREM_K', 'M_PREM_Q', 'M_PREM_T', 'M_STAN_F'}, "Make sure you have not modified the data provided"
+-- MAGIC assert set(row['item_id'] for row in spark.table("item_lookup").select("item_id").orderBy('item_id').limit(5).collect()) == {'M_PREM_F', 'M_PREM_K', 'M_PREM_Q', 'M_PREM_T', 'M_STAN_F'}, "Make sure you have not modified the data provided"
 
 -- COMMAND ----------
 
