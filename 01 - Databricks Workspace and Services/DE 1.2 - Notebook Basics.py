@@ -257,7 +257,7 @@ print("Hello Python!")
 print(f"DA:                   {DA}")
 print(f"DA.username:          {DA.username}")
 print(f"DA.paths.working_dir: {DA.paths.working_dir}")
-print(f"DA.db_name:           {DA.db_name}")
+print(f"DA.schema_name:       {DA.schema_name}")
 
 # COMMAND ----------
 
@@ -275,7 +275,7 @@ print(f"DA.db_name:           {DA.db_name}")
 # MAGIC %sql
 # MAGIC SELECT '${da.username}' AS current_username,
 # MAGIC        '${da.paths.working_dir}' AS working_directory,
-# MAGIC        '${da.db_name}' as database_name
+# MAGIC        '${da.schema_name}' as schema_name
 
 # COMMAND ----------
 

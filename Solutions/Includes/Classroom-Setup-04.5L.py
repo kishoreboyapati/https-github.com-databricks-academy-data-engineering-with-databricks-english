@@ -1,10 +1,10 @@
 # Databricks notebook source
-# MAGIC %run ./_utility-methods
+# MAGIC %run ./_common
 
 # COMMAND ----------
 
-DA = DBAcademyHelper(**helper_arguments)
-DA.reset_environment()
-DA.init(install_datasets=True, create_db=True)
+DA = DBAcademyHelper(course_config, lesson_config)
+DA.reset_lesson()
+DA.init()
 DA.conclude_setup()
 
