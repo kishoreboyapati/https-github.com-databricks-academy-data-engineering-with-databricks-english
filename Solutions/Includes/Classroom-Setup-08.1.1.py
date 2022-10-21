@@ -4,6 +4,17 @@
 # COMMAND ----------
 
 @DBAcademyHelper.monkey_patch
+def get_dlt_policy(self):
+    from dbacademy.dbhelper import ClustersHelper
+
+    dlt_policy = DA.client.cluster_policies.get_by_name(ClustersHelper.POLICY_DLT_ONLY)
+    assert dlt_policy is not None, f"Could not find the cluster policy \"{ClustersHelper.POLICY_DLT_ONLY}\"; Please run the notebook Includes/Workspace-Setup before proceeding."
+    
+    return dlt_policy
+
+# COMMAND ----------
+
+@DBAcademyHelper.monkey_patch
 def get_pipeline_config(self):
     path = dbutils.entry_point.getDbutils().notebook().getContext().notebookPath().getOrElse(None)
     path = "/".join(path.split("/")[:-1]) + "/DE 8.1.2 - SQL for Delta Live Tables"
@@ -15,6 +26,8 @@ def get_pipeline_config(self):
 @DBAcademyHelper.monkey_patch
 def print_pipeline_config(self):
     "Provided by DBAcademy, this function renders the configuration of the pipeline as HTML"
+    from dbacademy.dbhelper import ClustersHelper
+
     pipeline_name, path = self.get_pipeline_config()
     
     displayHTML(f"""<table style="width:100%">
@@ -33,8 +46,11 @@ def print_pipeline_config(self):
     <tr>
         <td style="white-space:nowrap; width:1em">Datasets Path:</td>
         <td><input type="text" value="{DA.paths.datasets}" style="width:100%"></td></tr>
+    <tr>
+        <td style="white-space:nowrap; width:1em">Policy:</td>
+        <td><input type="text" value="{ClustersHelper.POLICY_DLT_ONLY}" style="width:100%"></td></tr>
     </table>""")
-    
+
 
 # COMMAND ----------
 
@@ -57,11 +73,15 @@ def create_pipeline(self):
             "spark.master": "local[*]",
             "datasets_path": DA.paths.datasets,
         },
-        clusters=[{ "label": "default", "num_workers": 0 }])
+        clusters=[{ 
+            "num_workers": 0,
+            "policy_id": self.get_dlt_policy().get("policy_id")
+        }]
+    )
     
     pipeline_id = response.get("pipeline_id")
-    print(f"Created pipline {pipeline_id}")
-    
+    print(f"Created the pipeline \"{pipeline_name}\" ({pipeline_id})")
+
 
 # COMMAND ----------
 
@@ -69,6 +89,7 @@ def create_pipeline(self):
 def validate_pipeline_config(self):
     "Provided by DBAcademy, this function validates the configuration of the pipeline"
     import json
+    from dbacademy.dbhelper import ClustersHelper
     
     pipeline_name, path = self.get_pipeline_config()
 
@@ -98,12 +119,19 @@ def validate_pipeline_config(self):
     spark_master = configuration.get("spark.master")
     assert spark_master == f"local[*]", f"Invalid spark.master value. Expected \"local[*]\", found \"{spark_master}\"."
     
+    cluster_count = len(spec.get("clusters"))
+    assert cluster_count == 1, f"Expected one, and only one, cluster configuration, found {cluster_count}. You can use the JSON UI to edit the configuration and remove the extra clusters."
+    
     cluster = spec.get("clusters")[0]
     autoscale = cluster.get("autoscale")
     assert autoscale is None, f"Autoscaling should be disabled."
     
     num_workers = cluster.get("num_workers")
     assert num_workers == 0, f"Expected the number of workers to be 0, found {num_workers}."
+
+    policy_id = cluster.get("policy_id")
+    policy_name = None if policy_id is None else self.client.cluster_policies.get_by_id(policy_id).get("name")
+    assert policy_id == self.get_dlt_policy().get("policy_id"), f"Expected the policy to be set to \"{ClustersHelper.POLICY_DLT_ONLY}\", found \"{policy_name}\"."
 
     development = spec.get("development")
     assert development == True, f"The pipline mode should be set to \"Development\"."
@@ -117,24 +145,8 @@ def validate_pipeline_config(self):
     continuous = spec.get("continuous")
     assert continuous == False, f"Expected the Pipeline mode to be \"Triggered\", found \"Continuous\"."
 
-    policy = self.client.cluster_policies.get_by_name("Student's DLT-Only Policy")
-    if policy is not None:
-        cluster = { 
-            "num_workers": 0,
-            "label": "default", 
-            "policy_id": policy.get("policy_id")
-        }
-        self.client.pipelines.create_or_update(name = pipeline_name,
-                                               storage = DA.paths.storage_location,
-                                               target = DA.schema_name,
-                                               notebooks = [path],
-                                               configuration = {
-                                                   "spark.master": "local[*]",
-                                                   "datasets_path": DA.paths.datasets,
-                                               },
-                                               clusters=[cluster])
     print("All tests passed!")
-    
+
 
 # COMMAND ----------
 

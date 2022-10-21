@@ -159,8 +159,14 @@ SELECT * FROM events_raw
 -- COMMAND ----------
 
 -- MAGIC %python
+-- MAGIC import pyspark.sql.functions as F
 -- MAGIC assert spark.table("events_raw").count() == 2252, "The table should have 2252 records"
--- MAGIC assert set(row['timestamp'] for row in spark.table("events_raw").select("timestamp").limit(5).collect()) == {1593880885085, 1593880892303, 1593880889174, 1593880886106, 1593880889725}, "Make sure you have not modified the data provided"
+-- MAGIC 
+-- MAGIC first_5 = [row['timestamp'] for row in spark.table("events_raw").select("timestamp").orderBy(F.col("timestamp").asc()).limit(5).collect()]
+-- MAGIC assert first_5 == [1593879303631, 1593879304224, 1593879305465, 1593879305482, 1593879305746], "Make sure you have not modified the data provided"
+-- MAGIC 
+-- MAGIC last_5 = [row['timestamp'] for row in spark.table("events_raw").select("timestamp").orderBy(F.col("timestamp").desc()).limit(5).collect()]
+-- MAGIC assert last_5 == [1593881096290, 1593881095799, 1593881093452, 1593881093394, 1593881092076], "Make sure you have not modified the data provided"
 
 -- COMMAND ----------
 

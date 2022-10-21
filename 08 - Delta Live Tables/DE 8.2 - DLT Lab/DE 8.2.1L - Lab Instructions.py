@@ -101,13 +101,14 @@ DA.print_pipeline_config()
 # MAGIC    * Click **Add configuration**, set the "key" to **datasets_path** and the "value" to the value provided in the cell above.
 # MAGIC    * Click **Add configuration**, set the "key" to **source** and the "value" to the value provided in the cell above.
 # MAGIC 1. In the **Target** field, enter the database name provided in the cell above.<br/>
-# MAGIC This should follow the pattern **`da_<name_<hash>_dewd_dlt_lab_82`**
+# MAGIC This should follow the pattern **`<name>_<hash>_dbacademy_dewd_dlt_lab_82`**
 # MAGIC 1. In the **Storage location** field, enter the path provided in the cell above.
-# MAGIC 1. Enter the location printed next to **`Storage Location`** below in the **Storage Location** field.
 # MAGIC 1. For **Pipeline Mode**, select **Triggered**.
 # MAGIC 1. Uncheck the **Enable autoscaling** box.
 # MAGIC 1. Set the number of **`workers`** to **`0`** (zero).
-# MAGIC 1. Enable **Photon Acceleration**.
+# MAGIC 1. Check the **Use Photon Acceleration** box.
+# MAGIC 1. For **Channel**, select **Current**
+# MAGIC 1. For **Policy**, select the value provided in the cell above.
 # MAGIC 
 # MAGIC Finally, click **Create**.
 

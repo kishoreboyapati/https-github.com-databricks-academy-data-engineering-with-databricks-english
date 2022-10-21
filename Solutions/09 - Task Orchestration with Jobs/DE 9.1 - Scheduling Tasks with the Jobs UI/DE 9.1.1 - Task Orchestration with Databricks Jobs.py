@@ -55,18 +55,21 @@ DA.print_pipeline_config()
 # MAGIC 1. Click the **Workflows** button on the sidebar.
 # MAGIC 1. Select the **Delta Live Tables** tab.
 # MAGIC 1. Click **Create Pipeline**.
+# MAGIC 1. Leave **Product Edition** as **Advanced**.
 # MAGIC 1. Fill in a **Pipeline Name** - because these names must be unique, we suggest using the **Pipeline Name** provided in the cell above.
-# MAGIC 1. For **Notebook Libraries**, use the navigator to locate and select the companion notebook provided in the cell above.
-# MAGIC 1. Under **Configuration**, add the two configuration parameters:
+# MAGIC 1. For **Notebook Libraries**, use the navigator to locate and select the notebook specified above.
+# MAGIC 1. Under **Configuration**, add two configuration parameters:
 # MAGIC    * Click **Add configuration**, set the "key" to **spark.master** and the "value" to **local[\*]**.
 # MAGIC    * Click **Add configuration**, set the "key" to **datasets_path** and the "value" to the value provided in the cell above.
 # MAGIC 1. In the **Target** field, enter the database name provided in the cell above.<br/>
-# MAGIC This should follow the pattern **`da_<name>_<hash>_dewd_jobs_demo_91`**
-# MAGIC 1. In the **Storage location** field, copy the directory as printed above.
-# MAGIC 1. For **Pipeline Mode**, select **Triggered**
-# MAGIC 1. Uncheck the **Enable autoscaling** box
+# MAGIC This should follow the pattern **`<name>_<hash>_dbacademy_dewd_jobs_demo_91`**
+# MAGIC 1. In the **Storage location** field, enter the path provided in the cell above.
+# MAGIC 1. For **Pipeline Mode**, select **Triggered**.
+# MAGIC 1. Uncheck the **Enable autoscaling** box.
 # MAGIC 1. Set the number of **`workers`** to **`0`** (zero).
-# MAGIC 1. Enable **Photon Acceleration**.
+# MAGIC 1. Check the **Use Photon Acceleration** box.
+# MAGIC 1. For **Channel**, select **Current**
+# MAGIC 1. For **Policy**, select the value provided in the cell above.
 # MAGIC 
 # MAGIC Finally, click **Create**.
 # MAGIC 

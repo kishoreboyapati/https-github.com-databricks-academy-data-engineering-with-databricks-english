@@ -1,7 +1,5 @@
 # Databricks notebook source
-# MAGIC %pip install \
-# MAGIC git+https://github.com/databricks-academy/dbacademy@v1.0.2 \
-# MAGIC --quiet --disable-pip-version-check
+# MAGIC %run ./_libraries
 
 # COMMAND ----------
 
